@@ -100,4 +100,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd74d87fe89bfe46af955306d641812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Peashooter
+  _projectile: {fileID: 1609563426096356370, guid: b54c8b6de00b64b4990a88a1f28c6a28, type: 3}
+  _cooldown: 2

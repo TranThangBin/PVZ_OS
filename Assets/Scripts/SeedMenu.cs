@@ -4,18 +4,24 @@ using UnityEngine.UI;
 
 public class SeedMenu : MonoBehaviour
 {
+    [SerializeField] private GameObject[] _plantPrefabs;
+
     private UnityEvent<GameObject> _onItemClick;
 
     public void Awake()
     {
-        foreach (Button button in GetComponentsInChildren<Button>())
+        Button[] buttons = GetComponentsInChildren<Button>();
+        for (int i = 0; i < _plantPrefabs.Length; i++)
         {
-            SeedMenuItem seedMenuItem = button.GetComponentInChildren<SeedMenuItem>();
-            button.onClick.AddListener(() =>
+            GameObject plantPrefab = _plantPrefabs[i];
+            SpriteRenderer plantSR = plantPrefab.GetComponent<SpriteRenderer>();
+            Image buttonImg = buttons[i].GetComponent<Image>();
+            buttonImg.sprite = plantSR.sprite;
+            buttons[i].onClick.AddListener(() =>
             {
                 if (_onItemClick != null)
                 {
-                    _onItemClick.Invoke(seedMenuItem.PlantPrefab);
+                    _onItemClick.Invoke(plantPrefab);
                 }
             });
         }

@@ -18,7 +18,6 @@ public class Lawn : MonoBehaviour
                 Vector2 screenPos = RectTransformUtility.WorldToScreenPoint(null, uiButton.position);
                 Vector2 worldPos = Camera.main.ScreenToWorldPoint(screenPos);
                 _onLawnCellClick.Invoke(worldPos);
-                Debug.Log($"{worldPos.x} {worldPos.y}");
             });
         }
     }
