@@ -16,7 +16,9 @@ public class Peashooter : MonoBehaviour
         _timer -= Time.deltaTime;
         if (_timer <= 0)
         {
-            Instantiate(_projectile, transform.position, Quaternion.identity);
+            GameObject gameObject = Instantiate(_projectile, transform.position, Quaternion.identity);
+            IProjectile projectile = gameObject.GetComponent<IProjectile>();
+            projectile.Fire(Vector2.right);
             _timer = _cooldown;
         }
     }

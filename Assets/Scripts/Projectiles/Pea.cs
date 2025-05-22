@@ -1,12 +1,26 @@
 using UnityEngine;
 
-public class Pea : MonoBehaviour
+public class Pea : MonoBehaviour, IProjectile
 {
-    private Rigidbody2D rb;
+    [SerializeField] private int _flyForce;
+
+    private Rigidbody2D _rb;
 
     public void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(Vector2.right * 5, ForceMode2D.Impulse);
+        _rb = GetComponent<Rigidbody2D>();
+    }
+
+    public void Fire(Vector2 direction)
+    {
+        _rb.AddForce(direction * _flyForce, ForceMode2D.Impulse);
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

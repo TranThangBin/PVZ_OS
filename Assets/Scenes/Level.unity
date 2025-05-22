@@ -337,6 +337,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &952724010
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3155332019899120571, guid: 7ea6606f23f18ed47ada78bcea1fddc1, type: 3}
+      propertyPath: m_Name
+      value: Zombie
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920556359073637062, guid: 7ea6606f23f18ed47ada78bcea1fddc1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920556359073637062, guid: 7ea6606f23f18ed47ada78bcea1fddc1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920556359073637062, guid: 7ea6606f23f18ed47ada78bcea1fddc1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920556359073637062, guid: 7ea6606f23f18ed47ada78bcea1fddc1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920556359073637062, guid: 7ea6606f23f18ed47ada78bcea1fddc1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920556359073637062, guid: 7ea6606f23f18ed47ada78bcea1fddc1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920556359073637062, guid: 7ea6606f23f18ed47ada78bcea1fddc1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920556359073637062, guid: 7ea6606f23f18ed47ada78bcea1fddc1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920556359073637062, guid: 7ea6606f23f18ed47ada78bcea1fddc1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920556359073637062, guid: 7ea6606f23f18ed47ada78bcea1fddc1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7ea6606f23f18ed47ada78bcea1fddc1, type: 3}
 --- !u!1 &966606750
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,12 +907,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4710484132842688263, guid: fad37ac35c29e8941bf89cc2335e27d9, type: 3}
       propertyPath: _plantPrefabs.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4710484132842688263, guid: fad37ac35c29e8941bf89cc2335e27d9, type: 3}
       propertyPath: '_plantPrefabs.Array.data[0]'
       value: 
       objectReference: {fileID: 4694460127658889744, guid: 665836a7e0743b7439e799846b45b5e6, type: 3}
+    - target: {fileID: 4710484132842688263, guid: fad37ac35c29e8941bf89cc2335e27d9, type: 3}
+      propertyPath: '_plantPrefabs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 7950152709122560912, guid: e6ca91135cdba154caf7a1e2d1c72030, type: 3}
     - target: {fileID: 6001356137720436654, guid: fad37ac35c29e8941bf89cc2335e27d9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1168,6 +1229,10 @@ PrefabInstance:
     - target: {fileID: 195569074840900377, guid: f6f7b552f58cc5d4aa2b6d39dc29bc24, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 643726597201829887, guid: f6f7b552f58cc5d4aa2b6d39dc29bc24, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 867205778625131240, guid: f6f7b552f58cc5d4aa2b6d39dc29bc24, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1986,3 +2051,4 @@ SceneRoots:
   - {fileID: 966606754}
   - {fileID: 424282903}
   - {fileID: 1148357526}
+  - {fileID: 952724010}
