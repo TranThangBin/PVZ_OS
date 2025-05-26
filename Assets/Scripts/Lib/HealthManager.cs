@@ -9,7 +9,6 @@ public class HealthManager : MonoBehaviour
     {
         if (_hp <= 0)
         {
-            Debug.Log("out of health");
             Destroy(gameObject);
         }
     }
@@ -17,6 +16,5 @@ public class HealthManager : MonoBehaviour
     public void ReduceHealth(float amount)
     {
         _hp = Mathf.Max(0, _hp - amount);
-        Debug.Log(_hp);
     }
 }
