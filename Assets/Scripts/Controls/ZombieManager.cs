@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 namespace Game
@@ -6,13 +7,15 @@ namespace Game
     {
         [SerializeField] private float _spawnTimer;
         [SerializeField] private GameObject _zombie;
-        [SerializeField] private Transform[] _spawnDestinations;
+
+        private Transform[] _spawnDestinations;
 
         private float _timer;
 
         public void Awake()
         {
             _timer = _spawnTimer;
+            _spawnDestinations = GetComponentsInChildren<Transform>().Where(t => t != transform).ToArray();
         }
 
         public void Update()

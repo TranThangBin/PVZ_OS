@@ -23,7 +23,7 @@ namespace Game
             _timer -= Time.deltaTime;
             if (_timer <= 0)
             {
-                InvokeTransitionListener(this, typeof(PeashooterAttackState).ToString());
+                InvokeTransitionListener(this, typeof(PeaShooterReadyState).ToString());
             }
         }
     }

@@ -8,6 +8,8 @@ namespace Game
         [SerializeField] private float _damage;
         [SerializeField] private float _attackCooldown;
 
+        private HealthManager _plantHealth;
+
         private float _timer;
 
         public override string GetStateName()
@@ -23,19 +25,20 @@ namespace Game
         public override void StateUpdate()
         {
             _timer -= Time.deltaTime;
-        }
-
-        public override void StateCollisionStay2D(Collision2D collision)
-        {
-            if (collision.gameObject.TryGetComponent(out HealthManager healthManager) && _timer <= 0)
+            if (_timer <= 0)
             {
-                healthManager.ReduceHealth(_damage);
+                _plantHealth.ReduceHealth(_damage);
                 _timer = _attackCooldown;
-                if (healthManager.Hp <= 0)
+                if (_plantHealth.Hp <= 0)
                 {
                     InvokeTransitionListener(this, typeof(ZombieMoveState).ToString());
                 }
             }
+        }
+
+        public override void StateCollisionStay2D(Collision2D collision)
+        {
+            _plantHealth = collision.gameObject.GetComponent<HealthManager>();
         }
     }
 }

@@ -6,16 +6,16 @@ namespace Game
 {
     public class SeedMenu : MonoBehaviour
     {
-        [SerializeField] private GameObject[] _plantPrefabs;
+        [SerializeField] private Plant[] _plantPrefabs;
 
-        private UnityEvent<GameObject> _onItemClick;
+        private UnityEvent<Plant> _onItemClick;
 
         public void Awake()
         {
             Button[] buttons = GetComponentsInChildren<Button>();
             for (int i = 0; i < _plantPrefabs.Length; i++)
             {
-                GameObject plantPrefab = _plantPrefabs[i];
+                Plant plantPrefab = _plantPrefabs[i];
                 SpriteRenderer plantSR = plantPrefab.GetComponent<SpriteRenderer>();
                 Image buttonImg = buttons[i].GetComponent<Image>();
                 buttonImg.sprite = plantSR.sprite;
@@ -29,11 +29,11 @@ namespace Game
             }
         }
 
-        public void AddItemClickListener(UnityAction<GameObject> listener)
+        public void AddItemClickListener(UnityAction<Plant> listener)
         {
             if (_onItemClick == null)
             {
-                _onItemClick = new UnityEvent<GameObject>();
+                _onItemClick = new UnityEvent<Plant>();
             }
             _onItemClick.AddListener(listener);
         }

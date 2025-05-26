@@ -35,6 +35,11 @@ namespace Game
             _activeState.StateUpdate();
         }
 
+        public void FixedUpdate()
+        {
+            _activeState.StateFixedUpdate();
+        }
+
         private void _onStateTransition(State state, string newStateName)
         {
             Assert.IsTrue(state == _activeState, $"Something is wrong {_activeState.GetStateName()} " +

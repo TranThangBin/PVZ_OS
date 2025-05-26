@@ -7,11 +7,12 @@ namespace Game
 {
     public class PlantManager : MonoBehaviour
     {
-        [SerializeField] private Transform _plantsParent;
         [SerializeField] private SeedMenu _seedMenu;
         [SerializeField] private Lawn _lawn;
+        [SerializeField] private Transform _plantPool;
+        [SerializeField] private Transform _projectilePool;
 
-        private GameObject _selectedPlant;
+        private Plant _selectedPlant;
 
         public void Start()
         {
@@ -19,7 +20,7 @@ namespace Game
             _lawn.AddLawnCellClickListener(_onLawnCellClick);
         }
 
-        private void _onItemClick(GameObject plantPrefab)
+        private void _onItemClick(Plant plantPrefab)
         {
             if (_selectedPlant != plantPrefab)
             {
@@ -35,9 +36,16 @@ namespace Game
         {
             if (_selectedPlant != null)
             {
-                GameObject plant = Instantiate(_selectedPlant, position, Quaternion.identity, _plantsParent);
+                Plant plant = Instantiate(_selectedPlant, position, Quaternion.identity, _plantPool);
+                plant.AddPlantAttackListener(_onPlantAttack);
+
                 _selectedPlant = null;
             }
+        }
+
+        private void _onPlantAttack(GameObject projectile)
+        {
+            projectile.transform.parent = _projectilePool;
         }
     }
 }
