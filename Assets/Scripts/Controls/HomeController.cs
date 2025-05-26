@@ -1,25 +1,28 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class HomeController : MonoBehaviour
+namespace Game
 {
-    public void NewGame()
+    public class HomeController : MonoBehaviour
     {
-        SceneManager.LoadScene("Level");
-    }
+        public void NewGame()
+        {
+            SceneManager.LoadScene("Level");
+        }
 
-    public void Continue()
-    {
+        public void Continue()
+        {
 
-    }
+        }
 
-    public void Settings()
-    {
+        public void Settings()
+        {
 
-    }
+        }
 
-    public void Quit()
-    {
-        Application.Quit(0);
+        public void Quit()
+        {
+            Application.Quit(0);
+        }
     }
 }

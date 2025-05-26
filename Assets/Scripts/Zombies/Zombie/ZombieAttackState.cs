@@ -1,37 +1,40 @@
 using NUnit.Framework;
 using UnityEngine;
 
-public class ZombieAttackState : StateMachine.State
+namespace Game
 {
-    [SerializeField] private float _damage;
-    [SerializeField] private float _attackCooldown;
-
-    private float _timer;
-
-    public override string GetStateName()
+    public class ZombieAttackState : StateMachine.State
     {
-        return typeof(ZombieAttackState).ToString();
-    }
+        [SerializeField] private float _damage;
+        [SerializeField] private float _attackCooldown;
 
-    public override void StateEnter()
-    {
-        _timer = _attackCooldown;
-    }
+        private float _timer;
 
-    public override void StateUpdate()
-    {
-        _timer -= Time.deltaTime;
-    }
-
-    public override void StateCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.TryGetComponent(out HealthManager healthManager) && _timer <= 0)
+        public override string GetStateName()
         {
-            healthManager.ReduceHealth(_damage);
+            return typeof(ZombieAttackState).ToString();
+        }
+
+        public override void StateEnter()
+        {
             _timer = _attackCooldown;
-            if (healthManager.Hp <= 0)
+        }
+
+        public override void StateUpdate()
+        {
+            _timer -= Time.deltaTime;
+        }
+
+        public override void StateCollisionStay2D(Collision2D collision)
+        {
+            if (collision.gameObject.TryGetComponent(out HealthManager healthManager) && _timer <= 0)
             {
-                InvokeTransitionListener(this, typeof(ZombieMoveState).ToString());
+                healthManager.ReduceHealth(_damage);
+                _timer = _attackCooldown;
+                if (healthManager.Hp <= 0)
+                {
+                    InvokeTransitionListener(this, typeof(ZombieMoveState).ToString());
+                }
             }
         }
     }

@@ -1,27 +1,30 @@
 using UnityEngine;
 
-public class SplitPeaCooldownState : StateMachine.State
+namespace Game
 {
-    [SerializeField] private float _cooldown;
-
-    private float _timer;
-
-    public override string GetStateName()
+    public class SplitPeaCooldownState : StateMachine.State
     {
-        return typeof(SplitPeaCooldownState).ToString();
-    }
+        [SerializeField] private float _cooldown;
 
-    public override void StateEnter()
-    {
-        _timer = _cooldown;
-    }
+        private float _timer;
 
-    public override void StateUpdate()
-    {
-        _timer -= Time.deltaTime;
-        if (_timer <= 0)
+        public override string GetStateName()
         {
-            InvokeTransitionListener(this, typeof(SplitPeaAttackState).ToString());
+            return typeof(SplitPeaCooldownState).ToString();
+        }
+
+        public override void StateEnter()
+        {
+            _timer = _cooldown;
+        }
+
+        public override void StateUpdate()
+        {
+            _timer -= Time.deltaTime;
+            if (_timer <= 0)
+            {
+                InvokeTransitionListener(this, typeof(SplitPeaAttackState).ToString());
+            }
         }
     }
 }

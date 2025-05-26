@@ -1,25 +1,28 @@
 using UnityEngine;
 
-public class LawnMower : MonoBehaviour
+namespace Game
 {
-    [SerializeField] private float _velocity;
-    [SerializeField] private float _damage;
-
-    private Rigidbody2D _rb;
-
-    public void Awake()
+    public class LawnMower : MonoBehaviour
     {
-        _rb = GetComponent<Rigidbody2D>();
-    }
+        [SerializeField] private float _velocity;
+        [SerializeField] private float _damage;
 
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.TryGetComponent(out HealthManager healthManager))
+        private Rigidbody2D _rb;
+
+        public void Awake()
         {
-            healthManager.ReduceHealth(_damage);
-            if (_rb.linearVelocity == Vector2.zero)
+            _rb = GetComponent<Rigidbody2D>();
+        }
+
+        public void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.TryGetComponent(out HealthManager healthManager))
             {
-                _rb.linearVelocity = _velocity * Vector2.right;
+                healthManager.ReduceHealth(_damage);
+                if (_rb.linearVelocity == Vector2.zero)
+                {
+                    _rb.linearVelocity = _velocity * Vector2.right;
+                }
             }
         }
     }

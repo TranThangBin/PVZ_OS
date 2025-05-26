@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 
-public interface IProjectile
+namespace Game
 {
-    void Fire(Vector2 direction);
+    public interface IProjectile
+    {
+        void Fire(Vector2 direction);
+    }
 }
