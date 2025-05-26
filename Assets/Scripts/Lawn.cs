@@ -9,16 +9,19 @@ public class Lawn : MonoBehaviour
 
     public void Awake()
     {
-        foreach (Button button in GetComponentsInChildren<Button>())
+        foreach (HorizontalLayoutGroup layoutGroup in GetComponentsInChildren<HorizontalLayoutGroup>())
         {
-            RectTransform uiButton = button.GetComponentInChildren<RectTransform>();
-
-            button.onClick.AddListener(() =>
+            foreach (Button button in layoutGroup.GetComponentsInChildren<Button>())
             {
-                Vector2 screenPos = RectTransformUtility.WorldToScreenPoint(null, uiButton.position);
-                Vector2 worldPos = Camera.main.ScreenToWorldPoint(screenPos);
-                _onLawnCellClick.Invoke(worldPos);
-            });
+                RectTransform uiButton = button.GetComponentInChildren<RectTransform>();
+
+                button.onClick.AddListener(() =>
+                {
+                    Vector2 screenPos = RectTransformUtility.WorldToScreenPoint(null, uiButton.position);
+                    Vector2 worldPos = Camera.main.ScreenToWorldPoint(screenPos);
+                    _onLawnCellClick.Invoke(worldPos);
+                });
+            }
         }
     }
 

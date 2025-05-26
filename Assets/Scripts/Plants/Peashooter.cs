@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Peashooter : MonoBehaviour
 {
-    [SerializeField] private GameObject _projectile;
+    [SerializeField] private Pea _pea;
     [SerializeField] private float _cooldown;
     private float _timer;
 
@@ -16,9 +16,8 @@ public class Peashooter : MonoBehaviour
         _timer -= Time.deltaTime;
         if (_timer <= 0)
         {
-            GameObject gameObject = Instantiate(_projectile, transform.position, Quaternion.identity);
-            IProjectile projectile = gameObject.GetComponent<IProjectile>();
-            projectile.Fire(Vector2.right);
+            GameObject gameObject = Instantiate(_pea.gameObject, transform.position, Quaternion.identity);
+            gameObject.GetComponent<IProjectile>().Fire(Vector2.right);
             _timer = _cooldown;
         }
     }

@@ -30,8 +30,6 @@ public class SplitPea : MonoBehaviour
         foreach (Vector2 direction in _fireDirections)
         {
             GameObject gameObject = Instantiate(_projectile, transform.position, Quaternion.identity);
-            IProjectile projectile = gameObject.GetComponent<IProjectile>();
-            projectile.Fire(direction);
             yield return new WaitForSeconds(_shotDelay);
         }
     }
