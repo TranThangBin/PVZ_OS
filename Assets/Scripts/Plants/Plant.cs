@@ -5,6 +5,9 @@ namespace Game
 {
     public class Plant : MonoBehaviour
     {
+        [SerializeField] private int _plantCost;
+        public int PlantCost { get => _plantCost; }
+
         private UnityEvent<GameObject> _onPlantAttack;
 
         public void AddPlantAttackListener(UnityAction<GameObject> listener)

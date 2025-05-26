@@ -216,3 +216,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 523dd5a5304445c4e8672bf7a519376b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _plantCost: 125
