@@ -13,7 +13,7 @@ public class StateMachine : MonoBehaviour
     {
         _states = new Dictionary<string, State>();
 
-        foreach (State state in GetComponentsInChildren<State>())
+        foreach (State state in GetComponents<State>())
         {
             if (!_states.ContainsKey(state.GetStateName()))
             {
@@ -36,7 +36,7 @@ public class StateMachine : MonoBehaviour
     private void _onStateTransition(State state, string newStateName)
     {
         Assert.IsTrue(state == _activeState, $"Something is wrong {_activeState.GetStateName()} " +
-            $"does not match with transition state ${state.GetStateName()}");
+            $"does not match with transition state {state.GetStateName()}");
         Assert.IsTrue(_states.ContainsKey(newStateName), $"Something is wrong {newStateName} " +
             $"does not exists in {name}'s states");
 
@@ -51,6 +51,21 @@ public class StateMachine : MonoBehaviour
         newState.StateEnter();
     }
 
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        _activeState.StateCollisionEnter2D(collision);
+    }
+
+    public void OnCollisionStay2D(Collision2D collision)
+    {
+        _activeState.StateCollisionStay2D(collision);
+    }
+
+    public void OnCollisionExit2D(Collision2D collision)
+    {
+        _activeState.StateCollisionExit2D(collision);
+    }
+
     public abstract class State : MonoBehaviour
     {
         private UnityEvent<State, string> _onTransition;
@@ -62,6 +77,9 @@ public class StateMachine : MonoBehaviour
         public virtual void StateFixedUpdate() { }
         public virtual void StateLateUpdate() { }
         public virtual void StateExit() { }
+        public virtual void StateCollisionEnter2D(Collision2D collision) { }
+        public virtual void StateCollisionStay2D(Collision2D collision) { }
+        public virtual void StateCollisionExit2D(Collision2D collision) { }
 
         public void AddOnTransitionListener(UnityAction<State, string> listener)
         {

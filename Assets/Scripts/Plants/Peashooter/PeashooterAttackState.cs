@@ -11,7 +11,7 @@ public class PeashooterAttackState : StateMachine.State
 
     public override void StateEnter()
     {
-        GameObject gameObject = Instantiate(_projectile, transform.position, Quaternion.identity);
+        GameObject gameObject = Instantiate(_projectile, transform.position + Vector3.right, Quaternion.identity);
         IProjectile projectile = gameObject.GetComponent<IProjectile>();
         projectile.Fire(Vector2.right);
         InvokeTransitionListener(this, typeof(PeashooterCooldownState).ToString());

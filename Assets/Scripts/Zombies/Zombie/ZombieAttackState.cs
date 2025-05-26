@@ -1,16 +1,38 @@
+using NUnit.Framework;
 using UnityEngine;
 
-public class ZombieAttackState : MonoBehaviour
+public class ZombieAttackState : StateMachine.State
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private float _damage;
+    [SerializeField] private float _attackCooldown;
+
+    private float _timer;
+
+    public override string GetStateName()
     {
-        
+        return typeof(ZombieAttackState).ToString();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void StateEnter()
     {
-        
+        _timer = _attackCooldown;
+    }
+
+    public override void StateUpdate()
+    {
+        _timer -= Time.deltaTime;
+    }
+
+    public override void StateCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out HealthManager healthManager) && _timer <= 0)
+        {
+            healthManager.ReduceHealth(_damage);
+            _timer = _attackCooldown;
+            if (healthManager.Hp <= 0)
+            {
+                InvokeTransitionListener(this, typeof(ZombieMoveState).ToString());
+            }
+        }
     }
 }

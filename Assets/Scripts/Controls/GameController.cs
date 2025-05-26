@@ -17,11 +17,22 @@ public class GameController : MonoBehaviour
 
     private void _onItemClick(GameObject plantPrefab)
     {
-        _selectedPlant = plantPrefab;
+        if (_selectedPlant != plantPrefab)
+        {
+            _selectedPlant = plantPrefab;
+        }
+        else
+        {
+            _selectedPlant = null;
+        }
     }
 
     private void _onLawnCellClick(Vector2 position)
     {
-        Instantiate(_selectedPlant, position, Quaternion.identity);
+        if (_selectedPlant != null)
+        {
+            Instantiate(_selectedPlant, position, Quaternion.identity);
+            _selectedPlant = null;
+        }
     }
 }
