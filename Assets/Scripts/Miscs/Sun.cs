@@ -9,7 +9,11 @@ namespace Game
         [SerializeField] private float _lifeTime;
 
         private float _targetYPos;
-        private UnityEvent _onSunClick;
+
+        public void Awake()
+        {
+            _targetYPos = transform.position.y;
+        }
 
         public void Update()
         {
@@ -25,24 +29,6 @@ namespace Game
             }
             else
             {
-                Destroy(gameObject);
-            }
-        }
-
-        public void AddSunClickListener(UnityAction listener)
-        {
-            if (_onSunClick == null)
-            {
-                _onSunClick = new UnityEvent();
-            }
-            _onSunClick.AddListener(listener);
-        }
-
-        public void OnMouseDown()
-        {
-            if (_onSunClick != null)
-            {
-                _onSunClick.Invoke();
                 Destroy(gameObject);
             }
         }

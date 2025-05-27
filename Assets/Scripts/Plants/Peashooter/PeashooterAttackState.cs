@@ -21,7 +21,7 @@ namespace Game
             }
 
             GameObject gameObject = Instantiate(_projectile, transform.position + (Vector3.right / 2), Quaternion.identity);
-            _plant.InvokePlantAttackListener(gameObject);
+            _plant.InvokeChildInstantiateEvent(gameObject);
 
             IProjectile projectile = gameObject.GetComponent<IProjectile>();
             projectile.Fire(Vector2.right);

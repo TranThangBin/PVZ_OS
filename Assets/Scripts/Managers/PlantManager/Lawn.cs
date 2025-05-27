@@ -12,13 +12,9 @@ namespace Game
         {
             foreach (Button button in GetComponentsInChildren<Button>())
             {
-                RectTransform uiButton = button.GetComponentInChildren<RectTransform>();
-
                 button.onClick.AddListener(() =>
                 {
-                    Vector2 screenPos = RectTransformUtility.WorldToScreenPoint(null, uiButton.position);
-                    Vector2 worldPos = Camera.main.ScreenToWorldPoint(screenPos);
-                    _onLawnCellClick.Invoke(worldPos);
+                    _onLawnCellClick.Invoke(button.transform.position);
                 });
             }
         }

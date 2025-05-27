@@ -23,24 +23,39 @@ namespace Game
 
         public void Update()
         {
+            _handleSpawnSun();
+            _handleSunClicked();
+        }
+
+        private void _handleSpawnSun()
+        {
             _timer -= Time.deltaTime;
             if (_timer <= 0)
             {
                 int pad = 5;
                 Vector3 spawnPos = new Vector2(Random.Range(_sunSpanwTopLeft.position.x, _sunSpanwBottomRight.position.x),
                     _sunSpanwTopLeft.position.y + pad);
+
                 Sun sun = Instantiate(_sun, spawnPos, Quaternion.identity, transform);
-
-                sun.AddSunClickListener(_onSunClick);
-
                 sun.SetTargetYPosition(Random.Range(_sunSpanwTopLeft.position.y, _sunSpanwBottomRight.position.y));
+
                 _timer = _sunSpawnTimer;
             }
         }
 
-        private void _onSunClick()
+        private void _handleSunClicked()
         {
-            _incrementSunStore(25);
+            if (Input.GetMouseButtonDown(0))
+            {
+                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 1, LayerMask.GetMask("Sun"));
+
+                if (hit.collider != null)
+                {
+                    Destroy(hit.collider.gameObject);
+                    _incrementSunStore(25);
+                }
+            }
         }
 
         private void _incrementSunStore(int amount)

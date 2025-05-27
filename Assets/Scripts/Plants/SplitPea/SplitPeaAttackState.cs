@@ -32,7 +32,7 @@ namespace Game
             for (int i = 0; i < _directions.Length; i++)
             {
                 GameObject gameObject = Instantiate(_projectile, transform.position + (_directions[i] / 2), Quaternion.identity);
-                _plant.InvokePlantAttackListener(gameObject);
+                _plant.InvokeChildInstantiateEvent(gameObject);
 
                 IProjectile projectile = gameObject.GetComponent<IProjectile>();
                 projectile.Fire(_directions[i]);

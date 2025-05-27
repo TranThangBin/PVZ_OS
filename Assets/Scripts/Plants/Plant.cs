@@ -8,22 +8,22 @@ namespace Game
         [SerializeField] private int _plantCost;
         public int PlantCost { get => _plantCost; }
 
-        private UnityEvent<GameObject> _onPlantAttack;
+        private UnityEvent<GameObject> _onChildInstantiate;
 
-        public void AddPlantAttackListener(UnityAction<GameObject> listener)
+        public void AddChildInstiateListener(UnityAction<GameObject> listener)
         {
-            if (_onPlantAttack == null)
+            if (_onChildInstantiate == null)
             {
-                _onPlantAttack = new UnityEvent<GameObject>();
+                _onChildInstantiate = new UnityEvent<GameObject>();
             }
-            _onPlantAttack.AddListener(listener);
+            _onChildInstantiate.AddListener(listener);
         }
 
-        public void InvokePlantAttackListener(GameObject projectile)
+        public void InvokeChildInstantiateEvent(GameObject child)
         {
-            if (_onPlantAttack != null)
+            if (_onChildInstantiate != null)
             {
-                _onPlantAttack.Invoke(projectile);
+                _onChildInstantiate.Invoke(child);
             }
         }
     }

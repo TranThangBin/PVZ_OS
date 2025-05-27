@@ -40,10 +40,5 @@ namespace Game
                 }
             }
         }
-
-        public override void StateCollisionExit2D(Collision2D collision)
-        {
-            InvokeTransitionListener(this, typeof(ZombieMoveState).ToString());
-        }
     }
 }

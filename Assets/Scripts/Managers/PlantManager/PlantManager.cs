@@ -41,28 +41,43 @@ namespace Game
             if (buyedPlant != null)
             {
                 Plant plant = Instantiate(buyedPlant, position, Quaternion.identity, _plantPool);
-                plant.AddPlantAttackListener(_onPlantAttack);
+                plant.AddChildInstiateListener(_onPlantChildInstantiate);
             }
 
             _setSelectedPlant(null);
         }
 
-        private void _onPlantAttack(GameObject projectile)
+        private void _onPlantChildInstantiate(GameObject child)
         {
-            projectile.transform.parent = _projectilePool;
+            if (child.GetComponent<Sun>() != null)
+            {
+                child.transform.parent = _sunManager.transform;
+            }
+            else if (child.GetComponent<IProjectile>() != null)
+            {
+                child.transform.parent = _projectilePool;
+            }
         }
 
         private void _setSelectedPlant(Plant plant)
         {
+            Color cl = _selectedPlantIndicator.color;
+
             if (plant == null)
             {
+                cl.a = 0;
+
                 _selectedPlantIndicator.sprite = null;
+                _selectedPlantIndicator.color = cl;
                 _selectedPlant = null;
             }
             else
             {
+                cl.a = 1;
+
                 SpriteRenderer sr = plant.GetComponent<SpriteRenderer>();
                 _selectedPlantIndicator.sprite = sr.sprite;
+                _selectedPlantIndicator.color = cl;
                 _selectedPlant = plant;
             }
         }
