@@ -15,7 +15,7 @@ TagManager:
   - Plant
   - Cleaner
   - Sun
-  - 
+  - GameOver
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Front
+    uniqueID: 2359778567
     locked: 0
   m_RenderingLayers:
   - Default

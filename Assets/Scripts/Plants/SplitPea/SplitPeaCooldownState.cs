@@ -13,7 +13,7 @@ namespace Game
             return typeof(SplitPeaCooldownState).ToString();
         }
 
-        public override void StateEnter()
+        public override void StateEnter(params object[] parameters)
         {
             _timer = _cooldown;
         }
@@ -23,7 +23,7 @@ namespace Game
             _timer -= Time.deltaTime;
             if (_timer <= 0)
             {
-                InvokeTransitionListener(this, typeof(SplitPeaAttackState).ToString());
+                InvokeTransitionListener(this, typeof(SplitPeaReadyState).ToString());
             }
         }
     }

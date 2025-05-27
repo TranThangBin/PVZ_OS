@@ -6,6 +6,7 @@ namespace Game
     public class Sun : MonoBehaviour
     {
         [SerializeField] private float _velocity;
+        [SerializeField] private float _lifeTime;
 
         private float _targetYPos;
         private UnityEvent _onSunClick;
@@ -15,6 +16,16 @@ namespace Game
             if (transform.position.y > _targetYPos)
             {
                 transform.Translate(_velocity * Time.deltaTime * Vector3.down);
+                return;
+            }
+
+            if (_lifeTime > 0)
+            {
+                _lifeTime -= Time.deltaTime;
+            }
+            else
+            {
+                Destroy(gameObject);
             }
         }
 

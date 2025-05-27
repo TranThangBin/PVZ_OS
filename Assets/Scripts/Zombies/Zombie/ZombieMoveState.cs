@@ -13,7 +13,7 @@ namespace Game
             return typeof(ZombieMoveState).ToString();
         }
 
-        public override void StateEnter()
+        public override void StateEnter(params object[] parameters)
         {
             if (_rb == null)
             {
@@ -24,10 +24,10 @@ namespace Game
 
         public override void StateCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.layer == LayerMask.NameToLayer("Plant"))
+            if (collision.gameObject.TryGetComponent(out HealthManager healthManager))
             {
                 _rb.linearVelocity = Vector2.zero;
-                InvokeTransitionListener(this, typeof(ZombieAttackState).ToString());
+                InvokeTransitionListener(this, typeof(ZombieAttackState).ToString(), healthManager);
             }
         }
     }

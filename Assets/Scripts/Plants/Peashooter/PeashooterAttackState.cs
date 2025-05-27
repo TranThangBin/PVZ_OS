@@ -13,7 +13,7 @@ namespace Game
             return typeof(PeashooterAttackState).ToString();
         }
 
-        public override void StateEnter()
+        public override void StateEnter(params object[] parameters)
         {
             if (_plant == null)
             {

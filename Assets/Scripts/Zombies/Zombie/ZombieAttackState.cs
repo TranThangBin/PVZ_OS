@@ -17,9 +17,14 @@ namespace Game
             return typeof(ZombieAttackState).ToString();
         }
 
-        public override void StateEnter()
+        public override void StateEnter(params object[] parameters)
         {
             _timer = _attackCooldown;
+
+            Assert.IsTrue(parameters.Length == 1);
+            Assert.IsTrue(parameters[0] is HealthManager);
+
+            _plantHealth = (HealthManager)parameters[0];
         }
 
         public override void StateUpdate()
@@ -36,9 +41,9 @@ namespace Game
             }
         }
 
-        public override void StateCollisionStay2D(Collision2D collision)
+        public override void StateCollisionExit2D(Collision2D collision)
         {
-            _plantHealth = collision.gameObject.GetComponent<HealthManager>();
+            InvokeTransitionListener(this, typeof(ZombieMoveState).ToString());
         }
     }
 }

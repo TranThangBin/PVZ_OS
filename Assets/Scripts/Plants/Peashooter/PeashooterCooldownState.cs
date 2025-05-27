@@ -13,7 +13,7 @@ namespace Game
             return typeof(PeashooterCooldownState).ToString();
         }
 
-        public override void StateEnter()
+        public override void StateEnter(params object[] parameters)
         {
             _timer = _cooldown;
         }

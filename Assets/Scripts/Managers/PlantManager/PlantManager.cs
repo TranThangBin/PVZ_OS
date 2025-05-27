@@ -24,7 +24,7 @@ namespace Game
 
         private void _onItemClick(Plant plant)
         {
-            if (_sunManager.Buyable(plant))
+            if (_sunManager.Buyable(plant) && plant != _selectedPlant)
             {
                 _setSelectedPlant(plant);
             }

@@ -40,7 +40,7 @@ namespace Game
             _activeState.StateFixedUpdate();
         }
 
-        private void _onStateTransition(State state, string newStateName)
+        private void _onStateTransition(State state, string newStateName, params object[] parameters)
         {
             Assert.IsTrue(state == _activeState, $"Something is wrong {_activeState.GetStateName()} " +
                 $"does not match with transition state {state.GetStateName()}");
@@ -55,7 +55,7 @@ namespace Game
             }
 
             _activeState = newState;
-            newState.StateEnter();
+            newState.StateEnter(parameters);
         }
 
         public void OnCollisionEnter2D(Collision2D collision)
@@ -75,11 +75,11 @@ namespace Game
 
         public abstract class State : MonoBehaviour
         {
-            private UnityEvent<State, string> _onTransition;
+            private UnityEvent<State, string, object[]> _onTransition;
 
             public abstract string GetStateName();
 
-            public virtual void StateEnter() { }
+            public virtual void StateEnter(params object[] parameters) { }
             public virtual void StateUpdate() { }
             public virtual void StateFixedUpdate() { }
             public virtual void StateLateUpdate() { }
@@ -88,20 +88,20 @@ namespace Game
             public virtual void StateCollisionStay2D(Collision2D collision) { }
             public virtual void StateCollisionExit2D(Collision2D collision) { }
 
-            public void AddOnTransitionListener(UnityAction<State, string> listener)
+            public void AddOnTransitionListener(UnityAction<State, string, object[]> listener)
             {
                 if (_onTransition == null)
                 {
-                    _onTransition = new UnityEvent<State, string>();
+                    _onTransition = new UnityEvent<State, string, object[]>();
                 }
                 _onTransition.AddListener(listener);
             }
 
-            public void InvokeTransitionListener(State state, string newStateName)
+            public void InvokeTransitionListener(State state, string newStateName, params object[] parameters)
             {
                 if (_onTransition != null)
                 {
-                    _onTransition.Invoke(state, newStateName);
+                    _onTransition.Invoke(state, newStateName, parameters);
                 }
             }
         }

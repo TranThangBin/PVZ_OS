@@ -11,10 +11,10 @@ namespace Game
 
         public override void StateFixedUpdate()
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, 100, LayerMask.GetMask("Enemy"));
-            Debug.DrawRay(transform.position, Vector3.right * 100, Color.red);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.left * 100, Vector3.right, 200, LayerMask.GetMask("Enemy"));
+            Debug.DrawRay(transform.position + Vector3.left * 100, Vector3.right * 200, Color.red);
 
-            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+            if (hit.collider != null)
             {
                 InvokeTransitionListener(this, typeof(SplitPeaAttackState).ToString());
             }
