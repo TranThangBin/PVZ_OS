@@ -8,9 +8,8 @@ namespace Game
     public class PlantManager : MonoBehaviour
     {
         [SerializeField] private SeedMenu _seedMenu;
-        [SerializeField] private Lawn _lawn;
+        [SerializeField] private LawnManager _lawnManager;
         [SerializeField] private SunManager _sunManager;
-        [SerializeField] private Transform _plantPool;
         [SerializeField] private Transform _projectilePool;
         [SerializeField] private Image _selectedPlantIndicator;
 
@@ -19,7 +18,7 @@ namespace Game
         public void Start()
         {
             _seedMenu.AddItemClickListener(_onItemClick);
-            _lawn.AddLawnCellClickListener(_onLawnCellClick);
+            _lawnManager.AddLawnCellClickListener(_onLawnCellClick);
         }
 
         private void _onItemClick(Plant plant)
@@ -34,13 +33,18 @@ namespace Game
             }
         }
 
-        private void _onLawnCellClick(Vector2 position)
+        private void _onLawnCellClick(Transform transform)
         {
+            if (transform.GetComponentInChildren<Plant>() != null)
+            {
+                return;
+            }
+
             Plant buyedPlant = _sunManager.BuyPlant(_selectedPlant);
 
             if (buyedPlant != null)
             {
-                Plant plant = Instantiate(buyedPlant, position, Quaternion.identity, _plantPool);
+                Plant plant = Instantiate(buyedPlant, transform.position, Quaternion.identity, transform);
                 plant.AddChildInstiateListener(_onPlantChildInstantiate);
             }
 

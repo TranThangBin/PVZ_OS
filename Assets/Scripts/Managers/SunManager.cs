@@ -8,8 +8,8 @@ namespace Game
     {
         [SerializeField] private Sun _sun;
         [SerializeField] private TMP_Text _sunDisplay;
-        [SerializeField] private Transform _sunSpanwTopLeft;
-        [SerializeField] private Transform _sunSpanwBottomRight;
+        [SerializeField] private Transform _sunSpawnStart;
+        [SerializeField] private Transform _sunSpawnEnd;
         [SerializeField] private int _sunStored = 50;
         [SerializeField] private float _sunSpawnTimer;
 
@@ -33,11 +33,11 @@ namespace Game
             if (_timer <= 0)
             {
                 int pad = 5;
-                Vector3 spawnPos = new Vector2(Random.Range(_sunSpanwTopLeft.position.x, _sunSpanwBottomRight.position.x),
-                    _sunSpanwTopLeft.position.y + pad);
+                Vector3 spawnPos = new Vector2(Random.Range(_sunSpawnStart.position.x, _sunSpawnEnd.position.x),
+                    _sunSpawnStart.position.y + pad);
 
                 Sun sun = Instantiate(_sun, spawnPos, Quaternion.identity, transform);
-                sun.SetTargetYPosition(Random.Range(_sunSpanwTopLeft.position.y, _sunSpanwBottomRight.position.y));
+                sun.SetTargetYPosition(Random.Range(_sunSpawnStart.position.y, _sunSpawnEnd.position.y));
 
                 _timer = _sunSpawnTimer;
             }
