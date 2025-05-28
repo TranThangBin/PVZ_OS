@@ -36,8 +36,8 @@ namespace Game
                         GameObject gameObject = Instantiate(_projectile, transform.position + (Vector3.right / 2), Quaternion.identity, transform.parent);
                         IProjectile projectile = gameObject.GetComponent<IProjectile>();
                         projectile.Fire(Vector2.right);
-                        _state = PeashooterState.COOLDOWN;
 
+                        _state = PeashooterState.COOLDOWN;
                         _timer.TimerRestart();
                     }
                     break;

@@ -11,12 +11,10 @@ GameObject:
   - component: {fileID: 4716127328214316687}
   - component: {fileID: 7534209569936306291}
   - component: {fileID: 7932283402256941332}
-  - component: {fileID: 1562344975987020286}
   - component: {fileID: 6790629230564300571}
-  - component: {fileID: 1308081194546852309}
-  - component: {fileID: 2921451522654479738}
-  - component: {fileID: 564328350366445138}
   - component: {fileID: 8047447276178294074}
+  - component: {fileID: 5314107143473587250}
+  - component: {fileID: 5959866356943500423}
   m_Layer: 7
   m_Name: SplitPea
   m_TagString: Untagged
@@ -140,19 +138,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 5.51, y: 3.97}
   m_EdgeRadius: 0
---- !u!114 &1562344975987020286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7950152709122560912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c979754f79b6e484f8c104350d4a5b8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _activeState: {fileID: 2921451522654479738}
 --- !u!114 &6790629230564300571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,44 +151,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hp: 8
---- !u!114 &1308081194546852309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7950152709122560912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72bd387f668add54088ad6c30afee7d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _projectile: {fileID: 1609563426096356370, guid: b54c8b6de00b64b4990a88a1f28c6a28, type: 3}
---- !u!114 &2921451522654479738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7950152709122560912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 220def2e17228274a88f2acc1de0c29a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cooldown: 2
---- !u!114 &564328350366445138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7950152709122560912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27781f0dc01099b49b9d0043b8c5d397, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8047447276178294074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,3 +164,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plantCost: 125
+--- !u!114 &5314107143473587250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7950152709122560912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a67ffc1b414b6439a1c41d7aefbea5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectile: {fileID: 1609563426096356370, guid: b54c8b6de00b64b4990a88a1f28c6a28, type: 3}
+  _timer: {fileID: 5959866356943500423}
+--- !u!114 &5959866356943500423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7950152709122560912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea188def6ce4223428b713eb1cf49406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _time: 2
+  OnTimeOut:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5314107143473587250}
+        m_TargetAssemblyTypeName: Game.SplitPea, Game
+        m_MethodName: OnTimerTimeOut
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
