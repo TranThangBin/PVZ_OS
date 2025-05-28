@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 3205888237218734533}
   - component: {fileID: 450968121068859821}
   - component: {fileID: 4892654986605513088}
-  - component: {fileID: 7016008131668764001}
   - component: {fileID: 4289246665259828181}
   - component: {fileID: 3903558219692927935}
   - component: {fileID: 8975941096091579632}
   - component: {fileID: 1337254433167952582}
+  - component: {fileID: 4531171588865788150}
   m_Layer: 7
   m_Name: Sunflower
   m_TagString: Untagged
@@ -139,19 +139,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 9.28, y: 10.46}
   m_EdgeRadius: 0
---- !u!114 &7016008131668764001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7973500811911684898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 523dd5a5304445c4e8672bf7a519376b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _plantCost: 50
 --- !u!114 &4289246665259828181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,3 +191,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hp: 8
+--- !u!114 &4531171588865788150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973500811911684898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed24f815ca2adf49a82ec349a0d3d1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _plantCost: 50

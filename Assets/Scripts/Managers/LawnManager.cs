@@ -6,7 +6,6 @@ namespace Game
 {
     public class LawnManager : MonoBehaviour
     {
-        [SerializeField] private GameObject _lawnCell;
         [SerializeField] private Transform _lawnStart;
         [SerializeField] private Transform _lawnEnd;
         [SerializeField] private int _lawnRowCount;
@@ -27,9 +26,13 @@ namespace Game
             {
                 for (int col = 0; col < _lawnColumnCount; col++)
                 {
+                    GameObject cell = new GameObject($"lawnCell{row}:{col}", typeof(BoxCollider2D));
                     Vector3 instancePos = _lawnStart.position + new Vector3(cellSize.x * col + cellSize.x / 2, -(cellSize.y * row + cellSize.y / 2));
-                    GameObject cell = Instantiate(_lawnCell, instancePos, Quaternion.identity);
+
+                    cell.transform.position = instancePos;
                     cell.transform.parent = transform;
+                    cell.layer = LayerMask.NameToLayer("LawnCell");
+
                     BoxCollider2D collider = cell.GetComponent<BoxCollider2D>();
                     collider.size = cellSize;
                 }

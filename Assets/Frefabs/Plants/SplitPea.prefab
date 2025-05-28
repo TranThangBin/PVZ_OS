@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1308081194546852309}
   - component: {fileID: 2921451522654479738}
   - component: {fileID: 564328350366445138}
-  - component: {fileID: 4255221519590660868}
+  - component: {fileID: 8047447276178294074}
   m_Layer: 7
   m_Name: SplitPea
   m_TagString: Untagged
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27781f0dc01099b49b9d0043b8c5d397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4255221519590660868
+--- !u!114 &8047447276178294074
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7950152709122560912}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 523dd5a5304445c4e8672bf7a519376b, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ed24f815ca2adf49a82ec349a0d3d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _plantCost: 125
