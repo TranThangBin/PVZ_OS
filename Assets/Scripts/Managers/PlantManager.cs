@@ -45,22 +45,9 @@ namespace Game
             if (bought != null)
             {
                 Plant plant = Instantiate(bought, cell.position, Quaternion.identity, cell);
-                plant.AddChildInstiateListener(_onPlantChildInstantiate);
             }
 
             _setSelected(null);
-        }
-
-        private void _onPlantChildInstantiate(GameObject child)
-        {
-            if (child.GetComponent<Sun>() != null)
-            {
-                child.transform.parent = _sunManager.transform;
-            }
-            else if (child.GetComponent<IProjectile>() != null)
-            {
-                child.transform.parent = _projectilePool;
-            }
         }
 
         private void _setSelected(Plant selectable)
@@ -80,7 +67,7 @@ namespace Game
                 cl.a = 1;
 
                 SpriteRenderer sr = selectable.GetComponent<SpriteRenderer>();
-                //_selectedPlantIndicator.sprite = sr.sprite;
+                _selectedPlantIndicator.sprite = sr.sprite;
                 _selectedPlantIndicator.color = cl;
                 _selected = selectable;
             }

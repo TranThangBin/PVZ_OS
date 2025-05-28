@@ -12,12 +12,12 @@ namespace Game
 
         private PeashooterState _state = PeashooterState.COOLDOWN;
 
-        public void Start()
+        private void Start()
         {
             _timer.TimerStart();
         }
 
-        public void Update()
+        private void Update()
         {
             switch (_state)
             {

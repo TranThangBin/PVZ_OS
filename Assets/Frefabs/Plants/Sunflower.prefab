@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 3205888237218734533}
   - component: {fileID: 450968121068859821}
   - component: {fileID: 4892654986605513088}
-  - component: {fileID: 4289246665259828181}
-  - component: {fileID: 3903558219692927935}
-  - component: {fileID: 8975941096091579632}
   - component: {fileID: 1337254433167952582}
   - component: {fileID: 4531171588865788150}
+  - component: {fileID: 7241056927562610530}
+  - component: {fileID: 5532173415143523966}
   m_Layer: 7
   m_Name: Sunflower
   m_TagString: Untagged
@@ -139,45 +138,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 9.28, y: 10.46}
   m_EdgeRadius: 0
---- !u!114 &4289246665259828181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7973500811911684898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c979754f79b6e484f8c104350d4a5b8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _activeState: {fileID: 3903558219692927935}
---- !u!114 &3903558219692927935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7973500811911684898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac8ce357de9de43458427937aa47cd30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cooldown: 7
---- !u!114 &8975941096091579632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7973500811911684898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 517eba8f56a155542a8eea952c5f5134, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sun: {fileID: 864223831861094711, guid: b598fe2eaa925ad42a859425d519b571, type: 3}
 --- !u!114 &1337254433167952582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,3 +164,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plantCost: 50
+--- !u!114 &7241056927562610530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973500811911684898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea188def6ce4223428b713eb1cf49406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _time: 4
+  OnTimeOut:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5532173415143523966}
+        m_TargetAssemblyTypeName: Game.Sunflower, Game
+        m_MethodName: OnTimerTimeOut
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5532173415143523966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973500811911684898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59611af7281aa41498c06bc5bfe72af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sun: {fileID: 864223831861094711, guid: b598fe2eaa925ad42a859425d519b571, type: 3}
+  _timer: {fileID: 7241056927562610530}
