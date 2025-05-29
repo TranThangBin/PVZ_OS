@@ -1052,4 +1052,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45bf4cacac1041849895f0aea1853d69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plantPrefabs: []
+  _selectables: []
+  _selectedObjects: []
+  _shovel: {fileID: 7972805884316871125, guid: 359f6c05f7919134181ffeafb10b7f0c, type: 3}
+  OnItemSelect:
+    m_PersistentCalls:
+      m_Calls: []

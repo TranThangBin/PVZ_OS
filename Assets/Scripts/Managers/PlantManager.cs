@@ -28,12 +28,14 @@ namespace Game
             ISelectable selectable = selected.GetComponent<ISelectable>();
             Assert.IsNotNull(selectable);
 
-            if (selectable.CanSelect(_sunManager))
+            if (_selected == selected)
+            {
+                SetSelected(null);
+            }
+            else if (selectable.CanSelect(_sunManager))
             {
                 SetSelected(selected);
-                return;
             }
-            SetSelected(null);
         }
 
         private void OnLawnCellClick(Transform cell)
