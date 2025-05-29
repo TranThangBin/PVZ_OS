@@ -12,13 +12,13 @@ namespace Game
 
         private float _timer;
 
-        public void Awake()
+        private void Awake()
         {
             _timer = _spawnTimer;
             _spawnDestinations = GetComponentsInChildren<Transform>().Where(t => t != transform).ToArray();
         }
 
-        public void Update()
+        private void Update()
         {
             _timer -= Time.deltaTime;
             if (_timer <= 0)

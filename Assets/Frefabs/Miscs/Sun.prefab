@@ -166,9 +166,9 @@ MonoBehaviour:
   OnTimeOut:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 864223831861094711}
-        m_TargetAssemblyTypeName: Game.Sun, Game
-        m_MethodName: OnTimerTimeOut
+      - m_Target: {fileID: 6631941201375422040}
+        m_TargetAssemblyTypeName: Game.Timer, Game
+        m_MethodName: DestroyOnTimeOut
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

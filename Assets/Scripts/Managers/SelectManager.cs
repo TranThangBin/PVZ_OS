@@ -10,7 +10,7 @@ namespace Game
 
         public UnityEvent<Plant> OnItemSelect = new();
 
-        public void Awake()
+        private void Awake()
         {
             Button[] buttons = GetComponentsInChildren<Button>();
             for (int i = 0; i < _selectables.Length && i < buttons.Length; i++)

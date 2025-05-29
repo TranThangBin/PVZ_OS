@@ -11,17 +11,17 @@ namespace Game
 
         private float _targetYPos;
 
-        public void Awake()
+        private void Awake()
         {
             _targetYPos = transform.position.y;
         }
 
-        public void Start()
+        private void Start()
         {
             _lifeTimer.TimerStart();
         }
 
-        public void Update()
+        private void Update()
         {
             if (transform.position.y > _targetYPos)
             {
@@ -33,11 +33,6 @@ namespace Game
         {
             Assert.IsTrue(transform.position.y > yPos);
             _targetYPos = yPos;
-        }
-
-        public void OnTimerTimeOut()
-        {
-            Destroy(gameObject);
         }
     }
 }

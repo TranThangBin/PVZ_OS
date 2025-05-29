@@ -15,13 +15,13 @@ namespace Game
 
         private float _timer;
 
-        public void Awake()
+        private void Awake()
         {
             _sunDisplay.text = _sunStored.ToString();
             _timer = _sunSpawnTimer;
         }
 
-        public void Update()
+        private void Update()
         {
             HandleSpawnSun();
             HandleSunClicked();

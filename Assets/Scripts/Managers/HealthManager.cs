@@ -9,7 +9,7 @@ namespace Game
 
         public UnityEvent OnOutOfHealth = new();
 
-        public void Update()
+        private void Update()
         {
             if (IsOutOfHealth())
             {

@@ -14,7 +14,7 @@ namespace Game
 
         private Plant _selected;
 
-        public void Start()
+        private void Start()
         {
             _selectManager.OnItemSelect.AddListener(OnItemSelect);
             _lawnManager.OnLawnCellClick.AddListener(OnLawnCellClick);

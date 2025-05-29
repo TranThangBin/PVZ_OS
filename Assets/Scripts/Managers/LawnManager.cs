@@ -13,7 +13,7 @@ namespace Game
 
         public UnityEvent<Transform> OnLawnCellClick;
 
-        public void Awake()
+        private void Awake()
         {
             float width = _lawnEnd.position.x - _lawnStart.position.x;
             float height = _lawnStart.position.y - _lawnEnd.position.y;
@@ -39,7 +39,7 @@ namespace Game
             }
         }
 
-        public void Update()
+        private void Update()
         {
             if (Input.GetMouseButtonDown(0))
             {

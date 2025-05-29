@@ -55,5 +55,10 @@ namespace Game
         {
             return _isStopped;
         }
+
+        public void DestroyOnTimeOut()
+        {
+            Destroy(gameObject);
+        }
     }
 }
