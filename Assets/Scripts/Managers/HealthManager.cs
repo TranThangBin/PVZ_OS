@@ -7,11 +7,13 @@ namespace Game
     {
         [SerializeField] private float _hp;
 
+        public UnityEvent OnOutOfHealth = new();
+
         public void Update()
         {
-            if (_hp <= 0)
+            if (IsOutOfHealth())
             {
-                Destroy(gameObject);
+                OnOutOfHealth.Invoke();
             }
         }
 
@@ -20,10 +22,14 @@ namespace Game
             _hp = Mathf.Max(0, _hp - amount);
         }
 
-        public bool NoHealth()
+        public void DestroyOnOutOfHealth()
+        {
+            Destroy(gameObject);
+        }
+
+        public bool IsOutOfHealth()
         {
             return _hp == 0;
         }
     }
-
 }

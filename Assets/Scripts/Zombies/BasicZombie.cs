@@ -49,7 +49,7 @@ namespace Game
                 _attackTimer.TimerRestart();
             }
 
-            if (_plantHealth == null || _plantHealth.NoHealth())
+            if (_plantHealth == null || _plantHealth.IsOutOfHealth())
             {
                 _state = BasicZombieState.MOVE;
                 _rb.linearVelocity = _velocity * Vector2.left;
