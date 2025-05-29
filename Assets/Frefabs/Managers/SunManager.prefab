@@ -49,8 +49,8 @@ MonoBehaviour:
   _sunDisplay: {fileID: 0}
   _sunSpawnStart: {fileID: 363532367360841358}
   _sunSpawnEnd: {fileID: 1048387123058113521}
-  _sunStored: 50
   _sunSpawnTimer: {fileID: 1241121973602207206}
+  _sunStored: 50
 --- !u!114 &1241121973602207206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,6 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _time: 7
+  _autoStart: 1
   OnTimeOut:
     m_PersistentCalls:
       m_Calls:

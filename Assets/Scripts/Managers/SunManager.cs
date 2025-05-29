@@ -17,11 +17,6 @@ namespace Game
             _sunDisplay.text = _sunStored.ToString();
         }
 
-        private void Start()
-        {
-            _sunSpawnTimer.TimerStart();
-        }
-
         private void Update()
         {
             if (Input.GetMouseButtonDown(0))

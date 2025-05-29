@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c55849b6993719d4f99cc27e0ae343a4
+guid: 9e3da981e69cd234da36f9b5b96ed18e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6019453725058403666
-    second: Zombie_0
+      213: 8943299168362265071
+    second: day_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Zombie_0
+      name: day_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 1000
-        height: 1602
+        height: 549
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 25d02004545698350800000000000000
-      internalID: 6019453725058403666
+      spriteID: fe97742c53bfc1c70800000000000000
+      internalID: 8943299168362265071
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 85ee9bfa041c1334b82169feb811f78d
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Zombie_0: 6019453725058403666
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

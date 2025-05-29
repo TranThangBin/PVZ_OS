@@ -11,14 +11,14 @@ namespace Game
         public UnityEvent OnTimeOut = new();
 
         private bool _isStopped = true;
-        private float _counter;
+        private float _timerCounter;
 
-        public void Awake()
+        private void Awake()
         {
-            _counter = _time;
+            _timerCounter = _time;
         }
 
-        public void Start()
+        private void Start()
         {
             if (_autoStart)
             {
@@ -26,30 +26,35 @@ namespace Game
             }
         }
 
-        public void Update()
+        private void Update()
         {
             if (_isStopped)
             {
                 return;
             }
 
-            _counter -= Time.deltaTime;
-            if (_counter <= 0)
+            SetTimeCounter(_timerCounter - Time.deltaTime);
+            if (_timerCounter == 0)
             {
                 _isStopped = true;
                 OnTimeOut.Invoke();
             }
         }
 
+        private void SetTimeCounter(float time)
+        {
+            _timerCounter = Mathf.Max(0, time);
+        }
+
         public void TimerRestart()
         {
-            _counter = _time;
+            _timerCounter = _time;
             _isStopped = false;
         }
 
         public void TimerStart()
         {
-            if (_counter == _time)
+            if (_timerCounter == _time)
             {
                 _isStopped = false;
             }
@@ -57,12 +62,17 @@ namespace Game
 
         public void TimerReset()
         {
-            _counter = _time;
+            _timerCounter = _time;
         }
 
         public bool TimerIsStopped()
         {
             return _isStopped;
+        }
+
+        public float TimerGetTime()
+        {
+            return _timerCounter;
         }
 
         public void DestroyOnTimeOut()

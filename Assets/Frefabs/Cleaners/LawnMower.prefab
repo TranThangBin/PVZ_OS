@@ -179,6 +179,7 @@ MonoBehaviour:
   _velocity: 5
   _damage: 999
   _rb: {fileID: 220096961786312101}
+  _lifetimeTimer: {fileID: 5887975978577768303}
 --- !u!114 &5887975978577768303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _time: 15
-  _autoStart: 1
+  _autoStart: 0
   OnTimeOut:
     m_PersistentCalls:
       m_Calls:
