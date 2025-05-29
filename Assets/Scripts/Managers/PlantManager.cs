@@ -1,7 +1,10 @@
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.UI;
+using static Codice.Client.BaseCommands.Import.Commit;
 
 namespace Game
 {
@@ -12,7 +15,7 @@ namespace Game
         [SerializeField] private SunManager _sunManager;
         [SerializeField] private Image _selectedIndicator;
 
-        private Plant _selected;
+        private GameObject _selected;
 
         private void Start()
         {
@@ -20,36 +23,36 @@ namespace Game
             _lawnManager.OnLawnCellClick.AddListener(OnLawnCellClick);
         }
 
-        private void OnItemSelect(Plant plant)
+        private void OnItemSelect(GameObject selected)
         {
-            if (_sunManager.Buyable(plant) && plant != _selected)
+            ISelectable selectable = selected.GetComponent<ISelectable>();
+            Assert.IsNotNull(selectable);
+
+            if (selectable.CanSelect(_sunManager))
             {
-                SetSelected(plant);
+                SetSelected(selected);
+                return;
             }
-            else
+            SetSelected(null);
+        }
+
+        private void OnLawnCellClick(Transform cell)
+        {
+            if (_selected == null)
+            {
+                return;
+            }
+
+            ISelectable selectable = _selected.GetComponent<ISelectable>();
+            Assert.IsNotNull(selectable);
+
+            if (selectable.ActionOnLocation(cell, _sunManager))
             {
                 SetSelected(null);
             }
         }
 
-        private void OnLawnCellClick(Transform cell)
-        {
-            if (cell.GetComponentInChildren<Plant>() != null)
-            {
-                return;
-            }
-
-            Plant bought = _sunManager.BuyPlant(_selected);
-
-            if (bought != null)
-            {
-                Instantiate(bought, cell.position, Quaternion.identity, cell);
-            }
-
-            SetSelected(null);
-        }
-
-        private void SetSelected(Plant selectable)
+        private void SetSelected(GameObject selectable)
         {
             Color cl = _selectedIndicator.color;
 

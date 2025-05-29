@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game
 {
-    public class Sunflower : MonoBehaviour
+    public class Sunflower : Plant
     {
         private enum SunflowerState { COOLDOWN, GENSUN };
 

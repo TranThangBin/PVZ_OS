@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7534209569936306291}
   - component: {fileID: 7932283402256941332}
   - component: {fileID: 6790629230564300571}
-  - component: {fileID: 8047447276178294074}
   - component: {fileID: 5314107143473587250}
   - component: {fileID: 5959866356943500423}
   m_Layer: 7
@@ -166,19 +165,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8047447276178294074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7950152709122560912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ed24f815ca2adf49a82ec349a0d3d1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _plantCost: 125
 --- !u!114 &5314107143473587250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a67ffc1b414b6439a1c41d7aefbea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _plantCost: 125
   _projectile: {fileID: 1609563426096356370, guid: b54c8b6de00b64b4990a88a1f28c6a28, type: 3}
   _rechargeTimer: {fileID: 5959866356943500423}
 --- !u!114 &5959866356943500423

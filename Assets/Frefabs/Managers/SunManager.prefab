@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7137107729763815753}
   - component: {fileID: 6850263009236197378}
+  - component: {fileID: 1241121973602207206}
   m_Layer: 0
   m_Name: Suns
   m_TagString: Untagged
@@ -49,7 +50,35 @@ MonoBehaviour:
   _sunSpawnStart: {fileID: 363532367360841358}
   _sunSpawnEnd: {fileID: 1048387123058113521}
   _sunStored: 50
-  _sunSpawnTimer: 5
+  _sunSpawnTimer: {fileID: 1241121973602207206}
+--- !u!114 &1241121973602207206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2259008121884032719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea188def6ce4223428b713eb1cf49406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _time: 7
+  OnTimeOut:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6850263009236197378}
+        m_TargetAssemblyTypeName: Game.SunManager, Game
+        m_MethodName: OnTimerTimeOut
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2939775035879516415
 GameObject:
   m_ObjectHideFlags: 0

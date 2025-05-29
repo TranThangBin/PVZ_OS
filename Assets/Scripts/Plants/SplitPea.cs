@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Game
 {
-    public class SplitPea : MonoBehaviour
+    public class SplitPea : Plant
     {
         private enum SplitPeashooterState { COOLDOWN, READY, ATTACK }
 

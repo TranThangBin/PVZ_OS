@@ -6,22 +6,23 @@ namespace Game
 {
     public class SelectManager : MonoBehaviour
     {
-        [SerializeField] private Plant[] _selectables;
+        [SerializeField] private GameObject[] _selectables;
 
-        public UnityEvent<Plant> OnItemSelect = new();
+        public UnityEvent<GameObject> OnItemSelect = new();
 
         private void Awake()
         {
             Button[] buttons = GetComponentsInChildren<Button>();
             for (int i = 0; i < _selectables.Length && i < buttons.Length; i++)
             {
-                Plant _selectable = _selectables[i];
-                SpriteRenderer plantSR = _selectable.GetComponent<SpriteRenderer>();
+                GameObject selected = _selectables[i];
+                SpriteRenderer plantSR = selected.GetComponent<SpriteRenderer>();
                 Image buttonImg = buttons[i].GetComponent<Image>();
                 buttonImg.sprite = plantSR.sprite;
+
                 buttons[i].onClick.AddListener(() =>
                 {
-                    OnItemSelect.Invoke(_selectable);
+                    OnItemSelect.Invoke(selected);
                 });
             }
         }

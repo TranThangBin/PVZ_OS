@@ -1,9 +1,8 @@
 using UnityEngine;
-using UnityEngine.Assertions;
 
 namespace Game
 {
-    public class Peashooter : MonoBehaviour
+    public class Peashooter : Plant
     {
         private enum PeashooterState { COOLDOWN, READY, ATTACK }
 

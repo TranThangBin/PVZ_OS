@@ -10,40 +10,20 @@ namespace Game
         [SerializeField] private TMP_Text _sunDisplay;
         [SerializeField] private Transform _sunSpawnStart;
         [SerializeField] private Transform _sunSpawnEnd;
+        [SerializeField] private Timer _sunSpawnTimer;
         [SerializeField] private int _sunStored = 50;
-        [SerializeField] private float _sunSpawnTimer;
-
-        private float _timer;
 
         private void Awake()
         {
             _sunDisplay.text = _sunStored.ToString();
-            _timer = _sunSpawnTimer;
+        }
+
+        private void Start()
+        {
+            _sunSpawnTimer.TimerStart();
         }
 
         private void Update()
-        {
-            HandleSpawnSun();
-            HandleSunClicked();
-        }
-
-        private void HandleSpawnSun()
-        {
-            _timer -= Time.deltaTime;
-            if (_timer <= 0)
-            {
-                int pad = 5;
-                Vector3 spawnPos = new Vector2(Random.Range(_sunSpawnStart.position.x, _sunSpawnEnd.position.x),
-                    _sunSpawnStart.position.y + pad);
-
-                Sun sun = Instantiate(_sun, spawnPos, Quaternion.identity, transform);
-                sun.SetTargetYPosition(Random.Range(_sunSpawnStart.position.y, _sunSpawnEnd.position.y));
-
-                _timer = _sunSpawnTimer;
-            }
-        }
-
-        private void HandleSunClicked()
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -58,31 +38,33 @@ namespace Game
             }
         }
 
-        private void IncrementSunStore(int amount)
+        public void OnTimerTimeOut()
+        {
+            int pad = 5;
+            Vector3 spawnPos = new Vector2(Random.Range(_sunSpawnStart.position.x, _sunSpawnEnd.position.x),
+                _sunSpawnStart.position.y + pad);
+
+            Sun sun = Instantiate(_sun, spawnPos, Quaternion.identity, transform);
+            sun.SetTargetYPosition(Random.Range(_sunSpawnStart.position.y, _sunSpawnEnd.position.y));
+
+            _sunSpawnTimer.TimerRestart();
+        }
+
+        public void IncrementSunStore(int amount)
         {
             _sunStored += amount;
             _sunDisplay.text = _sunStored.ToString();
         }
 
-        private void DecrementSunStore(int amount)
+        public void DecrementSunStore(int amount)
         {
             _sunStored -= amount;
             _sunDisplay.text = _sunStored.ToString();
         }
 
-        public bool Buyable(Plant plant)
+        public bool Buyable(int cost)
         {
-            return plant != null && _sunStored >= plant.PlantCost;
-        }
-
-        public Plant BuyPlant(Plant plant)
-        {
-            if (!Buyable(plant))
-            {
-                return null;
-            }
-            DecrementSunStore(plant.PlantCost);
-            return plant;
+            return _sunStored >= cost;
         }
     }
 }
