@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
@@ -7,10 +8,11 @@ namespace Game
     public class SelectManager : MonoBehaviour
     {
         [SerializeField] private GameObject[] _selectables;
-        [SerializeField] private GameObject[] _selectedObjects;
         [SerializeField] private Shovel _shovel;
+        [SerializeField] private SunManager _sunManager;
+        [SerializeField] private LawnManager _lawnManager;
 
-        public UnityEvent<GameObject> OnItemSelect = new();
+        private GameObject _selected;
 
         private void Awake()
         {
@@ -26,18 +28,47 @@ namespace Game
             }
 
             UpdateButton(buttons[^1], _shovel.gameObject);
+
+            _lawnManager.OnLawnCellClick.AddListener(OnLawnCellClick);
         }
 
         private void UpdateButton(Button button, GameObject selected)
         {
-            SpriteRenderer plantSR = selected.GetComponent<SpriteRenderer>();
+            SpriteRenderer selectedSr = selected.GetComponent<SpriteRenderer>();
+
             Image buttonImg = button.GetComponent<Image>();
-            buttonImg.sprite = plantSR.sprite;
+            buttonImg.sprite = selectedSr.sprite;
+
+            ISelectable selectable = selected.GetComponent<ISelectable>();
+            Assert.IsNotNull(selectable);
 
             button.onClick.AddListener(() =>
             {
-                OnItemSelect.Invoke(selected);
+                if (_selected == selected)
+                {
+                    _selected = null;
+                }
+                else if (selectable.CanSelect(_sunManager))
+                {
+                    _selected = selected;
+                }
             });
+        }
+
+        private void OnLawnCellClick(Transform cell)
+        {
+            if (_selected == null)
+            {
+                return;
+            }
+
+            ISelectable selectable = _selected.GetComponent<ISelectable>();
+            Assert.IsNotNull(selectable);
+
+            if (selectable.ActionOnLocation(cell, _sunManager))
+            {
+                _selected = null;
+            }
         }
     }
 }
