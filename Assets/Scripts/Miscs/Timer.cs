@@ -6,6 +6,7 @@ namespace Game
     public class Timer : MonoBehaviour
     {
         [SerializeField] private float _time;
+        [SerializeField] private bool _autoStart;
 
         public UnityEvent OnTimeOut = new();
 
@@ -15,6 +16,14 @@ namespace Game
         public void Awake()
         {
             _counter = _time;
+        }
+
+        public void Start()
+        {
+            if (_autoStart)
+            {
+                TimerStart();
+            }
         }
 
         public void Update()

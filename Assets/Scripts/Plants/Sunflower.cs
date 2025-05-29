@@ -4,37 +4,18 @@ namespace Game
 {
     public class Sunflower : Plant
     {
-        private enum SunflowerState { COOLDOWN, GENSUN };
-
         [SerializeField] private Sun _sun;
         [SerializeField] private Timer _rechargeTimer;
-
-        private SunflowerState _state = SunflowerState.COOLDOWN;
 
         private void Start()
         {
             _rechargeTimer.TimerStart();
         }
 
-        private void Update()
-        {
-            switch (_state)
-            {
-                case SunflowerState.GENSUN:
-                    Instantiate(_sun, transform.position, Quaternion.identity, transform.parent);
-                    _state = SunflowerState.COOLDOWN;
-                    _rechargeTimer.TimerRestart();
-                    break;
-                case SunflowerState.COOLDOWN:
-                    break;
-                default:
-                    throw new UnityException();
-            }
-        }
-
         public void OnTimerTimeOut()
         {
-            _state = SunflowerState.GENSUN;
+            Instantiate(_sun, transform.position, Quaternion.identity, transform.parent);
+            _rechargeTimer.TimerRestart();
         }
     }
 }

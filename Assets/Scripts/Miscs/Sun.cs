@@ -7,18 +7,12 @@ namespace Game
     public class Sun : MonoBehaviour
     {
         [SerializeField] private float _velocity;
-        [SerializeField] private Timer _lifeTimer;
 
         private float _targetYPos;
 
         private void Awake()
         {
             _targetYPos = transform.position.y;
-        }
-
-        private void Start()
-        {
-            _lifeTimer.TimerStart();
         }
 
         private void Update()

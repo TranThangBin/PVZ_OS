@@ -149,7 +149,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _velocity: 3
-  _lifeTimer: {fileID: 6631941201375422040}
 --- !u!114 &6631941201375422040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,6 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _time: 7
+  _autoStart: 1
   OnTimeOut:
     m_PersistentCalls:
       m_Calls:

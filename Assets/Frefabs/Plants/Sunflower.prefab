@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _time: 9
+  _autoStart: 1
   OnTimeOut:
     m_PersistentCalls:
       m_Calls:
