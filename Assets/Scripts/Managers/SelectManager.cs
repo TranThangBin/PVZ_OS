@@ -8,7 +8,7 @@ namespace Game
     {
         [SerializeField] private Plant[] _selectables;
 
-        private UnityEvent<Plant> _onItemClick;
+        public UnityEvent<Plant> OnItemSelect = new();
 
         public void Awake()
         {
@@ -21,21 +21,9 @@ namespace Game
                 buttonImg.sprite = plantSR.sprite;
                 buttons[i].onClick.AddListener(() =>
                 {
-                    if (_onItemClick != null)
-                    {
-                        _onItemClick.Invoke(_selectable);
-                    }
+                    OnItemSelect.Invoke(_selectable);
                 });
             }
-        }
-
-        public void AddItemClickListener(UnityAction<Plant> listener)
-        {
-            if (_onItemClick == null)
-            {
-                _onItemClick = new UnityEvent<Plant>();
-            }
-            _onItemClick.AddListener(listener);
         }
     }
 }

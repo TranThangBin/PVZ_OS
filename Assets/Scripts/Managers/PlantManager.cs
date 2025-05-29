@@ -7,35 +7,34 @@ namespace Game
 {
     public class PlantManager : MonoBehaviour
     {
-        [SerializeField] private SelectManager _seedMenu;
+        [SerializeField] private SelectManager _selectManager;
         [SerializeField] private LawnManager _lawnManager;
         [SerializeField] private SunManager _sunManager;
-        [SerializeField] private Transform _projectilePool;
-        [SerializeField] private Image _selectedPlantIndicator;
+        [SerializeField] private Image _selectedIndicator;
 
         private Plant _selected;
 
         public void Start()
         {
-            _seedMenu.AddItemClickListener(_onItemClick);
-            _lawnManager.AddLawnCellClickListener(_onLawnCellClick);
+            _selectManager.OnItemSelect.AddListener(OnItemSelect);
+            _lawnManager.OnLawnCellClick.AddListener(OnLawnCellClick);
         }
 
-        private void _onItemClick(Plant plant)
+        private void OnItemSelect(Plant plant)
         {
             if (_sunManager.Buyable(plant) && plant != _selected)
             {
-                _setSelected(plant);
+                SetSelected(plant);
             }
             else
             {
-                _setSelected(null);
+                SetSelected(null);
             }
         }
 
-        private void _onLawnCellClick(Transform cell)
+        private void OnLawnCellClick(Transform cell)
         {
-            if (cell.GetComponentInChildren<Selectable>() != null)
+            if (cell.GetComponentInChildren<Plant>() != null)
             {
                 return;
             }
@@ -44,22 +43,22 @@ namespace Game
 
             if (bought != null)
             {
-                Plant plant = Instantiate(bought, cell.position, Quaternion.identity, cell);
+                Instantiate(bought, cell.position, Quaternion.identity, cell);
             }
 
-            _setSelected(null);
+            SetSelected(null);
         }
 
-        private void _setSelected(Plant selectable)
+        private void SetSelected(Plant selectable)
         {
-            Color cl = _selectedPlantIndicator.color;
+            Color cl = _selectedIndicator.color;
 
             if (selectable == null)
             {
                 cl.a = 0;
 
-                _selectedPlantIndicator.sprite = null;
-                _selectedPlantIndicator.color = cl;
+                _selectedIndicator.sprite = null;
+                _selectedIndicator.color = cl;
                 _selected = null;
             }
             else
@@ -67,8 +66,8 @@ namespace Game
                 cl.a = 1;
 
                 SpriteRenderer sr = selectable.GetComponent<SpriteRenderer>();
-                _selectedPlantIndicator.sprite = sr.sprite;
-                _selectedPlantIndicator.color = cl;
+                _selectedIndicator.sprite = sr.sprite;
+                _selectedIndicator.color = cl;
                 _selected = selectable;
             }
         }

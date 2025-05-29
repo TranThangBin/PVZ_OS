@@ -23,11 +23,11 @@ namespace Game
 
         public void Update()
         {
-            _handleSpawnSun();
-            _handleSunClicked();
+            HandleSpawnSun();
+            HandleSunClicked();
         }
 
-        private void _handleSpawnSun()
+        private void HandleSpawnSun()
         {
             _timer -= Time.deltaTime;
             if (_timer <= 0)
@@ -43,7 +43,7 @@ namespace Game
             }
         }
 
-        private void _handleSunClicked()
+        private void HandleSunClicked()
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -53,18 +53,18 @@ namespace Game
                 if (hit.collider != null)
                 {
                     Destroy(hit.collider.gameObject);
-                    _incrementSunStore(25);
+                    IncrementSunStore(25);
                 }
             }
         }
 
-        private void _incrementSunStore(int amount)
+        private void IncrementSunStore(int amount)
         {
             _sunStored += amount;
             _sunDisplay.text = _sunStored.ToString();
         }
 
-        private void _decrementSunStore(int amount)
+        private void DecrementSunStore(int amount)
         {
             _sunStored -= amount;
             _sunDisplay.text = _sunStored.ToString();
@@ -81,7 +81,7 @@ namespace Game
             {
                 return null;
             }
-            _decrementSunStore(plant.PlantCost);
+            DecrementSunStore(plant.PlantCost);
             return plant;
         }
     }

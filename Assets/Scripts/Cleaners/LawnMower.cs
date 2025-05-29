@@ -6,13 +6,7 @@ namespace Game
     {
         [SerializeField] private float _velocity;
         [SerializeField] private float _damage;
-
-        private Rigidbody2D _rb;
-
-        public void Awake()
-        {
-            _rb = GetComponent<Rigidbody2D>();
-        }
+        [SerializeField] private Rigidbody2D _rb;
 
         public void OnCollisionEnter2D(Collision2D collision)
         {

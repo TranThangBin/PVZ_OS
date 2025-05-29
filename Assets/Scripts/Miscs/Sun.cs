@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.Events;
 
 namespace Game
@@ -6,7 +7,7 @@ namespace Game
     public class Sun : MonoBehaviour
     {
         [SerializeField] private float _velocity;
-        [SerializeField] private float _lifeTime;
+        [SerializeField] private Timer _lifeTimer;
 
         private float _targetYPos;
 
@@ -15,27 +16,28 @@ namespace Game
             _targetYPos = transform.position.y;
         }
 
+        public void Start()
+        {
+            _lifeTimer.TimerStart();
+        }
+
         public void Update()
         {
             if (transform.position.y > _targetYPos)
             {
                 transform.Translate(_velocity * Time.deltaTime * Vector3.down);
-                return;
-            }
-
-            if (_lifeTime > 0)
-            {
-                _lifeTime -= Time.deltaTime;
-            }
-            else
-            {
-                Destroy(gameObject);
             }
         }
 
         public void SetTargetYPosition(float yPos)
         {
+            Assert.IsTrue(transform.position.y > yPos);
             _targetYPos = yPos;
+        }
+
+        public void OnTimerTimeOut()
+        {
+            Destroy(gameObject);
         }
     }
 }

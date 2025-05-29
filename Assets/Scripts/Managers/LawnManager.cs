@@ -11,7 +11,7 @@ namespace Game
         [SerializeField] private int _lawnRowCount;
         [SerializeField] private int _lawnColumnCount;
 
-        private UnityEvent<Transform> _onLawnCellClick;
+        public UnityEvent<Transform> OnLawnCellClick;
 
         public void Awake()
         {
@@ -20,13 +20,13 @@ namespace Game
 
             Assert.IsTrue(width > 0 && height > 0, "Check your lawn start and lawn end");
 
-            Vector2 cellSize = new Vector2(width / _lawnColumnCount, height / _lawnRowCount);
+            Vector2 cellSize = new(width / _lawnColumnCount, height / _lawnRowCount);
 
             for (int row = 0; row < _lawnRowCount; row++)
             {
                 for (int col = 0; col < _lawnColumnCount; col++)
                 {
-                    GameObject cell = new GameObject($"lawnCell{row}:{col}", typeof(BoxCollider2D));
+                    GameObject cell = new($"lawnCell{row}:{col}", typeof(BoxCollider2D));
                     Vector3 instancePos = _lawnStart.position + new Vector3(cellSize.x * col + cellSize.x / 2, -(cellSize.y * row + cellSize.y / 2));
 
                     cell.transform.position = instancePos;
@@ -46,20 +46,11 @@ namespace Game
                 Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 1, LayerMask.GetMask("LawnCell", "Sun"));
 
-                if (hit.collider != null && hit.collider.gameObject.layer != LayerMask.NameToLayer("Sun") && _onLawnCellClick != null)
+                if (hit.collider != null && hit.collider.gameObject.layer != LayerMask.NameToLayer("Sun"))
                 {
-                    _onLawnCellClick.Invoke(hit.collider.transform);
+                    OnLawnCellClick.Invoke(hit.collider.transform);
                 }
             }
-        }
-
-        public void AddLawnCellClickListener(UnityAction<Transform> listener)
-        {
-            if (_onLawnCellClick == null)
-            {
-                _onLawnCellClick = new UnityEvent<Transform>();
-            }
-            _onLawnCellClick.AddListener(listener);
         }
     }
 }
