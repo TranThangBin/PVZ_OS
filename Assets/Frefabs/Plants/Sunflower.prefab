@@ -205,4 +205,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sun: {fileID: 864223831861094711, guid: b598fe2eaa925ad42a859425d519b571, type: 3}
-  _timer: {fileID: 7241056927562610530}
+  _rechargeTimer: {fileID: 7241056927562610530}

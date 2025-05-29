@@ -8,13 +8,13 @@ namespace Game
         private enum PeashooterState { COOLDOWN, READY, ATTACK }
 
         [SerializeField] private GameObject _projectile;
-        [SerializeField] private Timer _timer;
+        [SerializeField] private Timer _rechargeTimer;
 
         private PeashooterState _state = PeashooterState.COOLDOWN;
 
         private void Start()
         {
-            _timer.TimerStart();
+            _rechargeTimer.TimerStart();
         }
 
         private void Update()
@@ -38,7 +38,7 @@ namespace Game
                         projectile.Fire(Vector2.right);
 
                         _state = PeashooterState.COOLDOWN;
-                        _timer.TimerRestart();
+                        _rechargeTimer.TimerRestart();
                     }
                     break;
                 case PeashooterState.COOLDOWN:

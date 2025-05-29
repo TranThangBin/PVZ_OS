@@ -8,7 +8,7 @@ namespace Game
         private enum SplitPeashooterState { COOLDOWN, READY, ATTACK }
 
         [SerializeField] private GameObject _projectile;
-        [SerializeField] private Timer _timer;
+        [SerializeField] private Timer _rechargeTimer;
 
         private SplitPeashooterState _state = SplitPeashooterState.COOLDOWN;
 
@@ -17,7 +17,7 @@ namespace Game
 
         private void Start()
         {
-            _timer.TimerStart();
+            _rechargeTimer.TimerStart();
         }
 
         private void Update()
@@ -39,7 +39,7 @@ namespace Game
                         StartCoroutine(Attack());
 
                         _state = SplitPeashooterState.COOLDOWN;
-                        _timer.TimerRestart();
+                        _rechargeTimer.TimerRestart();
                     }
                     break;
                 case SplitPeashooterState.COOLDOWN:

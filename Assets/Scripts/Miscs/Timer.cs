@@ -27,16 +27,8 @@ namespace Game
             _counter -= Time.deltaTime;
             if (_counter <= 0)
             {
-                OnTimeOut.Invoke();
                 _isStopped = true;
-            }
-        }
-
-        public void TimerStart()
-        {
-            if (_time > 0)
-            {
-                _isStopped = false;
+                OnTimeOut.Invoke();
             }
         }
 
@@ -46,9 +38,22 @@ namespace Game
             _isStopped = false;
         }
 
+        public void TimerStart()
+        {
+            if (_counter == _time)
+            {
+                _isStopped = false;
+            }
+        }
+
+        public void TimerReset()
+        {
+            _counter = _time;
+        }
+
         public bool TimerIsStopped()
         {
-            return !_isStopped;
+            return _isStopped;
         }
     }
 }

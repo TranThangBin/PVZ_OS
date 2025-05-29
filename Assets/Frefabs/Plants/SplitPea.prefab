@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectile: {fileID: 1609563426096356370, guid: b54c8b6de00b64b4990a88a1f28c6a28, type: 3}
-  _timer: {fileID: 5959866356943500423}
+  _rechargeTimer: {fileID: 5959866356943500423}
 --- !u!114 &5959866356943500423
 MonoBehaviour:
   m_ObjectHideFlags: 0

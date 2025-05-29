@@ -13,11 +13,10 @@ GameObject:
   - component: {fileID: 6539117250195111013}
   - component: {fileID: 1164603159226915951}
   - component: {fileID: 8764650309161090903}
-  - component: {fileID: 4928502279107067322}
-  - component: {fileID: 6824237334763600112}
-  - component: {fileID: 4057239510779895203}
+  - component: {fileID: 4012023038547497566}
+  - component: {fileID: 4168197291167336161}
   m_Layer: 6
-  m_Name: Zombie
+  m_Name: BasicZombie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hp: 8
---- !u!114 &4928502279107067322
+--- !u!114 &4012023038547497566
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,25 +187,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3155332019899120571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c979754f79b6e484f8c104350d4a5b8b, type: 3}
+  m_Script: {fileID: 11500000, guid: 98fd5bb54cb67494c90c2c15edb617cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _activeState: {fileID: 6824237334763600112}
---- !u!114 &6824237334763600112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3155332019899120571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bf56e8b5297a2b43804ddad4713ebde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rb: {fileID: 6539117250195111013}
   _velocity: 0.5
---- !u!114 &4057239510779895203
+  _damage: 1
+  _rb: {fileID: 6539117250195111013}
+  _attackTimer: {fileID: 4168197291167336161}
+--- !u!114 &4168197291167336161
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,8 +203,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 3155332019899120571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 539cff147e59bed4fa82c478da74341e, type: 3}
+  m_Script: {fileID: 11500000, guid: ea188def6ce4223428b713eb1cf49406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 1
-  _attackCooldown: 0.5
+  _time: 2
+  OnTimeOut:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4012023038547497566}
+        m_TargetAssemblyTypeName: Game.BasicZombie, Game
+        m_MethodName: OnTimerTimeOut
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

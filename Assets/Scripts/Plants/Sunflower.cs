@@ -7,13 +7,13 @@ namespace Game
         private enum SunflowerState { COOLDOWN, GENSUN };
 
         [SerializeField] private Sun _sun;
-        [SerializeField] private Timer _timer;
+        [SerializeField] private Timer _rechargeTimer;
 
         private SunflowerState _state = SunflowerState.COOLDOWN;
 
         private void Start()
         {
-            _timer.TimerStart();
+            _rechargeTimer.TimerStart();
         }
 
         private void Update()
@@ -23,7 +23,7 @@ namespace Game
                 case SunflowerState.GENSUN:
                     Instantiate(_sun, transform.position, Quaternion.identity, transform.parent);
                     _state = SunflowerState.COOLDOWN;
-                    _timer.TimerRestart();
+                    _rechargeTimer.TimerRestart();
                     break;
                 case SunflowerState.COOLDOWN:
                     break;
