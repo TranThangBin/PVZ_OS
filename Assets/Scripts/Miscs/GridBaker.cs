@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Game
 {
@@ -10,10 +9,11 @@ namespace Game
         [SerializeField] private int _lawnRowCount;
         [SerializeField] private int _lawnColumnCount;
 
-        public UnityEvent<Transform> OnLawnCellClick;
-
-        private void Awake()
+        [ContextMenu("Bake grid")]
+        private void BakeGrid()
         {
+            CleanupGrid();
+
             float width = _lawnEnd.position.x - _lawnStart.position.x;
             float height = _lawnStart.position.y - _lawnEnd.position.y;
 
@@ -23,12 +23,12 @@ namespace Game
             {
                 for (int col = 0; col < _lawnColumnCount; col++)
                 {
-                    GameObject cell = new($"lawnCell{row}:{col}", typeof(BoxCollider2D));
+                    GameObject cell = new($"GridCell{row}:{col}", typeof(BoxCollider2D));
                     Vector3 instancePos = _lawnStart.position + new Vector3(cellSize.x * col + cellSize.x / 2, -(cellSize.y * row + cellSize.y / 2));
 
                     cell.transform.position = instancePos;
                     cell.transform.parent = transform;
-                    cell.layer = LayerMask.NameToLayer("LawnCell");
+                    cell.layer = gameObject.layer;
 
                     BoxCollider2D collider = cell.GetComponent<BoxCollider2D>();
                     collider.size = cellSize;
@@ -36,17 +36,16 @@ namespace Game
             }
         }
 
-        private void Update()
+        private void CleanupGrid()
         {
-            if (Input.GetMouseButtonDown(0))
+            GameObject[] children = new GameObject[transform.childCount];
+            for (int i = 0; i < transform.childCount; i++)
             {
-                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 1, LayerMask.GetMask("LawnCell", "Sun"));
-
-                if (hit.collider != null && hit.collider.gameObject.layer != LayerMask.NameToLayer("Sun"))
-                {
-                    OnLawnCellClick.Invoke(hit.collider.transform);
-                }
+                children[i] = transform.GetChild(i).gameObject;
+            }
+            foreach (GameObject child in children)
+            {
+                DestroyImmediate(child);
             }
         }
     }
