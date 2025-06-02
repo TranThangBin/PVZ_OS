@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 
 namespace Game
@@ -6,7 +5,7 @@ namespace Game
     public class SunManager : MonoBehaviour
     {
         [SerializeField] private Sun _sun;
-        [SerializeField] private TMP_Text _sunDisplay;
+        [SerializeField] private TextMesh _sunDisplay;
         [SerializeField] private Transform _sunSpawnStart;
         [SerializeField] private Transform _sunSpawnEnd;
         [SerializeField] private Timer _sunSpawnTimer;

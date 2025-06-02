@@ -20,5 +20,10 @@ namespace Game
         {
             return sunManager.Buyable(_plantCost);
         }
+
+        public int GetPlantCost()
+        {
+            return _plantCost;
+        }
     }
 }

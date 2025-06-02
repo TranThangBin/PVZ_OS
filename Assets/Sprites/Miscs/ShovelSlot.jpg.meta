@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a4067bdf2a0f93742890bac3de682aa5
+guid: 2e304d57a9158af4f82fbc9447f7d803
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8469215725767673825
-    second: frontyard_0
+      213: -8607665071670805169
+    second: ShovelSlot_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: frontyard_0
+      name: ShovelSlot_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1000
-        height: 429
+        width: 139
+        height: 141
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1e7c88ca4d2b88570800000000000000
-      internalID: 8469215725767673825
+      spriteID: f4d3681093e6b8880800000000000000
+      internalID: -8607665071670805169
       vertices: []
       indices: 
       edges: []
