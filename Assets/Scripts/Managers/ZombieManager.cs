@@ -1,6 +1,5 @@
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Assertions;
 
 namespace Game
 {
@@ -18,7 +17,6 @@ namespace Game
             _spawnLocations = new Vector2[_rowCount];
             float distance = _spawnYLocationStart.position.y - _spawnYLocationEnd.position.y;
 
-            Assert.IsTrue(distance > 0);
 
             float height = distance / _rowCount;
             for (int i = 0; i < _spawnLocations.Length; i++)

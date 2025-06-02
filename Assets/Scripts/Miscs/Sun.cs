@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Assertions;
 using UnityEngine.Events;
 
 namespace Game
@@ -25,7 +24,6 @@ namespace Game
 
         public void SetTargetYPosition(float yPos)
         {
-            Assert.IsTrue(transform.position.y > yPos);
             _targetYPos = yPos;
         }
     }

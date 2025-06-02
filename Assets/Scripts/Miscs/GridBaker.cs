@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace Game
 {
-    public class LawnManager : MonoBehaviour
+    public class GridBaker : MonoBehaviour
     {
         [SerializeField] private Transform _lawnStart;
         [SerializeField] private Transform _lawnEnd;
@@ -16,7 +16,6 @@ namespace Game
         {
             float width = _lawnEnd.position.x - _lawnStart.position.x;
             float height = _lawnStart.position.y - _lawnEnd.position.y;
-
 
             Vector2 cellSize = new(width / _lawnColumnCount, height / _lawnRowCount);
 

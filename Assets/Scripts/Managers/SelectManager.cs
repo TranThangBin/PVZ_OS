@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Assertions;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
@@ -40,7 +39,6 @@ namespace Game
             buttonImg.sprite = selectedSr.sprite;
 
             ISelectable selectable = selected.GetComponent<ISelectable>();
-            Assert.IsNotNull(selectable);
 
             button.onClick.AddListener(() =>
             {
@@ -63,7 +61,6 @@ namespace Game
             }
 
             ISelectable selectable = _selected.GetComponent<ISelectable>();
-            Assert.IsNotNull(selectable);
 
             if (selectable.ActionOnLocation(cell, _sunManager))
             {
