@@ -1,13 +1,25 @@
 using UnityEngine;
+using UnityEngine.UIElements.Experimental;
 
 namespace Game
 {
     public class GameController : MonoBehaviour
     {
+        [SerializeField] private int _initialSun;
+        [SerializeField] private TextMesh _sunDisplay;
         [SerializeField] private Transform _plantSelectorGrid;
         [SerializeField] private SeedPacket _seedPacket;
         [SerializeField] private Plant[] _plants;
-        [SerializeField] private SunManager _sunManager;
+
+        private int _sunStore;
+        private int SunStore
+        {
+            get => _sunStore; set
+            {
+                _sunStore = Mathf.Max(0, value);
+                _sunDisplay.text = value.ToString();
+            }
+        }
 
         ILawnAction _selected;
 
@@ -20,10 +32,16 @@ namespace Game
             }
         }
 
+        private void Start()
+        {
+            SunStore = _initialSun;
+        }
+
         private void Update()
         {
             HandleSelection();
             HandleLawnInteraction();
+            HandleCollectSun();
         }
 
         private void HandleSelection()
@@ -37,7 +55,7 @@ namespace Game
                 {
                     IValuable valuable = hit.collider.gameObject.GetComponentInChildren<IValuable>();
 
-                    if (valuable != null && _sunManager.Buyable(valuable) || valuable == null)
+                    if (valuable != null && SunStore >= valuable.GetValue() || valuable == null)
                     {
                         _selected = hit.collider.gameObject.GetComponentInChildren<ILawnAction>();
                     }
@@ -59,10 +77,25 @@ namespace Game
                     {
                         if (gameObj.TryGetComponent(out IValuable valuable))
                         {
-                            _sunManager.DecrementSunStore(valuable);
+                            SunStore -= valuable.GetValue();
                         }
                         _selected = null;
                     });
+                }
+            }
+        }
+
+        private void HandleCollectSun()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 1, LayerMask.GetMask("Sun"));
+
+                if (hit.collider != null)
+                {
+                    Destroy(hit.collider.gameObject);
+                    SunStore += 25;
                 }
             }
         }
