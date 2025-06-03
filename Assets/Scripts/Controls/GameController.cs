@@ -21,7 +21,8 @@ namespace Game
             }
         }
 
-        ILawnAction _selected;
+        private ILawnAction _selected;
+        private SpriteRenderer _selectedSr;
 
         private void Awake()
         {
@@ -46,7 +47,7 @@ namespace Game
 
         private void HandleSelection()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (!Input.GetMouseButtonDown(0))
             {
                 Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 1, LayerMask.GetMask("Selectable"));
@@ -57,7 +58,7 @@ namespace Game
 
                     if (valuable != null && SunStore >= valuable.GetValue() || valuable == null)
                     {
-                        _selected = hit.collider.gameObject.GetComponentInChildren<ILawnAction>();
+                        SetSelected(hit.collider.gameObject);
                     }
                 }
             }
@@ -79,7 +80,8 @@ namespace Game
                         {
                             SunStore -= valuable.GetValue();
                         }
-                        _selected = null;
+
+                        SetSelected(null);
                     });
                 }
             }
@@ -95,8 +97,7 @@ namespace Game
                 if (hit.collider != null)
                 {
                     Sun sun = hit.collider.GetComponent<Sun>();
-                    sun.SetTargetPosition(_sunDisplay.transform.position);
-                    sun.SetVelocityMultiplier(5);
+                    sun.SetEndPoint(_sunDisplay.transform.position);
 
                     sun.OnSunDestroy.RemoveListener(OnSunDestroyListener);
                     sun.OnSunDestroy.AddListener(OnSunDestroyListener);
@@ -107,6 +108,52 @@ namespace Game
         private void OnSunDestroyListener()
         {
             SunStore += 25;
+        }
+
+        private void SetSelected(GameObject obj)
+        {
+            if (obj == null)
+            {
+                SetSelectedNull();
+                return;
+            }
+
+            ILawnAction lawnAction = obj.GetComponentInChildren<ILawnAction>();
+            if (lawnAction == _selected)
+            {
+                SetSelectedNull();
+                return;
+            }
+
+            Color cl;
+            if (_selectedSr != null)
+            {
+                cl = _selectedSr.color;
+                cl.a = 1;
+                _selectedSr.color = cl;
+            }
+
+            SpriteRenderer sr = obj.GetComponentInChildren<SpriteRenderer>();
+            cl = sr.color;
+            cl.a = 0.5f;
+            sr.color = cl;
+
+            _selected = lawnAction;
+            _selectedSr = sr;
+        }
+
+        private void SetSelectedNull()
+        {
+            _selected = null;
+
+            if (_selectedSr != null)
+            {
+                Color cl = _selectedSr.color;
+                cl.a = 1;
+
+                _selectedSr.color = cl;
+                _selectedSr = null;
+            }
         }
     }
 }

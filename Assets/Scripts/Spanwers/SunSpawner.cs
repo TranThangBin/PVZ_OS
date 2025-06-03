@@ -10,7 +10,7 @@ namespace Game
 
         public void OnTimerTimeOut(Timer sender)
         {
-            int padY = 5;
+            int padY = 10;
             Vector3 spawnPos = new Vector2(Random.Range(_sunSpawnStart.position.x, _sunSpawnEnd.position.x),
                 _sunSpawnStart.position.y + padY);
 

@@ -16,14 +16,19 @@ namespace Game
             _rb.linearVelocity = _velocity * Vector2.left;
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        private void FixedUpdate()
         {
-            GameObject gameObject = collision.collider.gameObject;
-            if (gameObject.layer == LayerMask.NameToLayer("Ally") && gameObject.TryGetComponent(out _plantHealth))
+            if (_attackTimer.TimerIsStopped())
             {
-                _rb.linearVelocity = Vector2.zero;
-                _plantHealth.ReduceHealth(_damage);
-                _attackTimer.TimerRestart();
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left, 3.5f, LayerMask.GetMask("Ally"));
+                Debug.DrawRay(transform.position, Vector2.left * 3.5f, Color.black);
+                if (hit.collider != null)
+                {
+                    _rb.linearVelocity = Vector2.zero;
+                    _plantHealth = hit.collider.GetComponent<HealthManager>();
+                    _plantHealth.ReduceHealth(_damage);
+                    _attackTimer.TimerStart();
+                }
             }
         }
 

@@ -20,16 +20,6 @@ namespace Game
         {
             switch (_state)
             {
-                case PeashooterState.READY:
-                    {
-                        RaycastHit2D rc = Physics2D.Raycast(transform.position, Vector2.right, 100, LayerMask.GetMask("Enemy"));
-                        Debug.DrawRay(transform.position, Vector3.right * 100, Color.red);
-                        if (rc.collider != null)
-                        {
-                            _state = PeashooterState.ATTACK;
-                        }
-                    }
-                    break;
                 case PeashooterState.ATTACK:
                     {
                         GameObject gameObject = Instantiate(_projectile, transform.position + (Vector3.right / 2), Quaternion.identity, transform.parent);
@@ -40,10 +30,24 @@ namespace Game
                         _rechargeTimer.TimerRestart();
                     }
                     break;
+                case PeashooterState.READY:
                 case PeashooterState.COOLDOWN:
                     break;
                 default:
                     throw new UnityException();
+            }
+        }
+
+        private void FixedUpdate()
+        {
+            if (_state == PeashooterState.READY)
+            {
+                RaycastHit2D rc = Physics2D.Raycast(transform.position, Vector2.right, 100, LayerMask.GetMask("Enemy"));
+                Debug.DrawRay(transform.position, Vector3.right * 100, Color.red);
+                if (rc.collider != null)
+                {
+                    _state = PeashooterState.ATTACK;
+                }
             }
         }
 

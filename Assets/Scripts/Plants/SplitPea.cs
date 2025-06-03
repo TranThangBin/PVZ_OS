@@ -24,16 +24,6 @@ namespace Game
         {
             switch (_state)
             {
-                case SplitPeashooterState.READY:
-                    {
-                        RaycastHit2D rc = Physics2D.Raycast(transform.position + Vector3.left * 100, Vector2.right, 200, LayerMask.GetMask("Enemy"));
-                        Debug.DrawRay(transform.position + Vector3.left * 100, Vector3.right * 200, Color.red);
-                        if (rc.collider != null)
-                        {
-                            _state = SplitPeashooterState.ATTACK;
-                        }
-                    }
-                    break;
                 case SplitPeashooterState.ATTACK:
                     {
                         StartCoroutine(Attack());
@@ -42,10 +32,24 @@ namespace Game
                         _rechargeTimer.TimerRestart();
                     }
                     break;
+                case SplitPeashooterState.READY:
                 case SplitPeashooterState.COOLDOWN:
                     break;
                 default:
                     throw new UnityException();
+            }
+        }
+
+        private void FixedUpdate()
+        {
+            if (_state == SplitPeashooterState.READY)
+            {
+                RaycastHit2D rc = Physics2D.Raycast(transform.position + Vector3.left * 100, Vector2.right, 200, LayerMask.GetMask("Enemy"));
+                Debug.DrawRay(transform.position + Vector3.left * 100, Vector3.right * 200, Color.red);
+                if (rc.collider != null)
+                {
+                    _state = SplitPeashooterState.ATTACK;
+                }
             }
         }
 

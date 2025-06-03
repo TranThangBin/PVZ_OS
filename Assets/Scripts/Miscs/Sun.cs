@@ -12,7 +12,7 @@ namespace Game
         public UnityEvent OnSunDestroy = new();
 
         private Vector3 _targetPosition;
-        private float _velocityMultiplier = 1;
+        private bool _goToEnd = false;
 
         private void Awake()
         {
@@ -28,7 +28,7 @@ namespace Game
                     _timer.TimerStop();
                 }
 
-                transform.position = Vector2.MoveTowards(transform.position, _targetPosition, GetActualVelocity(Time.deltaTime));
+                transform.position = Vector2.MoveTowards(transform.position, _targetPosition, _velocity * Time.deltaTime);
             }
             else if (_timer.TimerIsStopped())
             {
@@ -36,9 +36,9 @@ namespace Game
             }
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        private void OnCollisionStay2D(Collision2D collision)
         {
-            if (collision.collider.gameObject.layer == LayerMask.NameToLayer("SunStore"))
+            if (_goToEnd && collision.collider.gameObject.layer == LayerMask.NameToLayer("SunStore"))
             {
                 Destroy(gameObject);
             }
@@ -54,14 +54,11 @@ namespace Game
             _targetPosition = position;
         }
 
-        private float GetActualVelocity(float delta)
+        public void SetEndPoint(Vector2 position)
         {
-            return _velocity * _velocityMultiplier * delta;
-        }
-
-        public void SetVelocityMultiplier(float multiplier)
-        {
-            _velocityMultiplier = multiplier;
+            _velocity *= 6;
+            _targetPosition = position;
+            _goToEnd = true;
         }
     }
 }
