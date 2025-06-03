@@ -14,7 +14,7 @@ namespace Game
 
         public void OnTimerTimeOut()
         {
-            Instantiate(_sun, transform.position, Quaternion.identity, transform.parent);
+            Instantiate(_sun, transform.parent);
             _rechargeTimer.TimerRestart();
         }
     }

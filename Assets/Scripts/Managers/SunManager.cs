@@ -43,21 +43,27 @@ namespace Game
             _sunSpawnTimer.TimerRestart();
         }
 
-        public void IncrementSunStore(int amount)
+        public void IncrementSunStore(int value)
         {
-            _sunStored += amount;
+            _sunStored += value;
             _sunDisplay.text = _sunStored.ToString();
         }
 
-        public void DecrementSunStore(int amount)
+        public void IncrementSunStore(IValuable valuable)
         {
-            _sunStored -= amount;
+            _sunStored += valuable.GetValue();
             _sunDisplay.text = _sunStored.ToString();
         }
 
-        public bool Buyable(int cost)
+        public void DecrementSunStore(IValuable valuable)
         {
-            return _sunStored >= cost;
+            _sunStored -= valuable.GetValue();
+            _sunDisplay.text = _sunStored.ToString();
+        }
+
+        public bool Buyable(IValuable valuable)
+        {
+            return _sunStored >= valuable.GetValue();
         }
     }
 }

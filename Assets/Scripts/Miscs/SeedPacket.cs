@@ -1,22 +1,22 @@
 using UnityEngine;
-
+using UnityEngine.Events;
 namespace Game
 {
-    public class SeedPacket : MonoBehaviour, ISelectable
+    public class SeedPacket : MonoBehaviour, ILawnAction, IValuable
     {
         [SerializeField] private SpriteRenderer _srPlantSprite;
         [SerializeField] private TextMesh _tmPlantCost;
 
         private Plant _plant;
 
-        public bool ActionOnLocation(Transform location, SunManager sunManager)
+        public int GetValue()
         {
-            return _plant.ActionOnLocation(location, sunManager);
+            return _plant.GetValue();
         }
 
-        public bool CanSelect(SunManager sunManager)
+        public void ActionOnLawn(Transform lawnCell, UnityAction<GameObject> onSuccess)
         {
-            return _plant.CanSelect(sunManager);
+            _plant.ActionOnLawn(lawnCell, onSuccess);
         }
 
         public void SetPlant(Plant plant)
@@ -24,8 +24,13 @@ namespace Game
             SpriteRenderer plantSprite = plant.GetComponent<SpriteRenderer>();
             _srPlantSprite.sprite = plantSprite.sprite;
             _srPlantSprite.size = new Vector2(0.5f, 0.5f);
-            _tmPlantCost.text = plant.GetPlantCost().ToString();
+            _tmPlantCost.text = plant.GetValue().ToString();
             _plant = plant;
+        }
+
+        public Plant GetPlant()
+        {
+            return _plant;
         }
     }
 }

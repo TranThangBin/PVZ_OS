@@ -1,24 +1,19 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Game
 {
-    public class Shovel : MonoBehaviour, ISelectable
+    public class Shovel : MonoBehaviour, ILawnAction
     {
-        public bool CanSelect(SunManager _)
+        public void ActionOnLawn(Transform lawnCell, UnityAction<GameObject> onSuccess)
         {
-            return true;
-        }
-
-        public bool ActionOnLocation(Transform location, SunManager sunManager)
-        {
-            Plant plant = location.GetComponentInChildren<Plant>();
+            Plant plant = lawnCell.GetComponentInChildren<Plant>();
 
             if (plant != null)
             {
                 Destroy(plant.gameObject);
+                onSuccess.Invoke(gameObject);
             }
-
-            return true;
         }
     }
 }

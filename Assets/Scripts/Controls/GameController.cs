@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Game
 {
@@ -10,7 +9,7 @@ namespace Game
         [SerializeField] private Plant[] _plants;
         [SerializeField] private SunManager _sunManager;
 
-        ISelectable _selected;
+        ILawnAction _selected;
 
         private void Awake()
         {
@@ -36,10 +35,11 @@ namespace Game
 
                 if (hit.collider != null)
                 {
-                    ISelectable selectable = hit.collider.GetComponentInChildren<ISelectable>();
-                    if (selectable.CanSelect(_sunManager))
+                    IValuable valuable = hit.collider.gameObject.GetComponentInChildren<IValuable>();
+
+                    if (valuable != null && _sunManager.Buyable(valuable) || valuable == null)
                     {
-                        _selected = selectable;
+                        _selected = hit.collider.gameObject.GetComponentInChildren<ILawnAction>();
                     }
                 }
             }
@@ -47,17 +47,22 @@ namespace Game
 
         private void HandleLawnInteraction()
         {
-            if (Input.GetMouseButtonUp(0) && _selected != null)
+            if (_selected != null && Input.GetMouseButtonUp(0))
             {
                 Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 1, LayerMask.GetMask("LawnCell", "Sun"));
 
                 if (hit.collider != null &&
-                    hit.collider.gameObject.layer != LayerMask.NameToLayer("Sun") &&
-                    _selected.ActionOnLocation(hit.collider.transform, _sunManager)
-                    )
+                    hit.collider.gameObject.layer != LayerMask.NameToLayer("Sun"))
                 {
-                    _selected = null;
+                    _selected.ActionOnLawn(hit.collider.transform, (gameObj) =>
+                    {
+                        if (gameObj.TryGetComponent(out IValuable valuable))
+                        {
+                            _sunManager.DecrementSunStore(valuable);
+                        }
+                        _selected = null;
+                    });
                 }
             }
         }

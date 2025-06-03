@@ -1,27 +1,21 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Game
 {
-    public abstract class Plant : MonoBehaviour, ISelectable
+    public abstract class Plant : MonoBehaviour, ILawnAction, IValuable
     {
         [SerializeField] private int _plantCost;
-        public bool ActionOnLocation(Transform location, SunManager sunManager)
+        public void ActionOnLawn(Transform location, UnityAction<GameObject> onSuccess)
         {
-            if (!CanSelect(sunManager) || location.GetComponentInChildren<Plant>() != null)
+            if (location.GetComponentInChildren<Plant>() != null)
             {
-                return false;
+                return;
             }
-            Instantiate(gameObject, location.position, Quaternion.identity, location);
-            sunManager.DecrementSunStore(_plantCost);
-            return true;
+            onSuccess.Invoke(Instantiate(gameObject, location));
         }
 
-        public bool CanSelect(SunManager sunManager)
-        {
-            return sunManager.Buyable(_plantCost);
-        }
-
-        public int GetPlantCost()
+        public int GetValue()
         {
             return _plantCost;
         }
