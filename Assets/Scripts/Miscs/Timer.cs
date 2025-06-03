@@ -60,6 +60,16 @@ namespace Game
             }
         }
 
+        public void TimerStop()
+        {
+            _isStopped = true;
+        }
+
+        public bool TimerIsPaused()
+        {
+            return _isStopped && _timerCounter != _time;
+        }
+
         public void TimerReset()
         {
             _timerCounter = _time;

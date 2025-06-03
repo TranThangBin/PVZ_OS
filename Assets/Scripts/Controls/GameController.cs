@@ -94,10 +94,19 @@ namespace Game
 
                 if (hit.collider != null)
                 {
-                    Destroy(hit.collider.gameObject);
-                    SunStore += 25;
+                    Sun sun = hit.collider.GetComponent<Sun>();
+                    sun.SetTargetPosition(_sunDisplay.transform.position);
+                    sun.SetVelocityMultiplier(5);
+
+                    sun.OnSunDestroy.RemoveListener(OnSunDestroyListener);
+                    sun.OnSunDestroy.AddListener(OnSunDestroyListener);
                 }
             }
+        }
+
+        private void OnSunDestroyListener()
+        {
+            SunStore += 25;
         }
     }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5006048690563195560}
   - component: {fileID: 864223831861094711}
   - component: {fileID: 6631941201375422040}
+  - component: {fileID: 7917628257705099774}
   m_Layer: 9
   m_Name: Sun
   m_TagString: Untagged
@@ -149,6 +150,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _velocity: 12
+  _timer: {fileID: 6631941201375422040}
+  _rb: {fileID: 0}
+  OnSunDestroy:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6631941201375422040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _time: 7
-  _autoStart: 1
+  _autoStart: 0
   OnTimeOut:
     m_PersistentCalls:
       m_Calls:
@@ -178,3 +184,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!50 &7917628257705099774
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3258216883536469279}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

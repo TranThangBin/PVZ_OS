@@ -15,7 +15,7 @@ namespace Game
                 _sunSpawnStart.position.y + padY);
 
             Sun sun = Instantiate(_sun, spawnPos, Quaternion.identity, transform);
-            sun.SetTargetYPosition(Random.Range(_sunSpawnStart.position.y, _sunSpawnEnd.position.y));
+            sun.SetTargetPosition(new Vector2(sun.transform.position.x, Random.Range(_sunSpawnStart.position.y, _sunSpawnEnd.position.y)));
 
             sender.TimerRestart();
         }
