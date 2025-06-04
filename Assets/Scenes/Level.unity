@@ -703,6 +703,7 @@ MonoBehaviour:
   _sun: {fileID: 864223831861094711, guid: b598fe2eaa925ad42a859425d519b571, type: 3}
   _sunSpawnStart: {fileID: 1137014178}
   _sunSpawnEnd: {fileID: 1099315922}
+  _padY: 0
 --- !u!114 &169080150
 MonoBehaviour:
   m_ObjectHideFlags: 0

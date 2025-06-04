@@ -12,7 +12,7 @@ namespace Game
         [ContextMenu("Generate grid")]
         private void GenerateGrid()
         {
-            CleanupGrid();
+            EditorTimeUtils.CleanupChildren(transform);
 
             float width = _lawnEnd.position.x - _lawnStart.position.x;
             float height = _lawnStart.position.y - _lawnEnd.position.y;
@@ -33,19 +33,6 @@ namespace Game
                     BoxCollider2D collider = cell.GetComponent<BoxCollider2D>();
                     collider.size = cellSize;
                 }
-            }
-        }
-
-        private void CleanupGrid()
-        {
-            GameObject[] children = new GameObject[transform.childCount];
-            for (int i = 0; i < transform.childCount; i++)
-            {
-                children[i] = transform.GetChild(i).gameObject;
-            }
-            foreach (GameObject child in children)
-            {
-                DestroyImmediate(child);
             }
         }
     }

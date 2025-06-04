@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game
 {
-    public class GameOver : MonoBehaviour
+    public class GameOverTrigger : MonoBehaviour
     {
         [SerializeField] private GameObject _gameOverMenu;
 
@@ -13,6 +13,11 @@ namespace Game
                 _gameOverMenu.SetActive(true);
                 Time.timeScale = 0;
             }
+        }
+
+        private void OnDestroy()
+        {
+            Time.timeScale = 1;
         }
     }
 }

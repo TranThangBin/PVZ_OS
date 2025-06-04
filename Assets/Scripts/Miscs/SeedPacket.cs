@@ -24,7 +24,10 @@ namespace Game
             _isAvailable = false;
 
             _cooldownOverlay.localScale = Vector2.one;
-            _cooldownOverlay.DOScaleY(0, _plant.GetCooldown()).OnComplete(() => _isAvailable = true);
+            _cooldownOverlay.
+                DOScaleY(0, _plant.GetCooldown()).
+                SetEase(Ease.Linear).
+                OnComplete(() => _isAvailable = true);
         }
 
         public void SetPlant(Plant plant)
