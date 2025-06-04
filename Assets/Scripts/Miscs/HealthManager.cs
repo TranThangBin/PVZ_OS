@@ -11,7 +11,7 @@ namespace Game
             get => Mathf.Max(0, _hp);
             set
             {
-                _hp -= value;
+                _hp = value;
                 if (_hp == 0)
                 {
                     OnOutOfHealth.Invoke();
