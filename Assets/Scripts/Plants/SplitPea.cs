@@ -44,8 +44,9 @@ namespace Game
         {
             if (_state == SplitPeashooterState.READY)
             {
-                RaycastHit2D rc = Physics2D.Raycast(transform.position + Vector3.left * 100, Vector2.right, 200, LayerMask.GetMask("Enemy"));
-                Debug.DrawRay(transform.position + Vector3.left * 100, Vector3.right * 200, Color.red);
+                float rayDistance = 200;
+                RaycastHit2D rc = Physics2D.Raycast(transform.position + Vector3.left * rayDistance / 2, Vector2.right, rayDistance, LayerMask.GetMask("Enemy"));
+                Debug.DrawRay(transform.position + Vector3.left * rayDistance / 2, Vector3.right * rayDistance, Color.red);
                 if (rc.collider != null)
                 {
                     _state = SplitPeashooterState.ATTACK;

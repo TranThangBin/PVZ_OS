@@ -20,8 +20,9 @@ namespace Game
         {
             if (_attackTimer.TimerIsStopped())
             {
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left, 3.5f, LayerMask.GetMask("Ally"));
-                Debug.DrawRay(transform.position, Vector2.left * 3.5f, Color.black);
+                float rayDistance = 3.5f;
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left, rayDistance, LayerMask.GetMask("Ally"));
+                Debug.DrawRay(transform.position, Vector2.left * rayDistance, Color.black);
                 if (hit.collider != null)
                 {
                     _rb.linearVelocity = Vector2.zero;

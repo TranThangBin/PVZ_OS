@@ -42,8 +42,9 @@ namespace Game
         {
             if (_state == PeashooterState.READY)
             {
-                RaycastHit2D rc = Physics2D.Raycast(transform.position, Vector2.right, 100, LayerMask.GetMask("Enemy"));
-                Debug.DrawRay(transform.position, Vector3.right * 100, Color.red);
+                float rayDistance = 100;
+                RaycastHit2D rc = Physics2D.Raycast(transform.position, Vector2.right, rayDistance, LayerMask.GetMask("Enemy"));
+                Debug.DrawRay(transform.position, Vector3.right * rayDistance, Color.red);
                 if (rc.collider != null)
                 {
                     _state = PeashooterState.ATTACK;

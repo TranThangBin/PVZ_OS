@@ -1,3 +1,5 @@
+using DG.Tweening;
+using DG.Tweening.Core;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,56 +11,45 @@ namespace Game
         [SerializeField] private Timer _timer;
         [SerializeField] private Rigidbody2D _rb;
 
-        public UnityEvent OnSunDestroy = new();
-
-        private Vector3 _targetPosition;
         private bool _goToEnd = false;
+        private Tween _activeTween;
 
-        private void Awake()
+        private void Start()
         {
-            _targetPosition = transform.position;
-        }
-
-        private void Update()
-        {
-            if (transform.position != _targetPosition)
-            {
-                if (!_timer.TimerIsStopped())
-                {
-                    _timer.TimerStop();
-                }
-
-                transform.position = Vector2.MoveTowards(transform.position, _targetPosition, _velocity * Time.deltaTime);
-            }
-            else if (_timer.TimerIsStopped())
-            {
-                _timer.TimerStart();
-            }
-        }
-
-        private void OnCollisionStay2D(Collision2D collision)
-        {
-            if (_goToEnd && collision.collider.gameObject.layer == LayerMask.NameToLayer("SunStore"))
-            {
-                Destroy(gameObject);
-            }
-        }
-
-        private void OnDestroy()
-        {
-            OnSunDestroy.Invoke();
+            _timer.TimerStart();
         }
 
         public void SetTargetPosition(Vector2 position)
         {
-            _targetPosition = position;
+            if (_goToEnd) { return; }
+            _timer.TimerReset();
+
+            _activeTween?.Kill();
+            _activeTween = transform.DOMove(position, CalculateTime(position, _velocity)).
+                OnComplete(() => _timer.TimerStart());
         }
 
-        public void SetEndPoint(Vector2 position)
+        public void SetEndPoint(Vector2 position, UnityAction callback)
         {
-            _velocity *= 6;
-            _targetPosition = position;
+            if (_goToEnd) { return; }
+
             _goToEnd = true;
+            _timer.TimerStop();
+
+            _activeTween?.Kill();
+            _activeTween = transform.DOMove(position, CalculateTime(position, _velocity * 6)).OnComplete(() =>
+            {
+                callback();
+                Destroy(gameObject);
+            });
+        }
+
+        private float CalculateTime(Vector2 position, float velocity)
+        {
+            float edge1 = Mathf.Abs(transform.position.y - position.y);
+            float edge2 = Mathf.Abs(transform.position.x - position.x);
+            float distance = Mathf.Sqrt(edge1 * edge1 + edge2 * edge2);
+            return distance / velocity;
         }
     }
 }

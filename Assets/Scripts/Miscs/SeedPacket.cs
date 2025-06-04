@@ -2,9 +2,10 @@ using UnityEngine;
 using UnityEngine.Events;
 namespace Game
 {
-    public class SeedPacket : MonoBehaviour, ILawnAction, IValuable
+    public class SeedPacket : MonoBehaviour, IValuable, ISelectable
     {
         [SerializeField] private SpriteRenderer _srPlantSprite;
+        [SerializeField] private SpriteRenderer _srSelectedOverlay;
         [SerializeField] private TextMesh _tmPlantCost;
 
         private Plant _plant;
@@ -26,6 +27,11 @@ namespace Game
             _srPlantSprite.size = new Vector2(0.5f, 0.5f);
             _tmPlantCost.text = plant.GetValue().ToString();
             _plant = plant;
+        }
+
+        public void SetSelected(bool isSelected)
+        {
+            _srSelectedOverlay.enabled = isSelected;
         }
 
         public Plant GetPlant()

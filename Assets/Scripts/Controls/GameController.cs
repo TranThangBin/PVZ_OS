@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UIElements.Experimental;
+using UnityEngine.UI;
 
 namespace Game
 {
@@ -21,8 +21,7 @@ namespace Game
             }
         }
 
-        private ILawnAction _selected;
-        private SpriteRenderer _selectedSr;
+        private ISelectable _selected;
 
         private void Awake()
         {
@@ -47,7 +46,7 @@ namespace Game
 
         private void HandleSelection()
         {
-            if (!Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0))
             {
                 Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 1, LayerMask.GetMask("Selectable"));
@@ -56,9 +55,20 @@ namespace Game
                 {
                     IValuable valuable = hit.collider.gameObject.GetComponentInChildren<IValuable>();
 
-                    if (valuable != null && SunStore >= valuable.GetValue() || valuable == null)
+                    if (valuable == null || SunStore >= valuable.GetValue())
                     {
-                        SetSelected(hit.collider.gameObject);
+                        ISelectable selectable = hit.collider.gameObject.GetComponentInChildren<ISelectable>();
+
+                        if (_selected == selectable)
+                        {
+                            _selected.SetSelected(false);
+                            _selected = null;
+                        }
+                        else
+                        {
+                            selectable.SetSelected(true);
+                            _selected = selectable;
+                        }
                     }
                 }
             }
@@ -81,7 +91,8 @@ namespace Game
                             SunStore -= valuable.GetValue();
                         }
 
-                        SetSelected(null);
+                        _selected.SetSelected(false);
+                        _selected = null;
                     });
                 }
             }
@@ -97,62 +108,8 @@ namespace Game
                 if (hit.collider != null)
                 {
                     Sun sun = hit.collider.GetComponent<Sun>();
-                    sun.SetEndPoint(_sunDisplay.transform.position);
-
-                    sun.OnSunDestroy.RemoveListener(OnSunDestroyListener);
-                    sun.OnSunDestroy.AddListener(OnSunDestroyListener);
+                    sun.SetEndPoint(_sunDisplay.transform.position, () => SunStore += 25);
                 }
-            }
-        }
-
-        private void OnSunDestroyListener()
-        {
-            SunStore += 25;
-        }
-
-        private void SetSelected(GameObject obj)
-        {
-            if (obj == null)
-            {
-                SetSelectedNull();
-                return;
-            }
-
-            ILawnAction lawnAction = obj.GetComponentInChildren<ILawnAction>();
-            if (lawnAction == _selected)
-            {
-                SetSelectedNull();
-                return;
-            }
-
-            Color cl;
-            if (_selectedSr != null)
-            {
-                cl = _selectedSr.color;
-                cl.a = 1;
-                _selectedSr.color = cl;
-            }
-
-            SpriteRenderer sr = obj.GetComponentInChildren<SpriteRenderer>();
-            cl = sr.color;
-            cl.a = 0.5f;
-            sr.color = cl;
-
-            _selected = lawnAction;
-            _selectedSr = sr;
-        }
-
-        private void SetSelectedNull()
-        {
-            _selected = null;
-
-            if (_selectedSr != null)
-            {
-                Color cl = _selectedSr.color;
-                cl.a = 1;
-
-                _selectedSr.color = cl;
-                _selectedSr = null;
             }
         }
     }
