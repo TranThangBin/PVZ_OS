@@ -11,15 +11,18 @@ namespace Game
             get => Mathf.Max(0, _hp);
             set
             {
-                _hp = value;
-                if (_hp == 0)
+                _hp = Mathf.Max(0, value);
+                if (!_outOfHealthCalled && Hp == 0)
                 {
                     OnOutOfHealth.Invoke();
+                    _outOfHealthCalled = true;
                 }
             }
         }
 
         public UnityEvent OnOutOfHealth = new();
+
+        private bool _outOfHealthCalled = false;
 
         public void ReduceHealth(float amount)
         {

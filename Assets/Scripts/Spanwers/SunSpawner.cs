@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 namespace Game
@@ -7,15 +8,23 @@ namespace Game
         [SerializeField] private Sun _sun;
         [SerializeField] private Transform _sunSpawnStart;
         [SerializeField] private Transform _sunSpawnEnd;
+        [SerializeField] private float _padY;
 
         public void OnTimerTimeOut(Timer sender)
         {
-            int padY = 10;
             Vector3 spawnPos = new(Random.Range(_sunSpawnStart.position.x, _sunSpawnEnd.position.x),
-                _sunSpawnStart.position.y + padY);
+                _sunSpawnStart.position.y + _padY);
 
             Sun sun = Instantiate(_sun, spawnPos, Quaternion.identity, transform);
-            sun.SetTargetPosition(new(sun.transform.position.x, Random.Range(_sunSpawnStart.position.y, _sunSpawnEnd.position.y)));
+
+            float targetY = Random.Range(_sunSpawnStart.position.y, _sunSpawnEnd.position.y);
+
+            sun.
+                StartLifeTime().
+                Prepend(sun.transform.
+                    DOMoveY(targetY,
+                        sun.CalculateTime(new(spawnPos.x, targetY), 1)
+                    ));
 
             sender.TimerRestart();
         }

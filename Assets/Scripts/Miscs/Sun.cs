@@ -1,55 +1,49 @@
 using DG.Tweening;
-using DG.Tweening.Core;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Game
 {
     public class Sun : MonoBehaviour
     {
+        [SerializeField] float _lifeTime;
         [SerializeField] private float _velocity;
-        [SerializeField] private Timer _timer;
-        [SerializeField] private Rigidbody2D _rb;
+        [SerializeField] private SpriteRenderer _sunSprite;
 
-        private bool _goToEnd = false;
-        private Tween _activeTween;
-
-        private void Start()
+        private void OnDestroy()
         {
-            _timer.TimerStart();
+            DOTween.Kill(this);
         }
 
-        public void SetTargetPosition(Vector2 position)
+        public Sequence StartLifeTime()
         {
-            if (_goToEnd) { return; }
-            _timer.TimerReset();
+            float idleTime = 2 * _lifeTime / 3;
+            float timeRemain = _lifeTime - idleTime;
+            int loopAmount = 10;
 
-            _activeTween?.Kill();
-            _activeTween = transform.DOMove(position, CalculateTime(position, _velocity)).
-                OnComplete(() => _timer.TimerStart());
+            DOTween.Kill(this);
+
+            return DOTween.Sequence(this).
+                AppendInterval(idleTime).
+                Append(_sunSprite.
+                    DOFade(0, timeRemain / loopAmount).
+                    SetLoops(loopAmount, LoopType.Yoyo)).
+                OnComplete(() => Destroy(gameObject));
         }
 
-        public void SetEndPoint(Vector2 position, UnityAction callback)
+        public Sequence ToTheEnd()
         {
-            if (_goToEnd) { return; }
-
-            _goToEnd = true;
-            _timer.TimerStop();
-
-            _activeTween?.Kill();
-            _activeTween = transform.DOMove(position, CalculateTime(position, _velocity * 6)).OnComplete(() =>
-            {
-                callback();
-                Destroy(gameObject);
-            });
+            DOTween.Kill(this);
+            return DOTween.Sequence(this).
+                AppendCallback(() => _sunSprite.color = Color.white).
+                OnComplete(() => Destroy(gameObject));
         }
 
-        private float CalculateTime(Vector2 position, float velocity)
+        public float CalculateTime(Vector2 position, float velocityMultiplier)
         {
             float edge1 = Mathf.Abs(transform.position.y - position.y);
             float edge2 = Mathf.Abs(transform.position.x - position.x);
             float distance = Mathf.Sqrt(edge1 * edge1 + edge2 * edge2);
-            return distance / velocity;
+            return distance / (_velocity * velocityMultiplier);
         }
     }
 }

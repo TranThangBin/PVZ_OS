@@ -2,15 +2,15 @@ using UnityEngine;
 
 namespace Game
 {
-    public class GridBaker : MonoBehaviour
+    public class GridGenerator : MonoBehaviour
     {
         [SerializeField] private Transform _lawnStart;
         [SerializeField] private Transform _lawnEnd;
         [SerializeField] private int _lawnRowCount;
         [SerializeField] private int _lawnColumnCount;
 
-        [ContextMenu("Bake grid")]
-        private void BakeGrid()
+        [ContextMenu("Generate grid")]
+        private void GenerateGrid()
         {
             CleanupGrid();
 
