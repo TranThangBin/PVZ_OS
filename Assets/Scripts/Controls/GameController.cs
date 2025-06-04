@@ -54,8 +54,10 @@ namespace Game
                 if (hit.collider != null)
                 {
                     IValuable valuable = hit.collider.gameObject.GetComponentInChildren<IValuable>();
+                    IAvailable available = hit.collider.gameObject.GetComponentInChildren<IAvailable>();
 
-                    if (valuable == null || SunStore >= valuable.GetValue())
+                    if ((available == null || available.IsAvailable()) &&
+                        (valuable == null || SunStore >= valuable.GetValue()))
                     {
                         ISelectable selectable = hit.collider.gameObject.GetComponentInChildren<ISelectable>();
 
@@ -66,6 +68,10 @@ namespace Game
                         }
                         else
                         {
+                            if (_selected != null)
+                            {
+                                _selected.SetSelected(false);
+                            }
                             selectable.SetSelected(true);
                             _selected = selectable;
                         }

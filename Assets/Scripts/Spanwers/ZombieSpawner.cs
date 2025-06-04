@@ -20,7 +20,7 @@ namespace Game
             float height = distance / _rowCount;
             for (int i = 0; i < _spawnLocations.Length; i++)
             {
-                _spawnLocations[i] = new Vector2(transform.position.x, _spawnYLocationStart.position.y - height * (i + 1) + height / 2);
+                _spawnLocations[i] = new(transform.position.x, _spawnYLocationStart.position.y - height * (i + 1) + height / 2);
             }
         }
 

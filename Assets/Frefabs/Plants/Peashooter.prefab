@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plantCost: 100
+  _cooldown: 7
   _projectile: {fileID: 1609563426096356370, guid: b54c8b6de00b64b4990a88a1f28c6a28, type: 3}
   _rechargeTimer: {fileID: 2997351222644871838}
 --- !u!114 &2997351222644871838

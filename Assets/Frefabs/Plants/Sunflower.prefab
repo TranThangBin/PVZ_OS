@@ -207,5 +207,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plantCost: 50
+  _cooldown: 5
   _sun: {fileID: 864223831861094711, guid: b598fe2eaa925ad42a859425d519b571, type: 3}
   _rechargeTimer: {fileID: 7241056927562610530}

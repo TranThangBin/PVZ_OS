@@ -85,6 +85,21 @@ namespace Game
             return _timerCounter;
         }
 
+        public void TimerSetTime(float time)
+        {
+            _time = time;
+            _timerCounter = time;
+        }
+
+        public float TimerGetPercentage()
+        {
+            if (_time == 0)
+            {
+                return 0;
+            }
+            return 1 - _timerCounter / _time;
+        }
+
         public void DestroyOnTimeOut()
         {
             Destroy(gameObject);

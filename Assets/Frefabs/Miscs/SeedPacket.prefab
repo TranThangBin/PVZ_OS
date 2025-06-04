@@ -281,6 +281,8 @@ MonoBehaviour:
   _srPlantSprite: {fileID: 7826275616185544208}
   _srSelectedOverlay: {fileID: 4844722280284113570}
   _tmPlantCost: {fileID: 5022291353563304921}
+  _cooldownTimer: {fileID: 0}
+  _cooldownOverlay: {fileID: 3036999556101280888}
 --- !u!1 &8746118021226800324
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,8 @@ namespace Game
     public abstract class Plant : MonoBehaviour, ILawnAction, IValuable
     {
         [SerializeField] private int _plantCost;
+        [SerializeField] private float _cooldown;
+
         public void ActionOnLawn(Transform location, UnityAction<GameObject> onSuccess)
         {
             if (location.GetComponentInChildren<Plant>() != null)
@@ -18,6 +20,11 @@ namespace Game
         public int GetValue()
         {
             return _plantCost;
+        }
+
+        public float GetCooldown()
+        {
+            return _cooldown;
         }
     }
 }

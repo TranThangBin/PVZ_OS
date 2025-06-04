@@ -6,20 +6,24 @@ namespace Game
     public class HealthManager : MonoBehaviour
     {
         [SerializeField] private float _hp;
-
-        public UnityEvent OnOutOfHealth = new();
-
-        private void Update()
+        private float Hp
         {
-            if (IsOutOfHealth())
+            get => Mathf.Max(0, _hp);
+            set
             {
-                OnOutOfHealth.Invoke();
+                _hp -= value;
+                if (_hp == 0)
+                {
+                    OnOutOfHealth.Invoke();
+                }
             }
         }
 
+        public UnityEvent OnOutOfHealth = new();
+
         public void ReduceHealth(float amount)
         {
-            _hp = Mathf.Max(0, _hp - amount);
+            Hp -= amount;
         }
 
         public void DestroyOnOutOfHealth()
@@ -29,7 +33,7 @@ namespace Game
 
         public bool IsOutOfHealth()
         {
-            return _hp == 0;
+            return Hp == 0;
         }
     }
 }

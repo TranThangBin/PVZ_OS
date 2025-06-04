@@ -12,8 +12,8 @@ namespace Game
 
         private SplitPeashooterState _state = SplitPeashooterState.COOLDOWN;
 
-        private readonly Vector3[] _directions = new Vector3[] { Vector3.right, Vector3.left, Vector3.left };
-        private readonly float[] _shootWaitTime = new float[] { 0.5f, 0.25f, 0.25f };
+        private readonly Vector3[] _directions = new[] { Vector3.right, Vector3.left, Vector3.left };
+        private readonly float[] _shootWaitTime = new[] { 0.5f, 0.25f, 0.25f };
 
         private void Start()
         {
