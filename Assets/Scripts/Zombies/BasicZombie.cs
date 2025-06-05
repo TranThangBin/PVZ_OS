@@ -7,52 +7,46 @@ namespace Game
     public class BasicZombie : MonoBehaviour,
         HealthManager.IOnDamageTaken, HealthManager.IDestroyOnOutOfHealth
     {
-        [SerializeField] private float _attackCooldown;
-        [SerializeField] private float _velocity;
-        [SerializeField] private int _damage;
+        [SerializeField] private ZombieID _zombieID;
+        [SerializeField] private ZombieVelocities _zombieVelocities;
+        [SerializeField] private ZombieDamages _zombieDamages;
+        [SerializeField] private ZombieChargeTimes _zombieChargeTimes;
         [SerializeField] private Rigidbody2D _rb;
-
-        private Tween _attackTween;
-        private HealthManager _plantHealth;
 
         private void Start()
         {
-            _rb.linearVelocity = _velocity * Vector2.left;
-            _attackTween = DOTween.
-                Sequence().
-                AppendCallback(() => Assert.IsNotNull(_plantHealth)).
-                AppendCallback(() =>
-                {
-                    _plantHealth.ReduceHealth(_damage);
-                    if (_plantHealth.IsOutOfHealth())
-                    {
-                        _rb.linearVelocity = _velocity * Vector2.left;
-                        _attackTween.Pause();
-                    }
-                }).
-                AppendInterval(_attackCooldown).
-                SetLoops(-1).
-                SetAutoKill(false).
-                Pause();
+            _rb.linearVelocity = _zombieVelocities.GetValue(_zombieID) * Vector2.left;
         }
 
         private void OnDestroy()
         {
-            _attackTween.Kill();
+            DOTween.Kill(this);
         }
 
         private void FixedUpdate()
         {
-            if (!_attackTween.IsPlaying())
+            if (!DOTween.IsTweening(this))
             {
                 float rayDistance = 3.5f;
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left, rayDistance, LayerMask.GetMask("Ally"));
                 Debug.DrawRay(transform.position, Vector2.left * rayDistance, Color.black);
                 if (hit.collider != null)
                 {
-                    _plantHealth = hit.collider.GetComponentInParent<HealthManager>();
+                    HealthManager plantHealth = hit.collider.GetComponentInParent<HealthManager>();
                     _rb.linearVelocity = Vector2.zero;
-                    _attackTween.Restart();
+                    DOTween.
+                        Sequence(this).
+                        AppendCallback(() =>
+                        {
+                            plantHealth.ReduceHealth(_zombieDamages.GetValue(_zombieID));
+                            if (plantHealth.IsOutOfHealth())
+                            {
+                                _rb.linearVelocity = _zombieVelocities.GetValue(_zombieID) * Vector2.left;
+                                DOTween.Pause(this);
+                            }
+                        }).
+                        AppendInterval(_zombieChargeTimes.GetValue(_zombieID)).
+                        SetLoops(-1);
                 }
             }
         }

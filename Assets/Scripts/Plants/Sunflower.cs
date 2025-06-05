@@ -5,14 +5,14 @@ namespace Game
 {
     public class Sunflower : Plant
     {
-        [SerializeField] private float _sunGenerateTime;
+        [SerializeField] private PlantChargeTimes _plantChargeTimes;
         [SerializeField] private Sun _sun;
 
         private void Start()
         {
             DOTween.
                 Sequence(this).
-                AppendInterval(_sunGenerateTime).
+                AppendInterval(_plantChargeTimes.GetValue(PlantID)).
                 AppendCallback(() =>
                 {
                     Sun sun = Instantiate(_sun, transform.parent);

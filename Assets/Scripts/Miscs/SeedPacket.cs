@@ -25,7 +25,6 @@ namespace Game
             _plant.ActionOnLawn(lawnCell, (gameObj, cost) =>
             {
                 onSuccess(gameObj, cost);
-                DOTween.Kill(this);
                 DOTween.
                     Sequence(this).
                     AppendCallback(() =>
@@ -34,7 +33,7 @@ namespace Game
                         _cooldownOverlay.localScale = Vector2.one;
                     }).
                     Append(_cooldownOverlay.
-                        DOScaleY(0, _plant.GetCooldown()).
+                        DOScaleY(0, _plant.Cooldown).
                         SetEase(Ease.Linear)).
                     OnComplete(() => _onCooldown = false);
             });
@@ -45,7 +44,7 @@ namespace Game
             SpriteRenderer plantSprite = plant.GetComponent<SpriteRenderer>();
             _srPlantSprite.sprite = plantSprite.sprite;
             _srPlantSprite.size = new(0.5f, 0.5f);
-            _tmPlantCost.text = plant.GetCost().ToString();
+            _tmPlantCost.text = plant.Cost.ToString();
             _plant = plant;
         }
 
@@ -61,7 +60,7 @@ namespace Game
 
         public void OnSunStoreChange(int sun)
         {
-            _enoughSun = sun >= _plant.GetCost();
+            _enoughSun = sun >= _plant.Cost;
             _srNotEnoughSunOverlay.enabled = !_enoughSun;
         }
     }

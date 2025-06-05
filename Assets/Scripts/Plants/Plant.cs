@@ -1,5 +1,5 @@
-using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.Events;
 
 namespace Game
@@ -8,8 +8,13 @@ namespace Game
         ILawnAction,
         HealthManager.IOnDamageTaken, HealthManager.IDestroyOnOutOfHealth
     {
-        [SerializeField] private int _cost;
-        [SerializeField] private float _cooldown;
+        [SerializeField] private PlantID _plantID;
+        [SerializeField] private PlantCosts _plantCosts;
+        [SerializeField] private PlantCooldowns _plantCooldowns;
+
+        public int Cost { get => _plantCosts.GetValue(_plantID); }
+        public float Cooldown { get => _plantCooldowns.GetValue(_plantID); }
+        public PlantID PlantID { get => _plantID; }
 
         public void ActionOnLawn(Transform location, UnityAction<GameObject, int> onSuccess)
         {
@@ -17,17 +22,7 @@ namespace Game
             {
                 return;
             }
-            onSuccess.Invoke(Instantiate(gameObject, location), _cost);
-        }
-
-        public int GetCost()
-        {
-            return _cost;
-        }
-
-        public float GetCooldown()
-        {
-            return _cooldown;
+            onSuccess.Invoke(Instantiate(gameObject, location), Cost);
         }
 
         public virtual void OnDamageTaken(HealthManager sender)

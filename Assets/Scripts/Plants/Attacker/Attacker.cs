@@ -5,10 +5,10 @@ namespace Game
 {
     public abstract class Attacker : Plant
     {
-        [SerializeField] float _attackCooldown;
+        [SerializeField] private PlantChargeTimes _plantChargeTimes;
+        [SerializeField] private GameObject _projectile;
         [SerializeField] float _rayLength;
         [SerializeField] float _rayOffset;
-        [SerializeField] private GameObject _projectile;
 
         private bool _ready = false;
         private Tween _attackTween;
@@ -18,7 +18,7 @@ namespace Game
         {
             _cooldownTween = DOTween.
                 Sequence().
-                AppendInterval(_attackCooldown).
+                AppendInterval(_plantChargeTimes.GetValue(PlantID)).
                 AppendCallback(() => _ready = true).
                 SetAutoKill(false);
 

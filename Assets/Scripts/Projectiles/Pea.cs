@@ -4,13 +4,14 @@ namespace Game
 {
     public class Pea : MonoBehaviour, IProjectile
     {
-        [SerializeField] private float _damage;
-        [SerializeField] private int _flyVelocity;
+        [SerializeField] private ProjectileID _projectileID;
+        [SerializeField] private ProjectileVelocities _projectileVelocities;
+        [SerializeField] private ProjectileDamages _projectileDamages;
         [SerializeField] private Rigidbody2D _rb;
 
         public void Fire(Vector2 direction)
         {
-            _rb.linearVelocity = _flyVelocity * direction;
+            _rb.linearVelocity = _projectileVelocities.GetValue(_projectileID) * direction;
         }
 
         public void OnCollisionEnter2D(Collision2D collision)
@@ -18,7 +19,7 @@ namespace Game
             if (collision.gameObject.TryGetComponent(out HealthManager healthManager))
             {
                 Destroy(gameObject);
-                healthManager.ReduceHealth(_damage);
+                healthManager.ReduceHealth(_projectileDamages.GetValue(_projectileID));
             }
         }
     }

@@ -76,21 +76,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hp: 8
-  OnOutOfHealth:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8764650309161090903}
-        m_TargetAssemblyTypeName: Game.HealthManager, Game
-        m_MethodName: DestroyOnOutOfHealth
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &4012023038547497566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,9 +88,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98fd5bb54cb67494c90c2c15edb617cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackCooldown: 1
-  _velocity: 2
-  _damage: 1
+  _zombieID: 0
+  _zombieVelocities: {fileID: 11400000, guid: 1a811520fa6812549bbc92b00023c449, type: 2}
+  _zombieDamages: {fileID: 11400000, guid: 6fd882d8c0d3e3543b5db4f17d8f5881, type: 2}
+  _zombieChargeTimes: {fileID: 11400000, guid: bc430ca20b3375f44ac2659e41318fa1, type: 2}
   _rb: {fileID: 6539117250195111013}
 --- !u!61 &1859621238738543903
 BoxCollider2D:

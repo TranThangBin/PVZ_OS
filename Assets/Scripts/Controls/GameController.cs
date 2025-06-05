@@ -28,6 +28,24 @@ namespace Game
         }
 
         private ISelectable _selected;
+        private ISelectable Selected
+        {
+            get => _selected;
+            set
+            {
+                if (value == null || _selected == value)
+                {
+                    _selected?.SetSelected(false);
+                    _selected = null;
+                }
+                else
+                {
+                    value.SetSelected(true);
+                    _selected?.SetSelected(false);
+                    _selected = value;
+                }
+            }
+        }
 
         private void Awake()
         {
@@ -77,21 +95,7 @@ namespace Game
 
             if (available == null || available.IsAvailable())
             {
-                ISelectable selectable = hit.collider.GetComponentInChildren<ISelectable>();
-
-                if (selectable == null) { return; }
-
-                if (_selected == selectable)
-                {
-                    _selected.SetSelected(false);
-                    _selected = null;
-                }
-                else
-                {
-                    _selected?.SetSelected(false);
-                    selectable.SetSelected(true);
-                    _selected = selectable;
-                }
+                Selected = hit.collider.GetComponentInChildren<ISelectable>();
             }
             else
             {
@@ -111,8 +115,7 @@ namespace Game
                 _selected.ActionOnLawn(hit.collider.transform, (gameObj, cost) =>
                 {
                     SunStore -= cost;
-                    _selected.SetSelected(false);
-                    _selected = null;
+                    Selected = null;
                 });
             }
         }
