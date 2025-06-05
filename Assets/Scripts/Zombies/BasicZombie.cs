@@ -50,8 +50,8 @@ namespace Game
                 Debug.DrawRay(transform.position, Vector2.left * rayDistance, Color.black);
                 if (hit.collider != null)
                 {
+                    _plantHealth = hit.collider.GetComponentInParent<HealthManager>();
                     _rb.linearVelocity = Vector2.zero;
-                    _plantHealth = hit.collider.GetComponent<HealthManager>();
                     _attackTween.Restart();
                 }
             }

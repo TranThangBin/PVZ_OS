@@ -30,7 +30,7 @@ namespace Game
             return _cooldown;
         }
 
-        public void OnDamageTaken(HealthManager sender)
+        public virtual void OnDamageTaken(HealthManager sender)
         {
             SpriteRenderer sr = sender.GetComponent<SpriteRenderer>();
             Assert.IsNotNull(sr);

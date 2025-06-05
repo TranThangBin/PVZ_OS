@@ -7,7 +7,6 @@ namespace Game
     {
         [SerializeField] private float _damage;
         [SerializeField] private float _jumpForce;
-        [SerializeField] private Collider2D _collider;
 
         private bool _kill = false;
 
