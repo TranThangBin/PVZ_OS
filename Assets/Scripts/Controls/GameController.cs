@@ -79,7 +79,9 @@ namespace Game
             {
                 ISelectable selectable = hit.collider.GetComponentInChildren<ISelectable>();
 
-                if (_selected != null && _selected == selectable)
+                if (selectable == null) { return; }
+
+                if (_selected == selectable)
                 {
                     _selected.SetSelected(false);
                     _selected = null;

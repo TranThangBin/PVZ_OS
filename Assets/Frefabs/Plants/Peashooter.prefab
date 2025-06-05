@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1384606280834076401}
   - component: {fileID: 8011513110599344781}
   - component: {fileID: 2426910372618211863}
-  - component: {fileID: 2997351222644871838}
   m_Layer: 7
   m_Name: Peashooter
   m_TagString: Untagged
@@ -150,12 +149,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hp: 5
-  OnOutOfHealth:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDamageTaken:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &2426910372618211863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,34 +163,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cost: 100
   _cooldown: 7
+  _attackCooldown: 2
   _projectile: {fileID: 1609563426096356370, guid: b54c8b6de00b64b4990a88a1f28c6a28, type: 3}
-  _rechargeTimer: {fileID: 2997351222644871838}
---- !u!114 &2997351222644871838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4694460127658889744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea188def6ce4223428b713eb1cf49406, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _time: 2
-  _autoStart: 0
-  OnTimeOut:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2426910372618211863}
-        m_TargetAssemblyTypeName: Game.Peashooter, Game
-        m_MethodName: OnTimerTimeOut
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2

@@ -53,10 +53,10 @@ namespace Game
             }
         }
 
-        public void BlinkOnDamageTaken(SpriteRenderer sr)
+        public void BlinkOnDamageTaken(SpriteRenderer sr, Color cl)
         {
             sr.
-                DOColor(Color.red, 0.1f).
+                DOColor(cl, 0.1f).
                 SetLoops(2, LoopType.Yoyo).
                 SetId(this);
         }
@@ -65,13 +65,12 @@ namespace Game
         {
             return Hp == 0;
         }
+        public interface IDestroyOnOutOfHealth { }
 
         public interface IOnOutOfHealth
         {
             void OnOutOfHealth(HealthManager sender);
         }
-
-        public interface IDestroyOnOutOfHealth { }
 
         public interface IOnDamageTaken
         {

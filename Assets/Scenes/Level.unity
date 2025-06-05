@@ -3819,7 +3819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 367f8101073f85644b7bc7a00062e74c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initialSun: 50
+  _initialSun: 100
   _sunDisplay: {fileID: 148160935}
   _plantSelectorGrid: {fileID: 1119732815}
   _seedPacket: {fileID: 3673234174439415083, guid: 802a62eaa7760754098d44c83ca92ae7, type: 3}
@@ -5510,8 +5510,8 @@ Transform:
   m_GameObject: {fileID: 1902084818}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.8, y: 36.6, z: 0}
-  m_LocalScale: {x: 22.100677, y: 22.100677, z: 22.100677}
+  m_LocalPosition: {x: -20.8, y: 35.6827, z: 0}
+  m_LocalScale: {x: 19.992273, y: 19.992273, z: 19.992273}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 148160934}

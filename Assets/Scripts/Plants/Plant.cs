@@ -34,7 +34,7 @@ namespace Game
         {
             SpriteRenderer sr = sender.GetComponent<SpriteRenderer>();
             Assert.IsNotNull(sr);
-            sender.BlinkOnDamageTaken(sr);
+            sender.BlinkOnDamageTaken(sr, Color.red);
         }
     }
 }
