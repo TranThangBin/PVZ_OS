@@ -14,7 +14,7 @@ namespace Game
         [SerializeField] private Plant[] _plants;
 
         private Tween _invalidSelectAnimation;
-        private readonly UnityEvent<int> OnSunStoreChange = new();
+        private readonly UnityEvent<int> _onSunStoreChange = new();
         private int _sunStore;
         private int SunStore
         {
@@ -23,7 +23,7 @@ namespace Game
             {
                 _sunStore = Mathf.Max(0, value);
                 _sunDisplay.text = value.ToString();
-                OnSunStoreChange.Invoke(_sunStore);
+                _onSunStoreChange.Invoke(_sunStore);
             }
         }
 
@@ -35,7 +35,7 @@ namespace Game
             {
                 SeedPacket seedPacket = Instantiate(_seedPacket, _plantSelectorGrid.transform.GetChild(i));
                 seedPacket.SetPlant(_plants[i]);
-                OnSunStoreChange.AddListener(seedPacket.OnSunStoreChange);
+                _onSunStoreChange.AddListener(seedPacket.OnSunStoreChange);
             }
         }
 
@@ -73,11 +73,11 @@ namespace Game
 
             if (hit.collider == null) { return; }
 
-            IAvailable available = hit.collider.gameObject.GetComponentInChildren<IAvailable>();
+            IAvailable available = hit.collider.GetComponentInChildren<IAvailable>();
 
             if (available == null || available.IsAvailable())
             {
-                ISelectable selectable = hit.collider.gameObject.GetComponentInChildren<ISelectable>();
+                ISelectable selectable = hit.collider.GetComponentInChildren<ISelectable>();
 
                 if (_selected != null && _selected == selectable)
                 {

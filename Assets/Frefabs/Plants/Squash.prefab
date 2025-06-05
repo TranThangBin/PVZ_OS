@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7718135226500313617}
   - component: {fileID: 7583793638839938605}
   - component: {fileID: 2069520543453532704}
+  - component: {fileID: 1897357728947147464}
   m_Layer: 0
   m_Name: Squash
   m_TagString: Untagged
@@ -134,3 +135,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4.78, y: 5.69}
   m_EdgeRadius: 0
+--- !u!114 &1897357728947147464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191935844953624198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fbd2a2d1f010264e8e9aff8c61e1741, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hp: 0
+  OnOutOfHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []

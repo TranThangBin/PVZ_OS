@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: -3070453432627086885, guid: 90916fa7fe267aa41a7ecb2606205f64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -152,19 +152,10 @@ MonoBehaviour:
   _hp: 5
   OnOutOfHealth:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8011513110599344781}
-        m_TargetAssemblyTypeName: Game.HealthManager, Game
-        m_MethodName: DestroyOnOutOfHealth
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  OnDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2426910372618211863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a8c42d7932e5db4baedc9d307bf30f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plantCost: 100
+  _cost: 100
   _cooldown: 7
   _projectile: {fileID: 1609563426096356370, guid: b54c8b6de00b64b4990a88a1f28c6a28, type: 3}
   _rechargeTimer: {fileID: 2997351222644871838}

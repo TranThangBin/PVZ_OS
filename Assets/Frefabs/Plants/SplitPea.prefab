@@ -165,6 +165,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5314107143473587250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a67ffc1b414b6439a1c41d7aefbea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plantCost: 125
+  _cost: 125
   _cooldown: 8
   _projectile: {fileID: 1609563426096356370, guid: b54c8b6de00b64b4990a88a1f28c6a28, type: 3}
   _rechargeTimer: {fileID: 5959866356943500423}
@@ -197,16 +200,4 @@ MonoBehaviour:
   _autoStart: 0
   OnTimeOut:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5314107143473587250}
-        m_TargetAssemblyTypeName: Game.SplitPea, Game
-        m_MethodName: OnTimerTimeOut
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []

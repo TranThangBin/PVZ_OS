@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59611af7281aa41498c06bc5bfe72af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plantCost: 50
+  _cost: 50
   _cooldown: 5
   _sunGenerateTime: 8
   _sun: {fileID: 864223831861094711, guid: b598fe2eaa925ad42a859425d519b571, type: 3}

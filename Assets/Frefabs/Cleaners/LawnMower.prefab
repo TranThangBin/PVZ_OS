@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8853741203966488929}
   - component: {fileID: 220096961786312101}
   - component: {fileID: 8979489837004936232}
-  - component: {fileID: 5887975978577768303}
   m_Layer: 8
   m_Name: LawnMower
   m_TagString: Untagged
@@ -179,33 +178,4 @@ MonoBehaviour:
   _velocity: 50
   _damage: 999
   _rb: {fileID: 220096961786312101}
-  _lifetimeTimer: {fileID: 5887975978577768303}
---- !u!114 &5887975978577768303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7963923050220041964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea188def6ce4223428b713eb1cf49406, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _time: 15
-  _autoStart: 0
-  OnTimeOut:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5887975978577768303}
-        m_TargetAssemblyTypeName: Game.Timer, Game
-        m_MethodName: DestroyOnTimeOut
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  _lifetimeTimer: {fileID: 0}

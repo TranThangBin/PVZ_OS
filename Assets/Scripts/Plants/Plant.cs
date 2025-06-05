@@ -1,9 +1,12 @@
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Game
 {
-    public abstract class Plant : MonoBehaviour, ILawnAction
+    public abstract class Plant : MonoBehaviour,
+        ILawnAction,
+        HealthManager.IOnDamageTaken, HealthManager.IDestroyOnOutOfHealth
     {
         [SerializeField] private int _cost;
         [SerializeField] private float _cooldown;
@@ -25,6 +28,13 @@ namespace Game
         public float GetCooldown()
         {
             return _cooldown;
+        }
+
+        public void OnDamageTaken(HealthManager sender)
+        {
+            SpriteRenderer sr = sender.GetComponent<SpriteRenderer>();
+            Assert.IsNotNull(sr);
+            sender.BlinkOnDamageTaken(sr);
         }
     }
 }
