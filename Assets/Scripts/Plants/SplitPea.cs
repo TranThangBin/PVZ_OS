@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using UnityEngine;
 
@@ -5,71 +6,62 @@ namespace Game
 {
     public class SplitPea : Plant
     {
-        private enum SplitPeashooterState { COOLDOWN, READY, ATTACK }
-
+        [SerializeField] private float _attackCooldown;
         [SerializeField] private GameObject _projectile;
-        [SerializeField] private Timer _rechargeTimer;
 
-        private SplitPeashooterState _state = SplitPeashooterState.COOLDOWN;
-
-        private readonly Vector3[] _directions = new[] { Vector3.right, Vector3.left, Vector3.left };
-        private readonly float[] _shootWaitTime = new[] { 0.5f, 0.25f, 0.25f };
+        private bool _ready = false;
+        private Tween _attackTween;
+        private Tween _cooldownTween;
 
         private void Start()
         {
-            _rechargeTimer.TimerStart();
-        }
+            _cooldownTween = DOTween.
+                Sequence().
+                AppendInterval(_attackCooldown).
+                AppendCallback(() => _ready = true).
+                SetAutoKill(false);
 
-        private void Update()
-        {
-            switch (_state)
-            {
-                case SplitPeashooterState.ATTACK:
-                    {
-                        StartCoroutine(Attack());
-
-                        _state = SplitPeashooterState.COOLDOWN;
-                        _rechargeTimer.TimerRestart();
-                    }
-                    break;
-                case SplitPeashooterState.READY:
-                case SplitPeashooterState.COOLDOWN:
-                    break;
-                default:
-                    throw new UnityException();
-            }
+            _attackTween = DOTween.
+                Sequence().
+                AppendCallback(() => _ready = false).
+                AppendCallback(() => Attack(Vector2.right)).
+                AppendInterval(0.5f).
+                AppendCallback(() => Attack(Vector2.left)).
+                AppendInterval(0.25f).
+                AppendCallback(() =>
+                {
+                    Attack(Vector2.left);
+                    _cooldownTween.Restart();
+                }).
+                SetAutoKill(false).
+                Pause();
         }
 
         private void FixedUpdate()
         {
-            if (_state == SplitPeashooterState.READY)
+            if (_ready)
             {
                 float rayDistance = 200;
                 RaycastHit2D rc = Physics2D.Raycast(transform.position + Vector3.left * rayDistance / 2, Vector2.right, rayDistance, LayerMask.GetMask("Enemy"));
                 Debug.DrawRay(transform.position + Vector3.left * rayDistance / 2, Vector3.right * rayDistance, Color.red);
                 if (rc.collider != null)
                 {
-                    _state = SplitPeashooterState.ATTACK;
+                    _attackTween.Restart();
                 }
             }
         }
 
-        public void OnTimerTimeOut()
+        private void OnDestroy()
         {
-            _state = SplitPeashooterState.READY;
+            _attackTween.Kill();
+            _cooldownTween.Kill();
         }
 
-        private IEnumerator Attack()
+        private void Attack(Vector3 direction)
         {
-            for (int i = 0; i < _directions.Length; i++)
-            {
-                GameObject gameObject = Instantiate(_projectile, transform.position + (_directions[i] / 2), Quaternion.identity, transform.parent);
-
-                IProjectile projectile = gameObject.GetComponent<IProjectile>();
-                projectile.Fire(_directions[i]);
-
-                yield return new WaitForSeconds(_shootWaitTime[i]);
-            }
+            GameObject gameObject = Instantiate(_projectile, transform.position + direction / 2, Quaternion.identity, transform.parent);
+            IProjectile projectile = gameObject.GetComponent<IProjectile>();
+            projectile.Fire(direction);
         }
     }
 }

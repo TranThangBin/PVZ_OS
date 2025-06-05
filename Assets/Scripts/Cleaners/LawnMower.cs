@@ -23,9 +23,7 @@ namespace Game
                 {
                     DOTween.
                         Sequence(this).
-                        AppendCallback(() => _rb.linearVelocity = _velocity * Vector2.right).
-                        AppendInterval(15).
-                        AppendCallback(() => Destroy(gameObject));
+                        AppendCallback(() => _rb.linearVelocity = _velocity * Vector2.right);
                 }
             }
         }

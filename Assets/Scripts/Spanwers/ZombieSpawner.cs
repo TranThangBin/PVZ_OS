@@ -1,9 +1,11 @@
+using DG.Tweening;
 using UnityEngine;
 
 namespace Game
 {
     public class ZombieSpawner : MonoBehaviour
     {
+        [SerializeField] private int _spawnTime;
         [SerializeField] private int _rowCount;
         [SerializeField] private GameObject _zombie;
         [SerializeField] private Transform _spawnYLocationStart;
@@ -24,11 +26,22 @@ namespace Game
             }
         }
 
-        public void OnTimerTimeOut(Timer sender)
+        private void Start()
         {
-            int idx = Random.Range(0, _spawnLocations.Length);
-            Instantiate(_zombie, _spawnLocations[idx], Quaternion.identity, transform);
-            sender.TimerRestart();
+            DOTween.
+                Sequence(this).
+                AppendInterval(_spawnTime).
+                AppendCallback(() =>
+                {
+                    int idx = Random.Range(0, _spawnLocations.Length);
+                    Instantiate(_zombie, _spawnLocations[idx], Quaternion.identity, transform);
+                }).
+                SetLoops(-1);
+        }
+
+        private void OnDestroy()
+        {
+            DOTween.Kill(this);
         }
     }
 }

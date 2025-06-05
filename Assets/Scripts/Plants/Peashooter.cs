@@ -22,12 +22,12 @@ namespace Game
 
             _attackTween = DOTween.
                 Sequence().
+                AppendCallback(() => _ready = false).
                 AppendCallback(() =>
                 {
                     GameObject gameObject = Instantiate(_projectile, transform.position + (Vector3.right / 2), Quaternion.identity, transform.parent);
                     IProjectile projectile = gameObject.GetComponent<IProjectile>();
                     projectile.Fire(Vector2.right);
-                    _ready = false;
                     _cooldownTween.Restart();
                 }).
                 SetAutoKill(false).
