@@ -11,7 +11,7 @@ namespace Game
             {
                 children[i] = target.GetChild(i).gameObject;
             }
-            foreach (GameObject child in children)
+            foreach (var child in children)
             {
                 DestroyImmediate(child);
             }

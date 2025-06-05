@@ -8,7 +8,6 @@ namespace Game
         [SerializeField] private int _flyVelocity;
         [SerializeField] private Rigidbody2D _rb;
 
-
         public void Fire(Vector2 direction)
         {
             _rb.linearVelocity = _flyVelocity * direction;

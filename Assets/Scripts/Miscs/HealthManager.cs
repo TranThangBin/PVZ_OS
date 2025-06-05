@@ -23,6 +23,8 @@ namespace Game
         private readonly UnityEvent<HealthManager> _onOutOfHealth = new();
         private readonly UnityEvent<HealthManager> _onDamageTaken = new();
 
+        private Color _blinkColor = new(1, 0.5f, 0.5f);
+
         private void Start()
         {
             foreach (var handler in GetComponents<IOnOutOfHealth>())
@@ -53,11 +55,13 @@ namespace Game
             }
         }
 
-        public void BlinkOnDamageTaken(SpriteRenderer sr, Color cl)
+        public void BlinkSpriteColor(SpriteRenderer sr)
         {
+            DOTween.Kill(this);
             sr.
-                DOColor(cl, 0.1f).
+                DOColor(_blinkColor, 0.1f).
                 SetLoops(2, LoopType.Yoyo).
+                OnKill(() => sr.color = Color.white).
                 SetId(this);
         }
 
@@ -65,6 +69,12 @@ namespace Game
         {
             return Hp == 0;
         }
+
+        public void SetBlinkColor(Color cl)
+        {
+            _blinkColor = cl;
+        }
+
         public interface IDestroyOnOutOfHealth { }
 
         public interface IOnOutOfHealth

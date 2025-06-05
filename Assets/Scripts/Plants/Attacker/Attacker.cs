@@ -3,9 +3,11 @@ using UnityEngine;
 
 namespace Game
 {
-    public class Peashooter : Plant
+    public abstract class Attacker : Plant
     {
         [SerializeField] float _attackCooldown;
+        [SerializeField] float _rayLength;
+        [SerializeField] float _rayOffset;
         [SerializeField] private GameObject _projectile;
 
         private bool _ready = false;
@@ -23,13 +25,8 @@ namespace Game
             _attackTween = DOTween.
                 Sequence().
                 AppendCallback(() => _ready = false).
-                AppendCallback(() =>
-                {
-                    GameObject gameObject = Instantiate(_projectile, transform.position + (Vector3.right / 2), Quaternion.identity, transform.parent);
-                    IProjectile projectile = gameObject.GetComponent<IProjectile>();
-                    projectile.Fire(Vector2.right);
-                    _cooldownTween.Restart();
-                }).
+                Append(Attack(_projectile)).
+                AppendCallback(() => _cooldownTween.Restart()).
                 SetAutoKill(false).
                 Pause();
         }
@@ -38,9 +35,8 @@ namespace Game
         {
             if (_ready)
             {
-                float rayDistance = 100;
-                RaycastHit2D rc = Physics2D.Raycast(transform.position, Vector2.right, rayDistance, LayerMask.GetMask("Enemy"));
-                Debug.DrawRay(transform.position, Vector3.right * rayDistance, Color.red);
+                RaycastHit2D rc = Physics2D.Raycast(transform.position + Vector3.right * _rayOffset, Vector2.right, _rayLength, LayerMask.GetMask("Enemy"));
+                Debug.DrawRay(transform.position + Vector3.right * _rayOffset, Vector3.right * _rayLength, Color.red);
                 if (rc.collider != null)
                 {
                     _attackTween.Restart();
@@ -53,5 +49,7 @@ namespace Game
             _attackTween.Kill();
             _cooldownTween.Kill();
         }
+
+        protected abstract Tween Attack(GameObject projectile);
     }
 }

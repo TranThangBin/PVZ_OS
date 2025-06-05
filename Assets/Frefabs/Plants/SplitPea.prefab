@@ -164,4 +164,6 @@ MonoBehaviour:
   _cost: 125
   _cooldown: 8
   _attackCooldown: 3
+  _rayLength: 200
+  _rayOffset: -100
   _projectile: {fileID: 1609563426096356370, guid: b54c8b6de00b64b4990a88a1f28c6a28, type: 3}

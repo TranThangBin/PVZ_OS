@@ -9,7 +9,7 @@ namespace Game
     {
         [SerializeField] private float _attackCooldown;
         [SerializeField] private float _velocity;
-        [SerializeField] private float _damage;
+        [SerializeField] private int _damage;
         [SerializeField] private Rigidbody2D _rb;
 
         private Tween _attackTween;
@@ -61,7 +61,7 @@ namespace Game
         {
             SpriteRenderer sr = sender.GetComponent<SpriteRenderer>();
             Assert.IsNotNull(sr);
-            sender.BlinkOnDamageTaken(sr, Color.red);
+            sender.BlinkSpriteColor(sr);
         }
     }
 }
