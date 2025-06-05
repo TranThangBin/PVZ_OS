@@ -18,8 +18,7 @@ namespace Game
                     Sun sun = Instantiate(_sun, transform.parent);
                     sun.
                         StartLifeTime().
-                        Prepend(sun.transform.DOJump(transform.position + Vector3.up * 5, 2, 1, 1)).
-                        Play();
+                        Prepend(sun.transform.DOJump(transform.position + Vector3.up * 5, 2, 1, 1));
                 }).
                 SetLoops(-1);
         }

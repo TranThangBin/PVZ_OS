@@ -3,31 +3,41 @@ using UnityEngine;
 using UnityEngine.Events;
 namespace Game
 {
-    public class SeedPacket : MonoBehaviour, IValuable, ISelectable, IAvailable
+    public class SeedPacket : MonoBehaviour, ISelectable, IAvailable
     {
         [SerializeField] private SpriteRenderer _srPlantSprite;
         [SerializeField] private SpriteRenderer _srSelectedOverlay;
+        [SerializeField] private SpriteRenderer _srNotEnoughSunOverlay;
         [SerializeField] private TextMesh _tmPlantCost;
         [SerializeField] private Transform _cooldownOverlay;
 
         private Plant _plant;
-        private bool _isAvailable = true;
+        private bool _onCooldown = false;
+        private bool _enoughSun = false;
 
-        public int GetValue()
+        private void OnDestroy()
         {
-            return _plant.GetValue();
+            DOTween.Kill(this);
         }
 
-        public void ActionOnLawn(Transform lawnCell, UnityAction<GameObject> onSuccess)
+        public void ActionOnLawn(Transform lawnCell, UnityAction<GameObject, int> onSuccess)
         {
-            _plant.ActionOnLawn(lawnCell, onSuccess);
-            _isAvailable = false;
-
-            _cooldownOverlay.localScale = Vector2.one;
-            _cooldownOverlay.
-                DOScaleY(0, _plant.GetCooldown()).
-                SetEase(Ease.Linear).
-                OnComplete(() => _isAvailable = true);
+            _plant.ActionOnLawn(lawnCell, (gameObj, cost) =>
+            {
+                onSuccess(gameObj, cost);
+                DOTween.Kill(this);
+                DOTween.
+                    Sequence(this).
+                    AppendCallback(() =>
+                    {
+                        _onCooldown = true;
+                        _cooldownOverlay.localScale = Vector2.one;
+                    }).
+                    Append(_cooldownOverlay.
+                        DOScaleY(0, _plant.GetCooldown()).
+                        SetEase(Ease.Linear)).
+                    OnComplete(() => _onCooldown = false);
+            });
         }
 
         public void SetPlant(Plant plant)
@@ -35,7 +45,7 @@ namespace Game
             SpriteRenderer plantSprite = plant.GetComponent<SpriteRenderer>();
             _srPlantSprite.sprite = plantSprite.sprite;
             _srPlantSprite.size = new(0.5f, 0.5f);
-            _tmPlantCost.text = plant.GetValue().ToString();
+            _tmPlantCost.text = plant.GetCost().ToString();
             _plant = plant;
         }
 
@@ -46,7 +56,13 @@ namespace Game
 
         public bool IsAvailable()
         {
-            return _isAvailable;
+            return _enoughSun && !_onCooldown;
+        }
+
+        public void OnSunStoreChange(int sun)
+        {
+            _enoughSun = sun >= _plant.GetCost();
+            _srNotEnoughSunOverlay.enabled = !_enoughSun;
         }
     }
 }

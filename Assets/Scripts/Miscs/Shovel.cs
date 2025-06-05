@@ -7,14 +7,14 @@ namespace Game
     {
         [SerializeField] private SpriteRenderer _srSelectedOverlay;
 
-        public void ActionOnLawn(Transform lawnCell, UnityAction<GameObject> onSuccess)
+        public void ActionOnLawn(Transform lawnCell, UnityAction<GameObject, int> onSuccess)
         {
             Plant plant = lawnCell.GetComponentInChildren<Plant>();
 
             if (plant != null)
             {
                 Destroy(plant.gameObject);
-                onSuccess.Invoke(gameObject);
+                onSuccess.Invoke(gameObject, 0);
             }
         }
 

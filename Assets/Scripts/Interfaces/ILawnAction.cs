@@ -5,6 +5,6 @@ namespace Game
 {
     public interface ILawnAction
     {
-        void ActionOnLawn(Transform lawnCell, UnityAction<GameObject> onSuccess);
+        void ActionOnLawn(Transform lawnCell, UnityAction<GameObject, int> onSuccess);
     }
 }

@@ -1,5 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace Game
@@ -12,14 +13,17 @@ namespace Game
         [SerializeField] private SeedPacket _seedPacket;
         [SerializeField] private Plant[] _plants;
 
-        private int _sunStore;
         private Tween _invalidSelectAnimation;
+        private readonly UnityEvent<int> OnSunStoreChange = new();
+        private int _sunStore;
         private int SunStore
         {
-            get => _sunStore; set
+            get => _sunStore;
+            set
             {
                 _sunStore = Mathf.Max(0, value);
                 _sunDisplay.text = value.ToString();
+                OnSunStoreChange.Invoke(_sunStore);
             }
         }
 
@@ -31,6 +35,7 @@ namespace Game
             {
                 SeedPacket seedPacket = Instantiate(_seedPacket, _plantSelectorGrid.transform.GetChild(i));
                 seedPacket.SetPlant(_plants[i]);
+                OnSunStoreChange.AddListener(seedPacket.OnSunStoreChange);
             }
         }
 
@@ -68,15 +73,13 @@ namespace Game
 
             if (hit.collider == null) { return; }
 
-            IValuable valuable = hit.collider.gameObject.GetComponentInChildren<IValuable>();
             IAvailable available = hit.collider.gameObject.GetComponentInChildren<IAvailable>();
 
-            if ((available == null || available.IsAvailable()) &&
-                (valuable == null || SunStore >= valuable.GetValue()))
+            if (available == null || available.IsAvailable())
             {
                 ISelectable selectable = hit.collider.gameObject.GetComponentInChildren<ISelectable>();
 
-                if (_selected == selectable)
+                if (_selected != null && _selected == selectable)
                 {
                     _selected.SetSelected(false);
                     _selected = null;
@@ -103,13 +106,9 @@ namespace Game
 
             if (hit.collider != null)
             {
-                _selected.ActionOnLawn(hit.collider.transform, (gameObj) =>
+                _selected.ActionOnLawn(hit.collider.transform, (gameObj, cost) =>
                 {
-                    if (gameObj.TryGetComponent(out IValuable valuable))
-                    {
-                        SunStore -= valuable.GetValue();
-                    }
-
+                    SunStore -= cost;
                     _selected.SetSelected(false);
                     _selected = null;
                 });
@@ -131,8 +130,7 @@ namespace Game
                     PrependCallback(() => hit.collider.enabled = false).
                     Append(sun.transform.
                         DOMove(_sunDisplay.transform.position, sun.CalculateTime(_sunDisplay.transform.position, 6)).
-                        OnComplete(() => SunStore += 25)).
-                    Play();
+                        OnComplete(() => SunStore += 25));
             }
         }
     }
