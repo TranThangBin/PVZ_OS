@@ -11,18 +11,15 @@ namespace Game
         [SerializeField] private T _japaleno;
         [SerializeField] private T _potatoMine;
 
-        public T GetValue(PlantID plantID)
+        public T GetValue(PlantID plantID) => plantID switch
         {
-            return plantID switch
-            {
-                PlantID.SunFlower => _sunFlower,
-                PlantID.PeaShooter => _peaShooter,
-                PlantID.SplitPea => _splitPea,
-                PlantID.Squash => _squash,
-                PlantID.Japaleno => _japaleno,
-                PlantID.PotatoMine => _potatoMine,
-                _ => throw new UnityException(),
-            };
-        }
+            PlantID.SunFlower => _sunFlower,
+            PlantID.PeaShooter => _peaShooter,
+            PlantID.SplitPea => _splitPea,
+            PlantID.Squash => _squash,
+            PlantID.Japaleno => _japaleno,
+            PlantID.PotatoMine => _potatoMine,
+            _ => throw new UnityException(),
+        };
     }
 }

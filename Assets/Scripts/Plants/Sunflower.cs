@@ -8,6 +8,8 @@ namespace Game
         [SerializeField] private PlantChargeTimes _plantChargeTimes;
         [SerializeField] private Sun _sun;
 
+        private void OnDestroy() => DOTween.Kill(this);
+
         private void Start()
         {
             DOTween.
@@ -21,11 +23,6 @@ namespace Game
                         Prepend(sun.transform.DOJump(transform.position, 2, 1, 1));
                 }).
                 SetLoops(-1);
-        }
-
-        private void OnDestroy()
-        {
-            DOTween.Kill(this);
         }
     }
 }

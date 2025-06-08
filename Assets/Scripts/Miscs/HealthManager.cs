@@ -41,10 +41,10 @@ namespace Game
             }
         }
 
-        private void OnDestroy()
-        {
-            DOTween.Kill(this);
-        }
+        private void OnDestroy() => DOTween.Kill(this);
+
+        public bool IsOutOfHealth() => Hp == 0;
+        public void SetBlinkColor(Color cl) => _blinkColor = cl;
 
         public void ReduceHealth(float amount)
         {
@@ -63,16 +63,6 @@ namespace Game
                 SetLoops(2, LoopType.Yoyo).
                 OnKill(() => sr.color = Color.white).
                 SetId(this);
-        }
-
-        public bool IsOutOfHealth()
-        {
-            return Hp == 0;
-        }
-
-        public void SetBlinkColor(Color cl)
-        {
-            _blinkColor = cl;
         }
 
         public interface IDestroyOnOutOfHealth { }

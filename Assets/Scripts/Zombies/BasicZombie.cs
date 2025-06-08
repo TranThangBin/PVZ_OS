@@ -11,25 +11,20 @@ namespace Game
         [SerializeField] private ZombieVelocities _zombieVelocities;
         [SerializeField] private ZombieDamages _zombieDamages;
         [SerializeField] private ZombieChargeTimes _zombieChargeTimes;
+        [SerializeField] private ZombieRanges _zombieRanges;
         [SerializeField] private Rigidbody2D _rb;
 
-        private void Start()
-        {
-            _rb.linearVelocity = _zombieVelocities.GetValue(_zombieID) * Vector2.left;
-        }
-
-        private void OnDestroy()
-        {
-            DOTween.Kill(this);
-        }
+        private void Start() => _rb.linearVelocity = _zombieVelocities.GetValue(_zombieID) * Vector2.left;
+        private void OnDestroy() => DOTween.Kill(this);
 
         private void FixedUpdate()
         {
             if (!DOTween.IsTweening(this))
             {
-                float rayDistance = 3.5f;
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left, rayDistance, LayerMask.GetMask("Ally"));
-                Debug.DrawRay(transform.position, Vector2.left * rayDistance, Color.black);
+                float rayLength = _zombieRanges.GetValue(_zombieID);
+
+                RaycastHit2D hit = RunTimeUtils.Raycast(transform.position, Vector2.left, rayLength, LayerMask.GetMask("Ally"), Color.black);
+
                 if (hit.collider != null)
                 {
                     HealthManager plantHealth = hit.collider.GetComponentInParent<HealthManager>();
@@ -42,7 +37,7 @@ namespace Game
                             if (plantHealth.IsOutOfHealth())
                             {
                                 _rb.linearVelocity = _zombieVelocities.GetValue(_zombieID) * Vector2.left;
-                                DOTween.Pause(this);
+                                DOTween.Kill(this);
                             }
                         }).
                         AppendInterval(_zombieChargeTimes.GetValue(_zombieID)).

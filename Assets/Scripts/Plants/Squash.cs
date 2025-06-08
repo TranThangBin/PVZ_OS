@@ -7,18 +7,21 @@ namespace Game
     {
         [SerializeField] private PlantDamages _plantDamages;
         [SerializeField] private PlantChargeTimes _plantChargeTimes;
+        [SerializeField] private PlantRanges _plantRanges;
         [SerializeField] private float _jumpForce;
 
         private bool _kill = false;
+
+        private void OnDestroy() => DOTween.Kill(this);
 
         private void FixedUpdate()
         {
             if (!DOTween.IsTweening(this))
             {
-                float rayDistance = 30;
-                float rayOffset = rayDistance / 2;
-                RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.left * rayOffset, Vector3.right, rayDistance, LayerMask.GetMask("Enemy"));
-                Debug.DrawRay(transform.position + Vector3.left * rayOffset, Vector3.right * rayDistance, Color.red);
+                float rayLength = _plantRanges.GetValue(PlantID);
+                RaycastHit2D hit = RunTimeUtils.
+                    Raycast(transform.position, Vector3.right, rayLength, LayerMask.GetMask("Enemy"), Color.red);
+
                 if (hit.collider != null)
                 {
                     transform.
@@ -29,11 +32,6 @@ namespace Game
                         SetId(this);
                 }
             }
-        }
-
-        private void OnDestroy()
-        {
-            DOTween.Kill(this);
         }
 
         private void OnCollisionStay2D(Collision2D collision)

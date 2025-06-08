@@ -9,10 +9,7 @@ namespace Game
         [SerializeField] private ProjectileDamages _projectileDamages;
         [SerializeField] private Rigidbody2D _rb;
 
-        public void Fire(Vector2 direction)
-        {
-            _rb.linearVelocity = _projectileVelocities.GetValue(_projectileID) * direction;
-        }
+        public void Fire(Vector2 direction) => _rb.linearVelocity = _projectileVelocities.GetValue(_projectileID) * direction;
 
         public void OnCollisionEnter2D(Collision2D collision)
         {

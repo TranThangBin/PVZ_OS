@@ -118,9 +118,10 @@ MonoBehaviour:
   _plantID: 3
   _plantCosts: {fileID: 11400000, guid: 0b68edd2570bb7f40acbcc095c80743f, type: 2}
   _plantCooldowns: {fileID: 11400000, guid: c8eaf16a757b9e6408f40acf8cd04d78, type: 2}
-  _jumpForce: 10
   _plantDamages: {fileID: 11400000, guid: e7d5ac450f860ec499d69fd1b1136d75, type: 2}
   _plantChargeTimes: {fileID: 11400000, guid: 4914a48f528b8a645a9bfc87e519b0da, type: 2}
+  _plantRanges: {fileID: 11400000, guid: 5cced8ee0aa27834d9e28c081f8360a0, type: 2}
+  _jumpForce: 10
 --- !u!61 &7077533703957505779
 BoxCollider2D:
   m_ObjectHideFlags: 0

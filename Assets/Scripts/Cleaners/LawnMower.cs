@@ -9,10 +9,7 @@ namespace Game
         [SerializeField] private float _damage;
         [SerializeField] private Rigidbody2D _rb;
 
-        private void OnDestroy()
-        {
-            DOTween.Kill(this);
-        }
+        private void OnDestroy() => DOTween.Kill(this);
 
         public void OnCollisionEnter2D(Collision2D collision)
         {

@@ -6,9 +6,9 @@ namespace Game
     public abstract class Attacker : Plant
     {
         [SerializeField] private PlantChargeTimes _plantChargeTimes;
+        [SerializeField] PlantRanges _plantRanges;
         [SerializeField] private GameObject _projectile;
-        [SerializeField] float _rayLength;
-        [SerializeField] float _rayOffset;
+        [SerializeField] bool _bothDirection;
 
         private bool _ready = false;
         private Tween _attackTween;
@@ -35,15 +35,25 @@ namespace Game
         {
             if (_ready)
             {
-                RaycastHit2D rc = Physics2D.Raycast(transform.position + Vector3.right * _rayOffset, Vector2.right, _rayLength, LayerMask.GetMask("Enemy"));
-                Debug.DrawRay(transform.position + Vector3.right * _rayOffset, Vector3.right * _rayLength, Color.red);
+                float rayOffset = 0;
+                float rayLength = _plantRanges.GetValue(PlantID);
+                if (_bothDirection)
+                {
+                    rayOffset = rayLength;
+                    rayLength *= 2;
+                }
+
+                RaycastHit2D rc = RunTimeUtils.Raycast(
+                    transform.position + Vector3.left * rayOffset,
+                    Vector2.right, rayLength, LayerMask.GetMask("Enemy"), Color.red);
+
                 if (rc.collider != null)
                 {
                     _attackTween.Restart();
                 }
             }
         }
-
+                
         private void OnDestroy()
         {
             _attackTween.Kill();

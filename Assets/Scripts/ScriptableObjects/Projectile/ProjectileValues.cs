@@ -6,13 +6,10 @@ namespace Game
     {
         [SerializeField] private T _pea;
 
-        public T GetValue(ProjectileID projectileID)
+        public T GetValue(ProjectileID projectileID) => projectileID switch
         {
-            return projectileID switch
-            {
-                ProjectileID.Pea => _pea,
-                _ => throw new UnityException(),
-            };
-        }
+            ProjectileID.Pea => _pea,
+            _ => throw new UnityException(),
+        };
     }
 }

@@ -47,6 +47,8 @@ namespace Game
             }
         }
 
+        private void OnDestroy() => _invalidSelectAnimation.Kill();
+
         private void Awake()
         {
             for (int i = 0; i < _plants.Length && i < _plantSelectorGrid.transform.childCount; i++)
@@ -68,11 +70,6 @@ namespace Game
                 SetAutoKill(false).
                 SetLoops(2).
                 Pause();
-        }
-
-        private void OnDestroy()
-        {
-            _invalidSelectAnimation.Kill();
         }
 
         private void Update()

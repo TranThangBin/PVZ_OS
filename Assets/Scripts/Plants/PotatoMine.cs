@@ -26,10 +26,8 @@ namespace Game
             }
         }
 
-        private void Awake()
-        {
-            ActiveState = _unarmed;
-        }
+        private void Awake() => ActiveState = _unarmed;
+        private void OnDestroy() => DOTween.Kill(this);
 
         private void Start()
         {
@@ -46,11 +44,6 @@ namespace Game
                 zombieHealth.ReduceHealth(_plantDamages.GetValue(PlantID));
                 Destroy(gameObject);
             }
-        }
-
-        private void OnDestroy()
-        {
-            DOTween.Kill(this);
         }
 
         public override void OnDamageTaken(HealthManager sender)

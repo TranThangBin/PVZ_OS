@@ -14,13 +14,11 @@ namespace Game
             if (plant != null)
             {
                 Destroy(plant.gameObject);
-                onSuccess.Invoke(gameObject, 0);
             }
+
+            onSuccess.Invoke(gameObject, 0);
         }
 
-        public void SetSelected(bool isSelected)
-        {
-            _srSelectedOverlay.enabled = isSelected;
-        }
+        public void SetSelected(bool isSelected) => _srSelectedOverlay.enabled = isSelected;
     }
 }

@@ -8,6 +8,8 @@ namespace Game
         [SerializeField] private PlantDamages _plantDamages;
         [SerializeField] private PlantChargeTimes _plantChargeTimes;
 
+        private void OnDestroy() => DOTween.Kill(this);
+
         private void Start()
         {
             float killRange = 500;
@@ -24,11 +26,6 @@ namespace Game
                     }
                     Destroy(gameObject);
                 });
-        }
-
-        private void OnDestroy()
-        {
-            DOTween.Kill(this);
         }
     }
 }

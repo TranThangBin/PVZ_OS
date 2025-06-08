@@ -15,9 +15,6 @@ namespace Game
             }
         }
 
-        private void OnDestroy()
-        {
-            Time.timeScale = 1;
-        }
+        private void OnDestroy() => Time.timeScale = 1;
     }
 }

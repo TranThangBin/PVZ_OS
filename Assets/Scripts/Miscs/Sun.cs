@@ -9,10 +9,7 @@ namespace Game
         [SerializeField] private float _velocity;
         [SerializeField] private SpriteRenderer _sunSprite;
 
-        private void OnDestroy()
-        {
-            DOTween.Kill(this);
-        }
+        private void OnDestroy() => DOTween.Kill(this);
 
         public Sequence StartLifeTime()
         {

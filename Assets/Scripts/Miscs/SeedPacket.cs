@@ -15,10 +15,10 @@ namespace Game
         private bool _onCooldown = false;
         private bool _enoughSun = false;
 
-        private void OnDestroy()
-        {
-            DOTween.Kill(this);
-        }
+        private void OnDestroy() => DOTween.Kill(this);
+
+        public void SetSelected(bool isSelected) => _srSelectedOverlay.enabled = isSelected;
+        public bool IsAvailable() => _enoughSun && !_onCooldown;
 
         public void ActionOnLawn(Transform lawnCell, UnityAction<GameObject, int> onSuccess)
         {
@@ -46,16 +46,6 @@ namespace Game
             _srPlantSprite.size = new(0.5f, 0.5f);
             _tmPlantCost.text = plant.Cost.ToString();
             _plant = plant;
-        }
-
-        public void SetSelected(bool isSelected)
-        {
-            _srSelectedOverlay.enabled = isSelected;
-        }
-
-        public bool IsAvailable()
-        {
-            return _enoughSun && !_onCooldown;
         }
 
         public void OnSunStoreChange(int sun)

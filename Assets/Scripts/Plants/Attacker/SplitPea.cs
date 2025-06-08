@@ -5,21 +5,19 @@ namespace Game
 {
     public class SplitPea : Attacker
     {
-        protected override Tween Attack(GameObject projectile)
-        {
-            return DOTween.
+        protected override Tween Attack(GameObject projectile) => DOTween.
                 Sequence().
-                AppendCallback(() => ShootPea(Vector2.right, projectile)).
+                AppendCallback(() => InstantiatePea(projectile).Fire(Vector2.right)).
                 AppendInterval(0.5f).
-                AppendCallback(() => ShootPea(Vector2.left, projectile)).
+                AppendCallback(() => InstantiatePea(projectile).Fire(Vector2.left)).
                 AppendInterval(0.2f).
-                AppendCallback(() => ShootPea(Vector2.left, projectile));
-        }
+                AppendCallback(() => InstantiatePea(projectile).Fire(Vector2.left));
 
-        private void ShootPea(Vector3 direction, GameObject projectile)
+        private IProjectile InstantiatePea(GameObject projectile)
         {
-            GameObject p = Instantiate(projectile, transform.position + direction / 2, Quaternion.identity, transform.parent);
-            p.GetComponent<IProjectile>().Fire(direction);
+            return Instantiate(
+                projectile, transform.position, Quaternion.identity, transform.parent
+            ).GetComponent<IProjectile>();
         }
     }
 }

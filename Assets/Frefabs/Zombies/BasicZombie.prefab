@@ -92,6 +92,7 @@ MonoBehaviour:
   _zombieVelocities: {fileID: 11400000, guid: 1a811520fa6812549bbc92b00023c449, type: 2}
   _zombieDamages: {fileID: 11400000, guid: 6fd882d8c0d3e3543b5db4f17d8f5881, type: 2}
   _zombieChargeTimes: {fileID: 11400000, guid: bc430ca20b3375f44ac2659e41318fa1, type: 2}
+  _zombieRanges: {fileID: 11400000, guid: 2d1f32e86e129ef4c98c8dde1460f199, type: 2}
   _rb: {fileID: 6539117250195111013}
 --- !u!61 &1859621238738543903
 BoxCollider2D:

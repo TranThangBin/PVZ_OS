@@ -5,15 +5,10 @@ namespace Game
 {
     public class Peashooter : Attacker
     {
-        protected override Tween Attack(GameObject projectile)
-        {
-            return DOTween.
+        protected override Tween Attack(GameObject projectile) => DOTween.
                 Sequence().
-                AppendCallback(() =>
-                {
-                    GameObject p = Instantiate(projectile, transform.parent);
-                    p.GetComponent<IProjectile>().Fire(Vector2.right);
-                });
-        }
+                AppendCallback(() => Instantiate(projectile, transform.parent).
+                    GetComponent<IProjectile>().
+                    Fire(Vector2.right));
     }
 }
