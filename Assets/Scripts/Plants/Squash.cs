@@ -18,7 +18,7 @@ namespace Game
         {
             if (!DOTween.IsTweening(this))
             {
-                float rayLength = _plantRanges.GetValue(PlantID);
+                float rayLength = _plantRanges.GetValue(PlantID).Range;
                 RaycastHit2D hit = RunTimeUtils.
                     Raycast(transform.position, Vector3.right, rayLength, LayerMask.GetMask("Enemy"), Color.red);
 

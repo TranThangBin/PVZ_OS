@@ -8,7 +8,6 @@ namespace Game
         [SerializeField] private PlantChargeTimes _plantChargeTimes;
         [SerializeField] PlantRanges _plantRanges;
         [SerializeField] private GameObject _projectile;
-        [SerializeField] bool _bothDirection;
 
         private bool _ready = false;
         private Tween _attackTween;
@@ -36,8 +35,8 @@ namespace Game
             if (_ready)
             {
                 float rayOffset = 0;
-                float rayLength = _plantRanges.GetValue(PlantID);
-                if (_bothDirection)
+                float rayLength = _plantRanges.GetValue(PlantID).Range;
+                if (_plantRanges.GetValue(PlantID).BothDirection)
                 {
                     rayOffset = rayLength;
                     rayLength *= 2;
@@ -53,7 +52,7 @@ namespace Game
                 }
             }
         }
-                
+
         private void OnDestroy()
         {
             _attackTween.Kill();

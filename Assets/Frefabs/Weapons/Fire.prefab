@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 3653179117355740150}
   - component: {fileID: 419320873539012663}
   - component: {fileID: 1552949276055693521}
-  m_Layer: 0
+  - component: {fileID: 715590707022245607}
+  m_Layer: 3
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,9 +43,9 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6301681072028096432}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 0.05
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 2
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
@@ -4938,3 +4939,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 205.68, y: 6.68}
   m_EdgeRadius: 0
+--- !u!114 &715590707022245607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6301681072028096432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7757f9abf5d9d27418a98bd11f5dd10c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _plantWeaponID: 1
+  _plantWeaponDamages: {fileID: 11400000, guid: cea6629a197c1454fa3c9a93e7d87eb3, type: 2}

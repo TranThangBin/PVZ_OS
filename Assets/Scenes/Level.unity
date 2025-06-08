@@ -3797,10 +3797,7 @@ MonoBehaviour:
   _plants:
   - {fileID: 5532173415143523966, guid: 4b4f64d40c9ba5d4f9b952a4fa98c629, type: 3}
   - {fileID: 2426910372618211863, guid: 665836a7e0743b7439e799846b45b5e6, type: 3}
-  - {fileID: 5314107143473587250, guid: e6ca91135cdba154caf7a1e2d1c72030, type: 3}
-  - {fileID: 7983535774338096872, guid: e722e26d94c24354584d928b425a024b, type: 3}
   - {fileID: 4076101874668635763, guid: 698fa4de0ffeda248bfb5a544a63a326, type: 3}
-  - {fileID: 2736844375395762645, guid: 95bc1910900cfaf4088bdc1e0e825306, type: 3}
 --- !u!4 &1367410787
 Transform:
   m_ObjectHideFlags: 0

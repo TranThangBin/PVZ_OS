@@ -12,9 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b935a1420ef07f148906311f27802b65, type: 3}
   m_Name: PlantRanges
   m_EditorClassIdentifier: 
-  _sunFlower: 0
-  _peaShooter: 100
-  _splitPea: 100
-  _squash: 20
-  _japaleno: 0
-  _potatoMine: 0
+  _sunFlower:
+    _range: 0
+    _bothDirection: 0
+  _peaShooter:
+    _range: 100
+    _bothDirection: 0
+  _splitPea:
+    _range: 100
+    _bothDirection: 1
+  _squash:
+    _range: 30
+    _bothDirection: 1
+  _japaleno:
+    _range: 0
+    _bothDirection: 0
+  _potatoMine:
+    _range: 0
+    _bothDirection: 0

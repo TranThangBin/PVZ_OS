@@ -1,7 +1,8 @@
 namespace Game
 {
-    public enum ProjectileID
+    public enum PlantWeaponID
     {
         Pea,
+        Fire
     }
 }
