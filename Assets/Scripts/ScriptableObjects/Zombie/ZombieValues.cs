@@ -12,4 +12,9 @@ namespace Game
             _ => throw new UnityException(),
         };
     }
+
+    public enum ZombieID
+    {
+        BasicZombie,
+    }
 }

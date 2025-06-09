@@ -44,7 +44,7 @@ namespace Game
                     DOTween.
                         Sequence(this).
                         Append(Attack(_projectile, rc.rigidbody)).
-                        Append(_cooldownTween);
+                        AppendCallback(() => _cooldownTween.Restart());
                 }
             }
         }

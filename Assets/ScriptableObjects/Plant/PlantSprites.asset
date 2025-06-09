@@ -20,3 +20,4 @@ MonoBehaviour:
   _potatoMine: {fileID: -3987954987491192329, guid: 0874958737ba31b41b76ac9d4f8ad9d2, type: 3}
   _melonPult: {fileID: -2489681068780864722, guid: 730d3593be2db544da1cc1d3f8e277ae, type: 3}
   _chomper: {fileID: 815495372769449193, guid: ec143c165a22714498c759c2ab91bea4, type: 3}
+  _fumeshroom: {fileID: -526466204510868202, guid: 3010b886af019cf4f8d3ae0c5ad370fe, type: 3}

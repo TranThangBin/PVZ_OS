@@ -36,3 +36,6 @@ MonoBehaviour:
   _chomper:
     _range: 10
     _bothDirection: 0
+  _fumeshroom:
+    _range: 30
+    _bothDirection: 0
