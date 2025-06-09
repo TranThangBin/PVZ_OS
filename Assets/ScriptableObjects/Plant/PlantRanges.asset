@@ -22,7 +22,7 @@ MonoBehaviour:
     _range: 100
     _bothDirection: 1
   _squash:
-    _range: 30
+    _range: 10
     _bothDirection: 1
   _japaleno:
     _range: 0
@@ -32,4 +32,7 @@ MonoBehaviour:
     _bothDirection: 0
   _melonPult:
     _range: 100
+    _bothDirection: 0
+  _chomper:
+    _range: 10
     _bothDirection: 0

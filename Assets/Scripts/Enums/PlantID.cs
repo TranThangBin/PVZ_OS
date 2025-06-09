@@ -9,5 +9,6 @@
         Japaleno,
         PotatoMine,
         MelonPult,
+        Chomper,
     }
 }

@@ -16,6 +16,7 @@ namespace Game
         {
             _cooldownTween = DOTween.
                 Sequence(this).
+                AppendCallback(() => _ready = false).
                 AppendInterval(_plantChargeTimes.GetValue(PlantID)).
                 AppendCallback(() => _ready = true).
                 SetAutoKill(false);
@@ -43,11 +44,7 @@ namespace Game
                     DOTween.
                         Sequence(this).
                         Append(Attack(_projectile, rc.rigidbody)).
-                        AppendCallback(() =>
-                        {
-                            _ready = false;
-                            _cooldownTween.Restart();
-                        });
+                        Append(_cooldownTween);
                 }
             }
         }

@@ -76,8 +76,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2016032299
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 3776312371561069292, guid: 224b3e475ccfe7e4da98c71bd79b4b73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -150,8 +150,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _plantWeaponDamages: {fileID: 11400000, guid: cea6629a197c1454fa3c9a93e7d87eb3, type: 2}
   _plantWeaponVelocities: {fileID: 11400000, guid: 07826659383b5504688b97aa46697f0d, type: 2}
-  _jumpForce: 50
   _rb: {fileID: 4559623749003496746}
+  _jumpForce: 50
 --- !u!50 &4559623749003496746
 Rigidbody2D:
   serializedVersion: 5

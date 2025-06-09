@@ -20,7 +20,7 @@ namespace Game
             {
                 float rayLength = _plantRanges.GetValue(PlantID).Range;
                 RaycastHit2D hit = Utils.
-                    Raycast(transform.position, Vector3.right, rayLength, LayerMask.GetMask("Enemy"), Color.red);
+                    Raycast(transform.position + Vector3.left * rayLength, Vector3.right, rayLength * 2, LayerMask.GetMask("Enemy"), Color.red);
 
                 if (hit.collider != null)
                 {

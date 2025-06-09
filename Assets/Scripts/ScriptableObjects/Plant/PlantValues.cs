@@ -11,6 +11,7 @@ namespace Game
         [SerializeField] private T _japaleno;
         [SerializeField] private T _potatoMine;
         [SerializeField] private T _melonPult;
+        [SerializeField] private T _chomper;
 
         public T GetValue(PlantID plantID) => plantID switch
         {
@@ -21,6 +22,7 @@ namespace Game
             PlantID.Japaleno => _japaleno,
             PlantID.PotatoMine => _potatoMine,
             PlantID.MelonPult => _melonPult,
+            PlantID.Chomper => _chomper,
             _ => throw new UnityException(),
         };
     }

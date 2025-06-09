@@ -41,8 +41,17 @@ TagManager:
   - name: Background
     uniqueID: 3676333889
     locked: 0
+  - name: SeedBank
+    uniqueID: 1246528603
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Weapon
+    uniqueID: 2278934997
+    locked: 0
+  - name: Sun
+    uniqueID: 4013794277
     locked: 0
   - name: Front
     uniqueID: 2359778567
