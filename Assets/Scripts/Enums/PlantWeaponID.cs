@@ -3,6 +3,7 @@ namespace Game
     public enum PlantWeaponID
     {
         Pea,
-        Fire
+        Fire,
+        Melon,
     }
 }

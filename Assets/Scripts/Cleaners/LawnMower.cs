@@ -13,7 +13,7 @@ namespace Game
 
         public void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.TryGetComponent(out HealthManager healthManager))
+            if (collision.collider.TryGetComponent(out HealthManager healthManager))
             {
                 healthManager.ReduceHealth(_damage);
                 if (_rb.linearVelocity == Vector2.zero)

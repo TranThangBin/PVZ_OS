@@ -6,7 +6,6 @@ namespace Game
     public class Sun : MonoBehaviour
     {
         [SerializeField] float _lifeTime;
-        [SerializeField] private float _velocity;
         [SerializeField] private SpriteRenderer _sunSprite;
 
         private void OnDestroy() => DOTween.Kill(this);
@@ -33,14 +32,6 @@ namespace Game
             return DOTween.Sequence(this).
                 AppendCallback(() => _sunSprite.color = Color.white).
                 OnComplete(() => Destroy(gameObject));
-        }
-
-        public float CalculateTime(Vector2 position, float velocityMultiplier)
-        {
-            float edge1 = Mathf.Abs(transform.position.y - position.y);
-            float edge2 = Mathf.Abs(transform.position.x - position.x);
-            float distance = Mathf.Sqrt(edge1 * edge1 + edge2 * edge2);
-            return distance / (_velocity * velocityMultiplier);
         }
     }
 }

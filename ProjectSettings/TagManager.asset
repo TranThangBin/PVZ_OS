@@ -8,17 +8,17 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Weapon
+  - 
   - Water
   - UI
   - Enemy
   - Ally
-  - Cleaner
+  - Weapon
   - Sun
   - GameOver
   - LawnCell
   - Selectable
-  - 
+  - Cleaner
   - 
   - 
   - 

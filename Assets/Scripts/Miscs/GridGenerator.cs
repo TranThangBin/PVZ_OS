@@ -12,7 +12,7 @@ namespace Game
         [ContextMenu("Generate grid")]
         private void GenerateGrid()
         {
-            EditorTimeUtils.CleanupChildren(transform);
+            Utils.CleanupChildren(transform);
 
             float width = _lawnEnd.position.x - _lawnStart.position.x;
             float height = _lawnStart.position.y - _lawnEnd.position.y;

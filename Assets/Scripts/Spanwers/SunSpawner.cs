@@ -28,7 +28,7 @@ namespace Game
                            StartLifeTime().
                            Prepend(sun.transform.
                                DOMoveY(targetY,
-                                   sun.CalculateTime(new(spawnPos.x, targetY), 1)
+                                   Utils.CalculateTime(sun.transform.position, new(spawnPos.x, targetY), 12)
                             ));
                    }).
                    SetLoops(-1);

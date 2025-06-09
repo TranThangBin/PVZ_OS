@@ -1,6 +1,5 @@
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Assertions;
 
 namespace Game
 {
@@ -26,11 +25,11 @@ namespace Game
             }
         }
 
-        private void Awake() => ActiveState = _unarmed;
         private void OnDestroy() => DOTween.Kill(this);
 
         private void Start()
         {
+            _activeState = _unarmed;
             DOTween.
                 Sequence(this).
                 AppendInterval(_plantChargeTimes.GetValue(PlantID)).
@@ -39,7 +38,7 @@ namespace Game
 
         private void OnCollisionStay2D(Collision2D collision)
         {
-            if (ActiveState == _armed && collision.gameObject.TryGetComponent(out HealthManager zombieHealth))
+            if (ActiveState == _armed && collision.collider.TryGetComponent(out HealthManager zombieHealth))
             {
                 zombieHealth.ReduceHealth(_plantDamages.GetValue(PlantID));
                 Destroy(gameObject);
@@ -49,7 +48,6 @@ namespace Game
         public override void OnDamageTaken(HealthManager sender)
         {
             SpriteRenderer sr = ActiveState.GetComponent<SpriteRenderer>();
-            Assert.IsNotNull(sr);
             sender.BlinkSpriteColor(sr);
         }
     }

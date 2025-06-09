@@ -8,5 +8,6 @@
         Squash,
         Japaleno,
         PotatoMine,
+        MelonPult,
     }
 }

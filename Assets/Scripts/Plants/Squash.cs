@@ -19,7 +19,7 @@ namespace Game
             if (!DOTween.IsTweening(this))
             {
                 float rayLength = _plantRanges.GetValue(PlantID).Range;
-                RaycastHit2D hit = RunTimeUtils.
+                RaycastHit2D hit = Utils.
                     Raycast(transform.position, Vector3.right, rayLength, LayerMask.GetMask("Enemy"), Color.red);
 
                 if (hit.collider != null)
@@ -36,7 +36,7 @@ namespace Game
 
         private void OnCollisionStay2D(Collision2D collision)
         {
-            if (_kill && collision.gameObject.TryGetComponent(out HealthManager zombieHealth))
+            if (_kill && collision.collider.TryGetComponent(out HealthManager zombieHealth))
             {
                 zombieHealth.ReduceHealth(_plantDamages.GetValue(PlantID));
                 Destroy(gameObject);

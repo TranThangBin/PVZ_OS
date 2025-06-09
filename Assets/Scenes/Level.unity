@@ -3794,10 +3794,7 @@ MonoBehaviour:
   _sunDisplay: {fileID: 148160935}
   _plantSelectorGrid: {fileID: 1119732815}
   _seedPacket: {fileID: 3673234174439415083, guid: 802a62eaa7760754098d44c83ca92ae7, type: 3}
-  _plants:
-  - {fileID: 5532173415143523966, guid: 4b4f64d40c9ba5d4f9b952a4fa98c629, type: 3}
-  - {fileID: 2426910372618211863, guid: 665836a7e0743b7439e799846b45b5e6, type: 3}
-  - {fileID: 4076101874668635763, guid: 698fa4de0ffeda248bfb5a544a63a326, type: 3}
+  _seedBank: {fileID: 11400000, guid: 9f187027d6cdfb34d89e6b4046ad2ba1, type: 2}
 --- !u!4 &1367410787
 Transform:
   m_ObjectHideFlags: 0

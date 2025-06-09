@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Assertions;
 using UnityEngine.Events;
 
 namespace Game
@@ -8,8 +7,11 @@ namespace Game
         HealthManager.IOnDamageTaken, HealthManager.IDestroyOnOutOfHealth
     {
         [SerializeField] private PlantID _plantID;
+        [SerializeField] private PlantHealths _plantHealths;
 
         public PlantID PlantID { get => _plantID; }
+
+        private void Awake() => gameObject.AddComponent<HealthManager>().InitHealth(_plantHealths.GetValue(_plantID));
 
         public void Planting(Transform location, UnityAction<GameObject> onSuccess)
         {
@@ -23,7 +25,6 @@ namespace Game
         public virtual void OnDamageTaken(HealthManager sender)
         {
             SpriteRenderer sr = sender.GetComponent<SpriteRenderer>();
-            Assert.IsNotNull(sr);
             sender.BlinkSpriteColor(sr);
         }
     }

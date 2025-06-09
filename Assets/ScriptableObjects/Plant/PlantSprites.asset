@@ -18,3 +18,4 @@ MonoBehaviour:
   _squash: {fileID: -3879942837491269518, guid: 4a7c7d03fb26eb049aa242887f64410f, type: 3}
   _japaleno: {fileID: 1765607413124887585, guid: dc258f3076376e14ba062d10e3e30125, type: 3}
   _potatoMine: {fileID: -3987954987491192329, guid: 0874958737ba31b41b76ac9d4f8ad9d2, type: 3}
+  _melonPult: {fileID: -2489681068780864722, guid: 730d3593be2db544da1cc1d3f8e277ae, type: 3}

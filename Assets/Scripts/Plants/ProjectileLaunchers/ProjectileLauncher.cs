@@ -3,31 +3,22 @@ using UnityEngine;
 
 namespace Game
 {
-    public abstract class Attacker : Plant
+    public abstract class ProjectileLauncher : Plant
     {
         [SerializeField] private PlantChargeTimes _plantChargeTimes;
-        [SerializeField] PlantRanges _plantRanges;
+        [SerializeField] private PlantRanges _plantRanges;
         [SerializeField] private GameObject _projectile;
 
-        private bool _ready = false;
-        private Tween _attackTween;
         private Tween _cooldownTween;
+        private bool _ready;
 
         private void Start()
         {
             _cooldownTween = DOTween.
-                Sequence().
+                Sequence(this).
                 AppendInterval(_plantChargeTimes.GetValue(PlantID)).
                 AppendCallback(() => _ready = true).
                 SetAutoKill(false);
-
-            _attackTween = DOTween.
-                Sequence().
-                AppendCallback(() => _ready = false).
-                Append(Attack(_projectile)).
-                AppendCallback(() => _cooldownTween.Restart()).
-                SetAutoKill(false).
-                Pause();
         }
 
         private void FixedUpdate()
@@ -36,29 +27,33 @@ namespace Game
             {
                 float rayOffset = 0;
                 float rayLength = _plantRanges.GetValue(PlantID).Range;
+
                 if (_plantRanges.GetValue(PlantID).BothDirection)
                 {
                     rayOffset = rayLength;
                     rayLength *= 2;
                 }
 
-                RaycastHit2D rc = RunTimeUtils.Raycast(
+                RaycastHit2D rc = Utils.Raycast(
                     transform.position + Vector3.left * rayOffset,
                     Vector2.right, rayLength, LayerMask.GetMask("Enemy"), Color.red);
 
                 if (rc.collider != null)
                 {
-                    _attackTween.Restart();
+                    DOTween.
+                        Sequence(this).
+                        Append(Attack(_projectile, rc.rigidbody)).
+                        AppendCallback(() =>
+                        {
+                            _ready = false;
+                            _cooldownTween.Restart();
+                        });
                 }
             }
         }
 
-        private void OnDestroy()
-        {
-            _attackTween.Kill();
-            _cooldownTween.Kill();
-        }
+        private void OnDestroy() => DOTween.Kill(this);
 
-        protected abstract Tween Attack(GameObject projectile);
+        protected abstract Tween Attack(GameObject projectile, Rigidbody2D target);
     }
 }

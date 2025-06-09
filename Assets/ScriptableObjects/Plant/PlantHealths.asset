@@ -9,9 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2f535e30c74c5a48b71b138d57c2d91, type: 3}
-  m_Name: PlantWeaponVelocities
+  m_Script: {fileID: 11500000, guid: 11cccde8ca5e3654ea4ffb5cc1268b6c, type: 3}
+  m_Name: PlantHealths
   m_EditorClassIdentifier: 
-  _pea: 50
-  _fire: 0
-  _melon: 20
+  _sunFlower: 5
+  _peaShooter: 5
+  _splitPea: 5
+  _squash: 8
+  _japaleno: 8
+  _potatoMine: 5
+  _melonPult: 7

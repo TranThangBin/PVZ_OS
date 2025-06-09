@@ -11,7 +11,7 @@ namespace Game
         [SerializeField] private TextMesh _sunDisplay;
         [SerializeField] private Transform _plantSelectorGrid;
         [SerializeField] private SeedPacket _seedPacket;
-        [SerializeField] private Plant[] _plants;
+        [SerializeField] private SeedBank _seedBank;
 
         private Tween _invalidSelectAnimation;
         private readonly UnityEvent<int> _onSunStoreChange = new();
@@ -51,10 +51,10 @@ namespace Game
 
         private void Awake()
         {
-            for (int i = 0; i < _plants.Length && i < _plantSelectorGrid.transform.childCount; i++)
+            for (int i = 0; i < _seedBank.Plants.Length && i < _plantSelectorGrid.transform.childCount; i++)
             {
                 SeedPacket seedPacket = Instantiate(_seedPacket, _plantSelectorGrid.transform.GetChild(i));
-                seedPacket.SetPlant(_plants[i]);
+                seedPacket.SetPlant(_seedBank.Plants[i]);
                 _onSunStoreChange.AddListener(seedPacket.OnSunStoreChange);
             }
         }
@@ -131,7 +131,8 @@ namespace Game
                     ToTheEnd().
                     PrependCallback(() => hit.collider.enabled = false).
                     Append(sun.transform.
-                        DOMove(_sunDisplay.transform.position, sun.CalculateTime(_sunDisplay.transform.position, 6)).
+                        DOMove(_sunDisplay.transform.position,
+                            Utils.CalculateTime(sun.transform.position, _sunDisplay.transform.position, 82)).
                         OnComplete(() => SunStore += 25));
             }
         }

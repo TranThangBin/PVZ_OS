@@ -30,3 +30,6 @@ MonoBehaviour:
   _potatoMine:
     _range: 0
     _bothDirection: 0
+  _melonPult:
+    _range: 100
+    _bothDirection: 0

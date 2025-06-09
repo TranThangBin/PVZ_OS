@@ -20,6 +20,8 @@ namespace Game
             }
         }
 
+        private bool _init;
+
         private readonly UnityEvent<HealthManager> _onOutOfHealth = new();
         private readonly UnityEvent<HealthManager> _onDamageTaken = new();
 
@@ -39,6 +41,7 @@ namespace Game
             {
                 _onDamageTaken.AddListener(handler.OnDamageTaken);
             }
+            _init = true;
         }
 
         private void OnDestroy() => DOTween.Kill(this);
@@ -63,6 +66,12 @@ namespace Game
                 SetLoops(2, LoopType.Yoyo).
                 OnKill(() => sr.color = Color.white).
                 SetId(this);
+        }
+
+        public void InitHealth(float amount)
+        {
+            if (!_init) { Hp = amount; }
+            _init = true;
         }
 
         public interface IDestroyOnOutOfHealth { }

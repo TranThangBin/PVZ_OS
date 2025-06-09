@@ -1,6 +1,5 @@
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Assertions;
 
 namespace Game
 {
@@ -23,7 +22,7 @@ namespace Game
             {
                 float rayLength = _zombieRanges.GetValue(_zombieID);
 
-                RaycastHit2D hit = RunTimeUtils.Raycast(transform.position, Vector2.left, rayLength, LayerMask.GetMask("Ally"), Color.black);
+                RaycastHit2D hit = Utils.Raycast(transform.position, Vector2.left, rayLength, LayerMask.GetMask("Ally"), Color.black);
 
                 if (hit.collider != null)
                 {
@@ -49,7 +48,6 @@ namespace Game
         public void OnDamageTaken(HealthManager sender)
         {
             SpriteRenderer sr = sender.GetComponent<SpriteRenderer>();
-            Assert.IsNotNull(sr);
             sender.BlinkSpriteColor(sr);
         }
     }
