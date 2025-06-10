@@ -6,8 +6,6 @@ namespace Game
     public class Melon : MonoBehaviour
     {
         [SerializeField] private GameProperties _gameProps;
-        [SerializeField] private Rigidbody2D _rb;
-        [SerializeField] private float _jumpForce;
 
         private MelonProperties MelonProps => _gameProps.PlantWeapons.Melon;
 
@@ -19,9 +17,10 @@ namespace Game
             DOTween.
                 Sequence(this).
                 Append(transform.
-                    DOJump(target.position, _jumpForce, 1, travelTime).
+                    DOJump(target.position, MelonProps.ThrowForce, 1, travelTime).
                     Join(transform.DORotate(Vector3.back * 90, travelTime)).
-                    SetEase(Ease.OutBack));
+                    SetEase(Ease.Linear)).
+                OnComplete(() => Destroy(gameObject));
         }
 
         private void OnCollisionEnter2D(Collision2D collision)

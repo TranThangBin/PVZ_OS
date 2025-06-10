@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 153154346372897325}
   - component: {fileID: 4936941814430626789}
   - component: {fileID: 2242680074110977977}
-  - component: {fileID: 4559623749003496746}
   m_Layer: 7
   m_Name: Melon
   m_TagString: Untagged
@@ -77,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2016032299
-  m_SortingLayer: 1
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 3776312371561069292, guid: 224b3e475ccfe7e4da98c71bd79b4b73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -149,32 +148,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameProps: {fileID: 11400000, guid: 23a51bfab3853a34c9ea3bcabeba0bd6, type: 2}
-  _rb: {fileID: 4559623749003496746}
+  _rb: {fileID: 0}
   _jumpForce: 50
---- !u!50 &4559623749003496746
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5695234631569626275}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 1
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0

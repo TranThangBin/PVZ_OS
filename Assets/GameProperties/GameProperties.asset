@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24e515cac1bc054f934005d90a15725, type: 3}
   m_Name: GameProperties
   m_EditorClassIdentifier: 
-  InitialSun: 50
+  InitialSun: 300
   SeedPacket: {fileID: 3673234174439415083, guid: 802a62eaa7760754098d44c83ca92ae7, type: 3}
   SeedBank:
   - {fileID: 5532173415143523966, guid: 4b4f64d40c9ba5d4f9b952a4fa98c629, type: 3}
@@ -75,6 +75,7 @@ MonoBehaviour:
       Damage: 90
       DelayTime: 1
       VisionLength: 10
+      JumpForce: 5
     Jalapeno:
       PlantProps:
         Cost: 125
@@ -107,8 +108,9 @@ MonoBehaviour:
     Fire:
       Damage: 90
     Melon:
-      Damage: 0
-      FlySpeed: 0
+      Damage: 4
+      FlySpeed: 35
+      ThrowForce: 35
     Fume:
       Damage: 1
   Zombies:
@@ -117,4 +119,4 @@ MonoBehaviour:
       MovementSpeed: 1.4
       AttackDamage: 1
       AttackRange: 3
-      AttackCooldown: 0.5
+      AttackCooldown: 0.75

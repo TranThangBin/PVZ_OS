@@ -55,6 +55,7 @@ namespace Game
         public float Damage;
         public float DelayTime;
         public float VisionLength;
+        public float JumpForce;
     }
 
     [Serializable]

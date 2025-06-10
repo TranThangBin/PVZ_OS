@@ -47,6 +47,9 @@ TagManager:
   - name: Enemy
     uniqueID: 2814913991
     locked: 0
+  - name: SeedPacket
+    uniqueID: 3775449263
+    locked: 0
   - name: Weapon
     uniqueID: 2278934997
     locked: 0
@@ -55,9 +58,6 @@ TagManager:
     locked: 0
   - name: Sun
     uniqueID: 4013794277
-    locked: 0
-  - name: Front
-    uniqueID: 2359778567
     locked: 0
   m_RenderingLayers:
   - Default

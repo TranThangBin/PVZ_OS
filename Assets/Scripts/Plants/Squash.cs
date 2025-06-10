@@ -5,8 +5,6 @@ namespace Game
 {
     public class Squash : Plant
     {
-        [SerializeField] private float _jumpForce;
-
         private SquashProperties SquashProps => PlantsProps.Squash;
         private bool _kill = false;
 
@@ -25,7 +23,7 @@ namespace Game
                 if (hit.collider != null)
                 {
                     transform.
-                        DOJump(hit.collider.transform.position, _jumpForce, 1, 2).
+                        DOJump(hit.collider.transform.position, SquashProps.JumpForce, 1, 2).
                         SetEase(Ease.InBack).
                         AppendCallback(() => _kill = true).
                         PrependInterval(SquashProps.DelayTime).

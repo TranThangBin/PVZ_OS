@@ -29,6 +29,7 @@ namespace Game
     {
         public int Damage;
         public float FlySpeed;
+        public float ThrowForce;
     }
 
     [Serializable]
