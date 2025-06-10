@@ -5,21 +5,20 @@ namespace Game
 {
     public class ZombieSpawner : MonoBehaviour
     {
-        [SerializeField] private int _spawnTime;
-        [SerializeField] private int _rowCount;
-        [SerializeField] private GameObject _zombie;
+        [SerializeField] private SpawnersProperties _spawnerProps;
         [SerializeField] private Transform _spawnYLocationStart;
         [SerializeField] private Transform _spawnYLocationEnd;
 
+        private ZombieSpanwerProperties ZombieSpawnerProps => _spawnerProps.ZombieSpawner;
         private Vector2[] _spawnLocations;
 
         private void Awake()
         {
-            _spawnLocations = new Vector2[_rowCount];
+            _spawnLocations = new Vector2[ZombieSpawnerProps.RowCount];
             float distance = _spawnYLocationStart.position.y - _spawnYLocationEnd.position.y;
 
 
-            float height = distance / _rowCount;
+            float height = distance / ZombieSpawnerProps.RowCount;
             for (int i = 0; i < _spawnLocations.Length; i++)
             {
                 _spawnLocations[i] = new(transform.position.x, _spawnYLocationStart.position.y - height * (i + 1) + height / 2);
@@ -30,11 +29,11 @@ namespace Game
         {
             DOTween.
                 Sequence(this).
-                AppendInterval(_spawnTime).
+                AppendInterval(ZombieSpawnerProps.SpawnTime).
                 AppendCallback(() =>
                 {
                     int idx = Random.Range(0, _spawnLocations.Length);
-                    Instantiate(_zombie, _spawnLocations[idx], Quaternion.identity, transform);
+                    Instantiate(ZombieSpawnerProps.BasicZombie, _spawnLocations[idx], Quaternion.identity, transform);
                 }).
                 SetLoops(-1);
         }

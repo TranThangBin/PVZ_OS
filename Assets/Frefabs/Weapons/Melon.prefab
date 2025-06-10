@@ -147,6 +147,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d118e41902aa9c743afcfbadb42879fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameProps: {fileID: 11400000, guid: 23a51bfab3853a34c9ea3bcabeba0bd6, type: 2}
-  _rb: {fileID: 0}
-  _jumpForce: 50
+  _plantWeaponsProps: {fileID: 11400000, guid: d678a9dfe41ba4e45a80ac5433d510e2, type: 2}

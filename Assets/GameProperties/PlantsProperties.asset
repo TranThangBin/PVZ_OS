@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed0e639b2e52da043be9084c218f3c45, type: 3}
+  m_Name: PlantsProperties
+  m_EditorClassIdentifier: 
+  Sunflower:
+    PlantProps:
+      Cost: 50
+      Health: 6
+      Cooldown: 7.5
+      Sprite: {fileID: -256329436847572505, guid: 1c6595f11725368469b1102d78e124d5, type: 3}
+    SunGenerateTime: 24
+    Sun: {fileID: 864223831861094711, guid: b598fe2eaa925ad42a859425d519b571, type: 3}
+  Peashooter:
+    PlantProps:
+      Cost: 100
+      Health: 6
+      Cooldown: 7.5
+      Sprite: {fileID: -3070453432627086885, guid: 90916fa7fe267aa41a7ecb2606205f64, type: 3}
+    VisionLength: 100
+    AttackRechargeTime: 1.5
+    Projectile: {fileID: 1609563426096356370, guid: b54c8b6de00b64b4990a88a1f28c6a28, type: 3}
+  SplitPea:
+    PlantProps:
+      Cost: 125
+      Health: 6
+      Cooldown: 7.5
+      Sprite: {fileID: 4326361539532260895, guid: d8e419abf9cfa2c48be6853cf46170a9, type: 3}
+    VisionLength: 100
+    AttackRechargeTime: 1.5
+    Projectile: {fileID: 1609563426096356370, guid: b54c8b6de00b64b4990a88a1f28c6a28, type: 3}
+  Fumeshroom:
+    PlantProps:
+      Cost: 75
+      Health: 6
+      Cooldown: 7.5
+      Sprite: {fileID: -526466204510868202, guid: 3010b886af019cf4f8d3ae0c5ad370fe, type: 3}
+    VisionLength: 30
+    AttackRechargeTime: 1.5
+    Projectile: {fileID: 5444585552731047320, guid: 69310e8456fee914ba85627974fa36b3, type: 3}
+  MelonPult:
+    PlantProps:
+      Cost: 300
+      Health: 6
+      Cooldown: 7.5
+      Sprite: {fileID: -2489681068780864722, guid: 730d3593be2db544da1cc1d3f8e277ae, type: 3}
+    VisionLength: 100
+    AttackRechargeTime: 3
+    Projectile: {fileID: 5695234631569626275, guid: 9e9b83aa1fc47134b9e9d21d0a404db1, type: 3}
+  Squash:
+    PlantProps:
+      Cost: 50
+      Health: 6
+      Cooldown: 30
+      Sprite: {fileID: -3879942837491269518, guid: 4a7c7d03fb26eb049aa242887f64410f, type: 3}
+    Damage: 90
+    DelayTime: 1
+    VisionLength: 10
+    JumpForce: 5
+  Jalapeno:
+    PlantProps:
+      Cost: 125
+      Health: 6
+      Cooldown: 50
+      Sprite: {fileID: 1765607413124887585, guid: dc258f3076376e14ba062d10e3e30125, type: 3}
+    DelayTime: 1
+    Fire: {fileID: 715590707022245607, guid: 4bf8be5780705d646ae7bf141c505837, type: 3}
+  PotatoMine:
+    PlantProps:
+      Cost: 25
+      Health: 6
+      Cooldown: 30
+      Sprite: {fileID: -3987954987491192329, guid: 0874958737ba31b41b76ac9d4f8ad9d2, type: 3}
+    Damage: 90
+    GrowTime: 15
+  Chomper:
+    PlantProps:
+      Cost: 150
+      Health: 6
+      Cooldown: 7.5
+      Sprite: {fileID: 815495372769449193, guid: ec143c165a22714498c759c2ab91bea4, type: 3}
+    Damage: 120
+    ChewTime: 42
+    VisionLength: 0

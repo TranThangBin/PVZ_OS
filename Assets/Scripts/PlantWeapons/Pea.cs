@@ -5,9 +5,9 @@ namespace Game
     [RequireComponent(typeof(Rigidbody2D))]
     public class Pea : MonoBehaviour
     {
-        [SerializeField] private GameProperties _gameProps;
+        [SerializeField] private PlantWeaponsProperties _plantWeaponsProps;
 
-        private PeaProperties PeaProps => _gameProps.PlantWeapons.Pea;
+        private PeaProperties PeaProps => _plantWeaponsProps.Pea;
 
         private Rigidbody2D _rb;
 
@@ -19,7 +19,7 @@ namespace Game
         {
             if (collision.collider.TryGetComponent(out HealthManager healthManager))
             {
-                healthManager.ReduceHealth(PeaProps.Damage);
+                healthManager.ReduceHealth(PeaProps.PlantWeaponProps.Damage);
                 Destroy(gameObject);
             }
         }

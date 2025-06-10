@@ -1,12 +1,9 @@
 using DG.Tweening;
-using UnityEngine;
 
 namespace Game
 {
     public class Sunflower : Plant
     {
-        [SerializeField] private Sun _sun;
-
         private SunflowerProperties SunflowerProps => PlantsProps.Sunflower;
 
         public override PlantProperties PlantProps => SunflowerProps.PlantProps;
@@ -20,7 +17,7 @@ namespace Game
                 AppendInterval(SunflowerProps.SunGenerateTime).
                 AppendCallback(() =>
                 {
-                    Sun sun = Instantiate(_sun, transform.parent);
+                    Sun sun = Instantiate(SunflowerProps.Sun, transform.parent);
                     sun.
                         StartLifeTime().
                         Prepend(sun.transform.DOJump(transform.position, 2, 1, 1));

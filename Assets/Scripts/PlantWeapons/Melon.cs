@@ -5,9 +5,9 @@ namespace Game
 {
     public class Melon : MonoBehaviour
     {
-        [SerializeField] private GameProperties _gameProps;
+        [SerializeField] private PlantWeaponsProperties _plantWeaponsProps;
 
-        private MelonProperties MelonProps => _gameProps.PlantWeapons.Melon;
+        private MelonProperties MelonProps => _plantWeaponsProps.Melon;
 
         private void OnDestroy() => DOTween.Kill(this);
 
@@ -27,7 +27,7 @@ namespace Game
         {
             if (collision.collider.TryGetComponent(out HealthManager zombieHealth))
             {
-                zombieHealth.ReduceHealth(MelonProps.Damage);
+                zombieHealth.ReduceHealth(MelonProps.PlantWeaponProps.Damage);
                 Destroy(gameObject);
             }
         }

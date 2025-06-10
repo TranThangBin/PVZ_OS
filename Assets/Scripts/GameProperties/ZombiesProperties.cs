@@ -1,9 +1,10 @@
 using System;
+using UnityEngine;
 
 namespace Game
 {
-    [Serializable]
-    public struct ZombiesProperties
+    [CreateAssetMenu(menuName = "Scriptable Objects/Zombies Properties")]
+    public class ZombiesProperties : ScriptableObject
     {
         public BasicZombieProperties BasicZombie;
     }

@@ -6,7 +6,7 @@ namespace Game
 {
     public class GameController : MonoBehaviour
     {
-        [SerializeField] private GameProperties _gameProps;
+        [SerializeField] private MiscProperties _gameProps;
         [SerializeField] private TextMesh _sunDisplay;
         [SerializeField] private Transform _plantSelectorGrid;
 

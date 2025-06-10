@@ -3,18 +3,20 @@ using UnityEngine;
 
 namespace Game
 {
+    [RequireComponent(typeof(Rigidbody2D))]
     public class BasicZombie : MonoBehaviour,
         HealthManager.IOnDamageTaken, HealthManager.IDestroyOnOutOfHealth
     {
-        [SerializeField] private GameProperties _gameProps;
-        [SerializeField] private Rigidbody2D _rb;
+        [SerializeField] private ZombiesProperties _zombiesProps;
 
-        private BasicZombieProperties BasicZombieProps => _gameProps.Zombies.BasicZombie;
+        private BasicZombieProperties BasicZombieProps => _zombiesProps.BasicZombie;
+        private Rigidbody2D _rb;
 
         private void OnDestroy() => DOTween.Kill(this);
 
         private void Start()
         {
+            _rb = GetComponent<Rigidbody2D>();
             _rb.linearVelocity = BasicZombieProps.MovementSpeed * Vector2.left;
             gameObject.AddComponent<HealthManager>().InitHealth(BasicZombieProps.Health);
         }

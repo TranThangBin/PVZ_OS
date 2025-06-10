@@ -8,9 +8,32 @@ namespace Game
         [SerializeField] private Transform _lawnEnd;
         [SerializeField] private int _lawnRowCount;
         [SerializeField] private int _lawnColumnCount;
+        [SerializeField] private GameObject _object;
 
-        [ContextMenu("Generate grid")]
-        private void GenerateGrid()
+        [ContextMenu("Generate Objects")]
+        private void GenerateObjects()
+        {
+            if (_object == null) { return; }
+
+            Utils.CleanupChildren(transform);
+
+            float width = _lawnEnd.position.x - _lawnStart.position.x;
+            float height = _lawnStart.position.y - _lawnEnd.position.y;
+
+            Vector2 cellSize = new(width / _lawnColumnCount, height / _lawnRowCount);
+
+            for (int row = 0; row < _lawnRowCount; row++)
+            {
+                for (int col = 0; col < _lawnColumnCount; col++)
+                {
+                    Vector3 instancePos = _lawnStart.position + new Vector3(cellSize.x * col + cellSize.x / 2, -(cellSize.y * row + cellSize.y / 2));
+                    Instantiate(_object, instancePos, Quaternion.identity, transform);
+                }
+            }
+        }
+
+        [ContextMenu("Generate Colliders")]
+        private void GenerateColliders()
         {
             Utils.CleanupChildren(transform);
 

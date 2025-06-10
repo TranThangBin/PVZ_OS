@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d24e515cac1bc054f934005d90a15725, type: 3}
-  m_Name: GameProperties
+  m_Name: MiscProperties
   m_EditorClassIdentifier: 
-  InitialSun: 300
+  InitialSun: 50
   SeedPacket: {fileID: 3673234174439415083, guid: 802a62eaa7760754098d44c83ca92ae7, type: 3}
   SeedBank:
   - {fileID: 5532173415143523966, guid: 4b4f64d40c9ba5d4f9b952a4fa98c629, type: 3}
@@ -21,6 +21,15 @@ MonoBehaviour:
   - {fileID: 4076101874668635763, guid: 698fa4de0ffeda248bfb5a544a63a326, type: 3}
   - {fileID: 3742730945259845097, guid: 9f703f4ac66d4354286a71aebef2687b, type: 3}
   - {fileID: 7526974212239360823, guid: 1cbad56ee6aca3543aa9571e43e48cba, type: 3}
+  Spawners:
+    ZombieSpawner:
+      SpawnTime: 15
+      RowCount: 5
+      BasicZombie: {fileID: 4012023038547497566, guid: 7ea6606f23f18ed47ada78bcea1fddc1, type: 3}
+    SunSpanwer:
+      SpawnTime: 10
+      Padding: {x: 0, y: 30}
+      Sun: {fileID: 864223831861094711, guid: b598fe2eaa925ad42a859425d519b571, type: 3}
   Plants:
     Sunflower:
       PlantProps:
@@ -103,16 +112,24 @@ MonoBehaviour:
       VisionLength: 10
   PlantWeapons:
     Pea:
-      Damage: 1
+      PlantWeaponProps:
+        DestroyOnCollision: 1
+        Damage: 1
       FlySpeed: 50
     Fire:
-      Damage: 90
+      PlantWeaponProps:
+        DestroyOnCollision: 0
+        Damage: 90
     Melon:
-      Damage: 4
+      PlantWeaponProps:
+        DestroyOnCollision: 1
+        Damage: 4
       FlySpeed: 35
       ThrowForce: 35
     Fume:
-      Damage: 1
+      PlantWeaponProps:
+        DestroyOnCollision: 0
+        Damage: 0
   Zombies:
     BasicZombie:
       Health: 10

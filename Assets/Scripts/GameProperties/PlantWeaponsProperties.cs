@@ -1,9 +1,10 @@
 using System;
+using UnityEngine;
 
 namespace Game
 {
-    [Serializable]
-    public struct PlantWeaponsProperties
+    [CreateAssetMenu(menuName = "Scriptable Objects/Plant Weapons Properties")]
+    public class PlantWeaponsProperties : ScriptableObject
     {
         public PeaProperties Pea;
         public FireProperties Fire;
@@ -12,22 +13,29 @@ namespace Game
     }
 
     [Serializable]
+    public struct PlantWeaponProperties
+    {
+        public bool DestroyOnCollision;
+        public int Damage;
+    }
+
+    [Serializable]
     public struct PeaProperties
     {
-        public int Damage;
+        public PlantWeaponProperties PlantWeaponProps;
         public float FlySpeed;
     }
 
     [Serializable]
     public struct FireProperties
     {
-        public int Damage;
+        public PlantWeaponProperties PlantWeaponProps;
     }
 
     [Serializable]
     public struct MelonProperties
     {
-        public int Damage;
+        public PlantWeaponProperties PlantWeaponProps;
         public float FlySpeed;
         public float ThrowForce;
     }
@@ -35,6 +43,6 @@ namespace Game
     [Serializable]
     public struct FumeProperties
     {
-        public int Damage;
+        public PlantWeaponProperties PlantWeaponProps;
     }
 }

@@ -6,11 +6,10 @@ namespace Game
     public abstract class Plant : MonoBehaviour,
         HealthManager.IOnDamageTaken, HealthManager.IDestroyOnOutOfHealth
     {
-        [SerializeField] private GameProperties _gameProps;
+        [SerializeField] private PlantsProperties _plantsProps;
 
+        public PlantsProperties PlantsProps => _plantsProps;
         public abstract PlantProperties PlantProps { get; }
-
-        public PlantsProperties PlantsProps => _gameProps.Plants;
 
         private void Awake() => gameObject.AddComponent<HealthManager>().InitHealth(PlantProps.Health);
 

@@ -8,8 +8,8 @@ namespace Game
     using PeashooterProperties = ProjectileLauncherProperties;
     using SplitPeaProperties = ProjectileLauncherProperties;
 
-    [Serializable]
-    public struct PlantsProperties
+    [CreateAssetMenu(menuName = "Scriptable Objects/Plants Properties")]
+    public class PlantsProperties : ScriptableObject
     {
         public SunflowerProperties Sunflower;
         public PeashooterProperties Peashooter;

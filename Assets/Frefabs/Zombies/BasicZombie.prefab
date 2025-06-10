@@ -74,8 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98fd5bb54cb67494c90c2c15edb617cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameProps: {fileID: 11400000, guid: 23a51bfab3853a34c9ea3bcabeba0bd6, type: 2}
-  _rb: {fileID: 6539117250195111013}
+  _zombiesProps: {fileID: 11400000, guid: 392fac38b750f614395b393653647993, type: 2}
 --- !u!61 &1859621238738543903
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -120,7 +119,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 8, y: 8}
+  m_Size: {x: 10.197203, y: 15.998215}
   m_EdgeRadius: 0
 --- !u!212 &2238726059977035278
 SpriteRenderer:
@@ -164,7 +163,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1480053305
-  m_SortingLayer: -2
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 6019453725058403666, guid: c55849b6993719d4f99cc27e0ae343a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

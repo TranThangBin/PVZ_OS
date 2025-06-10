@@ -5,23 +5,23 @@ namespace Game
 {
     public class SunSpawner : MonoBehaviour
     {
-        [SerializeField] private float _sunDropTime;
-        [SerializeField] private float _padY;
-        [SerializeField] private Sun _sun;
+        [SerializeField] private SpawnersProperties _spawnerProps;
         [SerializeField] private Transform _sunSpawnStart;
         [SerializeField] private Transform _sunSpawnEnd;
+
+        private SunSpanwerProperties SunSpawnerProps => _spawnerProps.SunSpanwer;
 
         private void Start()
         {
             DOTween.
                    Sequence(this).
-                   AppendInterval(_sunDropTime).
+                   AppendInterval(SunSpawnerProps.SpawnTime).
                    AppendCallback(() =>
                    {
-                       Vector3 spawnPos = new(Random.Range(_sunSpawnStart.position.x, _sunSpawnEnd.position.x),
-                            _sunSpawnStart.position.y + _padY);
+                       Vector2 spawnPos = new Vector2(Random.Range(_sunSpawnStart.position.x, _sunSpawnEnd.position.x),
+                            _sunSpawnStart.position.y) + SunSpawnerProps.Padding;
 
-                       Sun sun = Instantiate(_sun, spawnPos, Quaternion.identity, transform);
+                       Sun sun = Instantiate(SunSpawnerProps.Sun, spawnPos, Quaternion.identity, transform);
 
                        float targetY = Random.Range(_sunSpawnStart.position.y, _sunSpawnEnd.position.y);
                        sun.
