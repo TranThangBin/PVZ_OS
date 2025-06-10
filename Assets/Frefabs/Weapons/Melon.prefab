@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 153154346372897325}
   - component: {fileID: 4936941814430626789}
   - component: {fileID: 2242680074110977977}
+  - component: {fileID: 8599312332176190270}
   m_Layer: 7
   m_Name: Melon
   m_TagString: Untagged
@@ -147,4 +148,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d118e41902aa9c743afcfbadb42879fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8599312332176190270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5695234631569626275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c2c7b33ca16444bba440ff533cb95d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _plantWeaponID: 2
   _plantWeaponsProps: {fileID: 11400000, guid: d678a9dfe41ba4e45a80ac5433d510e2, type: 2}

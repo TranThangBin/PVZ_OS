@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace Game
 {
-    public class MelonPult : ProjectileLauncher
+    public class MelonPult : WeaponizedPlant
     {
-        protected override ProjectileLauncherProperties ProjectileLauncherProps => PlantsProps.MelonPult;
+        protected override WeaponizedPlantProperties WeaponizedPlantProps => PlantsProps.MelonPult;
 
         protected override Tween Attack(GameObject projectile, Rigidbody2D target) => DOTween.
             Sequence().

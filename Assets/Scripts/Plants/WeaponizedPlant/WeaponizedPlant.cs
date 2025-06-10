@@ -3,20 +3,19 @@ using UnityEngine;
 
 namespace Game
 {
-    public abstract class ProjectileLauncher : Plant
+    public abstract class WeaponizedPlant : Plant
     {
         private Tween _cooldownTween;
         private bool _ready;
 
-        public override PlantProperties PlantProps => ProjectileLauncherProps.PlantProps;
-        protected abstract ProjectileLauncherProperties ProjectileLauncherProps { get; }
+        public override PlantProperties PlantProps => WeaponizedPlantProps.PlantProps;
+        protected abstract WeaponizedPlantProperties WeaponizedPlantProps { get; }
 
         private void Start()
         {
             _cooldownTween = DOTween.
                 Sequence(this).
-                AppendCallback(() => _ready = false).
-                AppendInterval(ProjectileLauncherProps.AttackRechargeTime).
+                AppendInterval(WeaponizedPlantProps.AttackRechargeTime).
                 AppendCallback(() => _ready = true).
                 SetAutoKill(false).
                 Pause();
@@ -37,8 +36,9 @@ namespace Game
                 {
                     DOTween.
                         Sequence(this).
-                        Append(Attack(ProjectileLauncherProps.Projectile, rc.rigidbody)).
+                        Append(Attack(WeaponizedPlantProps.Weapon.gameObject, rc.rigidbody)).
                         AppendCallback(() => _cooldownTween.Restart());
+                    _ready = false;
                 }
             }
         }
@@ -51,7 +51,7 @@ namespace Game
         {
             return Utils.Raycast(
                 transform.position,
-                Vector2.right, ProjectileLauncherProps.VisionLength, LayerMask.GetMask("Enemy"), Color.red);
+                Vector2.right, WeaponizedPlantProps.VisionLength, LayerMask.GetMask("Enemy"), Color.red);
         }
     }
 }

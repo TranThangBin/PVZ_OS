@@ -10,6 +10,23 @@ namespace Game
         public FireProperties Fire;
         public MelonProperties Melon;
         public FumeProperties Fume;
+
+        public PlantWeaponProperties GetWeaponProperties(PlantWeapons id) => id switch
+        {
+            PlantWeapons.Pea => Pea.PlantWeaponProps,
+            PlantWeapons.Fire => Fire.PlantWeaponProps,
+            PlantWeapons.Melon => Melon.PlantWeaponProps,
+            PlantWeapons.Fume => Fume.PlantWeaponProps,
+            _ => throw new UnityException(),
+        };
+    }
+
+    public enum PlantWeapons
+    {
+        Pea,
+        Fire,
+        Melon,
+        Fume,
     }
 
     [Serializable]

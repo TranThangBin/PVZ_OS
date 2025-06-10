@@ -3,21 +3,20 @@ using UnityEngine;
 
 namespace Game
 {
-    public class Melon : PlantWeapon
+    [RequireComponent(typeof(PlantWeapon))]
+    public class Melon : MonoBehaviour
     {
-        private MelonProperties MelonProps => PlantWeaponsProps.Melon;
-
-        protected override PlantWeaponProperties PlantWeaponProps => MelonProps.PlantWeaponProps;
-
         private void OnDestroy() => DOTween.Kill(this);
 
         public void Targeting(Rigidbody2D target)
         {
-            float travelTime = Utils.CalculateTime(transform.position, target.position, MelonProps.FlySpeed);
+            PlantWeapon plantWeapon = GetComponent<PlantWeapon>();
+            MelonProperties melonProps = plantWeapon.PlantWeaponsProps.Melon;
+            float travelTime = Utils.CalculateTime(transform.position, target.position, melonProps.FlySpeed);
             DOTween.
                 Sequence(this).
                 Append(transform.
-                    DOJump(target.position, MelonProps.ThrowForce, 1, travelTime).
+                    DOJump(target.position, melonProps.ThrowForce, 1, travelTime).
                     Join(transform.DORotate(Vector3.back * 90, travelTime)).
                     SetEase(Ease.Linear)).
                 OnComplete(() => Destroy(gameObject));

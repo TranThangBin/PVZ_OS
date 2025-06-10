@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace Game
 {
-    using FumeshroomProperties = ProjectileLauncherProperties;
-    using MelonPultProperties = ProjectileLauncherProperties;
-    using PeashooterProperties = ProjectileLauncherProperties;
-    using SplitPeaProperties = ProjectileLauncherProperties;
+    using FumeshroomProperties = WeaponizedPlantProperties;
+    using MelonPultProperties = WeaponizedPlantProperties;
+    using PeashooterProperties = WeaponizedPlantProperties;
+    using SplitPeaProperties = WeaponizedPlantProperties;
 
     [CreateAssetMenu(menuName = "Scriptable Objects/Plants Properties")]
     public class PlantsProperties : ScriptableObject
@@ -40,12 +40,12 @@ namespace Game
     }
 
     [Serializable]
-    public struct ProjectileLauncherProperties
+    public struct WeaponizedPlantProperties
     {
         public PlantProperties PlantProps;
         public float VisionLength;
         public float AttackRechargeTime;
-        public GameObject Projectile;
+        public PlantWeapon Weapon;
     }
 
     [Serializable]
@@ -63,7 +63,7 @@ namespace Game
     {
         public PlantProperties PlantProps;
         public float DelayTime;
-        public Fire Fire;
+        public PlantWeapon Fire;
     }
 
     [Serializable]

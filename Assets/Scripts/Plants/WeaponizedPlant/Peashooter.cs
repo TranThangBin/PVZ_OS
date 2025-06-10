@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace Game
 {
-    public class Peashooter : ProjectileLauncher
+    public class Peashooter : WeaponizedPlant
     {
-        protected override ProjectileLauncherProperties ProjectileLauncherProps => PlantsProps.Peashooter;
+        protected override WeaponizedPlantProperties WeaponizedPlantProps => PlantsProps.Peashooter;
 
         protected override Tween Attack(GameObject projectile, Rigidbody2D _) => DOTween.
             Sequence().

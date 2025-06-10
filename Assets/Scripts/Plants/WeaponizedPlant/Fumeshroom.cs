@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace Game
 {
-    public class Fumeshroom : ProjectileLauncher
+    public class Fumeshroom : WeaponizedPlant
     {
-        protected override ProjectileLauncherProperties ProjectileLauncherProps => PlantsProps.Fumeshroom;
+        protected override WeaponizedPlantProperties WeaponizedPlantProps => PlantsProps.Fumeshroom;
 
         protected override Tween Attack(GameObject projectile, Rigidbody2D target)
         {

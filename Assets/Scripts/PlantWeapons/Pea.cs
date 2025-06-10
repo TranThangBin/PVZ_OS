@@ -2,14 +2,14 @@ using UnityEngine;
 
 namespace Game
 {
-    [RequireComponent(typeof(Rigidbody2D))]
-    public class Pea : PlantWeapon
+    [RequireComponent(typeof(Rigidbody2D), typeof(PlantWeapon))]
+    public class Pea : MonoBehaviour
     {
-        private PeaProperties PeaProps => PlantWeaponsProps.Pea;
-
-        protected override PlantWeaponProperties PlantWeaponProps => PeaProps.PlantWeaponProps;
-
-        public void Targeting(Vector2 direction) =>
-            GetComponent<Rigidbody2D>().linearVelocity = PeaProps.FlySpeed * direction;
+        public void Targeting(Vector2 direction)
+        {
+            PlantWeapon weapon = GetComponent<PlantWeapon>();
+            float flySpeed = weapon.PlantWeaponsProps.Pea.FlySpeed;
+            GetComponent<Rigidbody2D>().linearVelocity = flySpeed * direction;
+        }
     }
 }

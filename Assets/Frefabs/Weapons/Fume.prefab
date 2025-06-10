@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1476713763849572028}
   - component: {fileID: 4785244997681116229}
   - component: {fileID: 3901762153417946493}
-  - component: {fileID: 1360762722112329315}
+  - component: {fileID: 6175180297980740870}
   m_Layer: 7
   m_Name: Fume
   m_TagString: Untagged
@@ -4881,7 +4881,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 30, y: 7}
   m_EdgeRadius: 0
---- !u!114 &1360762722112329315
+--- !u!114 &6175180297980740870
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4890,7 +4890,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5444585552731047320}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8527b5d55326544eb524e7ba2e32a11, type: 3}
+  m_Script: {fileID: 11500000, guid: 18c2c7b33ca16444bba440ff533cb95d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _plantWeaponID: 3
   _plantWeaponsProps: {fileID: 11400000, guid: d678a9dfe41ba4e45a80ac5433d510e2, type: 2}

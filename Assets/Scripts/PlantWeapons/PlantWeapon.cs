@@ -2,12 +2,15 @@ using UnityEngine;
 
 namespace Game
 {
-    public abstract class PlantWeapon : MonoBehaviour
+    public class PlantWeapon : MonoBehaviour
     {
+        [SerializeField] private PlantWeapons _plantWeaponID;
         [SerializeField] private PlantWeaponsProperties _plantWeaponsProps;
 
-        protected PlantWeaponsProperties PlantWeaponsProps => _plantWeaponsProps;
-        protected abstract PlantWeaponProperties PlantWeaponProps { get; }
+        public PlantWeaponsProperties PlantWeaponsProps => _plantWeaponsProps;
+
+        private PlantWeaponProperties PlantWeaponProps =>
+            _plantWeaponsProps.GetWeaponProperties(_plantWeaponID);
 
         private float _initialYPos;
 

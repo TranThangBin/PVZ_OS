@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace Game
 {
-    public class SplitPea : ProjectileLauncher
+    public class SplitPea : WeaponizedPlant
     {
-        protected override ProjectileLauncherProperties ProjectileLauncherProps => PlantsProps.SplitPea;
+        protected override WeaponizedPlantProperties WeaponizedPlantProps => PlantsProps.SplitPea;
 
         protected override Tween Attack(GameObject projectile, Rigidbody2D _) => DOTween.
                 Sequence().
@@ -17,7 +17,7 @@ namespace Game
 
         protected override RaycastHit2D Raycast()
         {
-            float rayLength = ProjectileLauncherProps.VisionLength;
+            float rayLength = WeaponizedPlantProps.VisionLength;
 
             return Utils.Raycast(
                 transform.position + Vector3.left * rayLength,

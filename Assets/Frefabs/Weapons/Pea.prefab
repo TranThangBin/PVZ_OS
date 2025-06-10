@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8758756591245593880}
   - component: {fileID: 4163923375107624312}
   - component: {fileID: 3984037697035269409}
+  - component: {fileID: 6333285805241277486}
   m_Layer: 7
   m_Name: Pea
   m_TagString: Untagged
@@ -175,4 +176,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff9a9628aa383564ca05f50ccc05ce86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6333285805241277486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609563426096356370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c2c7b33ca16444bba440ff533cb95d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _plantWeaponID: 0
   _plantWeaponsProps: {fileID: 11400000, guid: d678a9dfe41ba4e45a80ac5433d510e2, type: 2}

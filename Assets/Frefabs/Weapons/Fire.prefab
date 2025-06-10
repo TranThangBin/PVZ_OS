@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3653179117355740150}
   - component: {fileID: 419320873539012663}
   - component: {fileID: 1552949276055693521}
-  - component: {fileID: 715590707022245607}
+  - component: {fileID: 4628371508425154523}
   m_Layer: 7
   m_Name: Fire
   m_TagString: Untagged
@@ -4939,7 +4939,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 205.68, y: 6.68}
   m_EdgeRadius: 0
---- !u!114 &715590707022245607
+--- !u!114 &4628371508425154523
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4948,7 +4948,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6301681072028096432}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7757f9abf5d9d27418a98bd11f5dd10c, type: 3}
+  m_Script: {fileID: 11500000, guid: 18c2c7b33ca16444bba440ff533cb95d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _plantWeaponID: 1
   _plantWeaponsProps: {fileID: 11400000, guid: d678a9dfe41ba4e45a80ac5433d510e2, type: 2}
