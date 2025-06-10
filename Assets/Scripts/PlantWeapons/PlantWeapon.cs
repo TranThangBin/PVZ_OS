@@ -2,9 +2,12 @@ using UnityEngine;
 
 namespace Game
 {
-    public class PlantWeapon : MonoBehaviour
+    public abstract class PlantWeapon : MonoBehaviour
     {
-        [SerializeField] private MiscProperties _gameProps;
+        [SerializeField] private PlantWeaponsProperties _plantWeaponsProps;
+
+        protected PlantWeaponsProperties PlantWeaponsProps => _plantWeaponsProps;
+        protected abstract PlantWeaponProperties PlantWeaponProps { get; }
 
         private float _initialYPos;
 
@@ -12,10 +15,16 @@ namespace Game
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            float errorMargin = 2;
+            float errorMargin = 3;
             if (collision.transform.position.y <= _initialYPos + errorMargin &&
-                collision.transform.position.y >= _initialYPos - errorMargin)
+                collision.transform.position.y >= _initialYPos - errorMargin &&
+                collision.collider.TryGetComponent(out HealthManager healthManager))
             {
+                healthManager.ReduceHealth(PlantWeaponProps.Damage);
+                if (PlantWeaponProps.DestroyOnCollision)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }

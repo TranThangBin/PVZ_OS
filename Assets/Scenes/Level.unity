@@ -341,7 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 639784142a33b7b4285e7c69439fc587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameProps: {fileID: 11400000, guid: 23a51bfab3853a34c9ea3bcabeba0bd6, type: 2}
+  _spawnerProps: {fileID: 11400000, guid: c8ccc3df80a4f9740a6066fdf982d6e3, type: 2}
   _sunSpawnStart: {fileID: 1137014178}
   _sunSpawnEnd: {fileID: 1099315922}
 --- !u!1 &263228951
@@ -5178,7 +5178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97d94cc46feacf4c8ce62fd580d51c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameProps: {fileID: 11400000, guid: 23a51bfab3853a34c9ea3bcabeba0bd6, type: 2}
+  _spawnerProps: {fileID: 11400000, guid: c8ccc3df80a4f9740a6066fdf982d6e3, type: 2}
   _spawnYLocationStart: {fileID: 1137014178}
   _spawnYLocationEnd: {fileID: 1099315922}
 --- !u!1 &1760224029

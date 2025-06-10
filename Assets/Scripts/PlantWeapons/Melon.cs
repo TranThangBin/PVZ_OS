@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Game
 {
-    public class Melon : MonoBehaviour
+    public class Melon : PlantWeapon
     {
-        [SerializeField] private PlantWeaponsProperties _plantWeaponsProps;
+        private MelonProperties MelonProps => PlantWeaponsProps.Melon;
 
-        private MelonProperties MelonProps => _plantWeaponsProps.Melon;
+        protected override PlantWeaponProperties PlantWeaponProps => MelonProps.PlantWeaponProps;
 
         private void OnDestroy() => DOTween.Kill(this);
 
@@ -21,15 +21,6 @@ namespace Game
                     Join(transform.DORotate(Vector3.back * 90, travelTime)).
                     SetEase(Ease.Linear)).
                 OnComplete(() => Destroy(gameObject));
-        }
-
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.collider.TryGetComponent(out HealthManager zombieHealth))
-            {
-                zombieHealth.ReduceHealth(MelonProps.PlantWeaponProps.Damage);
-                Destroy(gameObject);
-            }
         }
     }
 }

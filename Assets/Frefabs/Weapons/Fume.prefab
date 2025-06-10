@@ -4893,4 +4893,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8527b5d55326544eb524e7ba2e32a11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plantWeaponProps: {fileID: 11400000, guid: d678a9dfe41ba4e45a80ac5433d510e2, type: 2}
+  _plantWeaponsProps: {fileID: 11400000, guid: d678a9dfe41ba4e45a80ac5433d510e2, type: 2}

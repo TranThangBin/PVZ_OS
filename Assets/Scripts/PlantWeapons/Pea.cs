@@ -3,25 +3,13 @@ using UnityEngine;
 namespace Game
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    public class Pea : MonoBehaviour
+    public class Pea : PlantWeapon
     {
-        [SerializeField] private PlantWeaponsProperties _plantWeaponsProps;
+        private PeaProperties PeaProps => PlantWeaponsProps.Pea;
 
-        private PeaProperties PeaProps => _plantWeaponsProps.Pea;
+        protected override PlantWeaponProperties PlantWeaponProps => PeaProps.PlantWeaponProps;
 
-        private Rigidbody2D _rb;
-
-        private void Awake() => _rb = GetComponent<Rigidbody2D>();
-
-        public void Targeting(Vector2 direction) => _rb.linearVelocity = PeaProps.FlySpeed * direction;
-
-        public void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.collider.TryGetComponent(out HealthManager healthManager))
-            {
-                healthManager.ReduceHealth(PeaProps.PlantWeaponProps.Damage);
-                Destroy(gameObject);
-            }
-        }
+        public void Targeting(Vector2 direction) =>
+            GetComponent<Rigidbody2D>().linearVelocity = PeaProps.FlySpeed * direction;
     }
 }

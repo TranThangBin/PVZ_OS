@@ -8,7 +8,7 @@ namespace Game
     {
         [SerializeField] private PlantsProperties _plantsProps;
 
-        public PlantsProperties PlantsProps => _plantsProps;
+        protected PlantsProperties PlantsProps => _plantsProps;
         public abstract PlantProperties PlantProps { get; }
 
         private void Awake() => gameObject.AddComponent<HealthManager>().InitHealth(PlantProps.Health);

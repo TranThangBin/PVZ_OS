@@ -14,9 +14,10 @@ namespace Game
 
         private void OnDestroy() => DOTween.Kill(this);
 
+        private void Awake() => _rb = GetComponent<Rigidbody2D>();
+
         private void Start()
         {
-            _rb = GetComponent<Rigidbody2D>();
             _rb.linearVelocity = BasicZombieProps.MovementSpeed * Vector2.left;
             gameObject.AddComponent<HealthManager>().InitHealth(BasicZombieProps.Health);
         }
