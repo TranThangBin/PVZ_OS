@@ -1,17 +1,14 @@
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 
 namespace Game
 {
     public class GameController : MonoBehaviour
     {
-        [SerializeField] private int _initialSun;
+        [SerializeField] private GameProperties _gameProps;
         [SerializeField] private TextMesh _sunDisplay;
         [SerializeField] private Transform _plantSelectorGrid;
-        [SerializeField] private SeedPacket _seedPacket;
-        [SerializeField] private SeedBank _seedBank;
 
         private Tween _invalidSelectAnimation;
         private readonly UnityEvent<int> _onSunStoreChange = new();
@@ -51,17 +48,18 @@ namespace Game
 
         private void Awake()
         {
-            for (int i = 0; i < _seedBank.Plants.Length && i < _plantSelectorGrid.transform.childCount; i++)
+            Plant[] seeds = _gameProps.SeedBank;
+            for (int i = 0; i < seeds.Length && i < _plantSelectorGrid.childCount; i++)
             {
-                SeedPacket seedPacket = Instantiate(_seedPacket, _plantSelectorGrid.transform.GetChild(i));
-                seedPacket.SetPlant(_seedBank.Plants[i]);
+                SeedPacket seedPacket = Instantiate(_gameProps.SeedPacket, _plantSelectorGrid.GetChild(i));
+                seedPacket.SetPlant(seeds[i]);
                 _onSunStoreChange.AddListener(seedPacket.OnSunStoreChange);
             }
         }
 
         private void Start()
         {
-            SunStore = _initialSun;
+            SunStore = _gameProps.InitialSun;
             Color sunDisplayColor = _sunDisplay.color;
             _invalidSelectAnimation = DOTween.
                 Sequence().

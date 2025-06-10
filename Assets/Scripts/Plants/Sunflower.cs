@@ -5,8 +5,11 @@ namespace Game
 {
     public class Sunflower : Plant
     {
-        [SerializeField] private PlantChargeTimes _plantChargeTimes;
         [SerializeField] private Sun _sun;
+
+        private SunflowerProperties SunflowerProps => PlantsProps.Sunflower;
+
+        public override PlantProperties PlantProps => SunflowerProps.PlantProps;
 
         private void OnDestroy() => DOTween.Kill(this);
 
@@ -14,7 +17,7 @@ namespace Game
         {
             DOTween.
                 Sequence(this).
-                AppendInterval(_plantChargeTimes.GetValue(PlantID)).
+                AppendInterval(SunflowerProps.SunGenerateTime).
                 AppendCallback(() =>
                 {
                     Sun sun = Instantiate(_sun, transform.parent);

@@ -1,12 +1,12 @@
 using DG.Tweening;
-using UnityEngine;
 
 namespace Game
 {
     public class Jalapeno : Plant
     {
-        [SerializeField] private PlantChargeTimes _plantChargeTimes;
-        [SerializeField] private GameObject _fire;
+        private JalapenoProperties JalapenoProps => PlantsProps.Jalapeno;
+
+        public override PlantProperties PlantProps => JalapenoProps.PlantProps;
 
         private void OnDestroy() => DOTween.Kill(this);
 
@@ -14,10 +14,10 @@ namespace Game
         {
             DOTween.
                 Sequence(this).
-                AppendInterval(_plantChargeTimes.GetValue(PlantID)).
+                AppendInterval(JalapenoProps.DelayTime).
                 AppendCallback(() =>
                 {
-                    Instantiate(_fire, transform.parent);
+                    Instantiate(JalapenoProps.Fire, transform.parent);
                     Destroy(gameObject);
                 });
         }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 419320873539012663}
   - component: {fileID: 1552949276055693521}
   - component: {fileID: 715590707022245607}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4951,4 +4951,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7757f9abf5d9d27418a98bd11f5dd10c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plantWeaponDamages: {fileID: 11400000, guid: cea6629a197c1454fa3c9a93e7d87eb3, type: 2}
+  _gameProps: {fileID: 11400000, guid: 23a51bfab3853a34c9ea3bcabeba0bd6, type: 2}

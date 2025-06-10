@@ -147,8 +147,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa10f52f91067734fa32721e5295a699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plantID: 8
-  _plantHealths: {fileID: 11400000, guid: c4f72013843f32d48947986132455015, type: 2}
-  _plantChargeTimes: {fileID: 11400000, guid: 4914a48f528b8a645a9bfc87e519b0da, type: 2}
-  _plantRanges: {fileID: 11400000, guid: 5cced8ee0aa27834d9e28c081f8360a0, type: 2}
-  _projectile: {fileID: 5444585552731047320, guid: 69310e8456fee914ba85627974fa36b3, type: 3}
+  _gameProps: {fileID: 11400000, guid: 23a51bfab3853a34c9ea3bcabeba0bd6, type: 2}

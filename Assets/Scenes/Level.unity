@@ -700,7 +700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sunDropTime: 7
-  _padY: 20
+  _padY: 25
   _sun: {fileID: 864223831861094711, guid: b598fe2eaa925ad42a859425d519b571, type: 3}
   _sunSpawnStart: {fileID: 1137014178}
   _sunSpawnEnd: {fileID: 1099315922}
@@ -854,7 +854,7 @@ GameObject:
   m_Component:
   - component: {fileID: 279487199}
   - component: {fileID: 279487200}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: GridCell0:0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2651,7 +2651,7 @@ GameObject:
   m_Component:
   - component: {fileID: 975147006}
   - component: {fileID: 975147007}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SelectedOverlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2816,7 +2816,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1095270936}
   - component: {fileID: 1095270937}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: GridCell0:6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2925,7 +2925,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1119732815}
   - component: {fileID: 1119732816}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: PlantSelector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3475,7 +3475,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1205021971}
   - component: {fileID: 1205021972}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: GridCell0:1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3790,11 +3790,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 367f8101073f85644b7bc7a00062e74c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initialSun: 50
+  _gameProps: {fileID: 11400000, guid: 23a51bfab3853a34c9ea3bcabeba0bd6, type: 2}
   _sunDisplay: {fileID: 148160935}
   _plantSelectorGrid: {fileID: 1119732815}
-  _seedPacket: {fileID: 3673234174439415083, guid: 802a62eaa7760754098d44c83ca92ae7, type: 3}
-  _seedBank: {fileID: 11400000, guid: 9f187027d6cdfb34d89e6b4046ad2ba1, type: 2}
 --- !u!4 &1367410787
 Transform:
   m_ObjectHideFlags: 0
@@ -3976,7 +3974,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1380955390}
   - component: {fileID: 1380955391}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: GridCell0:2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4054,7 +4052,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1381558829}
   - component: {fileID: 1381558830}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: GridCell0:5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4246,7 +4244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1460849715}
   - component: {fileID: 1460849716}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: GridCell0:3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4436,7 +4434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1611186457}
   - component: {fileID: 1611186458}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: GridCell0:7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4782,7 +4780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97d94cc46feacf4c8ce62fd580d51c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnTime: 10
+  _spawnTime: 15
   _rowCount: 5
   _zombie: {fileID: 3155332019899120571, guid: 7ea6606f23f18ed47ada78bcea1fddc1, type: 3}
   _spawnYLocationStart: {fileID: 1137014178}
@@ -4856,7 +4854,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -618633407
-  m_SortingLayer: -2
+  m_SortingLayer: -4
   m_SortingOrder: 0
   m_Sprite: {fileID: 8943299168362265071, guid: 9e3da981e69cd234da36f9b5b96ed18e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4896,7 +4894,7 @@ GameObject:
   - component: {fileID: 1855907692}
   - component: {fileID: 1855907693}
   - component: {fileID: 1855907694}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Shovel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4961,7 +4959,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1246528603
-  m_SortingLayer: -1
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: -8607665071670805169, guid: 2e304d57a9158af4f82fbc9447f7d803, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5499,7 +5497,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1246528603
-  m_SortingLayer: -1
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 7990429905292538296, guid: ec540f40da1903a4e99cab7af22fe136, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5522,7 +5520,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1907671838}
   - component: {fileID: 1907671839}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: GridCell0:4
   m_TagString: Untagged
   m_Icon: {fileID: 0}

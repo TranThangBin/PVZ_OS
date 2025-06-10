@@ -6,12 +6,13 @@ namespace Game
     public abstract class Plant : MonoBehaviour,
         HealthManager.IOnDamageTaken, HealthManager.IDestroyOnOutOfHealth
     {
-        [SerializeField] private PlantID _plantID;
-        [SerializeField] private PlantHealths _plantHealths;
+        [SerializeField] private GameProperties _gameProps;
 
-        public PlantID PlantID { get => _plantID; }
+        public abstract PlantProperties PlantProps { get; }
 
-        private void Awake() => gameObject.AddComponent<HealthManager>().InitHealth(_plantHealths.GetValue(_plantID));
+        public PlantsProperties PlantsProps => _gameProps.Plants;
+
+        private void Awake() => gameObject.AddComponent<HealthManager>().InitHealth(PlantProps.Health);
 
         public void Planting(Transform location, UnityAction<GameObject> onSuccess)
         {

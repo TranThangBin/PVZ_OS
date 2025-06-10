@@ -101,9 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59611af7281aa41498c06bc5bfe72af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plantID: 0
-  _plantHealths: {fileID: 11400000, guid: c4f72013843f32d48947986132455015, type: 2}
-  _plantChargeTimes: {fileID: 11400000, guid: 4914a48f528b8a645a9bfc87e519b0da, type: 2}
+  _gameProps: {fileID: 11400000, guid: 23a51bfab3853a34c9ea3bcabeba0bd6, type: 2}
   _sun: {fileID: 864223831861094711, guid: b598fe2eaa925ad42a859425d519b571, type: 3}
 --- !u!61 &4391589249661887442
 BoxCollider2D:

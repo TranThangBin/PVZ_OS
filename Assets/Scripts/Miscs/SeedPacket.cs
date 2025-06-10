@@ -10,10 +10,8 @@ namespace Game
         [SerializeField] private SpriteRenderer _srNotEnoughSunOverlay;
         [SerializeField] private TextMesh _tmPlantCost;
         [SerializeField] private Transform _cooldownOverlay;
-        [SerializeField] private PlantCooldowns _plantCooldowns;
-        [SerializeField] private PlantCosts _plantCosts;
-        [SerializeField] private PlantSprites _plantSprites;
 
+        private PlantProperties PlantProps => _plant.PlantProps;
         private Plant _plant;
         private bool _onCooldown = false;
         private bool _enoughSun = false;
@@ -27,7 +25,7 @@ namespace Game
         {
             _plant.Planting(lawnCell, (gameObj) =>
             {
-                onSuccess.Invoke(gameObj, _plantCosts.GetValue(_plant.PlantID));
+                onSuccess.Invoke(gameObj, PlantProps.Cost);
                 DOTween.
                     Sequence(this).
                     AppendCallback(() =>
@@ -36,7 +34,7 @@ namespace Game
                         _cooldownOverlay.localScale = Vector2.one;
                     }).
                     Append(_cooldownOverlay.
-                        DOScaleY(0, _plantCooldowns.GetValue(_plant.PlantID)).
+                        DOScaleY(0, PlantProps.Cooldown).
                         SetEase(Ease.Linear)).
                     OnComplete(() => _onCooldown = false);
             });
@@ -44,18 +42,18 @@ namespace Game
 
         public void SetPlant(Plant plant)
         {
-            Sprite plantSprite = _plantSprites.GetValue(plant.PlantID);
+            _plant = plant;
+
+            Sprite plantSprite = PlantProps.Sprite;
             _srPlantSprite.sprite = plantSprite;
             _srPlantSprite.size = new(0.5f, 0.5f);
 
-            _tmPlantCost.text = _plantCosts.GetValue(plant.PlantID).ToString();
-
-            _plant = plant;
+            _tmPlantCost.text = PlantProps.Cost.ToString();
         }
 
         public void OnSunStoreChange(int sun)
         {
-            _enoughSun = sun >= _plantCosts.GetValue(_plant.PlantID);
+            _enoughSun = sun >= PlantProps.Cost;
             _srNotEnoughSunOverlay.enabled = !_enoughSun;
         }
     }

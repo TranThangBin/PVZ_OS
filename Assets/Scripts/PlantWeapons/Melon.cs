@@ -5,16 +5,17 @@ namespace Game
 {
     public class Melon : MonoBehaviour
     {
-        [SerializeField] private PlantWeaponDamages _plantWeaponDamages;
-        [SerializeField] private PlantWeaponVelocities _plantWeaponVelocities;
+        [SerializeField] private GameProperties _gameProps;
         [SerializeField] private Rigidbody2D _rb;
         [SerializeField] private float _jumpForce;
+
+        private MelonProperties MelonProps => _gameProps.PlantWeapons.Melon;
 
         private void OnDestroy() => DOTween.Kill(this);
 
         public void Targeting(Rigidbody2D target)
         {
-            float travelTime = Utils.CalculateTime(transform.position, target.position, _plantWeaponVelocities.GetValue(PlantWeaponID.Melon));
+            float travelTime = Utils.CalculateTime(transform.position, target.position, MelonProps.FlySpeed);
             DOTween.
                 Sequence(this).
                 Append(transform.
@@ -27,7 +28,7 @@ namespace Game
         {
             if (collision.collider.TryGetComponent(out HealthManager zombieHealth))
             {
-                zombieHealth.ReduceHealth(_plantWeaponDamages.GetValue(PlantWeaponID.Melon));
+                zombieHealth.ReduceHealth(MelonProps.Damage);
                 Destroy(gameObject);
             }
         }

@@ -5,12 +5,12 @@ namespace Game
 {
     public class Squash : Plant
     {
-        [SerializeField] private PlantDamages _plantDamages;
-        [SerializeField] private PlantChargeTimes _plantChargeTimes;
-        [SerializeField] private PlantRanges _plantRanges;
         [SerializeField] private float _jumpForce;
 
+        private SquashProperties SquashProps => PlantsProps.Squash;
         private bool _kill = false;
+
+        public override PlantProperties PlantProps => SquashProps.PlantProps;
 
         private void OnDestroy() => DOTween.Kill(this);
 
@@ -18,7 +18,7 @@ namespace Game
         {
             if (!DOTween.IsTweening(this))
             {
-                float rayLength = _plantRanges.GetValue(PlantID).Range;
+                float rayLength = SquashProps.VisionLength;
                 RaycastHit2D hit = Utils.
                     Raycast(transform.position + Vector3.left * rayLength, Vector3.right, rayLength * 2, LayerMask.GetMask("Enemy"), Color.red);
 
@@ -28,7 +28,7 @@ namespace Game
                         DOJump(hit.collider.transform.position, _jumpForce, 1, 2).
                         SetEase(Ease.InBack).
                         AppendCallback(() => _kill = true).
-                        PrependInterval(_plantChargeTimes.GetValue(PlantID)).
+                        PrependInterval(SquashProps.DelayTime).
                         SetId(this);
                 }
             }
@@ -38,7 +38,7 @@ namespace Game
         {
             if (_kill && collision.collider.TryGetComponent(out HealthManager zombieHealth))
             {
-                zombieHealth.ReduceHealth(_plantDamages.GetValue(PlantID));
+                zombieHealth.ReduceHealth(SquashProps.Damage);
                 Destroy(gameObject);
             }
         }

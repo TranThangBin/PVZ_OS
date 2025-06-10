@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8920556359073637062}
   - component: {fileID: 6539117250195111013}
-  - component: {fileID: 8764650309161090903}
   - component: {fileID: 4012023038547497566}
   - component: {fileID: 1859621238738543903}
   - component: {fileID: 2238726059977035278}
@@ -63,19 +62,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8764650309161090903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3155332019899120571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fbd2a2d1f010264e8e9aff8c61e1741, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _hp: 8
 --- !u!114 &4012023038547497566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,11 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98fd5bb54cb67494c90c2c15edb617cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _zombieID: 0
-  _zombieVelocities: {fileID: 11400000, guid: 1a811520fa6812549bbc92b00023c449, type: 2}
-  _zombieDamages: {fileID: 11400000, guid: 6fd882d8c0d3e3543b5db4f17d8f5881, type: 2}
-  _zombieChargeTimes: {fileID: 11400000, guid: bc430ca20b3375f44ac2659e41318fa1, type: 2}
-  _zombieRanges: {fileID: 11400000, guid: 2d1f32e86e129ef4c98c8dde1460f199, type: 2}
+  _gameProps: {fileID: 11400000, guid: 23a51bfab3853a34c9ea3bcabeba0bd6, type: 2}
   _rb: {fileID: 6539117250195111013}
 --- !u!61 &1859621238738543903
 BoxCollider2D:
@@ -181,8 +163,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1480053305
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 6019453725058403666, guid: c55849b6993719d4f99cc27e0ae343a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

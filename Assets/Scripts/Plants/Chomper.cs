@@ -5,12 +5,11 @@ namespace Game
 {
     public class Chomper : Plant
     {
-        [SerializeField] private PlantChargeTimes _plantChargeTimes;
-        [SerializeField] private PlantDamages _plantDamages;
-        [SerializeField] private PlantRanges _plantRanges;
-
+        private ChomperProperties ChomperProps => PlantsProps.Chomper;
         private Tween _cooldownTween;
         private bool _ready;
+
+        public override PlantProperties PlantProps => ChomperProps.PlantProps;
 
         private void OnDestroy() => _cooldownTween.Kill();
 
@@ -19,7 +18,7 @@ namespace Game
             _cooldownTween = DOTween.
                 Sequence().
                 AppendCallback(() => _ready = false).
-                AppendInterval(_plantChargeTimes.GetValue(PlantID)).
+                AppendInterval(ChomperProps.ChewTime).
                 AppendCallback(() => _ready = true).
                 SetAutoKill(false).
                 Pause();
@@ -33,11 +32,11 @@ namespace Game
             {
                 RaycastHit2D rc = Utils.Raycast(
                     transform.position,
-                    Vector2.right, _plantRanges.GetValue(PlantID).Range, LayerMask.GetMask("Enemy"), Color.red);
+                    Vector2.right, ChomperProps.VisionLength, LayerMask.GetMask("Enemy"), Color.red);
 
                 if (rc.collider != null && rc.collider.TryGetComponent(out HealthManager zombieHealth))
                 {
-                    zombieHealth.ReduceHealth(_plantDamages.GetValue(PlantID));
+                    zombieHealth.ReduceHealth(ChomperProps.Damage);
                     _cooldownTween.Restart();
                 }
             }

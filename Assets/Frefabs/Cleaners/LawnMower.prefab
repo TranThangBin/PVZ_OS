@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8853741203966488929}
   - component: {fileID: 220096961786312101}
   - component: {fileID: 8979489837004936232}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: LawnMower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,4 +178,3 @@ MonoBehaviour:
   _velocity: 50
   _damage: 999
   _rb: {fileID: 220096961786312101}
-  _lifetimeTimer: {fileID: 0}

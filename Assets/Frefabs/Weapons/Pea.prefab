@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8758756591245593880}
   - component: {fileID: 4163923375107624312}
   - component: {fileID: 3984037697035269409}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Pea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,6 +175,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff9a9628aa383564ca05f50ccc05ce86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plantWeaponVelocities: {fileID: 11400000, guid: 07826659383b5504688b97aa46697f0d, type: 2}
-  _plantWeaponDamages: {fileID: 11400000, guid: cea6629a197c1454fa3c9a93e7d87eb3, type: 2}
+  _gameProps: {fileID: 11400000, guid: 23a51bfab3853a34c9ea3bcabeba0bd6, type: 2}
   _rb: {fileID: 4163923375107624312}

@@ -6,42 +6,47 @@ namespace Game
     public class BasicZombie : MonoBehaviour,
         HealthManager.IOnDamageTaken, HealthManager.IDestroyOnOutOfHealth
     {
-        [SerializeField] private ZombieID _zombieID;
-        [SerializeField] private ZombieVelocities _zombieVelocities;
-        [SerializeField] private ZombieDamages _zombieDamages;
-        [SerializeField] private ZombieChargeTimes _zombieChargeTimes;
-        [SerializeField] private ZombieRanges _zombieRanges;
+        [SerializeField] private GameProperties _gameProps;
         [SerializeField] private Rigidbody2D _rb;
 
-        private void Start() => _rb.linearVelocity = _zombieVelocities.GetValue(_zombieID) * Vector2.left;
+        private BasicZombieProperties BasicZombieProps => _gameProps.Zombies.BasicZombie;
+
         private void OnDestroy() => DOTween.Kill(this);
+
+        private void Start()
+        {
+            _rb.linearVelocity = BasicZombieProps.MovementSpeed * Vector2.left;
+            gameObject.AddComponent<HealthManager>().InitHealth(BasicZombieProps.Health);
+        }
 
         private void FixedUpdate()
         {
             if (!DOTween.IsTweening(this))
             {
-                float rayLength = _zombieRanges.GetValue(_zombieID);
+                float rayLength = BasicZombieProps.AttackRange;
 
                 RaycastHit2D hit = Utils.Raycast(transform.position, Vector2.left, rayLength, LayerMask.GetMask("Ally"), Color.black);
 
-                if (hit.collider != null)
-                {
-                    HealthManager plantHealth = hit.collider.GetComponentInParent<HealthManager>();
-                    _rb.linearVelocity = Vector2.zero;
-                    DOTween.
-                        Sequence(this).
-                        AppendCallback(() =>
+                if (hit.collider == null) { return; }
+
+                HealthManager plantHealth = hit.collider.GetComponentInParent<HealthManager>();
+
+                if (plantHealth == null) { return; }
+
+                _rb.linearVelocity = Vector2.zero;
+                DOTween.
+                    Sequence(this).
+                    AppendCallback(() =>
+                    {
+                        plantHealth.ReduceHealth(BasicZombieProps.AttackDamage);
+                        if (plantHealth.IsOutOfHealth())
                         {
-                            plantHealth.ReduceHealth(_zombieDamages.GetValue(_zombieID));
-                            if (plantHealth.IsOutOfHealth())
-                            {
-                                _rb.linearVelocity = _zombieVelocities.GetValue(_zombieID) * Vector2.left;
-                                DOTween.Kill(this);
-                            }
-                        }).
-                        AppendInterval(_zombieChargeTimes.GetValue(_zombieID)).
-                        SetLoops(-1);
-                }
+                            _rb.linearVelocity = BasicZombieProps.MovementSpeed * Vector2.left;
+                            DOTween.Kill(this);
+                        }
+                    }).
+                    AppendInterval(BasicZombieProps.AttackCooldown).
+                    SetLoops(-1);
             }
         }
 

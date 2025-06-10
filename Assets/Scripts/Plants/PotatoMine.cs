@@ -5,12 +5,14 @@ namespace Game
 {
     public class PotatoMine : Plant
     {
-        [SerializeField] private PlantChargeTimes _plantChargeTimes;
-        [SerializeField] private PlantDamages _plantDamages;
         [SerializeField] private GameObject _unarmed;
         [SerializeField] private GameObject _armed;
 
+        private PotatoMineProperties PotatoMineProps => PlantsProps.PotatoMine;
         private GameObject _activeState;
+
+        public override PlantProperties PlantProps => PotatoMineProps.PlantProps;
+
         private GameObject ActiveState
         {
             get => _activeState;
@@ -32,7 +34,7 @@ namespace Game
             _activeState = _unarmed;
             DOTween.
                 Sequence(this).
-                AppendInterval(_plantChargeTimes.GetValue(PlantID)).
+                AppendInterval(PotatoMineProps.GrowTime).
                 AppendCallback(() => ActiveState = _armed);
         }
 
@@ -40,7 +42,7 @@ namespace Game
         {
             if (ActiveState == _armed && collision.collider.TryGetComponent(out HealthManager zombieHealth))
             {
-                zombieHealth.ReduceHealth(_plantDamages.GetValue(PlantID));
+                zombieHealth.ReduceHealth(PotatoMineProps.Damage);
                 Destroy(gameObject);
             }
         }

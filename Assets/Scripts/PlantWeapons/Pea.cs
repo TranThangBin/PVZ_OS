@@ -4,18 +4,19 @@ namespace Game
 {
     public class Pea : MonoBehaviour
     {
-        [SerializeField] private PlantWeaponVelocities _plantWeaponVelocities;
-        [SerializeField] private PlantWeaponDamages _plantWeaponDamages;
+        [SerializeField] private GameProperties _gameProps;
         [SerializeField] private Rigidbody2D _rb;
 
-        public void Targeting(Vector2 direction) => _rb.linearVelocity = _plantWeaponVelocities.GetValue(PlantWeaponID.Pea) * direction;
+        private PeaProperties PeaProps => _gameProps.PlantWeapons.Pea;
+
+        public void Targeting(Vector2 direction) => _rb.linearVelocity = PeaProps.FlySpeed * direction;
 
         public void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.collider.TryGetComponent(out HealthManager healthManager))
             {
+                healthManager.ReduceHealth(PeaProps.Damage);
                 Destroy(gameObject);
-                healthManager.ReduceHealth(_plantWeaponDamages.GetValue(PlantWeaponID.Pea));
             }
         }
     }

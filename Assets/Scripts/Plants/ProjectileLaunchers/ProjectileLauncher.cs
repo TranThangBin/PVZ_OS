@@ -5,45 +5,39 @@ namespace Game
 {
     public abstract class ProjectileLauncher : Plant
     {
-        [SerializeField] private PlantChargeTimes _plantChargeTimes;
-        [SerializeField] private PlantRanges _plantRanges;
-        [SerializeField] private GameObject _projectile;
-
         private Tween _cooldownTween;
         private bool _ready;
+
+        public override PlantProperties PlantProps => ProjectileLauncherProps.PlantProps;
+        protected abstract ProjectileLauncherProperties ProjectileLauncherProps { get; }
 
         private void Start()
         {
             _cooldownTween = DOTween.
                 Sequence(this).
                 AppendCallback(() => _ready = false).
-                AppendInterval(_plantChargeTimes.GetValue(PlantID)).
+                AppendInterval(ProjectileLauncherProps.AttackRechargeTime).
                 AppendCallback(() => _ready = true).
-                SetAutoKill(false);
+                SetAutoKill(false).
+                Pause();
+
+            DOTween.
+                Sequence(this).
+                AppendInterval(1).
+                AppendCallback(() => _ready = true);
         }
 
         private void FixedUpdate()
         {
             if (_ready)
             {
-                float rayOffset = 0;
-                float rayLength = _plantRanges.GetValue(PlantID).Range;
-
-                if (_plantRanges.GetValue(PlantID).BothDirection)
-                {
-                    rayOffset = rayLength;
-                    rayLength *= 2;
-                }
-
-                RaycastHit2D rc = Utils.Raycast(
-                    transform.position + Vector3.left * rayOffset,
-                    Vector2.right, rayLength, LayerMask.GetMask("Enemy"), Color.red);
+                RaycastHit2D rc = Raycast();
 
                 if (rc.collider != null)
                 {
                     DOTween.
                         Sequence(this).
-                        Append(Attack(_projectile, rc.rigidbody)).
+                        Append(Attack(ProjectileLauncherProps.Projectile, rc.rigidbody)).
                         AppendCallback(() => _cooldownTween.Restart());
                 }
             }
@@ -52,5 +46,12 @@ namespace Game
         private void OnDestroy() => DOTween.Kill(this);
 
         protected abstract Tween Attack(GameObject projectile, Rigidbody2D target);
+
+        protected virtual RaycastHit2D Raycast()
+        {
+            return Utils.Raycast(
+                transform.position,
+                Vector2.right, ProjectileLauncherProps.VisionLength, LayerMask.GetMask("Enemy"), Color.red);
+        }
     }
 }

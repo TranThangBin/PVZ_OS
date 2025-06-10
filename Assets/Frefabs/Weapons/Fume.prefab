@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3901762153417946493}
   - component: {fileID: 6545119150691874463}
   - component: {fileID: 1360762722112329315}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Fume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 60
+      scalar: 75
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4801,8 +4801,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2016032299
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -4870,7 +4870,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 13.682196, y: 0}
+  m_Offset: {x: 15, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4880,7 +4880,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 29.28542, y: 7.334272}
+  m_Size: {x: 30, y: 7}
   m_EdgeRadius: 0
 --- !u!50 &6545119150691874463
 Rigidbody2D:
@@ -4921,4 +4921,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8527b5d55326544eb524e7ba2e32a11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plantWeaponDamages: {fileID: 11400000, guid: cea6629a197c1454fa3c9a93e7d87eb3, type: 2}
+  _gameProps: {fileID: 11400000, guid: 23a51bfab3853a34c9ea3bcabeba0bd6, type: 2}
