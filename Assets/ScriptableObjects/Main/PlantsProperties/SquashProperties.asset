@@ -17,6 +17,6 @@ MonoBehaviour:
     _seedRechargeTime: 30
     _sprite: {fileID: -3879942837491269518, guid: 4a7c7d03fb26eb049aa242887f64410f, type: 3}
   _jumpForce: 20
-  _jumpTime: 2
+  _jumpTime: 0.75
   _range: 20
   _damage: 90

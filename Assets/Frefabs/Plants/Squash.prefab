@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7077533703957505779}
   - component: {fileID: 604292118675582644}
   - component: {fileID: 7983535774338096872}
-  - component: {fileID: 3013751900048434439}
+  - component: {fileID: 7679763157376794722}
   m_Layer: 7
   m_Name: Squash
   m_TagString: Untagged
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _squashProps: {fileID: 11400000, guid: 2120b9f174e9280419befcddf7e30b8a, type: 2}
---- !u!114 &3013751900048434439
+--- !u!114 &7679763157376794722
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,6 +171,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1191935844953624198}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7934a65d7b9699942b64c751fac1bf86, type: 3}
+  m_Script: {fileID: 11500000, guid: 1110e1b3e07895d4684bf719dfbb820b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

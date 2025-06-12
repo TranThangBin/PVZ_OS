@@ -5,29 +5,30 @@ using UnityEngine;
 namespace Game
 {
     [RequireComponent(typeof(RangeCast))]
-    public class Chomper : Plant, HealthManager.IDestroyOnOutOfHealth, RangeCast.IOnRangeCastHit
+    public class MelonPult : Plant, RangeCast.IOnRangeCastHit
     {
-        [SerializeField] private ChomperProperties _chomperProps;
+        [SerializeField] private MelonPultProperties _melonPultProps;
 
         private void OnDestroy() => DOTween.Kill(this);
 
-        public override PlantProperties PlantProps => _chomperProps.PlantProps;
-
-        public int Health => _chomperProps.Hp;
+        public override PlantProperties PlantProps => _melonPultProps.PlantProps;
 
         public IEnumerable<RangeCast.RangeCastProperties> GetRangeCastProps()
         {
-            yield return new(Vector2.right, _chomperProps.Range, Color.red);
+            yield return new(Vector2.right, _melonPultProps.Range, Color.red);
         }
         public void OnRangeCastHit(RangeCast sender, Collider2D collider)
         {
-            if (!DOTween.IsTweening(this) && collider.TryGetComponent(out HealthManager enemyHealth))
+            if (!DOTween.IsTweening(this))
             {
-                enemyHealth.ReduceHealth(_chomperProps.Damage);
+                Melon melon = Instantiate(_melonPultProps.Melon, transform.parent);
+                melon.gameObject.layer = gameObject.layer;
+                melon.Targeting(collider.attachedRigidbody);
+
                 DOTween.
                     Sequence(this).
                     AppendCallback(() => sender.enabled = false).
-                    AppendInterval(_chomperProps.ChewingInterval).
+                    AppendInterval(_melonPultProps.ShootingInterval).
                     AppendCallback(() => sender.enabled = true);
             }
         }

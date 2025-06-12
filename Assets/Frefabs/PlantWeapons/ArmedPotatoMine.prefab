@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1008037116464820686}
   - component: {fileID: 9128842956320280}
   - component: {fileID: 5841118946822357125}
-  - component: {fileID: 5187453019949486617}
   - component: {fileID: 2662261496923821055}
-  m_Layer: 7
+  - component: {fileID: 7126919476401941017}
+  m_Layer: 0
   m_Name: ArmedPotatoMine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,18 +136,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 11.94, y: 8.86}
   m_EdgeRadius: 0
---- !u!114 &5187453019949486617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2971800562563735481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18c2c7b33ca16444bba440ff533cb95d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2662261496923821055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,3 +148,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bbc97aa5023ffe4b8e0f5a881c3c499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7126919476401941017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2971800562563735481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cde8ca4c236e4ed478dc0c6ab1dee1e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _armedPotatoMineProps: {fileID: 11400000, guid: 0f905baf1d2e5ce4d8a5aaa1d21f2230, type: 2}

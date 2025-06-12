@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace Game
 {
-    [RequireComponent(typeof(Plant), typeof(RangeCast))]
-    public class Squash : MonoBehaviour, Plant.IPlant, RangeCast.IOnRangeCastHit
+    [RequireComponent(typeof(RangeCast))]
+    public class Squash : Plant, RangeCast.IOnRangeCastHit
     {
         [SerializeField] private SquashProperties _squashProps;
 
@@ -22,12 +22,12 @@ namespace Game
             }
         }
 
-        public PlantProperties PlantProps => _squashProps.PlantProps;
+        public override PlantProperties PlantProps => _squashProps.PlantProps;
 
         public IEnumerable<RangeCast.RangeCastProperties> GetRangeCastProps()
         {
-            yield return new(Vector2.right, _squashProps.Range, LayerMask.GetMask("Enemy"), Color.red);
-            yield return new(Vector2.left, _squashProps.Range, LayerMask.GetMask("Enemy"), Color.red);
+            yield return new(Vector2.right, _squashProps.Range, Color.red);
+            yield return new(Vector2.left, _squashProps.Range, Color.red);
         }
         public void OnRangeCastHit(RangeCast sender, Collider2D collider)
         {
@@ -35,14 +35,18 @@ namespace Game
             {
                 sender.enabled = false;
                 float moveAmount = _squashProps.JumpTime * collider.attachedRigidbody.linearVelocityX;
-                Vector2 destination = collider.transform.position + Vector3.left * moveAmount;
+                Vector2 destination = collider.transform.position + Vector3.right * moveAmount;
 
                 transform.
                     DOJump(destination, _squashProps.JumpForce, 1, _squashProps.JumpTime).
-                    SetEase(Ease.Linear).
-                    AppendCallback(() => _kill = true).
-                    AppendInterval(1).
-                    AppendCallback(() => Destroy(gameObject)).
+                    SetEase(Ease.InOutQuart).
+                    OnComplete(() =>
+                    {
+                        _kill = true;
+                        DOTween.Sequence(this).
+                            AppendInterval(1).
+                            AppendCallback(() => Destroy(gameObject));
+                    }).
                     SetId(this);
             }
         }

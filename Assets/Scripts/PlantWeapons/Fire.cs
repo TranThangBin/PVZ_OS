@@ -2,10 +2,9 @@ using UnityEngine;
 
 namespace Game
 {
-    [RequireComponent(typeof(PlantWeapon))]
-    public class Fire : MonoBehaviour, PlantWeapon.IPlantWeapon
+    public class Fire : PlantWeapon
     {
         [SerializeField] private FireProperties _fireProps;
-        public PlantWeaponProperties PlantWeaponProps => _fireProps.PlantWeaponProps;
+        public override PlantWeaponProperties PlantWeaponProps => _fireProps.PlantWeaponProps;
     }
 }

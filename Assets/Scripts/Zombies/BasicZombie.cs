@@ -1,47 +1,43 @@
 using DG.Tweening;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game
 {
-    [RequireComponent(typeof(Rigidbody2D), typeof(HealthManager))]
+    [RequireComponent(typeof(Rigidbody2D), typeof(HealthManager), typeof(RangeCast))]
     public class BasicZombie : MonoBehaviour,
-        HealthManager.IDestroyOnOutOfHealth, HealthManager.IHealthy
+        HealthManager.IDestroyOnOutOfHealth, RangeCast.IOnRangeCastHit
     {
         [SerializeField] private BasicZombieProperties _basicZombieProps;
 
-        public int Health => _basicZombieProps.Hp;
-
         private Rigidbody2D _rb;
+        private Vector2 _direction = Vector2.left;
 
         private void OnDestroy() => DOTween.Kill(this);
 
         private void Awake() => _rb = GetComponent<Rigidbody2D>();
 
-        private void Start() => _rb.linearVelocity = _basicZombieProps.MovementSpeed * Vector2.left;
+        private void Start() => _rb.linearVelocity = _basicZombieProps.MovementSpeed * _direction;
 
-        private void FixedUpdate()
+        public int Health => _basicZombieProps.Hp;
+
+        public IEnumerable<RangeCast.RangeCastProperties> GetRangeCastProps()
         {
-            if (!DOTween.IsTweening(this))
+            yield return new(_direction, _basicZombieProps.AttackRange, Color.black);
+        }
+        public void OnRangeCastHit(RangeCast sender, Collider2D collider)
+        {
+            if (collider.TryGetComponent(out HealthManager health))
             {
-                float rayLength = _basicZombieProps.AttackRange;
-
-                RaycastHit2D hit = Utils.Raycast(transform.position, Vector2.left, rayLength, LayerMask.GetMask("Ally"), Color.black);
-
-                if (hit.collider == null) { return; }
-
-                HealthManager plantHealth = hit.collider.GetComponentInParent<HealthManager>();
-
-                if (plantHealth == null) { return; }
-
                 _rb.linearVelocity = Vector2.zero;
                 DOTween.
                     Sequence(this).
                     AppendCallback(() =>
                     {
-                        plantHealth.ReduceHealth(_basicZombieProps.Damage);
-                        if (plantHealth == null)
+                        health.ReduceHealth(_basicZombieProps.Damage);
+                        if (health == null)
                         {
-                            _rb.linearVelocity = _basicZombieProps.MovementSpeed * Vector2.left;
+                            _rb.linearVelocity = _basicZombieProps.MovementSpeed * _direction;
                             DOTween.Kill(this);
                         }
                     }).

@@ -3,8 +3,7 @@ using UnityEngine;
 
 namespace Game
 {
-    [RequireComponent(typeof(Plant))]
-    public class Sunflower : MonoBehaviour, Plant.IPlant, HealthManager.IDestroyOnOutOfHealth
+    public class Sunflower : Plant, HealthManager.IDestroyOnOutOfHealth
     {
         [SerializeField] private SunflowerProperties _sunflowerProps;
 
@@ -23,7 +22,7 @@ namespace Game
                 }).
                 SetLoops(-1);
 
-        public PlantProperties PlantProps => _sunflowerProps.PlantProps;
+        public override PlantProperties PlantProps => _sunflowerProps.PlantProps;
 
         public int Health => _sunflowerProps.Hp;
     }

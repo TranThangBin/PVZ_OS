@@ -4,18 +4,18 @@ using UnityEngine.Events;
 namespace Game
 {
     [RequireComponent(typeof(BoxCollider2D))]
-    public class PatchedBoxCollider2D : MonoBehaviour
+    public class BoxCollider2DPatch : MonoBehaviour
     {
         private float _initialYPos;
 
-        private readonly UnityEvent<Collision2D> PvZOnCollisionEnter2D = new();
+        private readonly UnityEvent<Collision2D> OnCollision2DPatch = new();
 
         private void Start()
         {
             _initialYPos = transform.position.y;
-            foreach (IOnPatchedCollisionEnter2D handler in GetComponents<IOnPatchedCollisionEnter2D>())
+            foreach (IOnCollisionEnter2DPatch handler in GetComponents<IOnCollisionEnter2DPatch>())
             {
-                PvZOnCollisionEnter2D.AddListener(handler.PatchedOnCollisionEnter2D);
+                OnCollision2DPatch.AddListener(handler.OnCollisionEnter2DPatch);
             }
         }
 
@@ -25,13 +25,13 @@ namespace Game
             if (collision.transform.position.y <= _initialYPos + errorMargin &&
                 collision.transform.position.y >= _initialYPos - errorMargin)
             {
-                PvZOnCollisionEnter2D.Invoke(collision);
+                OnCollision2DPatch.Invoke(collision);
             }
         }
 
-        public interface IOnPatchedCollisionEnter2D
+        public interface IOnCollisionEnter2DPatch
         {
-            void PatchedOnCollisionEnter2D(Collision2D collision);
+            void OnCollisionEnter2DPatch(Collision2D collision);
         }
     }
 }

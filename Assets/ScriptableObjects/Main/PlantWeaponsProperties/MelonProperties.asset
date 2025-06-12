@@ -15,5 +15,5 @@ MonoBehaviour:
   _plantWeaponProps:
     _damage: 3
     _destroyOnImpact: 1
-  _flyTime: 5
-  _jumpForce: 30
+  _flyTime: 2
+  _jumpForce: 40

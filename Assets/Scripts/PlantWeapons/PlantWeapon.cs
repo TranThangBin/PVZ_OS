@@ -2,22 +2,18 @@ using UnityEngine;
 
 namespace Game
 {
-    [RequireComponent(typeof(PatchedBoxCollider2D))]
-    public class PlantWeapon : MonoBehaviour, PatchedBoxCollider2D.IOnPatchedCollisionEnter2D
+    [RequireComponent(typeof(BoxCollider2DPatch))]
+    public abstract class PlantWeapon : MonoBehaviour, BoxCollider2DPatch.IOnCollisionEnter2DPatch
     {
-        public void PatchedOnCollisionEnter2D(Collision2D collision)
+        public abstract PlantWeaponProperties PlantWeaponProps { get; }
+
+        public void OnCollisionEnter2DPatch(Collision2D collision)
         {
-            PlantWeaponProperties props = GetComponent<IPlantWeapon>().PlantWeaponProps;
             if (collision.collider.TryGetComponent(out HealthManager healthManager))
             {
-                healthManager.ReduceHealth(props.Damage);
-                if (props.DestroyOnImpact) { Destroy(gameObject); }
+                healthManager.ReduceHealth(PlantWeaponProps.Damage);
+                if (PlantWeaponProps.DestroyOnImpact) { Destroy(gameObject); }
             }
-        }
-
-        public interface IPlantWeapon
-        {
-            PlantWeaponProperties PlantWeaponProps { get; }
         }
     }
 }

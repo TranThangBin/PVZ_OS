@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 450968121068859821}
   - component: {fileID: 1289254481578289759}
   - component: {fileID: 7706607425693762996}
-  - component: {fileID: 2932515131381500221}
   - component: {fileID: 5532173415143523966}
   m_Layer: 7
   m_Name: Sunflower
@@ -147,18 +146,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fbd2a2d1f010264e8e9aff8c61e1741, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2932515131381500221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7973500811911684898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7934a65d7b9699942b64c751fac1bf86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &5532173415143523966

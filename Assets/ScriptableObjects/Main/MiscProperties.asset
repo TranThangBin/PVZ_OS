@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 291d01f55034c5143aa41a45c8c9a521, type: 3}
   m_Name: MiscProperties
   m_EditorClassIdentifier: 
-  _initialSun: 50
+  _initialSun: 300
   _seedBank:
-  - {fileID: 2932515131381500221, guid: 4b4f64d40c9ba5d4f9b952a4fa98c629, type: 3}
-  - {fileID: 3013751900048434439, guid: e722e26d94c24354584d928b425a024b, type: 3}
-  - {fileID: 8718372271433807967, guid: 95bc1910900cfaf4088bdc1e0e825306, type: 3}
-  - {fileID: 1425078443413390765, guid: 698fa4de0ffeda248bfb5a544a63a326, type: 3}
-  - {fileID: 718356235254328270, guid: 4362556c827255c498ea2e5106c90743, type: 3}
+  - {fileID: 5532173415143523966, guid: 4b4f64d40c9ba5d4f9b952a4fa98c629, type: 3}
+  - {fileID: 7983535774338096872, guid: e722e26d94c24354584d928b425a024b, type: 3}
+  - {fileID: 2736844375395762645, guid: 95bc1910900cfaf4088bdc1e0e825306, type: 3}
+  - {fileID: 4076101874668635763, guid: 698fa4de0ffeda248bfb5a544a63a326, type: 3}
+  - {fileID: 7857222420521982423, guid: 4362556c827255c498ea2e5106c90743, type: 3}
+  - {fileID: 1425308207525346091, guid: 665836a7e0743b7439e799846b45b5e6, type: 3}
+  - {fileID: 1034642492722154264, guid: e6ca91135cdba154caf7a1e2d1c72030, type: 3}
+  - {fileID: 7723009065039194784, guid: 1cbad56ee6aca3543aa9571e43e48cba, type: 3}
   _seedPacket: {fileID: 3673234174439415083, guid: 802a62eaa7760754098d44c83ca92ae7, type: 3}
   _sun: {fileID: 864223831861094711, guid: b598fe2eaa925ad42a859425d519b571, type: 3}
   _basicZombie: {fileID: 4012023038547497566, guid: 7ea6606f23f18ed47ada78bcea1fddc1, type: 3}

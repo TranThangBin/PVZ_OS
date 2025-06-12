@@ -15,7 +15,7 @@ namespace Game
         {
             if (_object == null) { return; }
 
-            Utils.CleanupChildren(transform);
+            CleanupGrid();
 
             float width = _lawnEnd.position.x - _lawnStart.position.x;
             float height = _lawnStart.position.y - _lawnEnd.position.y;
@@ -35,7 +35,7 @@ namespace Game
         [ContextMenu("Generate Colliders")]
         private void GenerateColliders()
         {
-            Utils.CleanupChildren(transform);
+            CleanupGrid();
 
             float width = _lawnEnd.position.x - _lawnStart.position.x;
             float height = _lawnStart.position.y - _lawnEnd.position.y;
@@ -56,6 +56,19 @@ namespace Game
                     BoxCollider2D collider = cell.GetComponent<BoxCollider2D>();
                     collider.size = cellSize;
                 }
+            }
+        }
+
+        private void CleanupGrid()
+        {
+            GameObject[] children = new GameObject[transform.childCount];
+            for (int i = 0; i < children.Length; i++)
+            {
+                children[i] = transform.GetChild(i).gameObject;
+            }
+            foreach (GameObject child in children)
+            {
+                DestroyImmediate(child);
             }
         }
     }

@@ -2,10 +2,9 @@ using UnityEngine;
 
 namespace Game
 {
-    [RequireComponent(typeof(PlantWeapon))]
-    public class ArmedPotatoMine : MonoBehaviour, PlantWeapon.IPlantWeapon
+    public class ArmedPotatoMine : PlantWeapon
     {
         [SerializeField] private ArmedPotatoMineProperties _armedPotatoMineProps;
-        public PlantWeaponProperties PlantWeaponProps => _armedPotatoMineProps.PlantWeaponProps;
+        public override PlantWeaponProperties PlantWeaponProps => _armedPotatoMineProps.PlantWeaponProps;
     }
 }

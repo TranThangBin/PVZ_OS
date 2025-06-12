@@ -3,8 +3,7 @@ using UnityEngine;
 
 namespace Game
 {
-    [RequireComponent(typeof(PlantWeapon))]
-    public class Melon : MonoBehaviour, PlantWeapon.IPlantWeapon
+    public class Melon : PlantWeapon
     {
         [SerializeField] private MelonProperties _melonProps;
 
@@ -13,15 +12,16 @@ namespace Game
         public void Targeting(Rigidbody2D target)
         {
             float moveAmount = _melonProps.FlyTime * target.linearVelocityX;
-            Vector2 destination = target.position + Vector2.left * moveAmount;
+            Vector2 destination = target.position + Vector2.right * moveAmount;
+
             transform.
-                DOJump(target.position, _melonProps.JumpForce, 1, _melonProps.FlyTime).
+                DOJump(destination, _melonProps.JumpForce, 1, _melonProps.FlyTime).
                 Join(transform.DORotate(Vector3.back * 90, _melonProps.FlyTime)).
-                SetEase(Ease.Linear).
+                SetEase(Ease.InOutQuart).
                 OnComplete(() => Destroy(gameObject)).
                 SetId(this);
         }
 
-        public PlantWeaponProperties PlantWeaponProps => _melonProps.PlantWeaponProps;
+        public override PlantWeaponProperties PlantWeaponProps => _melonProps.PlantWeaponProps;
     }
 }

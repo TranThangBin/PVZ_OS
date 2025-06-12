@@ -7,16 +7,11 @@ namespace Game
     {
         [SerializeField] private SpriteRenderer _srSelectedOverlay;
 
-        public void ActionOnLawn(Transform lawnCell, UnityAction<GameObject, int> onSuccess)
+        public void ActionOnLawn(Transform lawnCell, UnityAction<int> onSuccess)
         {
             Plant plant = lawnCell.GetComponentInChildren<Plant>();
-
-            if (plant != null)
-            {
-                Destroy(plant.gameObject);
-            }
-
-            onSuccess.Invoke(gameObject, 0);
+            if (plant != null) { Destroy(plant.gameObject); }
+            onSuccess.Invoke(0);
         }
 
         public void SetSelected(bool isSelected) => _srSelectedOverlay.enabled = isSelected;

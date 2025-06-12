@@ -3,8 +3,7 @@ using UnityEngine;
 
 namespace Game
 {
-    [RequireComponent(typeof(Plant))]
-    public class PotatoMine : MonoBehaviour, Plant.IPlant, HealthManager.IDestroyOnOutOfHealth
+    public class PotatoMine : Plant, HealthManager.IDestroyOnOutOfHealth
     {
         [SerializeField] private PotatoMineProperties _potatoMineProps;
 
@@ -16,11 +15,12 @@ namespace Game
                 AppendInterval(_potatoMineProps.PreparationTime).
                 AppendCallback(() =>
                 {
-                    Instantiate(_potatoMineProps.ArmedPotatoMine, transform.parent);
+                    ArmedPotatoMine armed = Instantiate(_potatoMineProps.ArmedPotatoMine, transform.parent);
+                    armed.gameObject.layer = gameObject.layer;
                     Destroy(gameObject);
                 });
 
-        public PlantProperties PlantProps => _potatoMineProps.PlantProps;
+        public override PlantProperties PlantProps => _potatoMineProps.PlantProps;
 
         public int Health => _potatoMineProps.Hp;
     }

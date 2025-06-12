@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3584df74dbfc989478ce788854fcc394, type: 3}
-  m_Name: New Fume Properties
+  m_Script: {fileID: 11500000, guid: 00bddccc36cf48e4099c60a5a2373567, type: 3}
+  m_Name: ArmedPotatoMineProperties
   m_EditorClassIdentifier: 
   _plantWeaponProps:
-    _damage: 1
-    _destroyOnImpact: 0
+    _damage: 90
+    _destroyOnImpact: 1

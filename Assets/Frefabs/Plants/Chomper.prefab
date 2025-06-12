@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1552000581074121039}
   - component: {fileID: 7857222420521982423}
   - component: {fileID: 6026030796124015559}
-  - component: {fileID: 718356235254328270}
+  - component: {fileID: 4992566630368516403}
   m_Layer: 7
   m_Name: Chomper
   m_TagString: Untagged
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fbd2a2d1f010264e8e9aff8c61e1741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &718356235254328270
+--- !u!114 &4992566630368516403
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,6 +171,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1385696973055243218}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7934a65d7b9699942b64c751fac1bf86, type: 3}
+  m_Script: {fileID: 11500000, guid: 1110e1b3e07895d4684bf719dfbb820b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

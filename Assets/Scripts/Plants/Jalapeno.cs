@@ -3,8 +3,7 @@ using UnityEngine;
 
 namespace Game
 {
-    [RequireComponent(typeof(Plant))]
-    public class Jalapeno : MonoBehaviour, Plant.IPlant
+    public class Jalapeno : Plant
     {
         [SerializeField] private JalapenoProperties _jalapenoProps;
 
@@ -17,11 +16,12 @@ namespace Game
                 AppendInterval(_jalapenoProps.DelayTime).
                 AppendCallback(() =>
                 {
-                    Instantiate(_jalapenoProps.Fire, transform.parent);
+                    Fire fire = Instantiate(_jalapenoProps.Fire, transform.parent);
+                    fire.gameObject.layer = gameObject.layer;
                     Destroy(gameObject);
                 });
         }
 
-        public PlantProperties PlantProps => _jalapenoProps.PlantProps;
+        public override PlantProperties PlantProps => _jalapenoProps.PlantProps;
     }
 }

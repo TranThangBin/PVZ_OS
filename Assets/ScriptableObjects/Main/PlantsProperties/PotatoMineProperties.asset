@@ -18,4 +18,4 @@ MonoBehaviour:
     _sprite: {fileID: -3987954987491192329, guid: 0874958737ba31b41b76ac9d4f8ad9d2, type: 3}
   _hp: 6
   _preparationTime: 15
-  _armedPotatoMine: {fileID: 5187453019949486617, guid: 7e8676e908d1c9f41b584011d0aa8c53, type: 3}
+  _armedPotatoMine: {fileID: 7126919476401941017, guid: 7e8676e908d1c9f41b584011d0aa8c53, type: 3}

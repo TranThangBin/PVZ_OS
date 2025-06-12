@@ -3,8 +3,7 @@ using UnityEngine;
 
 namespace Game
 {
-    [RequireComponent(typeof(PlantWeapon))]
-    public class Pea : MonoBehaviour, PlantWeapon.IPlantWeapon
+    public class Pea : PlantWeapon
     {
         [SerializeField] private PeaProperties _peaProps;
 
@@ -13,9 +12,13 @@ namespace Game
         public void Targeting(Vector2 target)
         {
             float flyTime = Utils.CalculateTime(transform.position, target, _peaProps.FlyVelocity);
-            transform.DOMove(target, flyTime).OnComplete(() => Destroy(gameObject)).SetId(this);
+            transform.
+                DOMove(target, flyTime).
+                SetEase(Ease.Linear).
+                OnComplete(() => Destroy(gameObject)).
+                SetId(this);
         }
 
-        public PlantWeaponProperties PlantWeaponProps => _peaProps.PlantWeaponProps;
+        public override PlantWeaponProperties PlantWeaponProps => _peaProps.PlantWeaponProps;
     }
 }

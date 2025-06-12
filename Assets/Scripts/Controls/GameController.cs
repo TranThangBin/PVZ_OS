@@ -72,16 +72,21 @@ namespace Game
 
         private void Update()
         {
-            HandleSelection();
-            HandleLawnInteraction();
-            HandleCollectSun();
+            if (Input.GetMouseButtonDown(0))
+            {
+                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                HandleSelection(mousePosition);
+                HandleCollectSun(mousePosition);
+            }
+            else if (Input.GetMouseButtonUp(0))
+            {
+                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                HandleLawnInteraction(mousePosition);
+            }
         }
 
-        private void HandleSelection()
+        private void HandleSelection(Vector2 mousePosition)
         {
-            if (!Input.GetMouseButtonDown(0)) { return; }
-
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 1, LayerMask.GetMask("Selectable"));
 
             if (hit.collider == null) { return; }
@@ -98,16 +103,15 @@ namespace Game
             }
         }
 
-        private void HandleLawnInteraction()
+        private void HandleLawnInteraction(Vector2 mousePosition)
         {
-            if (_selected == null || !Input.GetMouseButtonUp(0)) { return; }
+            if (_selected == null) { return; }
 
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 1, LayerMask.GetMask("LawnCell"));
 
             if (hit.collider != null)
             {
-                _selected.ActionOnLawn(hit.collider.transform, (gameObj, cost) =>
+                _selected.ActionOnLawn(hit.collider.transform, (cost) =>
                 {
                     SunStore -= cost;
                     Selected = null;
@@ -115,11 +119,8 @@ namespace Game
             }
         }
 
-        private void HandleCollectSun()
+        private void HandleCollectSun(Vector2 mousePosition)
         {
-            if (!Input.GetMouseButtonDown(0)) { return; }
-
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 1, LayerMask.GetMask("Sun"));
 
             if (hit.collider != null)
