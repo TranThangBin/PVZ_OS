@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Game
 {
     [RequireComponent(typeof(RangeCast))]
-    public class Squash : Plant, RangeCast.IOnRangeCastHit
+    public class Squash : Plant, RangeCast.IOnRangeCastHit, HealthManager.IInfiniteHealth
     {
         [SerializeField] private SquashProperties _squashProps;
 

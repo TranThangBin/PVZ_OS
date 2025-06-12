@@ -9,6 +9,8 @@ namespace Game
         HealthManager.IDestroyOnOutOfHealth, RangeCast.IOnRangeCastHit
     {
         [SerializeField] private BasicZombieProperties _basicZombieProps;
+        [SerializeField] private Animator _anim;
+        [SerializeField] private ParticleSystem _ps;
 
         private Rigidbody2D _rb;
         private Vector2 _direction = Vector2.left;
@@ -27,17 +29,22 @@ namespace Game
         }
         public void OnRangeCastHit(RangeCast sender, Collider2D collider)
         {
-            if (collider.TryGetComponent(out HealthManager health))
+            if (!DOTween.IsTweening(this) && collider.TryGetComponent(out HealthManager health))
             {
                 _rb.linearVelocity = Vector2.zero;
+                _anim.SetBool("IsEating", true);
+                sender.enabled = false;
                 DOTween.
                     Sequence(this).
                     AppendCallback(() =>
                     {
                         health.ReduceHealth(_basicZombieProps.Damage);
-                        if (health == null)
+                        _ps.Play();
+                        if (health.IsOutOfHealth())
                         {
                             _rb.linearVelocity = _basicZombieProps.MovementSpeed * _direction;
+                            _anim.SetBool("IsEating", false);
+                            sender.enabled = true;
                             DOTween.Kill(this);
                         }
                     }).

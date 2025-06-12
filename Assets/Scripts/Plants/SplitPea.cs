@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Game
 {
     [RequireComponent(typeof(RangeCast))]
-    public class SplitPea : Plant, RangeCast.IOnRangeCastHit
+    public class SplitPea : Plant, RangeCast.IOnRangeCastHit, HealthManager.IDestroyOnOutOfHealth
     {
         [SerializeField] private SplitPeaProperties _splitPeaProps;
 
@@ -34,6 +34,8 @@ namespace Game
                     AppendCallback(() => sender.enabled = true);
             }
         }
+
+        public int Health => _splitPeaProps.Hp;
 
         private Pea InstantiatePea()
         {

@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Game
 {
     [RequireComponent(typeof(RangeCast))]
-    public class MelonPult : Plant, RangeCast.IOnRangeCastHit
+    public class MelonPult : Plant, RangeCast.IOnRangeCastHit, HealthManager.IDestroyOnOutOfHealth
     {
         [SerializeField] private MelonPultProperties _melonPultProps;
 
@@ -32,5 +32,7 @@ namespace Game
                     AppendCallback(() => sender.enabled = true);
             }
         }
+
+        public int Health => _melonPultProps.Hp;
     }
 }

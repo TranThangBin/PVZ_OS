@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Row1
+  - Row2
+  - Row3
+  - Row4
+  - Row5
   layers:
   - Default
   - TransparentFX
@@ -58,6 +63,9 @@ TagManager:
     locked: 0
   - name: Sun
     uniqueID: 4013794277
+    locked: 0
+  - name: Front
+    uniqueID: 925092403
     locked: 0
   m_RenderingLayers:
   - Default

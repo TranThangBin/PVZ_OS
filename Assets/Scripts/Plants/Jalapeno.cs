@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Game
 {
-    public class Jalapeno : Plant
+    public class Jalapeno : Plant, HealthManager.IInfiniteHealth
     {
         [SerializeField] private JalapenoProperties _jalapenoProps;
 

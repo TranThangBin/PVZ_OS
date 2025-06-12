@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Game
 {
     [RequireComponent(typeof(RangeCast))]
-    public class Peashooter : Plant, RangeCast.IOnRangeCastHit
+    public class Peashooter : Plant, RangeCast.IOnRangeCastHit, HealthManager.IDestroyOnOutOfHealth
     {
         [SerializeField] private PeashooterProperties _peashooterProps;
 
@@ -32,5 +32,7 @@ namespace Game
                     AppendCallback(() => sender.enabled = true);
             }
         }
+
+        public int Health => _peashooterProps.Hp;
     }
 }

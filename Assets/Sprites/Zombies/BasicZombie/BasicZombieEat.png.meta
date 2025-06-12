@@ -1,0 +1,1157 @@
+fileFormatVersion: 2
+guid: 59585624be4694f43b7e46ae76f3cd89
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2900258029587848315
+    second: BasicZombieEat_0
+  - first:
+      213: 1105316163096197335
+    second: BasicZombieEat_1
+  - first:
+      213: 7486851806880217401
+    second: BasicZombieEat_2
+  - first:
+      213: 5822293152380092615
+    second: BasicZombieEat_3
+  - first:
+      213: -3417553396678383312
+    second: BasicZombieEat_4
+  - first:
+      213: 5565003301149856003
+    second: BasicZombieEat_5
+  - first:
+      213: -3768075976852426585
+    second: BasicZombieEat_6
+  - first:
+      213: 4066527327454615655
+    second: BasicZombieEat_7
+  - first:
+      213: -9074431026667529904
+    second: BasicZombieEat_8
+  - first:
+      213: 6427436453831043918
+    second: BasicZombieEat_9
+  - first:
+      213: 7398680047634194126
+    second: BasicZombieEat_10
+  - first:
+      213: 6123494416417237438
+    second: BasicZombieEat_11
+  - first:
+      213: 2065895515008930657
+    second: BasicZombieEat_12
+  - first:
+      213: 3530901829485963002
+    second: BasicZombieEat_13
+  - first:
+      213: 85580765182761823
+    second: BasicZombieEat_14
+  - first:
+      213: 7343722127049074035
+    second: BasicZombieEat_15
+  - first:
+      213: -1331344337804498243
+    second: BasicZombieEat_16
+  - first:
+      213: -1128943982054366487
+    second: BasicZombieEat_17
+  - first:
+      213: -6097055594177471935
+    second: BasicZombieEat_18
+  - first:
+      213: -1835795163952525283
+    second: BasicZombieEat_19
+  - first:
+      213: -4566363831873234843
+    second: BasicZombieEat_20
+  - first:
+      213: 1809461223867495788
+    second: BasicZombieEat_21
+  - first:
+      213: 2688764885013126727
+    second: BasicZombieEat_22
+  - first:
+      213: 1038215475986663644
+    second: BasicZombieEat_23
+  - first:
+      213: 8933258522191752489
+    second: BasicZombieEat_24
+  - first:
+      213: -7730268022345016725
+    second: BasicZombieEat_25
+  - first:
+      213: 7840644863015596624
+    second: BasicZombieEat_26
+  - first:
+      213: -77320633797312972
+    second: BasicZombieEat_27
+  - first:
+      213: -5319739107942916745
+    second: BasicZombieEat_28
+  - first:
+      213: -7011400169973344697
+    second: BasicZombieEat_29
+  - first:
+      213: -7429805377030467411
+    second: BasicZombieEat_30
+  - first:
+      213: -7579999765658426780
+    second: BasicZombieEat_31
+  - first:
+      213: -3989003630900399897
+    second: BasicZombieEat_32
+  - first:
+      213: 1744147205550534154
+    second: BasicZombieEat_33
+  - first:
+      213: -3398917290490187969
+    second: BasicZombieEat_34
+  - first:
+      213: -4409403690681589910
+    second: BasicZombieEat_35
+  - first:
+      213: -3123877964108330608
+    second: BasicZombieEat_36
+  - first:
+      213: 7128206317310824537
+    second: BasicZombieEat_37
+  - first:
+      213: 1168401701097123425
+    second: BasicZombieEat_38
+  - first:
+      213: 4986251324533416710
+    second: BasicZombieEat_39
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BasicZombieEat_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 388
+        width: 87
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7cde8acf49cf3820800000000000000
+      internalID: 2900258029587848315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_1
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 388
+        width: 85
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d8b8d1b13fd65f00800000000000000
+      internalID: 1105316163096197335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_2
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 388
+        width: 84
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93936132d04a6e760800000000000000
+      internalID: 7486851806880217401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_3
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 388
+        width: 82
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c00ec536c0fcc050800000000000000
+      internalID: 5822293152380092615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_4
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 388
+        width: 80
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0392e0eea496290d0800000000000000
+      internalID: -3417553396678383312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_5
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 388
+        width: 79
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 301d9ea840dda3d40800000000000000
+      internalID: 5565003301149856003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_6
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 388
+        width: 78
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a03709fcda15bbc0800000000000000
+      internalID: -3768075976852426585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_7
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 388
+        width: 78
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 768d9561f053f6830800000000000000
+      internalID: 4066527327454615655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_8
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 389
+        width: 77
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 059d2b44f05211280800000000000000
+      internalID: -9074431026667529904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_9
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 389
+        width: 78
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4beef69667d23950800000000000000
+      internalID: 6427436453831043918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_10
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 260
+        width: 78
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ece910ead446da660800000000000000
+      internalID: 7398680047634194126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_11
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 260
+        width: 79
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb923a26ab50bf450800000000000000
+      internalID: 6123494416417237438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_12
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 260
+        width: 79
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1631e2b76098bac10800000000000000
+      internalID: 2065895515008930657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_13
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 260
+        width: 80
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af6a943a188400130800000000000000
+      internalID: 3530901829485963002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_14
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 260
+        width: 82
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5b1354a04b003100800000000000000
+      internalID: 85580765182761823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_15
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 260
+        width: 82
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 375afe7ad542ae560800000000000000
+      internalID: 7343722127049074035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_16
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 260
+        width: 83
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dba6f67e06d168de0800000000000000
+      internalID: -1331344337804498243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_17
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 260
+        width: 84
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e2a5520e6f2550f0800000000000000
+      internalID: -1128943982054366487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_18
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 259
+        width: 86
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14a5e3d9d38e26ba0800000000000000
+      internalID: -6097055594177471935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_19
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 259
+        width: 87
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d10da3c5602f586e0800000000000000
+      internalID: -1835795163952525283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_20
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 130
+        width: 89
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 568110ed94401a0c0800000000000000
+      internalID: -4566363831873234843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_21
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 130
+        width: 87
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c65377b656f7c1910800000000000000
+      internalID: 1809461223867495788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_22
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 130
+        width: 85
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74e50cfca69605520800000000000000
+      internalID: 2688764885013126727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_23
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 130
+        width: 83
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd88f76897b786e00800000000000000
+      internalID: 1038215475986663644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_24
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 130
+        width: 81
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92d68f5ab4f49fb70800000000000000
+      internalID: 8933258522191752489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_25
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 130
+        width: 79
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6a509db03298b490800000000000000
+      internalID: -7730268022345016725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_26
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 130
+        width: 80
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 052390e16f09fcc60800000000000000
+      internalID: 7840644863015596624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_27
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 130
+        width: 81
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43ef3b01b4d4deef0800000000000000
+      internalID: -77320633797312972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_28
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 131
+        width: 82
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77d1f4d677d7c26b0800000000000000
+      internalID: -5319739107942916745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_29
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 131
+        width: 84
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74610a281b082be90800000000000000
+      internalID: -7011400169973344697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_30
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 2
+        width: 83
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da0dfc7df5704e890800000000000000
+      internalID: -7429805377030467411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_31
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 2
+        width: 85
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 462a26aaf5e6ec690800000000000000
+      internalID: -7579999765658426780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_32
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 2
+        width: 85
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e03074155634a8c0800000000000000
+      internalID: -3989003630900399897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_33
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 2
+        width: 86
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0e64de74a4743810800000000000000
+      internalID: 1744147205550534154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_34
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 2
+        width: 87
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3f26678bbe94d0d0800000000000000
+      internalID: -3398917290490187969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_35
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 2
+        width: 86
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6f90a194b6aec2c0800000000000000
+      internalID: -4409403690681589910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_36
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 2
+        width: 86
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09907abea81c5a4d0800000000000000
+      internalID: -3123877964108330608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_37
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 2
+        width: 87
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 950d105f0e97ce260800000000000000
+      internalID: 7128206317310824537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_38
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 1
+        width: 87
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16e2bdc182ff63010800000000000000
+      internalID: 1168401701097123425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicZombieEat_39
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 1
+        width: 87
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 603a2af4929b23540800000000000000
+      internalID: 4986251324533416710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: e7e9e3d8eebf45648a5552d8fee11771
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BasicZombieEat_0: 2900258029587848315
+      BasicZombieEat_1: 1105316163096197335
+      BasicZombieEat_10: 7398680047634194126
+      BasicZombieEat_11: 6123494416417237438
+      BasicZombieEat_12: 2065895515008930657
+      BasicZombieEat_13: 3530901829485963002
+      BasicZombieEat_14: 85580765182761823
+      BasicZombieEat_15: 7343722127049074035
+      BasicZombieEat_16: -1331344337804498243
+      BasicZombieEat_17: -1128943982054366487
+      BasicZombieEat_18: -6097055594177471935
+      BasicZombieEat_19: -1835795163952525283
+      BasicZombieEat_2: 7486851806880217401
+      BasicZombieEat_20: -4566363831873234843
+      BasicZombieEat_21: 1809461223867495788
+      BasicZombieEat_22: 2688764885013126727
+      BasicZombieEat_23: 1038215475986663644
+      BasicZombieEat_24: 8933258522191752489
+      BasicZombieEat_25: -7730268022345016725
+      BasicZombieEat_26: 7840644863015596624
+      BasicZombieEat_27: -77320633797312972
+      BasicZombieEat_28: -5319739107942916745
+      BasicZombieEat_29: -7011400169973344697
+      BasicZombieEat_3: 5822293152380092615
+      BasicZombieEat_30: -7429805377030467411
+      BasicZombieEat_31: -7579999765658426780
+      BasicZombieEat_32: -3989003630900399897
+      BasicZombieEat_33: 1744147205550534154
+      BasicZombieEat_34: -3398917290490187969
+      BasicZombieEat_35: -4409403690681589910
+      BasicZombieEat_36: -3123877964108330608
+      BasicZombieEat_37: 7128206317310824537
+      BasicZombieEat_38: 1168401701097123425
+      BasicZombieEat_39: 4986251324533416710
+      BasicZombieEat_4: -3417553396678383312
+      BasicZombieEat_5: 5565003301149856003
+      BasicZombieEat_6: -3768075976852426585
+      BasicZombieEat_7: 4066527327454615655
+      BasicZombieEat_8: -9074431026667529904
+      BasicZombieEat_9: 6427436453831043918
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
