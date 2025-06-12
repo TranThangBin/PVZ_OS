@@ -8,6 +8,7 @@ namespace Game
     public class Chomper : Plant, HealthManager.IDestroyOnOutOfHealth, RangeCast.IOnRangeCastHit
     {
         [SerializeField] private ChomperProperties _chomperProps;
+        [SerializeField] private Animator _anim;
 
         private void OnDestroy() => DOTween.Kill(this);
 
@@ -26,9 +27,17 @@ namespace Game
                 enemyHealth.ReduceHealth(_chomperProps.Damage);
                 DOTween.
                     Sequence(this).
-                    AppendCallback(() => sender.enabled = false).
+                    AppendCallback(() =>
+                    {
+                        sender.enabled = false;
+                        _anim.SetBool("IsChewing", true);
+                    }).
                     AppendInterval(_chomperProps.ChewingInterval).
-                    AppendCallback(() => sender.enabled = true);
+                    AppendCallback(() =>
+                    {
+                        sender.enabled = true;
+                        _anim.SetBool("IsChewing", false);
+                    });
             }
         }
     }
