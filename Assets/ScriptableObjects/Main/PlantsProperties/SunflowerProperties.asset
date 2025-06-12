@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ccb8078d60813141aa59f2c541fee63, type: 3}
+  m_Name: SunflowerProperties
+  m_EditorClassIdentifier: 
+  _plantProps:
+    _sunCost: 50
+    _seedRechargeTime: 7.5
+    _sprite: {fileID: -256329436847572505, guid: 1c6595f11725368469b1102d78e124d5, type: 3}
+  _hp: 6
+  _sunGenerateInterval: 24
+  _sun: {fileID: 864223831861094711, guid: b598fe2eaa925ad42a859425d519b571, type: 3}

@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 419320873539012663}
   - component: {fileID: 1552949276055693521}
   - component: {fileID: 4628371508425154523}
+  - component: {fileID: 2377188112295220194}
+  - component: {fileID: 1981085375663749264}
   m_Layer: 7
   m_Name: Fire
   m_TagString: Untagged
@@ -1369,7 +1371,7 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 0, a: 1}
-        key1: {r: 1, g: 0.39215687, b: 0, a: 0.39215687}
+        key1: {r: 1, g: 0.39215687, b: 0, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -4951,5 +4953,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18c2c7b33ca16444bba440ff533cb95d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plantWeaponID: 1
-  _plantWeaponsProps: {fileID: 11400000, guid: d678a9dfe41ba4e45a80ac5433d510e2, type: 2}
+--- !u!114 &2377188112295220194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6301681072028096432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbc97aa5023ffe4b8e0f5a881c3c499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1981085375663749264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6301681072028096432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d24388f9c22544fa1614f87ee59850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fireProps: {fileID: 11400000, guid: bfbe5819bdc86c8468a532146e34348f, type: 2}

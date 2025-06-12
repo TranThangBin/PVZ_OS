@@ -10,8 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3205888237218734533}
   - component: {fileID: 450968121068859821}
+  - component: {fileID: 1289254481578289759}
+  - component: {fileID: 7706607425693762996}
+  - component: {fileID: 2932515131381500221}
   - component: {fileID: 5532173415143523966}
-  - component: {fileID: 4391589249661887442}
   m_Layer: 7
   m_Name: Sunflower
   m_TagString: Untagged
@@ -82,27 +84,14 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 1
-  m_Size: {x: 10, y: 10}
+  m_DrawMode: 0
+  m_Size: {x: 9.28, y: 10.46}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5532173415143523966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7973500811911684898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59611af7281aa41498c06bc5bfe72af3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _plantsProps: {fileID: 11400000, guid: 7e6e43a1fda969841852997910ba85f3, type: 2}
---- !u!61 &4391589249661887442
+--- !u!61 &1289254481578289759
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,10 +130,47 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 9.28, y: 10.46}
-    newSize: {x: 10, y: 10}
+    newSize: {x: 9.28, y: 10.46}
     adaptiveTilingThreshold: 0.5
-    drawMode: 1
+    drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 10.171955, y: 10.46}
+  m_Size: {x: 9.28, y: 10.46}
   m_EdgeRadius: 0
+--- !u!114 &7706607425693762996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973500811911684898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fbd2a2d1f010264e8e9aff8c61e1741, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2932515131381500221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973500811911684898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7934a65d7b9699942b64c751fac1bf86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5532173415143523966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973500811911684898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59611af7281aa41498c06bc5bfe72af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sunflowerProps: {fileID: 11400000, guid: bfad0b4b4b1aecd43b6cc115500f467f, type: 2}

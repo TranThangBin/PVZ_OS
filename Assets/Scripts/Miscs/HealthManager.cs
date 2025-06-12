@@ -1,89 +1,50 @@
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Game
 {
+    // if initial health is less than 0 then we go to infinity technically
     public class HealthManager : MonoBehaviour
     {
-        [SerializeField] private float _hp;
-        private float Hp
+        private int _hp;
+        private int Hp
         {
-            get => Mathf.Max(0, _hp);
+            get => _hp;
             set
             {
-                _hp = Mathf.Max(0, value);
-                if (IsOutOfHealth())
+                _hp = value;
+                if (_hp <= 0)
                 {
-                    _onOutOfHealth.Invoke(this);
+                    OnOutOfHealth.Invoke(this);
                 }
             }
         }
 
-        private bool _init;
-
-        private readonly UnityEvent<HealthManager> _onOutOfHealth = new();
-        private readonly UnityEvent<HealthManager> _onDamageTaken = new();
-
-        private Color _blinkColor = new(1, 0.5f, 0.5f);
+        private readonly UnityEvent<HealthManager> OnOutOfHealth = new();
 
         private void Start()
         {
-            foreach (var handler in GetComponents<IOnOutOfHealth>())
+            if (TryGetComponent(out IHealthy healthyObject)) { _hp = healthyObject.Health; }
+
+            foreach (IDestroyOnOutOfHealth handler in GetComponents<IDestroyOnOutOfHealth>())
             {
-                _onOutOfHealth.AddListener(handler.OnOutOfHealth);
+                OnOutOfHealth.AddListener((sender) => Destroy(gameObject));
             }
-            foreach (var handler in GetComponents<IDestroyOnOutOfHealth>())
-            {
-                _onOutOfHealth.AddListener((sender) => Destroy(gameObject));
-            }
-            foreach (var handler in GetComponents<IOnDamageTaken>())
-            {
-                _onDamageTaken.AddListener(handler.OnDamageTaken);
-            }
-            _init = true;
         }
 
-        private void OnDestroy() => DOTween.Kill(this);
-
-        public bool IsOutOfHealth() => Hp == 0;
-        public void SetBlinkColor(Color cl) => _blinkColor = cl;
-
-        public void ReduceHealth(float amount)
+        public void ReduceHealth(int amount)
         {
-            if (!IsOutOfHealth())
+            if (Hp > 0)
             {
                 Hp -= amount;
-                _onDamageTaken.Invoke(this);
             }
         }
 
-        public void BlinkSpriteColor(SpriteRenderer sr)
-        {
-            DOTween.Kill(this);
-            sr.
-                DOColor(_blinkColor, 0.1f).
-                SetLoops(2, LoopType.Yoyo).
-                OnKill(() => sr.color = Color.white).
-                SetId(this);
-        }
+        public interface IDestroyOnOutOfHealth : IHealthy { }
 
-        public void InitHealth(float amount)
+        public interface IHealthy
         {
-            if (!_init) { Hp = amount; }
-            _init = true;
-        }
-
-        public interface IDestroyOnOutOfHealth { }
-
-        public interface IOnOutOfHealth
-        {
-            void OnOutOfHealth(HealthManager sender);
-        }
-
-        public interface IOnDamageTaken
-        {
-            void OnDamageTaken(HealthManager sender);
+            int Health { get; }
         }
     }
 }

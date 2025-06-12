@@ -3,54 +3,25 @@ using UnityEngine;
 
 namespace Game
 {
-    public class PotatoMine : Plant
+    [RequireComponent(typeof(Plant))]
+    public class PotatoMine : MonoBehaviour, Plant.IPlant, HealthManager.IDestroyOnOutOfHealth
     {
-        [SerializeField] private GameObject _unarmed;
-        [SerializeField] private GameObject _armed;
-
-        private PotatoMineProperties PotatoMineProps => PlantsProps.PotatoMine;
-        private GameObject _activeState;
-
-        public override PlantProperties PlantProps => PotatoMineProps.PlantProps;
-
-        private GameObject ActiveState
-        {
-            get => _activeState;
-            set
-            {
-                if (_activeState != null)
-                {
-                    _activeState.SetActive(false);
-                }
-                _activeState = value;
-                _activeState.SetActive(true);
-            }
-        }
+        [SerializeField] private PotatoMineProperties _potatoMineProps;
 
         private void OnDestroy() => DOTween.Kill(this);
 
-        private void Start()
-        {
-            _activeState = _unarmed;
+        private void Start() =>
             DOTween.
                 Sequence(this).
-                AppendInterval(PotatoMineProps.GrowTime).
-                AppendCallback(() => ActiveState = _armed);
-        }
+                AppendInterval(_potatoMineProps.PreparationTime).
+                AppendCallback(() =>
+                {
+                    Instantiate(_potatoMineProps.ArmedPotatoMine, transform.parent);
+                    Destroy(gameObject);
+                });
 
-        private void OnCollisionStay2D(Collision2D collision)
-        {
-            if (ActiveState == _armed && collision.collider.TryGetComponent(out HealthManager zombieHealth))
-            {
-                zombieHealth.ReduceHealth(PotatoMineProps.Damage);
-                Destroy(gameObject);
-            }
-        }
+        public PlantProperties PlantProps => _potatoMineProps.PlantProps;
 
-        public override void OnDamageTaken(HealthManager sender)
-        {
-            SpriteRenderer sr = ActiveState.GetComponent<SpriteRenderer>();
-            sender.BlinkSpriteColor(sr);
-        }
+        public int Health => _potatoMineProps.Hp;
     }
 }

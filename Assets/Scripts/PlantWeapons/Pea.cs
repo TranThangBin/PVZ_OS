@@ -1,15 +1,21 @@
+using DG.Tweening;
 using UnityEngine;
 
 namespace Game
 {
-    [RequireComponent(typeof(Rigidbody2D), typeof(PlantWeapon))]
-    public class Pea : MonoBehaviour
+    [RequireComponent(typeof(PlantWeapon))]
+    public class Pea : MonoBehaviour, PlantWeapon.IPlantWeapon
     {
-        public void Targeting(Vector2 direction)
+        [SerializeField] private PeaProperties _peaProps;
+
+        private void OnDestroy() => DOTween.Kill(this);
+
+        public void Targeting(Vector2 target)
         {
-            PlantWeapon weapon = GetComponent<PlantWeapon>();
-            float flySpeed = weapon.PlantWeaponsProps.Pea.FlySpeed;
-            GetComponent<Rigidbody2D>().linearVelocity = flySpeed * direction;
+            float flyTime = Utils.CalculateTime(transform.position, target, _peaProps.FlyVelocity);
+            transform.DOMove(target, flyTime).OnComplete(() => Destroy(gameObject)).SetId(this);
         }
+
+        public PlantWeaponProperties PlantWeaponProps => _peaProps.PlantWeaponProps;
     }
 }

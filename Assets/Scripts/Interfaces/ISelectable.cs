@@ -1,7 +1,4 @@
-﻿using UnityEditor;
-using UnityEngine;
-
-namespace Game
+﻿namespace Game
 {
     public interface ISelectable : ILawnAction
     {

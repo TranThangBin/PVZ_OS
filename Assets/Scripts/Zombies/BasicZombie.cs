@@ -3,30 +3,27 @@ using UnityEngine;
 
 namespace Game
 {
-    [RequireComponent(typeof(Rigidbody2D))]
+    [RequireComponent(typeof(Rigidbody2D), typeof(HealthManager))]
     public class BasicZombie : MonoBehaviour,
-        HealthManager.IOnDamageTaken, HealthManager.IDestroyOnOutOfHealth
+        HealthManager.IDestroyOnOutOfHealth, HealthManager.IHealthy
     {
-        [SerializeField] private ZombiesProperties _zombiesProps;
+        [SerializeField] private BasicZombieProperties _basicZombieProps;
 
-        private BasicZombieProperties BasicZombieProps => _zombiesProps.BasicZombie;
+        public int Health => _basicZombieProps.Hp;
+
         private Rigidbody2D _rb;
 
         private void OnDestroy() => DOTween.Kill(this);
 
         private void Awake() => _rb = GetComponent<Rigidbody2D>();
 
-        private void Start()
-        {
-            _rb.linearVelocity = BasicZombieProps.MovementSpeed * Vector2.left;
-            gameObject.AddComponent<HealthManager>().InitHealth(BasicZombieProps.Health);
-        }
+        private void Start() => _rb.linearVelocity = _basicZombieProps.MovementSpeed * Vector2.left;
 
         private void FixedUpdate()
         {
             if (!DOTween.IsTweening(this))
             {
-                float rayLength = BasicZombieProps.AttackRange;
+                float rayLength = _basicZombieProps.AttackRange;
 
                 RaycastHit2D hit = Utils.Raycast(transform.position, Vector2.left, rayLength, LayerMask.GetMask("Ally"), Color.black);
 
@@ -41,22 +38,16 @@ namespace Game
                     Sequence(this).
                     AppendCallback(() =>
                     {
-                        plantHealth.ReduceHealth(BasicZombieProps.AttackDamage);
-                        if (plantHealth.IsOutOfHealth())
+                        plantHealth.ReduceHealth(_basicZombieProps.Damage);
+                        if (plantHealth == null)
                         {
-                            _rb.linearVelocity = BasicZombieProps.MovementSpeed * Vector2.left;
+                            _rb.linearVelocity = _basicZombieProps.MovementSpeed * Vector2.left;
                             DOTween.Kill(this);
                         }
                     }).
-                    AppendInterval(BasicZombieProps.AttackCooldown).
+                    AppendInterval(_basicZombieProps.AttackCooldown).
                     SetLoops(-1);
             }
-        }
-
-        public void OnDamageTaken(HealthManager sender)
-        {
-            SpriteRenderer sr = sender.GetComponent<SpriteRenderer>();
-            sender.BlinkSpriteColor(sr);
         }
     }
 }

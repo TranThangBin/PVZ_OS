@@ -327,7 +327,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 646240323}
+  m_Father: {fileID: 1367410787}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &169080149
 MonoBehaviour:
@@ -341,7 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 639784142a33b7b4285e7c69439fc587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnerProps: {fileID: 11400000, guid: c8ccc3df80a4f9740a6066fdf982d6e3, type: 2}
+  _miscProps: {fileID: 11400000, guid: 3bbb195125762794190bb1d45e80d303, type: 2}
   _sunSpawnStart: {fileID: 1137014178}
   _sunSpawnEnd: {fileID: 1099315922}
 --- !u!1 &263228951
@@ -1730,8 +1730,6 @@ Transform:
   - {fileID: 1902084819}
   - {fileID: 1396393989}
   - {fileID: 1518756908}
-  - {fileID: 1676003224}
-  - {fileID: 169080148}
   - {fileID: 1134046611}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4513,7 +4511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 367f8101073f85644b7bc7a00062e74c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameProps: {fileID: 11400000, guid: 23a51bfab3853a34c9ea3bcabeba0bd6, type: 2}
+  _miscProps: {fileID: 11400000, guid: 3bbb195125762794190bb1d45e80d303, type: 2}
   _sunDisplay: {fileID: 148160935}
   _plantSelectorGrid: {fileID: 1119732815}
 --- !u!4 &1367410787
@@ -4525,10 +4523,12 @@ Transform:
   m_GameObject: {fileID: 1367410785}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.8, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1676003224}
+  - {fileID: 169080148}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1380955389
@@ -5171,11 +5171,11 @@ Transform:
   m_GameObject: {fileID: 1676003223}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 48, y: -20.354551, z: -0.23884735}
+  m_LocalPosition: {x: 49.9, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 646240323}
+  m_Father: {fileID: 1367410787}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1676003225
 MonoBehaviour:
@@ -5189,7 +5189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97d94cc46feacf4c8ce62fd580d51c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnerProps: {fileID: 11400000, guid: c8ccc3df80a4f9740a6066fdf982d6e3, type: 2}
+  _miscProps: {fileID: 11400000, guid: 3bbb195125762794190bb1d45e80d303, type: 2}
   _spawnYLocationStart: {fileID: 1137014178}
   _spawnYLocationEnd: {fileID: 1099315922}
 --- !u!1 &1760224029

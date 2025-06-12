@@ -2,33 +2,22 @@ using UnityEngine;
 
 namespace Game
 {
-    public class PlantWeapon : MonoBehaviour
+    [RequireComponent(typeof(PatchedBoxCollider2D))]
+    public class PlantWeapon : MonoBehaviour, PatchedBoxCollider2D.IOnPatchedCollisionEnter2D
     {
-        [SerializeField] private PlantWeapons _plantWeaponID;
-        [SerializeField] private PlantWeaponsProperties _plantWeaponsProps;
-
-        public PlantWeaponsProperties PlantWeaponsProps => _plantWeaponsProps;
-
-        private PlantWeaponProperties PlantWeaponProps =>
-            _plantWeaponsProps.GetWeaponProperties(_plantWeaponID);
-
-        private float _initialYPos;
-
-        private void Start() => _initialYPos = transform.position.y;
-
-        private void OnCollisionEnter2D(Collision2D collision)
+        public void PatchedOnCollisionEnter2D(Collision2D collision)
         {
-            float errorMargin = 3;
-            if (collision.transform.position.y <= _initialYPos + errorMargin &&
-                collision.transform.position.y >= _initialYPos - errorMargin &&
-                collision.collider.TryGetComponent(out HealthManager healthManager))
+            PlantWeaponProperties props = GetComponent<IPlantWeapon>().PlantWeaponProps;
+            if (collision.collider.TryGetComponent(out HealthManager healthManager))
             {
-                healthManager.ReduceHealth(PlantWeaponProps.Damage);
-                if (PlantWeaponProps.DestroyOnCollision)
-                {
-                    Destroy(gameObject);
-                }
+                healthManager.ReduceHealth(props.Damage);
+                if (props.DestroyOnImpact) { Destroy(gameObject); }
             }
+        }
+
+        public interface IPlantWeapon
+        {
+            PlantWeaponProperties PlantWeaponProps { get; }
         }
     }
 }

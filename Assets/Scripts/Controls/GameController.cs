@@ -6,7 +6,7 @@ namespace Game
 {
     public class GameController : MonoBehaviour
     {
-        [SerializeField] private MiscProperties _gameProps;
+        [SerializeField] private MiscProperties _miscProps;
         [SerializeField] private TextMesh _sunDisplay;
         [SerializeField] private Transform _plantSelectorGrid;
 
@@ -48,10 +48,10 @@ namespace Game
 
         private void Awake()
         {
-            Plant[] seeds = _gameProps.SeedBank;
+            Plant[] seeds = _miscProps.SeedBank;
             for (int i = 0; i < seeds.Length && i < _plantSelectorGrid.childCount; i++)
             {
-                SeedPacket seedPacket = Instantiate(_gameProps.SeedPacket, _plantSelectorGrid.GetChild(i));
+                SeedPacket seedPacket = Instantiate(_miscProps.SeedPacket, _plantSelectorGrid.GetChild(i));
                 seedPacket.SetPlant(seeds[i]);
                 _onSunStoreChange.AddListener(seedPacket.OnSunStoreChange);
             }
@@ -59,7 +59,7 @@ namespace Game
 
         private void Start()
         {
-            SunStore = _gameProps.InitialSun;
+            SunStore = _miscProps.InitialSun;
             Color sunDisplayColor = _sunDisplay.color;
             _invalidSelectAnimation = DOTween.
                 Sequence().

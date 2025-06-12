@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d15c27c7828044ba4fc50d1705614c, type: 3}
+  m_Name: ChomperProperties
+  m_EditorClassIdentifier: 
+  _plantProps:
+    _sunCost: 150
+    _seedRechargeTime: 7.5
+    _sprite: {fileID: 815495372769449193, guid: ec143c165a22714498c759c2ab91bea4, type: 3}
+  _hp: 6
+  _chewingInterval: 42
+  _damage: 120
+  _range: 20

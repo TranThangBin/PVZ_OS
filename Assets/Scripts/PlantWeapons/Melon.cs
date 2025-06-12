@@ -4,22 +4,24 @@ using UnityEngine;
 namespace Game
 {
     [RequireComponent(typeof(PlantWeapon))]
-    public class Melon : MonoBehaviour
+    public class Melon : MonoBehaviour, PlantWeapon.IPlantWeapon
     {
+        [SerializeField] private MelonProperties _melonProps;
+
         private void OnDestroy() => DOTween.Kill(this);
 
         public void Targeting(Rigidbody2D target)
         {
-            PlantWeapon plantWeapon = GetComponent<PlantWeapon>();
-            MelonProperties melonProps = plantWeapon.PlantWeaponsProps.Melon;
-            float travelTime = Utils.CalculateTime(transform.position, target.position, melonProps.FlySpeed);
-            DOTween.
-                Sequence(this).
-                Append(transform.
-                    DOJump(target.position, melonProps.ThrowForce, 1, travelTime).
-                    Join(transform.DORotate(Vector3.back * 90, travelTime)).
-                    SetEase(Ease.Linear)).
-                OnComplete(() => Destroy(gameObject));
+            float moveAmount = _melonProps.FlyTime * target.linearVelocityX;
+            Vector2 destination = target.position + Vector2.left * moveAmount;
+            transform.
+                DOJump(target.position, _melonProps.JumpForce, 1, _melonProps.FlyTime).
+                Join(transform.DORotate(Vector3.back * 90, _melonProps.FlyTime)).
+                SetEase(Ease.Linear).
+                OnComplete(() => Destroy(gameObject)).
+                SetId(this);
         }
+
+        public PlantWeaponProperties PlantWeaponProps => _melonProps.PlantWeaponProps;
     }
 }

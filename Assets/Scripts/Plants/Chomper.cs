@@ -1,44 +1,34 @@
 using DG.Tweening;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game
 {
-    public class Chomper : Plant
+    [RequireComponent(typeof(Plant), typeof(RangeCast))]
+    public class Chomper : MonoBehaviour, Plant.IPlant, HealthManager.IDestroyOnOutOfHealth, RangeCast.IOnRangeCastHit
     {
-        private ChomperProperties ChomperProps => PlantsProps.Chomper;
-        private Tween _cooldownTween;
-        private bool _ready;
+        [SerializeField] private ChomperProperties _chomperProps;
 
-        public override PlantProperties PlantProps => ChomperProps.PlantProps;
+        private void OnDestroy() => DOTween.Kill(this);
 
-        private void OnDestroy() => _cooldownTween.Kill();
+        public PlantProperties PlantProps => _chomperProps.PlantProps;
 
-        private void Start()
+        public int Health => _chomperProps.Hp;
+
+        public IEnumerable<RangeCast.RangeCastProperties> GetRangeCastProps()
         {
-            _cooldownTween = DOTween.
-                Sequence().
-                AppendCallback(() => _ready = false).
-                AppendInterval(ChomperProps.ChewTime).
-                AppendCallback(() => _ready = true).
-                SetAutoKill(false).
-                Pause();
-
-            _ready = true;
+            yield return new(Vector2.right, _chomperProps.Range, LayerMask.GetMask("Enemy"), Color.red);
         }
-
-        private void FixedUpdate()
+        public void OnRangeCastHit(RangeCast sender, Collider2D collider)
         {
-            if (_ready)
+            if (!DOTween.IsTweening(this) && collider.TryGetComponent(out HealthManager enemyHealth))
             {
-                RaycastHit2D rc = Utils.Raycast(
-                    transform.position,
-                    Vector2.right, ChomperProps.VisionLength, LayerMask.GetMask("Enemy"), Color.red);
-
-                if (rc.collider != null && rc.collider.TryGetComponent(out HealthManager zombieHealth))
-                {
-                    zombieHealth.ReduceHealth(ChomperProps.Damage);
-                    _cooldownTween.Restart();
-                }
+                enemyHealth.ReduceHealth(_chomperProps.Damage);
+                DOTween.
+                    Sequence(this).
+                    AppendCallback(() => sender.enabled = false).
+                    AppendInterval(_chomperProps.ChewingInterval).
+                    AppendCallback(() => sender.enabled = true);
             }
         }
     }

@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6096833055011703481}
   - component: {fileID: 1552000581074121039}
   - component: {fileID: 7857222420521982423}
+  - component: {fileID: 6026030796124015559}
+  - component: {fileID: 718356235254328270}
   m_Layer: 7
   m_Name: Chomper
   m_TagString: Untagged
@@ -82,7 +84,7 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 1
+  m_DrawMode: 0
   m_Size: {x: 10, y: 10}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -127,13 +129,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.35, y: 5.78}
+    oldSize: {x: 7.25, y: 9.633333}
     newSize: {x: 10, y: 10}
     adaptiveTilingThreshold: 0.5
-    drawMode: 1
+    drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 10, y: 10}
+  m_Size: {x: 7.25, y: 9.633333}
   m_EdgeRadius: 0
 --- !u!114 &7857222420521982423
 MonoBehaviour:
@@ -147,4 +149,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d0081f87143c7e439731f3aa1a9b1a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plantsProps: {fileID: 11400000, guid: 7e6e43a1fda969841852997910ba85f3, type: 2}
+  _chomperProps: {fileID: 11400000, guid: 6a9645ea2233e8f41b84d51b32b4cf13, type: 2}
+--- !u!114 &6026030796124015559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385696973055243218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fbd2a2d1f010264e8e9aff8c61e1741, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &718356235254328270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385696973055243218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7934a65d7b9699942b64c751fac1bf86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

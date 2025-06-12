@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4785244997681116229}
   - component: {fileID: 3901762153417946493}
   - component: {fileID: 6175180297980740870}
+  - component: {fileID: 8790852989362745058}
+  - component: {fileID: 4154847728432756090}
   m_Layer: 7
   m_Name: Fume
   m_TagString: Untagged
@@ -4893,5 +4895,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18c2c7b33ca16444bba440ff533cb95d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plantWeaponID: 3
-  _plantWeaponsProps: {fileID: 11400000, guid: d678a9dfe41ba4e45a80ac5433d510e2, type: 2}
+--- !u!114 &8790852989362745058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5444585552731047320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbc97aa5023ffe4b8e0f5a881c3c499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4154847728432756090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5444585552731047320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f829779d765c774bbd303e260281b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fumeProps: {fileID: 11400000, guid: c0382d2e9aecd6141af846d6b14ed661, type: 2}

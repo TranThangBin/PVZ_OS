@@ -1,43 +1,49 @@
 using DG.Tweening;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game
 {
-    public class Squash : Plant
+    [RequireComponent(typeof(Plant), typeof(RangeCast))]
+    public class Squash : MonoBehaviour, Plant.IPlant, RangeCast.IOnRangeCastHit
     {
-        private SquashProperties SquashProps => PlantsProps.Squash;
+        [SerializeField] private SquashProperties _squashProps;
+
         private bool _kill = false;
 
-        public override PlantProperties PlantProps => SquashProps.PlantProps;
-
         private void OnDestroy() => DOTween.Kill(this);
-
-        private void FixedUpdate()
-        {
-            if (!DOTween.IsTweening(this))
-            {
-                float rayLength = SquashProps.VisionLength;
-                RaycastHit2D hit = Utils.
-                    Raycast(transform.position + Vector3.left * rayLength, Vector3.right, rayLength * 2, LayerMask.GetMask("Enemy"), Color.red);
-
-                if (hit.collider != null)
-                {
-                    transform.
-                        DOJump(hit.collider.transform.position, SquashProps.JumpForce, 1, 2).
-                        SetEase(Ease.InBack).
-                        AppendCallback(() => _kill = true).
-                        PrependInterval(SquashProps.DelayTime).
-                        SetId(this);
-                }
-            }
-        }
 
         private void OnCollisionStay2D(Collision2D collision)
         {
             if (_kill && collision.collider.TryGetComponent(out HealthManager zombieHealth))
             {
-                zombieHealth.ReduceHealth(SquashProps.Damage);
+                zombieHealth.ReduceHealth(_squashProps.Damage);
                 Destroy(gameObject);
+            }
+        }
+
+        public PlantProperties PlantProps => _squashProps.PlantProps;
+
+        public IEnumerable<RangeCast.RangeCastProperties> GetRangeCastProps()
+        {
+            yield return new(Vector2.right, _squashProps.Range, LayerMask.GetMask("Enemy"), Color.red);
+            yield return new(Vector2.left, _squashProps.Range, LayerMask.GetMask("Enemy"), Color.red);
+        }
+        public void OnRangeCastHit(RangeCast sender, Collider2D collider)
+        {
+            if (!DOTween.IsTweening(this))
+            {
+                sender.enabled = false;
+                float moveAmount = _squashProps.JumpTime * collider.attachedRigidbody.linearVelocityX;
+                Vector2 destination = collider.transform.position + Vector3.left * moveAmount;
+
+                transform.
+                    DOJump(destination, _squashProps.JumpForce, 1, _squashProps.JumpTime).
+                    SetEase(Ease.Linear).
+                    AppendCallback(() => _kill = true).
+                    AppendInterval(1).
+                    AppendCallback(() => Destroy(gameObject)).
+                    SetId(this);
             }
         }
     }
