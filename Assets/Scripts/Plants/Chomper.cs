@@ -24,15 +24,16 @@ namespace Game
                     Sequence(this).
                     AppendCallback(() =>
                     {
-                        enemyHealth.ReduceHealth(_chomperProps.Damage);
                         sender.enabled = false;
-                        _anim.SetBool("IsChewing", true);
+                        _anim.SetBool("IsIdle", false);
                     }).
+                    AppendInterval(1).
+                    AppendCallback(() => enemyHealth.ReduceHealth(_chomperProps.Damage)).
                     AppendInterval(_chomperProps.ChewingInterval).
                     AppendCallback(() =>
                     {
                         sender.enabled = true;
-                        _anim.SetBool("IsChewing", false);
+                        _anim.SetBool("IsIdle", true);
                     });
             }
         }

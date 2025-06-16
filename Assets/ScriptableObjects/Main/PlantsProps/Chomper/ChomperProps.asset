@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d15c27c7828044ba4fc50d1705614c, type: 3}
   m_Name: ChomperProps
   m_EditorClassIdentifier: 
-  <Hp>k__BackingField: 6
   <ChewingInterval>k__BackingField: 42
   <Damage>k__BackingField: 120
-  <Range>k__BackingField: 20
+  <Range>k__BackingField: 10

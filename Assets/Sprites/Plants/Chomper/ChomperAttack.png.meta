@@ -1,0 +1,1948 @@
+fileFormatVersion: 2
+guid: 72e1411840acf2a4a9f6007fd9543146
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3474270817750803710
+    second: ChomperAttack_0
+  - first:
+      213: -1191796942179029466
+    second: ChomperAttack_1
+  - first:
+      213: 8697161300521014293
+    second: ChomperAttack_2
+  - first:
+      213: 7259944964684892140
+    second: ChomperAttack_3
+  - first:
+      213: 2002317081006888074
+    second: ChomperAttack_4
+  - first:
+      213: -2145252610028526347
+    second: ChomperAttack_5
+  - first:
+      213: 4203091547479813391
+    second: ChomperAttack_6
+  - first:
+      213: 5282413237911061448
+    second: ChomperAttack_7
+  - first:
+      213: 6925372237377990692
+    second: ChomperAttack_8
+  - first:
+      213: -8770574011662847967
+    second: ChomperAttack_9
+  - first:
+      213: 6306849003271088048
+    second: ChomperAttack_10
+  - first:
+      213: 5695784985573116589
+    second: ChomperAttack_11
+  - first:
+      213: 1847681344797219733
+    second: ChomperAttack_12
+  - first:
+      213: 4283525832120335244
+    second: ChomperAttack_13
+  - first:
+      213: 953603677023871361
+    second: ChomperAttack_14
+  - first:
+      213: 9130432968523604095
+    second: ChomperAttack_15
+  - first:
+      213: 6472895885445199036
+    second: ChomperAttack_16
+  - first:
+      213: -6379319267886903594
+    second: ChomperAttack_17
+  - first:
+      213: -1529978770513680499
+    second: ChomperAttack_18
+  - first:
+      213: 6788109163942107804
+    second: ChomperAttack_19
+  - first:
+      213: 505281103578634696
+    second: ChomperAttack_20
+  - first:
+      213: -5400280606921012998
+    second: ChomperAttack_21
+  - first:
+      213: 4783610960366455593
+    second: ChomperAttack_22
+  - first:
+      213: 2285117137163211295
+    second: ChomperAttack_23
+  - first:
+      213: 4990419037136109515
+    second: ChomperAttack_24
+  - first:
+      213: -4927739108977880792
+    second: ChomperAttack_25
+  - first:
+      213: -7959330983304193550
+    second: ChomperAttack_26
+  - first:
+      213: 4733090626694982899
+    second: ChomperAttack_27
+  - first:
+      213: 1820758422927652317
+    second: ChomperAttack_28
+  - first:
+      213: 5138751850641772432
+    second: ChomperAttack_29
+  - first:
+      213: -8227886883704151921
+    second: ChomperAttack_30
+  - first:
+      213: -1779724139581905258
+    second: ChomperAttack_31
+  - first:
+      213: 5944659132815816181
+    second: ChomperAttack_32
+  - first:
+      213: 1717443045278964501
+    second: ChomperAttack_33
+  - first:
+      213: 5279485188250658542
+    second: ChomperAttack_34
+  - first:
+      213: 8249449713937694332
+    second: ChomperAttack_35
+  - first:
+      213: -8990838069518097058
+    second: ChomperAttack_36
+  - first:
+      213: 4003299125284139463
+    second: ChomperAttack_37
+  - first:
+      213: -1163850431277376700
+    second: ChomperAttack_38
+  - first:
+      213: -6280902106619590482
+    second: ChomperAttack_39
+  - first:
+      213: -6585867549393281064
+    second: ChomperAttack_40
+  - first:
+      213: -7788367034246512331
+    second: ChomperAttack_41
+  - first:
+      213: -8621872246838661664
+    second: ChomperAttack_42
+  - first:
+      213: 6318568123602921723
+    second: ChomperAttack_43
+  - first:
+      213: -2551544705243724078
+    second: ChomperAttack_44
+  - first:
+      213: 1626937105958330275
+    second: ChomperAttack_45
+  - first:
+      213: 1754840150478448575
+    second: ChomperAttack_46
+  - first:
+      213: 6782700267195215479
+    second: ChomperAttack_47
+  - first:
+      213: -6986653129646055182
+    second: ChomperAttack_48
+  - first:
+      213: -6541837344801387838
+    second: ChomperAttack_49
+  - first:
+      213: -2894519490020646436
+    second: ChomperAttack_50
+  - first:
+      213: -842054020063236358
+    second: ChomperAttack_51
+  - first:
+      213: -2763782646644690605
+    second: ChomperAttack_52
+  - first:
+      213: -820116042706550412
+    second: ChomperAttack_53
+  - first:
+      213: 6228306833620597594
+    second: ChomperAttack_54
+  - first:
+      213: -5645081757762478361
+    second: ChomperAttack_55
+  - first:
+      213: -3311524600750720162
+    second: ChomperAttack_56
+  - first:
+      213: 1561943727080052773
+    second: ChomperAttack_57
+  - first:
+      213: 7085963023780416298
+    second: ChomperAttack_58
+  - first:
+      213: -2928463717327342461
+    second: ChomperAttack_59
+  - first:
+      213: -3532299661217084105
+    second: ChomperAttack_60
+  - first:
+      213: -6333840095548823482
+    second: ChomperAttack_61
+  - first:
+      213: 8908730024103150038
+    second: ChomperAttack_62
+  - first:
+      213: 3810354240572395817
+    second: ChomperAttack_63
+  - first:
+      213: -4352913263467679353
+    second: ChomperAttack_64
+  - first:
+      213: 5852986904652943026
+    second: ChomperAttack_65
+  - first:
+      213: 2120025450349542757
+    second: ChomperAttack_66
+  - first:
+      213: -6305697852631858841
+    second: ChomperAttack_67
+  - first:
+      213: -4799101753273096022
+    second: ChomperAttack_68
+  - first:
+      213: -2028000634484499754
+    second: ChomperAttack_69
+  - first:
+      213: -2704895259049554163
+    second: ChomperAttack_70
+  - first:
+      213: -1058219256895937846
+    second: ChomperAttack_71
+  - first:
+      213: -4274480119639948539
+    second: ChomperAttack_72
+  - first:
+      213: -490730848356317068
+    second: ChomperAttack_73
+  - first:
+      213: 6270424955604372767
+    second: ChomperAttack_74
+  - first:
+      213: 6850817285365525419
+    second: ChomperAttack_75
+  - first:
+      213: 5247581721574873334
+    second: ChomperAttack_76
+  - first:
+      213: 4439564606177835007
+    second: ChomperAttack_77
+  - first:
+      213: 5221537086099879897
+    second: ChomperAttack_78
+  - first:
+      213: -2712164522479334556
+    second: ChomperAttack_79
+  - first:
+      213: 3474748664312266913
+    second: ChomperAttack_80
+  - first:
+      213: 1006966943229400572
+    second: ChomperAttack_81
+  - first:
+      213: 6911597432443852129
+    second: ChomperAttack_82
+  - first:
+      213: 5548452677630788416
+    second: ChomperAttack_83
+  - first:
+      213: -5395312681241914205
+    second: ChomperAttack_84
+  - first:
+      213: -5635989109991306569
+    second: ChomperAttack_85
+  - first:
+      213: -4216750495556839028
+    second: ChomperAttack_86
+  - first:
+      213: 6483755502834141939
+    second: ChomperAttack_87
+  - first:
+      213: -3633853731099666032
+    second: ChomperAttack_88
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ChomperAttack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1677
+        width: 83
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 998f85cc0fa2db24d91c07e74d6ec722
+      internalID: 2029539560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_1
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 1677
+        width: 86
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83dae46c1d4e4d3469d7a292434c25d3
+      internalID: -1469593518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_2
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 1677
+        width: 88
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e253c3b9af10f2349b23f36154b0eb64
+      internalID: -1631614076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_3
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 1677
+        width: 86
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 599481112995cca47a29f4e93be9b753
+      internalID: -250932685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_4
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1677
+        width: 83
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4954747b7a742914d9795d3673ae8866
+      internalID: -466232283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1548
+        width: 79
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eadd89027d145644b1c40991e095e4e
+      internalID: -622296281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_6
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 1549
+        width: 78
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 437ce611fedd97742bc833a5e4bc48bd
+      internalID: -240851689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_7
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 1548
+        width: 77
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2057a4ff47fa190449bfd220ab16fcd6
+      internalID: 1245211808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_8
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 1548
+        width: 75
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d42a5ef50b453249b17fddff1ed9b25
+      internalID: -307762309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_9
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1548
+        width: 73
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffa78439225799441b3f720c0d25025f
+      internalID: -1499729684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1419
+        width: 74
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b2ccb77690063844941d35431bb1e13
+      internalID: 655925097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_11
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 1419
+        width: 83
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d46b82dff0abf39479dfd24f49205550
+      internalID: 26249329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_12
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 1419
+        width: 98
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b9cf1dbe2a074c438b086bbdb7d774f
+      internalID: 709916004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_13
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 1419
+        width: 111
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb169378f3a1df4468246d31e62a2c59
+      internalID: 311864800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_14
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1419
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a80c703b244076b4298fcbd3a6df7c19
+      internalID: 1609862080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1290
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7461143db08f9844939771524424456
+      internalID: -1630230924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_16
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 1290
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5c57618056175b41b028b4abc261d87
+      internalID: -1575213020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_17
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 1290
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e2721876e32a1a4492d12f9171ab13d
+      internalID: -168791369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_18
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 1290
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7de15c9e12925141b060e79b0a10ba1
+      internalID: -2123412396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_19
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1290
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad5d3729dc90c5546ac9a7b908d8ab56
+      internalID: 1319042545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1161
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b87d6808a91b044ea9b8086ddfc409c
+      internalID: 1841393714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_21
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 1161
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 496fa1d557c376f4abbff0a6c3764db3
+      internalID: 76236519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_22
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 1161
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 121e8c499ff971a40b377d5379d8212f
+      internalID: -2003593613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_23
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 1161
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b054e5b32e7427c4f8aa463dd575d429
+      internalID: 1168096275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_24
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1161
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8569de4faec025c4e8c19da7b596425f
+      internalID: -1484656433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1032
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b51936d5173964419f03af88ad29a12
+      internalID: 1791844141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_26
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 1032
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84883a4346391574b85c309df6983cdf
+      internalID: -521685244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_27
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 1032
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8905a4be74a972429a4e8ee9f7343d6
+      internalID: -21776420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_28
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 1032
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6725a95dc38bec46a6457927a034615
+      internalID: -1226696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_29
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1032
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 015085acda00c3742a8c4329ee600d4f
+      internalID: 1739125329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 903
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f7d566b2e595244190f3f00e583db59
+      internalID: -80238460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_31
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 903
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f241f661fe902347b0475bb676237fe
+      internalID: 13109793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_32
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 903
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 478ed69ea0e9eb841882b3e99884649a
+      internalID: 797643938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_33
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 903
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96f95426c2ed4aa449b66f14d61d53af
+      internalID: 128398608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_34
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 903
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe83d94bc86bb644eb302a4c95036aac
+      internalID: 870648672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 774
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0752aab8334a33e46993c93b2b07b255
+      internalID: 417670863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_36
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 774
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b9024ce49d200042a483307812ae1a5
+      internalID: -1999490677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_37
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 774
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ef983b0503f9343b461ab0eaa695f1
+      internalID: -834669168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_38
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 774
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09d2bb2cd7d00fc46a221ee48f8af819
+      internalID: 110708955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_39
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 774
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf4a49af134cc5a4da36726cd457f261
+      internalID: 17516434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 645
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2280e67704cca2e49a6dae13591eee1c
+      internalID: 1690356554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_41
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 645
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dc183f3ac2df924e9d69bc0da306275
+      internalID: 1887372884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_42
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 645
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70130537ca334d2409d8944de5f94b58
+      internalID: 1195432321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_43
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 645
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2b0e1e0d8b683a4fb40d61e6e6a688b
+      internalID: -1039666742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_44
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 645
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07d14c99857719d4b8cdba0b568faef0
+      internalID: -2006702206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 516
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8490b086711e0e942921e16ab0886945
+      internalID: -1813303130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_46
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 516
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e37a2fe6761135b4590320554f71fba3
+      internalID: -1914785396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_47
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 516
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f873b3a6579ca0541ad7905722f38aa4
+      internalID: 1866340273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_48
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 516
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4211070d706875343b1b33003cd73c4e
+      internalID: -513068681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_49
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 516
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b69d704a96d3c7418e18658590c2bea
+      internalID: -1184015726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 387
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 877d385bee83d534db45933ac9aad53d
+      internalID: 1629831931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_51
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 387
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 011818b55def945428b31fd54baabc5d
+      internalID: 631392851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_52
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 387
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a5161c28cf6aab46adba6a5341d6a09
+      internalID: 803885374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_53
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 387
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af3e39213d29d7943b02edc169c57399
+      internalID: -237161776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_54
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 387
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 811b9477c9ffff145907e721883d5363
+      internalID: -542140987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 258
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 199fa77dc5ff6594a9a74d8cb7a5edc6
+      internalID: 1687007312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_56
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 258
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fa60e6679f4b8945908658cbb704374
+      internalID: -739766559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_57
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 258
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d617a8627845874b8799bc33036b25b
+      internalID: -1568970101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_58
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 258
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b428ca71a01fbe5469706c2c1feaf920
+      internalID: 1709490650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_59
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 258
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45a59276ebb618d4d858b2945a641ab3
+      internalID: 163806742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 129
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f44bb9f2fab12749a75eef64574a075
+      internalID: -641040824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_61
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 129
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7ee3f013c8319c4b8ee1f8d2af72fa5
+      internalID: 1653129664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_62
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 129
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19ec657a8125ebe44be5e60c82da1cae
+      internalID: 1993440281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_63
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 129
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8654778bb277b694580a81f12f4708b3
+      internalID: 965849576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_64
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 129
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9266b04d05c268349abb7bfefd4afe3a
+      internalID: 282958807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_65
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa2a7f0c81c2e7e46b21f98a07076ba1
+      internalID: 1314578052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_66
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 0
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d360136564fca840a516852ecdb098c
+      internalID: -1093190581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChomperAttack_67
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 0
+        width: 134
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7336d84143222f34fb49e55f25bb6061
+      internalID: 1362239630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: fb31c537bd1db4b4fbd8b8734aaef442
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ChomperAttack_0: 2029539560
+      ChomperAttack_1: -1469593518
+      ChomperAttack_10: 655925097
+      ChomperAttack_11: 26249329
+      ChomperAttack_12: 709916004
+      ChomperAttack_13: 311864800
+      ChomperAttack_14: 1609862080
+      ChomperAttack_15: -1630230924
+      ChomperAttack_16: -1575213020
+      ChomperAttack_17: -168791369
+      ChomperAttack_18: -2123412396
+      ChomperAttack_19: 1319042545
+      ChomperAttack_2: -1631614076
+      ChomperAttack_20: 1841393714
+      ChomperAttack_21: 76236519
+      ChomperAttack_22: -2003593613
+      ChomperAttack_23: 1168096275
+      ChomperAttack_24: -1484656433
+      ChomperAttack_25: 1791844141
+      ChomperAttack_26: -521685244
+      ChomperAttack_27: -21776420
+      ChomperAttack_28: -1226696
+      ChomperAttack_29: 1739125329
+      ChomperAttack_3: -250932685
+      ChomperAttack_30: -80238460
+      ChomperAttack_31: 13109793
+      ChomperAttack_32: 797643938
+      ChomperAttack_33: 128398608
+      ChomperAttack_34: 870648672
+      ChomperAttack_35: 417670863
+      ChomperAttack_36: -1999490677
+      ChomperAttack_37: -834669168
+      ChomperAttack_38: 110708955
+      ChomperAttack_39: 17516434
+      ChomperAttack_4: -466232283
+      ChomperAttack_40: 1690356554
+      ChomperAttack_41: 1887372884
+      ChomperAttack_42: 1195432321
+      ChomperAttack_43: -1039666742
+      ChomperAttack_44: -2006702206
+      ChomperAttack_45: -1813303130
+      ChomperAttack_46: -1914785396
+      ChomperAttack_47: 1866340273
+      ChomperAttack_48: -513068681
+      ChomperAttack_49: -1184015726
+      ChomperAttack_5: -622296281
+      ChomperAttack_50: 1629831931
+      ChomperAttack_51: 631392851
+      ChomperAttack_52: 803885374
+      ChomperAttack_53: -237161776
+      ChomperAttack_54: -542140987
+      ChomperAttack_55: 1687007312
+      ChomperAttack_56: -739766559
+      ChomperAttack_57: -1568970101
+      ChomperAttack_58: 1709490650
+      ChomperAttack_59: 163806742
+      ChomperAttack_6: -240851689
+      ChomperAttack_60: -641040824
+      ChomperAttack_61: 1653129664
+      ChomperAttack_62: 1993440281
+      ChomperAttack_63: 965849576
+      ChomperAttack_64: 282958807
+      ChomperAttack_65: 1314578052
+      ChomperAttack_66: -1093190581
+      ChomperAttack_67: 1362239630
+      ChomperAttack_7: 1245211808
+      ChomperAttack_8: -307762309
+      ChomperAttack_9: -1499729684
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

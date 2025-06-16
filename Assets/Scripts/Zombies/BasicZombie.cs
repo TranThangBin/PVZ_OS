@@ -6,7 +6,8 @@ namespace Game
 {
     [RequireComponent(typeof(HealthManager), typeof(RangeCast))]
     public class BasicZombie : MonoBehaviour,
-        HealthManager.IDestroyOnOutOfHealth, RangeCast.IOnRangeCastHit
+        HealthManager.IDestroyOnOutOfHealth, HealthManager.IBlinkOnDamageTaken,
+        RangeCast.IOnRangeCastHit
     {
         [SerializeField] private BasicZombieProps _basicZombieProps;
         [SerializeField] private Animator _anim;
@@ -22,6 +23,8 @@ namespace Game
         private void Start() => _rb.linearVelocity = _basicZombieProps.MovementSpeed * _direction;
 
         public int Health => _basicZombieProps.Hp;
+        public Color BlinkColor => new(1, 0.25f, 0.25f);
+        public SpriteRenderer SpriteRenderer => GetComponent<SpriteRenderer>();
 
         public IEnumerable<RangeCast.RangeCastProperties> GetRangeCastProps()
         {

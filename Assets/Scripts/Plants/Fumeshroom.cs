@@ -24,7 +24,9 @@ namespace Game
                     AppendCallback(() =>
                     {
                         sender.enabled = false;
-                        Instantiate(_props.Fume, transform.parent).tag = tag;
+                        Weapon fume = Instantiate(_props.Fume, transform.parent);
+                        fume.tag = tag;
+                        fume.gameObject.layer = gameObject.layer;
                     }).
                     AppendInterval(_props.ShootingInterval).
                     AppendCallback(() => sender.enabled = true);

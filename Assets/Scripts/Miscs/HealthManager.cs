@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Events;
@@ -18,16 +19,20 @@ namespace Game
         private void Start()
         {
             if (TryGetComponent(out IHealthy healthyObject)) { _hp = healthyObject.Health; }
-
-            foreach (IDestroyOnOutOfHealth handler in GetComponents<IDestroyOnOutOfHealth>())
+            if (TryGetComponent(out IDestroyOnOutOfHealth _)) { OnOutOfHealth.AddListener((sender) => Destroy(gameObject)); }
+            if (TryGetComponent(out IBlinkOnDamageTaken blinker))
             {
-                OnOutOfHealth.AddListener((sender) => Destroy(gameObject));
+                OnDamageTaken.AddListener((sender) => Blink(blinker.SpriteRenderer, blinker.BlinkColor));
             }
 
-            foreach (IOnDamageTaken handler in GetComponents<IOnDamageTaken>())
-            {
-                OnDamageTaken.AddListener(handler.OnDamageTaken);
-            }
+        }
+
+        private void Blink(SpriteRenderer sprite, Color color)
+        {
+            sprite.
+                DOColor(color, 0.1f).
+                SetLoops(2, LoopType.Yoyo).
+                SetId(this);
         }
 
         public void ReduceHealth(int amount)
@@ -41,17 +46,22 @@ namespace Game
                     OnOutOfHealth.Invoke(this);
                     _hp = -1;
                 }
+                else
+                {
+                    OnDamageTaken.Invoke(this);
+                }
             }
         }
 
         public bool IsOutOfHealth() => _hp == 0 || _hp == -1;
 
-        public interface IOnDamageTaken
-        {
-            void OnDamageTaken(HealthManager sender);
-        }
-
         public interface IDestroyOnOutOfHealth : IHealthy { }
+
+        public interface IBlinkOnDamageTaken : IHealthy
+        {
+            Color BlinkColor { get; }
+            SpriteRenderer SpriteRenderer { get; }
+        }
 
         public interface IHealthy
         {
