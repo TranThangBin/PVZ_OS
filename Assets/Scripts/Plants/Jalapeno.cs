@@ -3,25 +3,21 @@ using UnityEngine;
 
 namespace Game
 {
-    public class Jalapeno : Plant, HealthManager.IInfiniteHealth
+    [RequireComponent(typeof(Plant))]
+    public class Jalapeno : MonoBehaviour
     {
-        [SerializeField] private JalapenoProperties _jalapenoProps;
+        [SerializeField] private JalapenoProps _jalapenoProps;
 
         private void OnDestroy() => DOTween.Kill(this);
 
-        private void Start()
-        {
-            DOTween.
-                Sequence(this).
-                AppendInterval(_jalapenoProps.DelayTime).
-                AppendCallback(() =>
-                {
-                    Fire fire = Instantiate(_jalapenoProps.Fire, transform.parent);
-                    fire.gameObject.layer = gameObject.layer;
-                    Destroy(gameObject);
-                });
-        }
+        private void Start() => Invoke(nameof(Attack), _jalapenoProps.DelayTime);
 
-        public override PlantProperties PlantProps => _jalapenoProps.PlantProps;
+        private void Attack()
+        {
+            Weapon weapon = Instantiate(_jalapenoProps.Fire, transform.parent);
+            weapon.gameObject.layer = gameObject.layer;
+            weapon.tag = tag;
+            Destroy(gameObject);
+        }
     }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8861324485292484621}
   - component: {fileID: 3656049963898255353}
   - component: {fileID: 2736844375395762645}
+  - component: {fileID: 8718372271433807967}
   m_Layer: 7
   m_Name: PotatoMine
   m_TagString: Untagged
@@ -124,17 +125,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 1.0699999}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5325562, y: 0.64558595}
-    oldSize: {x: 12, y: 8.86}
+    pivot: {x: 0.5, y: 0.25}
+    oldSize: {x: 2.8, y: 4.28}
     newSize: {x: 6, y: 4.43}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3, y: 8}
+  m_Size: {x: 2.8, y: 4.28}
   m_EdgeRadius: 0
 --- !u!114 &3656049963898255353
 MonoBehaviour:
@@ -160,4 +161,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e6c4116219d971418ea0c051123de59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _potatoMineProps: {fileID: 11400000, guid: bacf7cb0a5fab8547a57e8be9d1244c2, type: 2}
+  _potatoMineProps: {fileID: 11400000, guid: cdd025c61e400864ca6d448d78e0eaef, type: 2}
+--- !u!114 &8718372271433807967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5258420907568665613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7934a65d7b9699942b64c751fac1bf86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Props>k__BackingField: {fileID: 11400000, guid: aa01cf923d0dc0e46a76b8004e39a529, type: 2}

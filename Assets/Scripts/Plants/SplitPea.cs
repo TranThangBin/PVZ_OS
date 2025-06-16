@@ -4,14 +4,12 @@ using UnityEngine;
 
 namespace Game
 {
-    [RequireComponent(typeof(RangeCast))]
-    public class SplitPea : Plant, RangeCast.IOnRangeCastHit, HealthManager.IDestroyOnOutOfHealth
+    [RequireComponent(typeof(RangeCast), typeof(Plant))]
+    public class SplitPea : MonoBehaviour, RangeCast.IOnRangeCastHit
     {
-        [SerializeField] private SplitPeaProperties _splitPeaProps;
+        [SerializeField] private SplitPeaProps _splitPeaProps;
 
         private void OnDestroy() => DOTween.Kill(this);
-
-        public override PlantProperties PlantProps => _splitPeaProps.PlantProps;
 
         public IEnumerable<RangeCast.RangeCastProperties> GetRangeCastProps()
         {
@@ -24,23 +22,25 @@ namespace Game
             {
                 DOTween.
                     Sequence(this).
-                    AppendCallback(() => sender.enabled = false).
-                    AppendCallback(() => InstantiatePea().Targeting(transform.position + Vector3.right * _splitPeaProps.Range)).
+                    AppendCallback(() =>
+                    {
+                        sender.enabled = false;
+                        InstantiatePea().Targeting(Vector2.right);
+                    }).
                     AppendInterval(0.4f).
-                    AppendCallback(() => InstantiatePea().Targeting(transform.position + Vector3.left * _splitPeaProps.Range)).
+                    AppendCallback(() => InstantiatePea().Targeting(Vector2.left)).
                     AppendInterval(0.2f).
-                    AppendCallback(() => InstantiatePea().Targeting(transform.position + Vector3.left * _splitPeaProps.Range)).
+                    AppendCallback(() => InstantiatePea().Targeting(Vector2.left)).
                     AppendInterval(_splitPeaProps.ShootingInterval).
                     AppendCallback(() => sender.enabled = true);
             }
         }
 
-        public int Health => _splitPeaProps.Hp;
-
         private Pea InstantiatePea()
         {
             Pea pea = Instantiate(_splitPeaProps.Pea, transform.parent);
             pea.gameObject.layer = gameObject.layer;
+            pea.tag = tag;
             return pea;
         }
     }

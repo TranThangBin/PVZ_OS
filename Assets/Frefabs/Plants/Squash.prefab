@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 7583793638839938605}
   - component: {fileID: 7077533703957505779}
   - component: {fileID: 604292118675582644}
-  - component: {fileID: 7983535774338096872}
   - component: {fileID: 7679763157376794722}
+  - component: {fileID: 7983535774338096872}
+  - component: {fileID: 3013751900048434439}
   m_Layer: 7
   m_Name: Squash
   m_TagString: Untagged
@@ -125,10 +126,10 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 2.3708334}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.25}
     oldSize: {x: 7.9666667, y: 9.483334}
     newSize: {x: 4.78, y: 5.69}
     adaptiveTilingThreshold: 0.5
@@ -149,19 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fbd2a2d1f010264e8e9aff8c61e1741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7983535774338096872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191935844953624198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc1b233cbc4e6da40844ac42305064a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _squashProps: {fileID: 11400000, guid: 2120b9f174e9280419befcddf7e30b8a, type: 2}
 --- !u!114 &7679763157376794722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,3 +162,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1110e1b3e07895d4684bf719dfbb820b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7983535774338096872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191935844953624198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1b233cbc4e6da40844ac42305064a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _squashProps: {fileID: 11400000, guid: a29f40c925df78642b5f42ed2eb27720, type: 2}
+--- !u!114 &3013751900048434439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191935844953624198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7934a65d7b9699942b64c751fac1bf86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Props>k__BackingField: {fileID: 11400000, guid: 0fb7b840fabd079448684bdd39bf0a96, type: 2}

@@ -12,7 +12,7 @@ namespace Game
         [SerializeField] private Transform _cooldownOverlay;
 
         private Plant _plant;
-        private bool _enoughSun = false;
+        private bool _enoughSun;
 
         private void OnDestroy() => DOTween.Kill(this);
 
@@ -20,13 +20,16 @@ namespace Game
         {
             if (lawnCell.GetComponentInChildren<Plant>() == null)
             {
-                onSuccess.Invoke(_plant.PlantProps.SunCost);
-                Instantiate(_plant.gameObject, lawnCell);
                 DOTween.
                     Sequence(this).
-                    AppendCallback(() => _cooldownOverlay.localScale = Vector2.one).
+                    AppendCallback(() =>
+                    {
+                        _cooldownOverlay.localScale = Vector2.one;
+                        onSuccess.Invoke(_plant.Props.SunCost);
+                        Instantiate(_plant.gameObject, lawnCell).tag = lawnCell.tag;
+                    }).
                     Append(_cooldownOverlay.
-                        DOScaleY(0, _plant.PlantProps.SeedRechargeTime).
+                        DOScaleY(0, _plant.Props.SeedRechargeTime).
                         SetEase(Ease.Linear));
             }
         }
@@ -35,16 +38,15 @@ namespace Game
         {
             _plant = plant;
 
-            Sprite plantSprite = _plant.PlantProps.Sprite;
-            _srPlantSprite.sprite = plantSprite;
+            _srPlantSprite.sprite = _plant.Props.Sprite;
             _srPlantSprite.size = new(0.5f, 0.5f);
 
-            _tmPlantCost.text = _plant.PlantProps.SunCost.ToString();
+            _tmPlantCost.text = _plant.Props.SunCost.ToString();
         }
 
         public void OnSunStoreChange(int sun)
         {
-            _enoughSun = sun >= _plant.PlantProps.SunCost;
+            _enoughSun = sun >= _plant.Props.SunCost;
             _srNotEnoughSunOverlay.enabled = !_enoughSun;
         }
 

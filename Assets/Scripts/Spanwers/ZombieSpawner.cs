@@ -5,38 +5,22 @@ namespace Game
 {
     public class ZombieSpawner : MonoBehaviour
     {
-        [SerializeField] private MiscProperties _miscProps;
-        [SerializeField] private Transform _spawnYLocationStart;
-        [SerializeField] private Transform _spawnYLocationEnd;
-
-        private Vector2[] _spawnLocations;
+        public float ZombieSpawnInterval;
+        public BasicZombie BasicZombie;
 
         private void OnDestroy() => DOTween.Kill(this);
 
-        private void Awake()
-        {
-            _spawnLocations = new Vector2[_miscProps.ZombieSpawnRows];
-            float distance = _spawnYLocationStart.position.y - _spawnYLocationEnd.position.y;
-
-
-            float height = distance / _spawnLocations.Length;
-            for (int i = 0; i < _spawnLocations.Length; i++)
-            {
-                _spawnLocations[i] = new(transform.position.x, _spawnYLocationStart.position.y - height * (i + 1) + height / 2);
-            }
-        }
-
-        private void Start()
-        {
+        private void Start() =>
             DOTween.
                 Sequence(this).
-                AppendInterval(_miscProps.ZombieSpawnInterval).
+                AppendInterval(ZombieSpawnInterval).
                 AppendCallback(() =>
                 {
-                    int idx = Random.Range(0, _spawnLocations.Length);
-                    Instantiate(_miscProps.BasicZombie, _spawnLocations[idx], Quaternion.identity, transform);
+                    int idx = Random.Range(0, transform.childCount);
+                    Transform zombieParent = transform.GetChild(idx);
+                    BasicZombie zombie = Instantiate(BasicZombie, zombieParent);
+                    zombie.tag = zombieParent.tag;
                 }).
                 SetLoops(-1);
-        }
     }
 }

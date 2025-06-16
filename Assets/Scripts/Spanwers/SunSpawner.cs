@@ -5,33 +5,27 @@ namespace Game
 {
     public class SunSpawner : MonoBehaviour
     {
-        [SerializeField] private MiscProperties _miscProps;
-        [SerializeField] private Transform _sunSpawnStart;
-        [SerializeField] private Transform _sunSpawnEnd;
+        public Transform SunSpawnStart;
+        public Transform SunSpawnEnd;
+        public Sun Sun;
+        public float SunSpawnInterval;
 
-        private void OnDestroy() => DOTween.Kill(this);
+        private void Start() =>
+            InvokeRepeating(nameof(SpawnSun), SunSpawnInterval, SunSpawnInterval);
 
-        private void Start()
+        private void SpawnSun()
         {
-            DOTween.
-                   Sequence(this).
-                   AppendInterval(_miscProps.SunSpawnInterval).
-                   AppendCallback(() =>
-                   {
-                       Vector2 spawnPos = new Vector2(Random.Range(_sunSpawnStart.position.x, _sunSpawnEnd.position.x),
-                            _sunSpawnStart.position.y) + new Vector2(0, 20);
+            Vector2 spawnPos = new Vector2(Random.
+                Range(SunSpawnStart.position.x, SunSpawnEnd.position.x),
+                SunSpawnStart.position.y) +
+                new Vector2(0, 30);
 
-                       Sun sun = Instantiate(_miscProps.Sun, spawnPos, Quaternion.identity, transform);
+            Sun sun = Instantiate(Sun, spawnPos, Quaternion.identity, transform);
 
-                       float targetY = Random.Range(_sunSpawnStart.position.y, _sunSpawnEnd.position.y);
-                       sun.
-                           StartLifeTime().
-                           Prepend(sun.transform.
-                               DOMoveY(targetY,
-                                   Utils.CalculateTime(sun.transform.position, new(spawnPos.x, targetY), 12)
-                            ));
-                   }).
-                   SetLoops(-1);
+            float targetY = Random.Range(SunSpawnStart.position.y, SunSpawnEnd.position.y);
+            sun.
+                StartLifeTime().
+                Prepend(sun.MoveTo(new(spawnPos.x, targetY)));
         }
     }
 }

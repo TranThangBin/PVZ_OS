@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.Events;
 
 namespace Game
@@ -8,6 +9,9 @@ namespace Game
     {
         private IEnumerable<RangeCastProperties> _rangeCastProps;
         private readonly UnityEvent<RangeCast, Collider2D> OnRangeCastHit = new();
+
+        private void OnValidate() => Assert.IsNotNull(GetComponent<IRange>(),
+            $"Expect an {typeof(IRange)}");
 
         private void Start()
         {

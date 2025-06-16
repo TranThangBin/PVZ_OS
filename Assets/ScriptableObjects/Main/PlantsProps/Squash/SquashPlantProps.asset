@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ef7b470c6a3a049bc165c55b86c982, type: 3}
+  m_Name: SquashPlantProps
+  m_EditorClassIdentifier: 
+  <SunCost>k__BackingField: 50
+  <SeedRechargeTime>k__BackingField: 30
+  <Hp>k__BackingField: 6
+  <Sprite>k__BackingField: {fileID: -3879942837491269518, guid: 4a7c7d03fb26eb049aa242887f64410f, type: 3}

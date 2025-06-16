@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 3171023122554927125}
   - component: {fileID: 7935115802897401648}
   - component: {fileID: 3794347107123626149}
+  - component: {fileID: 2901760223579771142}
   - component: {fileID: 1616559888810682488}
   - component: {fileID: 2911047016184457076}
   - component: {fileID: 1425308207525346091}
-  - component: {fileID: 2901760223579771142}
+  - component: {fileID: 1151657842344725703}
   m_Layer: 7
   m_Name: Peashooter
   m_TagString: Untagged
@@ -81,12 +82,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: -3070453432627086885, guid: 90916fa7fe267aa41a7ecb2606205f64, type: 3}
+  m_Sprite: {fileID: -2007062429, guid: 90916fa7fe267aa41a7ecb2606205f64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.5222661, y: 3.55}
+  m_Size: {x: 10.063618, y: 10.142858}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -126,18 +127,40 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 2.5357146}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.5222661, y: 3.55}
-    newSize: {x: 3.5222661, y: 3.55}
+    pivot: {x: 0.5, y: 0.25}
+    oldSize: {x: 10.063618, y: 10.142858}
+    newSize: {x: 10.063618, y: 10.142858}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 8.74, y: 8.92}
+  m_Size: {x: 10.063618, y: 10.142858}
   m_EdgeRadius: 0
+--- !u!95 &2901760223579771142
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4694460127658889744}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 914ae2cc3d4f92741aa9b051324b822b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1616559888810682488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,26 +197,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c55a7063a4801c446acb2acfe2afe7f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _peashooterProps: {fileID: 11400000, guid: d77113ec6bdda0c4c859725d75c8daaa, type: 2}
---- !u!95 &2901760223579771142
-Animator:
-  serializedVersion: 7
+  _peashooterProps: {fileID: 11400000, guid: 0fe5bf7c35bfd5f47ad3d2a389ef865f, type: 2}
+--- !u!114 &1151657842344725703
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4694460127658889744}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 914ae2cc3d4f92741aa9b051324b822b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7934a65d7b9699942b64c751fac1bf86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Props>k__BackingField: {fileID: 11400000, guid: 840144500b44e3d4bb4b58f66e91cef7, type: 2}

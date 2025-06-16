@@ -103,12 +103,12 @@ TextureImporter:
       name: PotatoMineUnArmed_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 600
-        height: 443
+        x: 248
+        y: 229
+        width: 140
+        height: 214
       alignment: 9
-      pivot: {x: 0.5325562, y: 0.64558595}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

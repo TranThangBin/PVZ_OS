@@ -2,9 +2,10 @@ using UnityEngine;
 
 namespace Game
 {
-    [RequireComponent(typeof(HealthManager), typeof(BoxCollider2D))]
-    public abstract class Plant : MonoBehaviour
+    [RequireComponent(typeof(HealthManager))]
+    public class Plant : MonoBehaviour, HealthManager.IDestroyOnOutOfHealth, HealthManager.IHealthy
     {
-        public abstract PlantProperties PlantProps { get; }
+        [field: SerializeField] public PlantProps Props { get; private set; }
+        public int Health => Props.Hp;
     }
 }

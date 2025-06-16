@@ -4,14 +4,12 @@ using UnityEngine;
 
 namespace Game
 {
-    [RequireComponent(typeof(RangeCast))]
-    public class Peashooter : Plant, RangeCast.IOnRangeCastHit, HealthManager.IDestroyOnOutOfHealth
+    [RequireComponent(typeof(RangeCast), typeof(Plant))]
+    public class Peashooter : MonoBehaviour, RangeCast.IOnRangeCastHit
     {
-        [SerializeField] private PeashooterProperties _peashooterProps;
+        [SerializeField] private PeashooterProps _peashooterProps;
 
         private void OnDestroy() => DOTween.Kill(this);
-
-        public override PlantProperties PlantProps => _peashooterProps.PlantProps;
 
         public IEnumerable<RangeCast.RangeCastProperties> GetRangeCastProps()
         {
@@ -21,18 +19,19 @@ namespace Game
         {
             if (!DOTween.IsTweening(this))
             {
-                Pea pea = Instantiate(_peashooterProps.Pea, transform.parent);
-                pea.Targeting(transform.position + Vector3.right * _peashooterProps.Range);
-                pea.gameObject.layer = gameObject.layer;
-
                 DOTween.
                     Sequence(this).
-                    AppendCallback(() => sender.enabled = false).
+                    AppendCallback(() =>
+                    {
+                        sender.enabled = false;
+                        Pea pea = Instantiate(_peashooterProps.Pea, transform.parent);
+                        pea.gameObject.layer = gameObject.layer;
+                        pea.tag = tag;
+                        pea.Targeting(Vector2.right);
+                    }).
                     AppendInterval(_peashooterProps.ShootingInterval).
                     AppendCallback(() => sender.enabled = true);
             }
         }
-
-        public int Health => _peashooterProps.Hp;
     }
 }

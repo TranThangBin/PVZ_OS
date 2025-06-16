@@ -100,1255 +100,1255 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Chomper_0
+      name: ChomperIdle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 2565
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9e4d5e988b8315b00800000000000000
-      internalID: 815495372769449193
+      spriteID: a12f98e53663765409e33c3338de0907
+      internalID: -1026073718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_1
+      name: ChomperIdle_1
       rect:
         serializedVersion: 2
         x: 496
         y: 2565
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 344c324b320a91744925913e41fb6dde
-      internalID: -1429725196
+      spriteID: c7099d7b29cfd0f4ea67f2dd10f8db1e
+      internalID: 2119413449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_2
+      name: ChomperIdle_2
       rect:
         serializedVersion: 2
         x: 992
         y: 2565
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bedf59675ce9f304a83c51611fbfdab4
-      internalID: -1657232135
+      spriteID: efc9bbb794e247a42a1c9a97d617cfc5
+      internalID: 395886368
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_3
+      name: ChomperIdle_3
       rect:
         serializedVersion: 2
         x: 1488
         y: 2565
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 982f45cce68c25142b5fb25a465c2866
-      internalID: 1294874221
+      spriteID: 8560504180678cc46875141c77c0f424
+      internalID: -2048316983
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_4
+      name: ChomperIdle_4
       rect:
         serializedVersion: 2
         x: 1984
         y: 2565
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37dcfc12d26744341aac2d31271b5b46
-      internalID: -631943547
+      spriteID: 06653014c1c14a742b9f33b3c3e25818
+      internalID: 1761036890
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_5
+      name: ChomperIdle_5
       rect:
         serializedVersion: 2
         x: 2480
         y: 2565
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e732d9272295cad45a40539606b65b00
-      internalID: -645631107
+      spriteID: b77dd30150d716d4a830b0cc603d533c
+      internalID: 419883166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_6
+      name: ChomperIdle_6
       rect:
         serializedVersion: 2
         x: 2976
         y: 2565
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e77d958681e07b4c8ea68c99e55b854
-      internalID: 1013582685
+      spriteID: 40a9e15108ca0d84d9c16a4f3586dc66
+      internalID: -521129546
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_7
+      name: ChomperIdle_7
       rect:
         serializedVersion: 2
         x: 3472
         y: 2565
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d68066e0b4ca17641b4b56ce868f9c04
-      internalID: 119522055
+      spriteID: ccddfdc2a27806849b916737e6d8b5fa
+      internalID: -1762312587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_8
+      name: ChomperIdle_8
       rect:
         serializedVersion: 2
         x: 3968
         y: 2565
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a3ee467f12ea4148b8476930ce1f294
-      internalID: -313007364
+      spriteID: de08efa64ea94b44585a6cb5e96c6f3f
+      internalID: 2041891458
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_9
+      name: ChomperIdle_9
       rect:
         serializedVersion: 2
         x: 4464
         y: 2565
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fbe6dcbdc4c08c4383f5e6f5b8c8c89
-      internalID: 2118466603
+      spriteID: 09be5bf5cec207046842b9a5fc8cbd85
+      internalID: 900185165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_10
+      name: ChomperIdle_10
       rect:
         serializedVersion: 2
         x: 0
         y: 2052
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f932f7abf6c160e4eb45831628b8e8aa
-      internalID: -209690552
+      spriteID: a71a83a0ef7a28642a40c2fe327b5d77
+      internalID: 2070806981
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_11
+      name: ChomperIdle_11
       rect:
         serializedVersion: 2
         x: 496
         y: 2052
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd6a83d14223fa64d9ec4a6b74a1fc2e
-      internalID: -2102833994
+      spriteID: 2a536620f69e77547bea1c7e750e66eb
+      internalID: -1641832327
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_12
+      name: ChomperIdle_12
       rect:
         serializedVersion: 2
         x: 992
         y: 2052
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7a6f5ec60ed42644a8752025b44a2c5
-      internalID: -1962449483
+      spriteID: 15aa3c7688fd4c0419f359d367dbbe57
+      internalID: 1772711542
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_13
+      name: ChomperIdle_13
       rect:
         serializedVersion: 2
         x: 1488
         y: 2052
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2726070efbeb7b24d9c5c667b76dd041
-      internalID: -62433145
+      spriteID: a2d74344bbdf51041b28efedb3ff0a09
+      internalID: 384426847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_14
+      name: ChomperIdle_14
       rect:
         serializedVersion: 2
         x: 1984
         y: 2052
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a95930407dbb3cc4ab4d945897f07c60
-      internalID: -56086842
+      spriteID: 229dfb8a6a947bd4db77db8a7d948e87
+      internalID: 1187957194
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_15
+      name: ChomperIdle_15
       rect:
         serializedVersion: 2
         x: 2480
         y: 2052
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a74f576acc86754d80b94832b6c0b83
-      internalID: 1187873288
+      spriteID: 526837bfe3434d548be14049b4f4ca60
+      internalID: -1015095516
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_16
+      name: ChomperIdle_16
       rect:
         serializedVersion: 2
         x: 2976
         y: 2052
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd8dd2c835b274d4b9b98eb87906022a
-      internalID: -1025742030
+      spriteID: ea9c1ebe730e4934a8f2d9e97cd4ee28
+      internalID: -1488893572
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_17
+      name: ChomperIdle_17
       rect:
         serializedVersion: 2
         x: 3472
         y: 2052
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f163333d401e0ab4fa9a1400f41135d2
-      internalID: -852879237
+      spriteID: 6c01d1c0e47ee2c4593c6033a3d9af53
+      internalID: 1273459563
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_18
+      name: ChomperIdle_18
       rect:
         serializedVersion: 2
         x: 3968
         y: 2052
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 146d90db1d95cbf48b4fcbf52e243032
-      internalID: -331518938
+      spriteID: 48ba7b74d71841a4fa37e4f69a3185d7
+      internalID: -1145017861
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_19
+      name: ChomperIdle_19
       rect:
         serializedVersion: 2
         x: 4464
         y: 2052
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 768a3049a40283244b8038b67bfc045d
-      internalID: 633293378
+      spriteID: b3a06db4c5afcf945b21e1e6b93186c4
+      internalID: -919523887
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_20
+      name: ChomperIdle_20
       rect:
         serializedVersion: 2
         x: 0
         y: 1539
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1102892673142c4081f7b8bfc95ae94
-      internalID: 1091748904
+      spriteID: d4cf7501450f8984a98661b1cf1541b3
+      internalID: -957076389
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_21
+      name: ChomperIdle_21
       rect:
         serializedVersion: 2
         x: 496
         y: 1539
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bcd2340a84fae9f4bbd6a052956f8e6c
-      internalID: 720457017
+      spriteID: 6406d44eeb279f5439905fe41a80e35b
+      internalID: 1980566950
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_22
+      name: ChomperIdle_22
       rect:
         serializedVersion: 2
         x: 992
         y: 1539
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4e5f3a600d596346ad9ac253ace281e
-      internalID: 131277230
+      spriteID: 926b26f84da43a2418579503b7e3f654
+      internalID: 1670953383
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_23
+      name: ChomperIdle_23
       rect:
         serializedVersion: 2
         x: 1488
         y: 1539
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7abfeeea1a930f46bad4d50d0d9307a
-      internalID: -487648240
+      spriteID: 866f004fe1fad004db074f2c44010105
+      internalID: -1612369597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_24
+      name: ChomperIdle_24
       rect:
         serializedVersion: 2
         x: 1984
         y: 1539
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f364032ac96cb1a48ade6d1b23848782
-      internalID: -643912579
+      spriteID: 2316a0ed3ef1dcb41b277571b91059fe
+      internalID: 777083279
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_25
+      name: ChomperIdle_25
       rect:
         serializedVersion: 2
         x: 2480
         y: 1539
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4a050f01b319f445b7686635fe34d09
-      internalID: 874143375
+      spriteID: d4f188cfa61419e43900fe24a44e8927
+      internalID: 639591406
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_26
+      name: ChomperIdle_26
       rect:
         serializedVersion: 2
         x: 2976
         y: 1539
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 723738e83d11d6242a534345abd852e9
-      internalID: 1799290264
+      spriteID: 1ec0260b7b21b0a42929b45c4e92395f
+      internalID: 1346788068
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_27
+      name: ChomperIdle_27
       rect:
         serializedVersion: 2
         x: 3472
         y: 1539
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e896ffad1f6896d499349579d90208b2
-      internalID: 598552455
+      spriteID: 1daaeb40cb66e1e408a71cfa5250251d
+      internalID: 827386348
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_28
+      name: ChomperIdle_28
       rect:
         serializedVersion: 2
         x: 3968
         y: 1539
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c9b969248c952b4293a8b8b30e1861d
-      internalID: -648382190
+      spriteID: caedd102f7a93934d8dd7c24a9059312
+      internalID: -1368071304
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_29
+      name: ChomperIdle_29
       rect:
         serializedVersion: 2
         x: 4464
         y: 1539
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a2c36f9fe092ae459e7f3d5f76394a8
-      internalID: 159149692
+      spriteID: c7c2157c338dd034ea65644943b231b6
+      internalID: 471411981
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_30
+      name: ChomperIdle_30
       rect:
         serializedVersion: 2
         x: 0
         y: 1026
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5dc6a80803c99604bbec70e9953546a4
-      internalID: 1873652359
+      spriteID: d50bfa780416b6f429b67481d02cc8fa
+      internalID: -520782266
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_31
+      name: ChomperIdle_31
       rect:
         serializedVersion: 2
         x: 496
         y: 1026
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e096bfd6bd1b934db15638d33222e89
-      internalID: -150888590
+      spriteID: 054d885c5a8d6b747b4bec0a3659efe9
+      internalID: -538015699
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_32
+      name: ChomperIdle_32
       rect:
         serializedVersion: 2
         x: 992
         y: 1026
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9db04c6c06c26c0479dbc4c48b8af169
-      internalID: 463560070
+      spriteID: 4fd2c6e3fb8985e4e841716705957c90
+      internalID: -1669361395
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_33
+      name: ChomperIdle_33
       rect:
         serializedVersion: 2
         x: 1488
         y: 1026
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebd369c664151a44a9a223c77cb70df5
-      internalID: 2132466037
+      spriteID: 1dc92dc233a99164ab8b3b16e0f9ee01
+      internalID: 1007261170
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_34
+      name: ChomperIdle_34
       rect:
         serializedVersion: 2
         x: 1984
         y: 1026
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea6889f814b0c7442b84a4ff281288fe
-      internalID: -278964537
+      spriteID: 6a76e89fe29e7d64ca4a5110075c9721
+      internalID: 1634564236
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_35
+      name: ChomperIdle_35
       rect:
         serializedVersion: 2
         x: 2480
         y: 1026
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 753599f488ffed64a9bff027aa33acf4
-      internalID: 218048339
+      spriteID: 9467de0ffc630b14f9e2e1cc79179bb2
+      internalID: 1650180702
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_36
+      name: ChomperIdle_36
       rect:
         serializedVersion: 2
         x: 2976
         y: 1026
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb82327d88298a947be5ad45c2f84ce0
-      internalID: 2120695072
+      spriteID: 892ef6b48d4f376429fbb08a57d0e8b8
+      internalID: -1545655361
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_37
+      name: ChomperIdle_37
       rect:
         serializedVersion: 2
         x: 3472
         y: 1026
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86a9b1cfc9514394e82d358806b010f7
-      internalID: -937833054
+      spriteID: c646725727aa4c540a19746fdb48e6ff
+      internalID: -638997085
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_38
+      name: ChomperIdle_38
       rect:
         serializedVersion: 2
         x: 3968
         y: 1026
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab2b37a6e8915b04fafb48dbf044c588
-      internalID: -510781560
+      spriteID: 135e7f2527020ad4786ec772a9708488
+      internalID: -1867793426
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_39
+      name: ChomperIdle_39
       rect:
         serializedVersion: 2
         x: 4464
         y: 1026
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be0e8c7ac0ce0584da10cbd751b013fc
-      internalID: -2128080329
+      spriteID: 851344980921dd449b3f35a9758e2ae3
+      internalID: -2084506518
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_40
+      name: ChomperIdle_40
       rect:
         serializedVersion: 2
         x: 0
         y: 513
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91d0136256d966443b3ac86c36b806bb
-      internalID: -1369703532
+      spriteID: ee5ebc0acc4a20b47a944a3170802eb2
+      internalID: 971707830
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_41
+      name: ChomperIdle_41
       rect:
         serializedVersion: 2
         x: 496
         y: 513
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 590ada4adcefbc040a65448b43859ec1
-      internalID: -1992798936
+      spriteID: c55af0b544c4d074e96a457371d3dc74
+      internalID: 108843081
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_42
+      name: ChomperIdle_42
       rect:
         serializedVersion: 2
         x: 992
         y: 513
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7792811c55d15cb47b6fec97a8dd971b
-      internalID: -786979273
+      spriteID: 1616a7f89a8b9944c9045752b8eb051a
+      internalID: 275352003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_43
+      name: ChomperIdle_43
       rect:
         serializedVersion: 2
         x: 1488
         y: 513
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86679fd34965c7547b4409bb22493a1a
-      internalID: -846368131
+      spriteID: 95d9faae89410c8439cf5a4dc42409ad
+      internalID: -1981077842
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_44
+      name: ChomperIdle_44
       rect:
         serializedVersion: 2
         x: 1984
         y: 513
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de87089af2f700746891630732aa5467
-      internalID: -960475669
+      spriteID: 911ed4a464e92e34c89dd7cec35b2ba2
+      internalID: 1761994515
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_45
+      name: ChomperIdle_45
       rect:
         serializedVersion: 2
         x: 2480
         y: 513
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8f0396f23530e449923dba9eb7763d1
-      internalID: 555231735
+      spriteID: 2fd7d58ab5f1a19458035f5a88bbc88d
+      internalID: -1974850448
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_46
+      name: ChomperIdle_46
       rect:
         serializedVersion: 2
         x: 2976
         y: 513
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d50c75d061a5a0546b615568bdd77de7
-      internalID: -583544310
+      spriteID: a169c8b1e2e8a794eb5667d532e26faf
+      internalID: 885231209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_47
+      name: ChomperIdle_47
       rect:
         serializedVersion: 2
         x: 3472
         y: 513
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb11e7c7a62f51245b5cf70b000c08fe
-      internalID: 1222757460
+      spriteID: fc08c22eb76d4234c8af7997dcfa6501
+      internalID: 1510594377
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_48
+      name: ChomperIdle_48
       rect:
         serializedVersion: 2
         x: 3968
         y: 513
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2eb2b11a0ae6cc449ae4b7c10f83e033
-      internalID: 1484223503
+      spriteID: 228015c979670c04a88aeb0759585ad9
+      internalID: 576827250
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_49
+      name: ChomperIdle_49
       rect:
         serializedVersion: 2
         x: 4464
         y: 513
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 314952225e24d5b4288644d5b29b63a6
-      internalID: 213831139
+      spriteID: fa7b37a9269fe4948b6ec8fe2d26b0bd
+      internalID: -486651165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_50
+      name: ChomperIdle_50
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bc81be00cbcb1f4eaf9f6fb381028a5
-      internalID: 1212684160
+      spriteID: 76b7cbc6e4b29cb4ea3dc0dab16971d6
+      internalID: 2115620936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_51
+      name: ChomperIdle_51
       rect:
         serializedVersion: 2
         x: 496
         y: 0
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c5edfa577ba9fe449ead67233c26cc4
-      internalID: -1005983794
+      spriteID: 7a8f743e7cd2d604880b5ad4c57fd57a
+      internalID: -1050315800
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_52
+      name: ChomperIdle_52
       rect:
         serializedVersion: 2
         x: 992
         y: 0
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a2153020c5301e4b87e11149b703d88
-      internalID: 394693886
+      spriteID: 447695634f45aa74b822c57fdf10885a
+      internalID: -264022798
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_53
+      name: ChomperIdle_53
       rect:
         serializedVersion: 2
         x: 1488
         y: 0
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e1e94fcff619f4419427285b638b240
-      internalID: 1775241979
+      spriteID: 6093b9a713eab9e478c28fc091c0dc5e
+      internalID: 986068989
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_54
+      name: ChomperIdle_54
       rect:
         serializedVersion: 2
         x: 1984
         y: 0
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6049eab4c8ef8544bab2cb3c39ad9268
-      internalID: 1048243630
+      spriteID: a967942c48235fe4caa9d10359aad88a
+      internalID: 770883295
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_55
+      name: ChomperIdle_55
       rect:
         serializedVersion: 2
         x: 2480
         y: 0
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f376ef2b55b7f84695e3c4dc7f4e186
-      internalID: 2008691378
+      spriteID: 59011a7736f90164cbebc56f94e1c7e5
+      internalID: -1388963145
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chomper_56
+      name: ChomperIdle_56
       rect:
         serializedVersion: 2
         x: 2976
         y: 0
         width: 496
         height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7dad57e691b3e3b48a0050dd6e6608df
-      internalID: -145167076
+      spriteID: 9fcbb6ced69d640418792659c6c6b087
+      internalID: 1929626873
       vertices: []
       indices: 
       edges: []
@@ -1367,63 +1367,63 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Chomper_0: 815495372769449193
-      Chomper_1: -1429725196
-      Chomper_10: -209690552
-      Chomper_11: -2102833994
-      Chomper_12: -1962449483
-      Chomper_13: -62433145
-      Chomper_14: -56086842
-      Chomper_15: 1187873288
-      Chomper_16: -1025742030
-      Chomper_17: -852879237
-      Chomper_18: -331518938
-      Chomper_19: 633293378
-      Chomper_2: -1657232135
-      Chomper_20: 1091748904
-      Chomper_21: 720457017
-      Chomper_22: 131277230
-      Chomper_23: -487648240
-      Chomper_24: -643912579
-      Chomper_25: 874143375
-      Chomper_26: 1799290264
-      Chomper_27: 598552455
-      Chomper_28: -648382190
-      Chomper_29: 159149692
-      Chomper_3: 1294874221
-      Chomper_30: 1873652359
-      Chomper_31: -150888590
-      Chomper_32: 463560070
-      Chomper_33: 2132466037
-      Chomper_34: -278964537
-      Chomper_35: 218048339
-      Chomper_36: 2120695072
-      Chomper_37: -937833054
-      Chomper_38: -510781560
-      Chomper_39: -2128080329
-      Chomper_4: -631943547
-      Chomper_40: -1369703532
-      Chomper_41: -1992798936
-      Chomper_42: -786979273
-      Chomper_43: -846368131
-      Chomper_44: -960475669
-      Chomper_45: 555231735
-      Chomper_46: -583544310
-      Chomper_47: 1222757460
-      Chomper_48: 1484223503
-      Chomper_49: 213831139
-      Chomper_5: -645631107
-      Chomper_50: 1212684160
-      Chomper_51: -1005983794
-      Chomper_52: 394693886
-      Chomper_53: 1775241979
-      Chomper_54: 1048243630
-      Chomper_55: 2008691378
-      Chomper_56: -145167076
-      Chomper_6: 1013582685
-      Chomper_7: 119522055
-      Chomper_8: -313007364
-      Chomper_9: 2118466603
+      ChomperIdle_0: -1026073718
+      ChomperIdle_1: 2119413449
+      ChomperIdle_10: 2070806981
+      ChomperIdle_11: -1641832327
+      ChomperIdle_12: 1772711542
+      ChomperIdle_13: 384426847
+      ChomperIdle_14: 1187957194
+      ChomperIdle_15: -1015095516
+      ChomperIdle_16: -1488893572
+      ChomperIdle_17: 1273459563
+      ChomperIdle_18: -1145017861
+      ChomperIdle_19: -919523887
+      ChomperIdle_2: 395886368
+      ChomperIdle_20: -957076389
+      ChomperIdle_21: 1980566950
+      ChomperIdle_22: 1670953383
+      ChomperIdle_23: -1612369597
+      ChomperIdle_24: 777083279
+      ChomperIdle_25: 639591406
+      ChomperIdle_26: 1346788068
+      ChomperIdle_27: 827386348
+      ChomperIdle_28: -1368071304
+      ChomperIdle_29: 471411981
+      ChomperIdle_3: -2048316983
+      ChomperIdle_30: -520782266
+      ChomperIdle_31: -538015699
+      ChomperIdle_32: -1669361395
+      ChomperIdle_33: 1007261170
+      ChomperIdle_34: 1634564236
+      ChomperIdle_35: 1650180702
+      ChomperIdle_36: -1545655361
+      ChomperIdle_37: -638997085
+      ChomperIdle_38: -1867793426
+      ChomperIdle_39: -2084506518
+      ChomperIdle_4: 1761036890
+      ChomperIdle_40: 971707830
+      ChomperIdle_41: 108843081
+      ChomperIdle_42: 275352003
+      ChomperIdle_43: -1981077842
+      ChomperIdle_44: 1761994515
+      ChomperIdle_45: -1974850448
+      ChomperIdle_46: 885231209
+      ChomperIdle_47: 1510594377
+      ChomperIdle_48: 576827250
+      ChomperIdle_49: -486651165
+      ChomperIdle_5: 419883166
+      ChomperIdle_50: 2115620936
+      ChomperIdle_51: -1050315800
+      ChomperIdle_52: -264022798
+      ChomperIdle_53: 986068989
+      ChomperIdle_54: 770883295
+      ChomperIdle_55: -1388963145
+      ChomperIdle_56: 1929626873
+      ChomperIdle_6: -521129546
+      ChomperIdle_7: -1762312587
+      ChomperIdle_8: 2041891458
+      ChomperIdle_9: 900185165
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

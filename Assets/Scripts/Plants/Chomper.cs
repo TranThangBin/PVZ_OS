@@ -4,17 +4,13 @@ using UnityEngine;
 
 namespace Game
 {
-    [RequireComponent(typeof(RangeCast))]
-    public class Chomper : Plant, HealthManager.IDestroyOnOutOfHealth, RangeCast.IOnRangeCastHit
+    [RequireComponent(typeof(RangeCast), typeof(Plant))]
+    public class Chomper : MonoBehaviour, RangeCast.IOnRangeCastHit
     {
-        [SerializeField] private ChomperProperties _chomperProps;
+        [SerializeField] private ChomperProps _chomperProps;
         [SerializeField] private Animator _anim;
 
         private void OnDestroy() => DOTween.Kill(this);
-
-        public override PlantProperties PlantProps => _chomperProps.PlantProps;
-
-        public int Health => _chomperProps.Hp;
 
         public IEnumerable<RangeCast.RangeCastProperties> GetRangeCastProps()
         {
@@ -24,11 +20,11 @@ namespace Game
         {
             if (!DOTween.IsTweening(this) && collider.TryGetComponent(out HealthManager enemyHealth))
             {
-                enemyHealth.ReduceHealth(_chomperProps.Damage);
                 DOTween.
                     Sequence(this).
                     AppendCallback(() =>
                     {
+                        enemyHealth.ReduceHealth(_chomperProps.Damage);
                         sender.enabled = false;
                         _anim.SetBool("IsChewing", true);
                     }).

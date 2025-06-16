@@ -5,20 +5,20 @@ namespace Game
 {
     public class Sun : MonoBehaviour
     {
-        [SerializeField] float _lifeTime;
         [SerializeField] private SpriteRenderer _sunSprite;
 
         private void OnDestroy() => DOTween.Kill(this);
 
         public Sequence StartLifeTime()
         {
-            float idleTime = 2 * _lifeTime / 3;
-            float timeRemain = _lifeTime - idleTime;
+            float lifeTime = 7;
+
+            float idleTime = 2 * lifeTime / 3;
+            float timeRemain = lifeTime - idleTime;
             int loopAmount = 10;
 
-            DOTween.Kill(this);
-
-            return DOTween.Sequence(this).
+            return DOTween.
+                Sequence(this).
                 AppendInterval(idleTime).
                 Append(_sunSprite.
                     DOFade(0, timeRemain / loopAmount).
@@ -26,11 +26,19 @@ namespace Game
                 OnComplete(() => Destroy(gameObject));
         }
 
-        public Sequence ToTheEnd()
+        public Tween MoveTo(Vector3 position, float velocity = 15) =>
+            transform.
+                DOMove(position, Vector3.Distance(transform.position, position) / velocity).
+                SetId(this);
+
+        public Sequence ToTheEnd(Vector3 position)
         {
-            DOTween.Kill(this);
-            return DOTween.Sequence(this).
-                AppendCallback(() => _sunSprite.color = Color.white).
+            float velocity = 50;
+            return DOTween.
+                Sequence(this).
+                Prepend(MoveTo(position, velocity)).
+                PrependCallback(() => _sunSprite.color = Color.white).
+                SetEase(Ease.Linear).
                 OnComplete(() => Destroy(gameObject));
         }
     }

@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Game
 {
-    [RequireComponent(typeof(Rigidbody2D), typeof(HealthManager), typeof(RangeCast))]
+    [RequireComponent(typeof(HealthManager), typeof(RangeCast))]
     public class BasicZombie : MonoBehaviour,
         HealthManager.IDestroyOnOutOfHealth, RangeCast.IOnRangeCastHit
     {
-        [SerializeField] private BasicZombieProperties _basicZombieProps;
+        [SerializeField] private BasicZombieProps _basicZombieProps;
         [SerializeField] private Animator _anim;
         [SerializeField] private ParticleSystem _ps;
 
@@ -29,7 +29,7 @@ namespace Game
         }
         public void OnRangeCastHit(RangeCast sender, Collider2D collider)
         {
-            if (!DOTween.IsTweening(this) && collider.TryGetComponent(out HealthManager health))
+            if (!DOTween.IsTweening(this) && collider.TryGetComponent(out HealthManager health) && CompareTag(health.tag))
             {
                 _rb.linearVelocity = Vector2.zero;
                 _anim.SetBool("IsEating", true);

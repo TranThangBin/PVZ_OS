@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4532329833821885254}
   - component: {fileID: 3860030498405499970}
   - component: {fileID: 7723009065039194784}
+  - component: {fileID: 9190282964686871703}
   m_Layer: 7
   m_Name: MelonPult
   m_TagString: Untagged
@@ -125,10 +126,10 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 2.3600001}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.25}
     oldSize: {x: 11.92, y: 9.44}
     newSize: {x: 10, y: 10}
     adaptiveTilingThreshold: 0.5
@@ -173,4 +174,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd735e244f936f4fa88e0e3534ec16f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _melonPultProps: {fileID: 11400000, guid: 8b2e51d7d151a1649a7be726c7f14079, type: 2}
+  _melonPultProps: {fileID: 11400000, guid: 6b52669e527dc53419ac2f33d5b7caa6, type: 2}
+--- !u!114 &9190282964686871703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7144638837843532576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7934a65d7b9699942b64c751fac1bf86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Props>k__BackingField: {fileID: 11400000, guid: c1efe8c975d7f8444ba6ac5419ecd489, type: 2}

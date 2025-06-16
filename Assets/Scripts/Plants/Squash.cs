@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace Game
 {
-    [RequireComponent(typeof(RangeCast))]
-    public class Squash : Plant, RangeCast.IOnRangeCastHit, HealthManager.IInfiniteHealth
+    [RequireComponent(typeof(RangeCast), typeof(Plant))]
+    public class Squash : MonoBehaviour, RangeCast.IOnRangeCastHit
     {
-        [SerializeField] private SquashProperties _squashProps;
+        [SerializeField] private SquashProps _squashProps;
 
         private bool _kill = false;
 
@@ -21,8 +21,6 @@ namespace Game
                 Destroy(gameObject);
             }
         }
-
-        public override PlantProperties PlantProps => _squashProps.PlantProps;
 
         public IEnumerable<RangeCast.RangeCastProperties> GetRangeCastProps()
         {

@@ -4,14 +4,12 @@ using UnityEngine;
 
 namespace Game
 {
-    [RequireComponent(typeof(RangeCast))]
-    public class MelonPult : Plant, RangeCast.IOnRangeCastHit, HealthManager.IDestroyOnOutOfHealth
+    [RequireComponent(typeof(RangeCast), typeof(Plant))]
+    public class MelonPult : MonoBehaviour, RangeCast.IOnRangeCastHit
     {
-        [SerializeField] private MelonPultProperties _melonPultProps;
+        [SerializeField] private MelonPultProps _melonPultProps;
 
         private void OnDestroy() => DOTween.Kill(this);
-
-        public override PlantProperties PlantProps => _melonPultProps.PlantProps;
 
         public IEnumerable<RangeCast.RangeCastProperties> GetRangeCastProps()
         {
@@ -21,18 +19,19 @@ namespace Game
         {
             if (!DOTween.IsTweening(this))
             {
-                Melon melon = Instantiate(_melonPultProps.Melon, transform.parent);
-                melon.gameObject.layer = gameObject.layer;
-                melon.Targeting(collider.attachedRigidbody);
-
                 DOTween.
                     Sequence(this).
-                    AppendCallback(() => sender.enabled = false).
+                    AppendCallback(() =>
+                    {
+                        sender.enabled = false;
+                        Melon melon = Instantiate(_melonPultProps.Melon, transform.parent);
+                        melon.gameObject.layer = gameObject.layer;
+                        melon.tag = tag;
+                        melon.Targeting(collider.attachedRigidbody);
+                    }).
                     AppendInterval(_melonPultProps.ShootingInterval).
                     AppendCallback(() => sender.enabled = true);
             }
         }
-
-        public int Health => _melonPultProps.Hp;
     }
 }

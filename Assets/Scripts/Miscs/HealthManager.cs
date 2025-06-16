@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.Events;
 
 namespace Game
@@ -10,11 +11,13 @@ namespace Game
         private readonly UnityEvent<HealthManager> OnOutOfHealth = new();
         private readonly UnityEvent<HealthManager> OnDamageTaken = new();
 
+        private void OnValidate() =>
+            Assert.IsTrue(TryGetComponent(out IHealthy health) && health.Health > 0,
+                $"Expect an {typeof(IHealthy)} with more than 0 health");
+
         private void Start()
         {
             if (TryGetComponent(out IHealthy healthyObject)) { _hp = healthyObject.Health; }
-
-            if (TryGetComponent(out IInfiniteHealth _)) { _hp = -2; }
 
             foreach (IDestroyOnOutOfHealth handler in GetComponents<IDestroyOnOutOfHealth>())
             {
@@ -25,8 +28,6 @@ namespace Game
             {
                 OnDamageTaken.AddListener(handler.OnDamageTaken);
             }
-
-            if (_hp == 0) { Debug.LogWarning(gameObject + " does not have any health initializer"); }
         }
 
         public void ReduceHealth(int amount)
@@ -49,8 +50,6 @@ namespace Game
         {
             void OnDamageTaken(HealthManager sender);
         }
-
-        public interface IInfiniteHealth { }
 
         public interface IDestroyOnOutOfHealth : IHealthy { }
 

@@ -3,9 +3,10 @@ using UnityEngine;
 
 namespace Game
 {
-    public class PotatoMine : Plant, HealthManager.IDestroyOnOutOfHealth
+    [RequireComponent(typeof(Plant))]
+    public class PotatoMine : MonoBehaviour
     {
-        [SerializeField] private PotatoMineProperties _potatoMineProps;
+        [SerializeField] private PotatoMineProps _potatoMineProps;
 
         private void OnDestroy() => DOTween.Kill(this);
 
@@ -15,13 +16,10 @@ namespace Game
                 AppendInterval(_potatoMineProps.PreparationTime).
                 AppendCallback(() =>
                 {
-                    ArmedPotatoMine armed = Instantiate(_potatoMineProps.ArmedPotatoMine, transform.parent);
-                    armed.gameObject.layer = gameObject.layer;
+                    Weapon weapon = Instantiate(_potatoMineProps.Armed, transform.parent);
+                    weapon.gameObject.layer = gameObject.layer;
+                    weapon.tag = tag;
                     Destroy(gameObject);
                 });
-
-        public override PlantProperties PlantProps => _potatoMineProps.PlantProps;
-
-        public int Health => _potatoMineProps.Hp;
     }
 }
