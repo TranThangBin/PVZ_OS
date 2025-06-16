@@ -29,7 +29,7 @@ namespace Game
             {
                 Debug.DrawRay(transform.position, props.Direction * props.Distance, props.RayColor);
                 RaycastHit2D rc = Physics2D.Raycast(transform.position, props.Direction, props.Distance, Physics2D.GetLayerCollisionMask(gameObject.layer));
-                if (rc.collider != null)
+                if (rc.collider != null && CompareTag(rc.collider.tag))
                 {
                     OnRangeCastHit.Invoke(this, rc.collider);
                 }

@@ -22,6 +22,14 @@ namespace Game
 
         private void Start() => _rb.linearVelocity = _basicZombieProps.MovementSpeed * _direction;
 
+        private void SetEatingAnimation(bool value)
+        {
+            if (_anim != null)
+            {
+                _anim.SetBool("IsEating", value);
+            }
+        }
+
         public int Health => _basicZombieProps.Hp;
         public void OnDamageTaken(HealthManager sender)
         {
@@ -39,19 +47,20 @@ namespace Game
         {
             if (!DOTween.IsTweening(this) && collider.TryGetComponent(out HealthManager health) && CompareTag(health.tag))
             {
-                _rb.linearVelocity = Vector2.zero;
-                _anim.SetBool("IsEating", true);
-                sender.enabled = false;
+
                 DOTween.
                     Sequence(this).
                     AppendCallback(() =>
                     {
+                        sender.enabled = false;
                         health.ReduceHealth(_basicZombieProps.Damage);
+                        SetEatingAnimation(true);
+                        _rb.linearVelocity = Vector2.zero;
                         _ps.Play();
                         if (health.IsOutOfHealth())
                         {
                             _rb.linearVelocity = _basicZombieProps.MovementSpeed * _direction;
-                            _anim.SetBool("IsEating", false);
+                            SetEatingAnimation(false);
                             sender.enabled = true;
                             DOTween.Kill(this);
                         }

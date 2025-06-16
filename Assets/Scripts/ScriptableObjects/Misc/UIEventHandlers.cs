@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,7 +16,7 @@ namespace Game
 
         public void HomeQuit()
         {
-            Environment.Exit(0);
+            Application.Quit();
         }
 
         public void LevelGameOverRestart()

@@ -14,6 +14,7 @@ namespace Game
         [SerializeField] private Transform _seedContainerEnd;
 
         private Tween _invalidSelectAnimation;
+        private bool _mouseHitSun;
         private readonly UnityEvent<int> OnSunStoreChange = new();
 
         private int _sunStore;
@@ -110,6 +111,7 @@ namespace Game
                 if (sun != null)
                 {
                     HandleCollectSun(sun);
+                    _mouseHitSun = true;
                 }
                 else if (selectable != null)
                 {
@@ -119,10 +121,11 @@ namespace Game
 
             if (lMouseUp)
             {
-                if (lawnCell)
+                if (lawnCell != null && !_mouseHitSun)
                 {
                     HandleLawnInteraction(lawnCell);
                 }
+                _mouseHitSun = false;
             }
         }
 

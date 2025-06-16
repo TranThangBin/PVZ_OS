@@ -50,6 +50,7 @@ namespace Game
             }
 
             GameObject gameOverTrigger = new("GameOverTrigger");
+            gameOverTrigger.layer = LayerMask.NameToLayer("GameOver");
             gameOverTrigger.transform.parent = _pool;
             gameOverTrigger.transform.position = grid.Matrix[0, 0] + Vector2.left * grid.CellSize * 1.8f;
             gameOverTrigger.AddComponent<GameOverTrigger>().GameOverMenu = _gameOverMenu;
