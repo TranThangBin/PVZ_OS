@@ -23,7 +23,7 @@ TagManager:
   - Sun
   - GameOver
   - LawnCell
-  - 
+  - Protector
   - 
   - 
   - 
@@ -59,8 +59,14 @@ TagManager:
   - name: Weapon
     uniqueID: 2278934997
     locked: 0
+  - name: ProtectorBack
+    uniqueID: 2232636763
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: ProtectorFront
+    uniqueID: 3600171253
     locked: 0
   - name: Sun
     uniqueID: 4013794277

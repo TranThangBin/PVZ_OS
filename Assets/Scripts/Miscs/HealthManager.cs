@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Events;
@@ -20,19 +21,22 @@ namespace Game
         {
             if (TryGetComponent(out IHealthy healthyObject)) { _hp = healthyObject.Health; }
             if (TryGetComponent(out IDestroyOnOutOfHealth _)) { OnOutOfHealth.AddListener((sender) => Destroy(gameObject)); }
-            if (TryGetComponent(out IBlinkOnDamageTaken blinker))
+            foreach (IOnDamageTaken handler in GetComponents<IOnDamageTaken>())
             {
-                OnDamageTaken.AddListener((sender) => Blink(blinker.SpriteRenderer, blinker.BlinkColor));
+                OnDamageTaken.AddListener(handler.OnDamageTaken);
             }
 
         }
 
-        private void Blink(SpriteRenderer sprite, Color color)
+        private void Blink(IEnumerable<SpriteRenderer> srs, Color color)
         {
-            sprite.
-                DOColor(color, 0.1f).
-                SetLoops(2, LoopType.Yoyo).
-                SetId(this);
+            foreach (SpriteRenderer sr in srs)
+            {
+                sr.
+                    DOColor(color, 0.1f).
+                    SetLoops(2, LoopType.Yoyo).
+                    SetId(this);
+            }
         }
 
         public void ReduceHealth(int amount)
@@ -57,10 +61,9 @@ namespace Game
 
         public interface IDestroyOnOutOfHealth : IHealthy { }
 
-        public interface IBlinkOnDamageTaken : IHealthy
+        public interface IOnDamageTaken : IHealthy
         {
-            Color BlinkColor { get; }
-            SpriteRenderer SpriteRenderer { get; }
+            void OnDamageTaken(HealthManager sender);
         }
 
         public interface IHealthy

@@ -11,6 +11,8 @@ namespace Game
 
         private void OnDestroy() => DOTween.Kill(this);
 
+        private void Start() => DOTween.Sequence(this).AppendInterval(1);
+
         public IEnumerable<RangeCast.RangeCastProperties> GetRangeCastProps()
         {
             yield return new(Vector2.right, _splitPeaProps.Range, Color.red);

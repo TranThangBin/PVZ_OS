@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 namespace Game
@@ -16,9 +17,16 @@ namespace Game
 
         private void OnDestroy() => DOTween.Kill(this);
 
+        private static bool IsProtector(Plant plant) => plant.gameObject.layer ==
+            LayerMask.NameToLayer("Protector");
+
         public void ActionOnLawn(Transform lawnCell, UnityAction<int> onSuccess)
         {
-            if (lawnCell.GetComponentInChildren<Plant>() == null)
+            Plant[] plants = lawnCell.GetComponentsInChildren<Plant>();
+
+            if (plants.Length == 2) { return; }
+
+            if (plants.Length == 0 || plants.Any(IsProtector) != IsProtector(_plant))
             {
                 DOTween.
                     Sequence(this).
