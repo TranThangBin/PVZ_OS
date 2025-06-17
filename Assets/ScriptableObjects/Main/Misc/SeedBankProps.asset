@@ -21,5 +21,8 @@ MonoBehaviour:
   - {fileID: 9190282964686871703, guid: 1cbad56ee6aca3543aa9571e43e48cba, type: 3}
   - {fileID: 3013751900048434439, guid: e722e26d94c24354584d928b425a024b, type: 3}
   - {fileID: 589892929687130414, guid: 9f703f4ac66d4354286a71aebef2687b, type: 3}
-  <MaxSeed>k__BackingField: 7
+  - {fileID: 8718372271433807967, guid: 95bc1910900cfaf4088bdc1e0e825306, type: 3}
+  - {fileID: 8513055167355661146, guid: e6ca91135cdba154caf7a1e2d1c72030, type: 3}
+  - {fileID: 718356235254328270, guid: 4362556c827255c498ea2e5106c90743, type: 3}
+  <MaxSeed>k__BackingField: 10
   <InitialSun>k__BackingField: 300

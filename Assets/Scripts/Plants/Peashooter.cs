@@ -8,10 +8,9 @@ namespace Game
     public class Peashooter : MonoBehaviour, RangeCast.IOnRangeCastHit
     {
         [SerializeField] private PeashooterProps _peashooterProps;
+        [SerializeField] private Transform _shootPosition;
 
         private void OnDestroy() => DOTween.Kill(this);
-
-        private void Start() => DOTween.Sequence(this).AppendInterval(1);
 
         public IEnumerable<RangeCast.RangeCastProperties> GetRangeCastProps()
         {
@@ -26,7 +25,8 @@ namespace Game
                     AppendCallback(() =>
                     {
                         sender.enabled = false;
-                        Pea pea = Instantiate(_peashooterProps.Pea, transform.parent);
+                        Pea pea = Instantiate(_peashooterProps.Pea,
+                            _shootPosition.position, Quaternion.identity, transform.parent);
                         pea.gameObject.layer = gameObject.layer;
                         pea.tag = tag;
                         pea.Targeting(Vector2.right);

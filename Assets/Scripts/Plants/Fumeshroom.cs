@@ -8,6 +8,7 @@ namespace Game
     public class Fumeshroom : MonoBehaviour, RangeCast.IOnRangeCastHit
     {
         [SerializeField] private FumeshroomProps _props;
+        [SerializeField] private Transform _shootPosition;
 
         private void OnDestroy() => DOTween.Kill(this);
 
@@ -24,7 +25,8 @@ namespace Game
                     AppendCallback(() =>
                     {
                         sender.enabled = false;
-                        Weapon fume = Instantiate(_props.Fume, transform.parent);
+                        Weapon fume = Instantiate(_props.Fume,
+                            _shootPosition.position, Quaternion.identity, transform.parent);
                         fume.tag = tag;
                         fume.gameObject.layer = gameObject.layer;
                     }).

@@ -8,10 +8,10 @@ namespace Game
     public class SplitPea : MonoBehaviour, RangeCast.IOnRangeCastHit
     {
         [SerializeField] private SplitPeaProps _splitPeaProps;
+        [SerializeField] private Transform _frontShootPosition;
+        [SerializeField] private Transform _backShootPosition;
 
         private void OnDestroy() => DOTween.Kill(this);
-
-        private void Start() => DOTween.Sequence(this).AppendInterval(1);
 
         public IEnumerable<RangeCast.RangeCastProperties> GetRangeCastProps()
         {
@@ -27,20 +27,21 @@ namespace Game
                     AppendCallback(() =>
                     {
                         sender.enabled = false;
-                        InstantiatePea().Targeting(Vector2.right);
+                        InstantiatePea(_frontShootPosition).Targeting(Vector2.right);
                     }).
                     AppendInterval(0.4f).
-                    AppendCallback(() => InstantiatePea().Targeting(Vector2.left)).
+                    AppendCallback(() => InstantiatePea(_backShootPosition).Targeting(Vector2.left)).
                     AppendInterval(0.2f).
-                    AppendCallback(() => InstantiatePea().Targeting(Vector2.left)).
+                    AppendCallback(() => InstantiatePea(_backShootPosition).Targeting(Vector2.left)).
                     AppendInterval(_splitPeaProps.ShootingInterval).
                     AppendCallback(() => sender.enabled = true);
             }
         }
 
-        private Pea InstantiatePea()
+        private Pea InstantiatePea(Transform t)
         {
-            Pea pea = Instantiate(_splitPeaProps.Pea, transform.parent);
+            Pea pea = Instantiate(_splitPeaProps.Pea, t.position,
+                Quaternion.identity, transform.parent);
             pea.gameObject.layer = gameObject.layer;
             pea.tag = tag;
             return pea;

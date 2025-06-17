@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98ae4490f290cfb48b09dcb6b0285992, type: 3}
   m_Name: PlayerLevels
   m_EditorClassIdentifier: 
-  CurrentLevel: 1
+  _currentLevel: 1
+  CurrentLevel: 0
   <ZombieSpawnerLevels>k__BackingField:
   - {fileID: 11400000, guid: 68d79fe385c6c1041b31d4487a26c590, type: 2}
   - {fileID: 11400000, guid: ae3cc096390bb754ca24d70e8618f90f, type: 2}
