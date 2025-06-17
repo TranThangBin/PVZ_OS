@@ -325,7 +325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ZombieSpawnInterval: 15
-  BasicZombie: {fileID: 3093293127321692786, guid: e3a96d23ba15101459840d513fe080b4, type: 3}
+  BasicZombie: {fileID: 3093293127321692786, guid: 7ea6606f23f18ed47ada78bcea1fddc1, type: 3}
 --- !u!1 &57207585
 GameObject:
   m_ObjectHideFlags: 0
@@ -1825,12 +1825,12 @@ TextMesh:
   m_GameObject: {fileID: 567122295}
   m_Text: 0
   m_OffsetZ: 0
-  m_CharacterSize: 0.1
+  m_CharacterSize: 0.03
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 13
+  m_FontSize: 48
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}

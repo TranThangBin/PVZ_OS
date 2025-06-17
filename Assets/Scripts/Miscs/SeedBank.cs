@@ -70,6 +70,8 @@ namespace Game
                 SetLoops(2).
                 Pause();
             SunStore = _props.InitialSun;
+            MeshRenderer sunRenderer = _sunDisplay.GetComponent<MeshRenderer>();
+            sunRenderer.sortingLayerName = "SeedBank";
         }
 
         private void Update()

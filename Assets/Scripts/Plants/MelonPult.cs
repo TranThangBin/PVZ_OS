@@ -8,6 +8,8 @@ namespace Game
     public class MelonPult : MonoBehaviour, RangeCast.IOnRangeCastHit
     {
         [SerializeField] private MelonPultProps _melonPultProps;
+        [SerializeField] private Transform _pult;
+        [SerializeField] private SpriteRenderer _melonProjectile;
 
         private void OnDestroy() => DOTween.Kill(this);
 
@@ -21,18 +23,36 @@ namespace Game
         {
             if (!DOTween.IsTweening(this))
             {
+                float pultTime = 0.5f;
+                Tween pultTween = DOTween.
+                    Sequence(this).
+                    Append(_pult.DOLocalRotate(new(0, 0, -60), pultTime)).
+                    Join(_pult.DOLocalMove(new(0, 5.5f), pultTime)).
+                    SetEase(Ease.InCubic).
+                    SetLoops(2, LoopType.Yoyo).
+                    Pause();
+
                 DOTween.
                     Sequence(this).
+                    AppendCallback(() => pultTween.Play()).
+                    AppendInterval(pultTime).
                     AppendCallback(() =>
                     {
                         sender.enabled = false;
-                        Melon melon = Instantiate(_melonPultProps.Melon, transform.parent);
+                        _melonProjectile.enabled = false;
+
+                        Melon melon = Instantiate(_melonPultProps.Melon, _melonProjectile.transform.position,
+                            _melonProjectile.transform.rotation, transform.parent);
                         melon.gameObject.layer = gameObject.layer;
                         melon.tag = tag;
                         melon.Targeting(collider.attachedRigidbody);
                     }).
                     AppendInterval(_melonPultProps.ShootingInterval).
-                    AppendCallback(() => sender.enabled = true);
+                    AppendCallback(() =>
+                    {
+                        sender.enabled = true;
+                        _melonProjectile.enabled = true;
+                    });
             }
         }
     }
