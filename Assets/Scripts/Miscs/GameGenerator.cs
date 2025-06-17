@@ -16,7 +16,6 @@ namespace Game
         {
             List<Transform> children = new();
             foreach (Transform child in _pool.transform) { children.Add(child); }
-            children.ForEach((t) => DestroyImmediate(t.gameObject));
 
             GameGrid grid = new(_lawnStart.position, _lawnEnd.position,
                 _props.Cleaners.Length, _props.LawnColumns);
@@ -60,8 +59,8 @@ namespace Game
             zombies.transform.parent = _pool;
 
             ZombieSpawner zSpawner = zombies.AddComponent<ZombieSpawner>();
-            zSpawner.ZombieSpawnInterval = _props.ZombieSpawnInterval;
-            zSpawner.BasicZombie = _props.BasicZombie;
+            zSpawner.PlayerLevels = GetPlayerLevels();
+            zSpawner.ProgressBar = GetZombieProgressBar();
 
             for (int i = 0; i < grid.Matrix.GetLength(0); i++)
             {
@@ -79,6 +78,19 @@ namespace Game
             sSpawner.SunSpawnInterval = _props.SunSpawnInterval;
             sSpawner.SunSpawnStart = _lawnStart;
             sSpawner.SunSpawnEnd = _lawnEnd;
+
+            children.ForEach((t) => DestroyImmediate(t.gameObject));
+        }
+
+        private PlayerLevels GetPlayerLevels()
+        {
+            ZombieSpawner zSpawner = _pool.GetComponentInChildren<ZombieSpawner>();
+            return zSpawner != null ? zSpawner.PlayerLevels : null;
+        }
+        private Transform GetZombieProgressBar()
+        {
+            ZombieSpawner zSpawner = _pool.GetComponentInChildren<ZombieSpawner>();
+            return zSpawner != null ? zSpawner.ProgressBar : null;
         }
     }
 }

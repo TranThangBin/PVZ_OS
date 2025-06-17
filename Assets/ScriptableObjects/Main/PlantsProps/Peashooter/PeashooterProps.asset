@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PeashooterProps
   m_EditorClassIdentifier: 
   <ShootingInterval>k__BackingField: 1.5
-  <Range>k__BackingField: 100
+  <Range>k__BackingField: 150
   <Pea>k__BackingField: {fileID: 3984037697035269409, guid: b54c8b6de00b64b4990a88a1f28c6a28, type: 3}

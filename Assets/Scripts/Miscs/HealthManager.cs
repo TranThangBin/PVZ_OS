@@ -25,6 +25,10 @@ namespace Game
             {
                 OnDamageTaken.AddListener(handler.OnDamageTaken);
             }
+            foreach (IOnOutOfHealth handler in GetComponents<IOnOutOfHealth>())
+            {
+                OnOutOfHealth.AddListener(handler.OnOutOfHealth);
+            }
 
         }
 
@@ -60,6 +64,11 @@ namespace Game
         public bool IsOutOfHealth() => _hp == 0 || _hp == -1;
 
         public interface IDestroyOnOutOfHealth : IHealthy { }
+
+        public interface IOnOutOfHealth : IHealthy
+        {
+            void OnOutOfHealth(HealthManager sender);
+        }
 
         public interface IOnDamageTaken : IHealthy
         {

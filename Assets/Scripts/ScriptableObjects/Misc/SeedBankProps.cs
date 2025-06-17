@@ -2,7 +2,7 @@
 
 namespace Game
 {
-    [CreateAssetMenu(menuName = "Scriptable Objects/Seed Bank Properties")]
+    [CreateAssetMenu(menuName = "Scriptable Objects/Misc/Seed Bank Properties")]
     public class SeedBankProps : ScriptableObject
     {
         [field: SerializeField] public SeedPacket SeedPacket { get; private set; }

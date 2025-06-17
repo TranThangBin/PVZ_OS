@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,7 +9,7 @@ namespace Game
     public class SeedBank : MonoBehaviour
     {
         [SerializeField] private SeedBankProps _props;
-        [SerializeField] private TextMesh _sunDisplay;
+        [SerializeField] private TextMeshPro _sunDisplay;
         [SerializeField] private Transform _seedsContainer;
         [SerializeField] private Transform _seedContainerStart;
         [SerializeField] private Transform _seedContainerEnd;
@@ -61,13 +62,10 @@ namespace Game
 
                 OnSunStoreChange.AddListener(seedPacket.OnSunStoreChange);
             }
-            Color sunDisplayColor = _sunDisplay.color;
-            _invalidSelectAnimation = DOTween.
-                Sequence().
-                AppendCallback(() => _sunDisplay.color = Color.red).AppendInterval(0.1f).
-                AppendCallback(() => _sunDisplay.color = sunDisplayColor).AppendInterval(0.1f).
+            _invalidSelectAnimation = _sunDisplay.
+                DOColor(Color.red, 0.1f).
                 SetAutoKill(false).
-                SetLoops(2).
+                SetLoops(2, LoopType.Yoyo).
                 Pause();
             SunStore = _props.InitialSun;
             MeshRenderer sunRenderer = _sunDisplay.GetComponent<MeshRenderer>();

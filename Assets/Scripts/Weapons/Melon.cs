@@ -7,7 +7,7 @@ namespace Game
     public class Melon : MonoBehaviour, Weapon.IOnWeaponCollision
     {
         [SerializeField] private MelonProps _props;
-            
+
         private void OnDestroy() => DOTween.Kill(this);
 
         public void Targeting(Rigidbody2D target)
@@ -17,7 +17,7 @@ namespace Game
 
             transform.
                 DOJump(destination, _props.JumpForce, 1, _props.FlyTime).
-                Join(transform.DORotate(new(0, 0, -90), _props.FlyTime)).
+                Join(transform.DORotate(new(0, 0, -360), _props.FlyTime, RotateMode.WorldAxisAdd)).
                 SetEase(Ease.Linear).
                 OnComplete(() =>
                 {

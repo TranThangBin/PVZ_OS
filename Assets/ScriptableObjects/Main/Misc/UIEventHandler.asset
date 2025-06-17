@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d43430c68afaab24595bbf74e1764790, type: 3}
   m_Name: UIEventHandler
   m_EditorClassIdentifier: 
+  _playerLevels: {fileID: 11400000, guid: 3aff3ace1e52b324d876027321a060e0, type: 2}
   _homeScene: Home
   _levelScene: Level

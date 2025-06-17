@@ -26,7 +26,7 @@ namespace Game
                 float pultTime = 0.5f;
                 Tween pultTween = DOTween.
                     Sequence(this).
-                    Append(_pult.DOLocalRotate(new(0, 0, -60), pultTime)).
+                    Append(_pult.DOLocalRotate(new(0, 0, -80), pultTime)).
                     Join(_pult.DOLocalMove(new(0, 5.5f), pultTime)).
                     SetEase(Ease.InCubic).
                     SetLoops(2, LoopType.Yoyo).

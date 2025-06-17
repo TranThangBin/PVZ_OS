@@ -3,13 +3,20 @@ using UnityEngine.SceneManagement;
 
 namespace Game
 {
-    [CreateAssetMenu(menuName = "Scriptable Objects/UI Event Handlers")]
+    [CreateAssetMenu(menuName = "Scriptable Objects/Misc/UI Event Handlers")]
     public class UIEventHandler : ScriptableObject
     {
+        [SerializeField] private PlayerLevels _playerLevels;
         [SerializeField] private string _homeScene;
         [SerializeField] private string _levelScene;
 
         public void HomeNewGame()
+        {
+            _playerLevels.CurrentLevel = 1;
+            SceneManager.LoadScene(_levelScene);
+        }
+
+        public void HomeContinue()
         {
             SceneManager.LoadScene(_levelScene);
         }

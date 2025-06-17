@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 namespace Game
@@ -9,7 +10,7 @@ namespace Game
         [SerializeField] private SpriteRenderer _srPlantSprite;
         [SerializeField] private SpriteRenderer _srSelectedOverlay;
         [SerializeField] private SpriteRenderer _srNotEnoughSunOverlay;
-        [SerializeField] private TextMesh _tmPlantCost;
+        [SerializeField] private TextMeshPro _tmPlantCost;
         [SerializeField] private Transform _cooldownOverlay;
 
         private Plant _plant;

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: MelonPultProps
   m_EditorClassIdentifier: 
   <ShootingInterval>k__BackingField: 3
-  <Range>k__BackingField: 100
+  <Range>k__BackingField: 150
   <Melon>k__BackingField: {fileID: 2242680074110977977, guid: 9e9b83aa1fc47134b9e9d21d0a404db1, type: 3}
