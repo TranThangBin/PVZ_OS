@@ -6,8 +6,6 @@ namespace Game
 {
     public class Trophy : MonoBehaviour
     {
-        public PlayerLevels PlayerLevels { get; set; }
-
         private void OnDestroy() => DOTween.Kill(this);
 
         private void Update()
@@ -26,14 +24,13 @@ namespace Game
                         Join(transform.DOScale(30, animateDuration)).
                         OnComplete(() =>
                         {
-                            if (PlayerLevels.FinalLevel)
+                            if (PlayerLevels.IncrementLevel())
                             {
-                                SceneManager.LoadScene("Home");
+                                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                             }
                             else
                             {
-                                PlayerLevels.CurrentLevel++;
-                                SceneManager.LoadScene("Level");
+                                SceneManager.LoadScene("Home");
                             }
                         });
                 }

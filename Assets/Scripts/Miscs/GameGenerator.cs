@@ -59,7 +59,6 @@ namespace Game
             zombies.transform.parent = _pool;
 
             ZombieSpawner zSpawner = zombies.AddComponent<ZombieSpawner>();
-            zSpawner.PlayerLevels = GetPlayerLevels();
             zSpawner.ProgressBar = GetZombieProgressBar();
 
             for (int i = 0; i < grid.Matrix.GetLength(0); i++)
@@ -82,11 +81,6 @@ namespace Game
             children.ForEach((t) => DestroyImmediate(t.gameObject));
         }
 
-        private PlayerLevels GetPlayerLevels()
-        {
-            ZombieSpawner zSpawner = _pool.GetComponentInChildren<ZombieSpawner>();
-            return zSpawner != null ? zSpawner.PlayerLevels : null;
-        }
         private Transform GetZombieProgressBar()
         {
             ZombieSpawner zSpawner = _pool.GetComponentInChildren<ZombieSpawner>();

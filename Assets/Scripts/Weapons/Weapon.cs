@@ -11,9 +11,9 @@ namespace Game
 
         private void Awake()
         {
-            foreach (IOnWeaponCollision c in GetComponents<IOnWeaponCollision>())
+            foreach (IOnWeaponCollisionEnter c in GetComponents<IOnWeaponCollisionEnter>())
             {
-                OnWeaponCollision.AddListener(c.OnWeaponCollision);
+                OnWeaponCollision.AddListener(c.OnWeaponCollisionEnter);
             }
         }
 
@@ -23,12 +23,16 @@ namespace Game
             {
                 healthManager.ReduceHealth(_props.Damage);
                 OnWeaponCollision.Invoke(collision);
+                if (_props.DestroyOnCollision)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
 
-        public interface IOnWeaponCollision
+        public interface IOnWeaponCollisionEnter
         {
-            void OnWeaponCollision(Collision2D collision);
+            void OnWeaponCollisionEnter(Collision2D collision);
         }
     }
 }

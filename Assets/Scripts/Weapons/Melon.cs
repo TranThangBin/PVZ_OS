@@ -4,9 +4,11 @@ using UnityEngine;
 namespace Game
 {
     [RequireComponent(typeof(Weapon))]
-    public class Melon : MonoBehaviour, Weapon.IOnWeaponCollision
+    public class Melon : MonoBehaviour, Weapon.IOnWeaponCollisionEnter
     {
         [SerializeField] private MelonProps _props;
+        [SerializeField] private SpriteRenderer _melonSprite;
+        [SerializeField] private ParticleSystem _ps;
 
         private void OnDestroy() => DOTween.Kill(this);
 
@@ -28,9 +30,12 @@ namespace Game
                 SetId(this);
         }
 
-        public void OnWeaponCollision(Collision2D collision)
+        public void OnWeaponCollisionEnter(Collision2D collision)
         {
-            Destroy(gameObject);
+            DOTween.Kill(this);
+            collision.otherCollider.enabled = false;
+            _melonSprite.enabled = false;
+            _ps.Play();
         }
     }
 }

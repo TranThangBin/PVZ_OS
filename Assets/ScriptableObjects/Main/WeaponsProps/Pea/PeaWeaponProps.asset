@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: PeaWeaponProps
   m_EditorClassIdentifier: 
   <Damage>k__BackingField: 1
+  <DestroyOnCollision>k__BackingField: 1

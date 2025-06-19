@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Game
 {
     [RequireComponent(typeof(Weapon))]
-    public class Pea : MonoBehaviour, Weapon.IOnWeaponCollision
+    public class Pea : MonoBehaviour
     {
         [SerializeField] private PeaProps _props;
 
@@ -16,11 +16,6 @@ namespace Game
             transform.
                 DOMoveX(direction.x * _props.FlyVelocity * flyDuration, flyDuration).
                 SetId(this);
-        }
-
-        public void OnWeaponCollision(Collision2D collision)
-        {
-            Destroy(gameObject);
         }
     }
 }

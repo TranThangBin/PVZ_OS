@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: MelonWeaponProps
   m_EditorClassIdentifier: 
   <Damage>k__BackingField: 3
+  <DestroyOnCollision>k__BackingField: 0

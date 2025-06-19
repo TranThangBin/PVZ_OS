@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: ArmedPotatoMineWeaponProps
   m_EditorClassIdentifier: 
   <Damage>k__BackingField: 90
+  <DestroyOnCollision>k__BackingField: 1

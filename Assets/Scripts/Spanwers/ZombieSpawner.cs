@@ -5,7 +5,6 @@ namespace Game
 {
     public class ZombieSpawner : MonoBehaviour
     {
-        public PlayerLevels PlayerLevels;
         public Transform ProgressBar;
 
         private ZombieSpawnerLevel _level;
@@ -52,7 +51,6 @@ namespace Game
                     if (Progress == 1)
                     {
                         Trophy trophy = Instantiate(_level.Trophy, zombie.transform.position, Quaternion.identity);
-                        trophy.PlayerLevels = PlayerLevels;
                         trophy.transform.DOJump(trophy.transform.position, 10, 1, 1).SetId(this);
                     }
                 });

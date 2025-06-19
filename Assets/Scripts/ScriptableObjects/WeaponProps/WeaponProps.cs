@@ -6,5 +6,6 @@ namespace Game
     public class WeaponProps : ScriptableObject
     {
         [field: SerializeField] public int Damage { get; private set; }
+        [field: SerializeField] public bool DestroyOnCollision { get; private set; }
     }
 }
